@@ -1,0 +1,57 @@
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 64px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+
+  background: #151B1F;
+}
+
+.burgerImg {
+  margin-top: 55%;
+  cursor: pointer;
+}
+
+svg {
+  .svgColor {
+    stroke: white;
+  }
+}
+
+.language {
+  margin-bottom: 55%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  color: #0EC261;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+  .burgerMenu{
+    display: block;
+    align-items: center;
+    background: none;
+    height: auto; //Почему не работает в %
+    width: auto;
+  }
+  .language {
+    display: none;
+  }
+  svg {
+    .svgColor {
+      stroke: black;
+    }
+  }
+}

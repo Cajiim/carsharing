@@ -1,0 +1,118 @@
+/* .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 27, 31, 0.81);
+  z-index: 5;
+} */
+
+////////// это для 1 страницы, не знаю куда это надо записать
+.mainContent{
+  width:100%
+}
+///////////
+
+.leftSide {
+  width: 50%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.navigation {
+  height: auto;
+  width: 64px;
+}
+
+.rightSide {
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+////Стили для слайдера
+.swiper-pagination-bullets {
+  --swiper-pagination-bullet-inactive-color: #EEEEEE;
+  margin-bottom: 3%;
+}
+
+.swiper-pagination-bullet-active {
+  --swiper-theme-color: #0EC261;
+}
+
+.swiper-button-prev {
+  //ok
+  --swiper-theme-color: #EEEEEE;
+  --swiper-navigation-size: 20px;
+}
+
+.swiper-button-next {
+  //ok
+  --swiper-theme-color: #EEEEEE;
+  --swiper-navigation-size: 20px;
+}
+
+.swiper-button-disabled {
+  //ok
+  color: #EEEEEE;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .container {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .leftSide {
+    width: 57%;
+  }
+
+  .rightSide {
+    width: 43%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .rightSide {
+    display: none;
+  }
+
+  .navigation {
+    height: 811px; //Почему не получается в %
+    width: 86px;
+  }
+
+  .leftSide {
+    height: auto;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .container {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .navigation {
+    display: block;
+    align-items: center;
+    background: none;
+    height: 100vh; //Почему не работает в %
+    width: auto;
+  }
+}
