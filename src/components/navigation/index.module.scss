@@ -57,6 +57,7 @@
 }
 
 .aside__content__language {
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
     position: absolute;
     font-family: 'Roboto';
     font-style: normal;
@@ -67,14 +68,23 @@
     bottom: 2%
 }
 
+.aside__content__language:hover {
+    color:white;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 50%;
+   
+ 
+}
+
 .aside {
     margin: 0;
     padding: 0;
 }
 
 @media screen and (min-width: 2200px) {
-    .aside__content__language{
-        font-size:0.9vh;
+    .aside__content__language {
+        font-size: 0.9vh;
     }
 }
 
@@ -91,9 +101,9 @@
         background: none;
     }
 
-    .aside__content__language{
+    .aside__content__language {
         z-index: 5;
-        bottom:3.5%;
+        bottom: 3.5%;
     }
-    
+
 }
