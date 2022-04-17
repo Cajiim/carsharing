@@ -1,4 +1,4 @@
-function My () {
+ function My () {
     return (
        <p>
            Итог моего заказа

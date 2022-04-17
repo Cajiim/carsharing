@@ -1,57 +1,99 @@
-.burgerMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 64px;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-
-  background: #151B1F;
+.containerBurg {
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 5;
+    margin-top: 30%;
 }
 
-.burgerImg {
-  margin-top: 55%;
-  cursor: pointer;
+.containerBurg::before,
+.containerBurg::after,
+.containerBurg span {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: white;
 }
 
-svg {
-  .svgColor {
-    stroke: white;
-  }
+.containerBurg::after,
+.containerBurg::before {
+    content: '';
 }
 
-.language {
-  margin-bottom: 55%;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 15px;
-  color: #0EC261;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.containerBurg::before {
+    top: 0;
+}
+
+.containerBurg::after {
+    bottom: 0;
+}
+
+.containerBurg span {
+    top: 40%;
+    transform: scale(1) translate(0px, 50%);
 }
 
 
 
 
 
-
-@media screen and (max-width: 320px) {
-  .burgerMenu{
-    display: block;
+///
+.aside__content {
+    position: absolute;
+    width: 64px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: #151B1F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background: none;
-    height: auto; //Почему не работает в %
-    width: auto;
-  }
-  .language {
-    display: none;
-  }
-  svg {
-    .svgColor {
-      stroke: black;
+    margin: 0;
+    padding: 0;
+}
+
+.aside__content__language {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    color: #0EC261;
+    bottom: 2%
+}
+
+.aside {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 2200px) {
+    .aside__content__language{
+        font-size:0.9vh;
     }
-  }
+}
+
+
+@media screen and (max-width: 768px) {
+    /* .aside__content {
+        width:86px;
+    } */
+}
+
+
+@media screen and (max-width: 370px) {
+    .aside__content {
+        background: none;
+    }
+
+    .aside__content__language{
+        z-index: 5;
+        bottom:3.5%;
+    }
+    
 }

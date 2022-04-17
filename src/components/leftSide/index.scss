@@ -1,0 +1,263 @@
+.clear {
+    * {
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none
+    }
+}
+
+.left-Container {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.head__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #0EC261;
+}
+
+.head__geolocation_city {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #999999;
+}
+
+.head__geolocation_img {
+    padding-top: 6%;
+}
+
+.leftContent__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 66px;
+    color: #121212;
+
+}
+
+h1 {
+    margin-bottom: 3%;
+}
+
+.leftContent-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 66px;
+    color: #0EC261;
+
+}
+
+.leftContent__container_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 30px;
+    color: #999999;
+    margin-bottom: 7%;
+}
+
+.leftContent__container_button {
+    background: linear-gradient(90deg, #0EC261 2.61%, #039F67 112.6%);
+    background-blend-mode: darken;
+    border-radius: 8px;
+    border: 0;
+    width: 250px;
+    height: 48px;
+    color: white;
+    font-size: 18px;
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+}
+
+.leftContent__container_button:hover{
+    background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+}
+
+.leftContent__container_button:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+    background-blend-mode: darken;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.3%;
+}
+
+.foot__year {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+}
+
+.foot__number {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #121212
+}
+.foot__number:hover{
+    color: #0EC261;
+}
+
+@media screen and (min-width: 2200px) {
+    .head__name {
+        font-size: 1.5vw;
+    }
+
+    .head__geolocation_img {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .head__geolocation_city {
+        font-size: 0.7vw;
+    }
+
+    .leftContent__title,
+    .leftContent-title {
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+
+    .leftContent__container_text {
+        font-size: 2vw;
+        line-height: 2vw;
+    }
+
+    .leftContent__container_button {
+        font-size: 1.5vw;
+        width: 20vw;
+        height: 4vw;
+        border-radius: 0.6vw;
+
+    }
+
+    .foot__number,
+    .foot__year {
+        font-size: 0.9vw;
+    }
+
+
+}
+
+@media screen and (max-width: 455px) {
+    .leftContent-title {
+        font-size: 50px;
+    }
+
+    .leftContent__title {
+        font-size: 50px;
+    }
+
+}
+
+@media screen and (max-width: 370px) {
+    .leftContent-title {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .leftContent__title {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .leftContent__container_text {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .head {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 5%;
+    }
+
+    .foot {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        margin: 0;
+        position: relative;
+        background-color: #151B1F;
+        font-size: 13px;
+
+
+
+    }
+
+    .foot__year {
+        line-height: 5vh;
+    }
+
+    .foot__number {
+        line-height: 5vh;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        color: #0EC261
+    }
+
+
+
+    .left-Container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .leftContent__title,
+    .leftContent-title,
+    .leftContent__container {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .leftContent__container_button {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+    }
+
+}

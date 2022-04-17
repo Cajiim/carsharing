@@ -1,18 +1,17 @@
 
-
-function Additionally () {
+ function Additionally() {
     return (
-       <p>
-           Дополнительные опции
-       </p>
+        <p>
+            Дополнительные опции
+        </p>
 
     )
 
-       
+
 }
 
 
 
 
 
-export {Additionally};
+export { Additionally };

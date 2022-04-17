@@ -1,17 +1,31 @@
+import styles from './index.module.scss';
+import React from 'react';
+import Menu from '../Menu';
 
-import styles from './index.module.scss'
+import { useState } from 'react';
+
+function Navigation() {
 
 
-export default function Navigation(props) {
-    console.log(props)
+
+    const [menuActive, setMenuActive] = useState(false);
+
+
+
     return (
-        <div className={styles.burgerMenu}>
-            <svg onClick={props.onClickBurger} width="32" height="32" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg" className={styles.burgerImg}>
-                <path d="M4 16H28" /* stroke="white" */ strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={styles.svgColor}/>
-                <path d="M4 8H28" /* stroke="white" */ strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={styles.svgColor} />
-                <path d="M4 24H28" /* stroke="white" */ strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={styles.svgColor} />
-            </svg>
-            <p className={styles.language}>Eng</p>
+        <div className={styles.aside}>
+            <div className={styles.aside__content}>
+                <div className={menuActive ? 'containerBurg active' : 'containerBurg'} onClick={() => { setMenuActive(!menuActive); console.log(123) }}>
+                    <span>
+                    </span>
+                </div>
+                <p className={styles.aside__content__language}>Eng</p>
+            </div>
+            <Menu active={menuActive} setActive={setMenuActive} />
         </div>
     );
 }
+
+
+export default Navigation;
+

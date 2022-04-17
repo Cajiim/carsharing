@@ -1,29 +1,14 @@
-import Navigation from "../components/navigation";
-import Generalhead from "../components/generalhead";
-/* import Overflow from "../components/overflow"; */
+/* import Navigation from "../components/navigation";
+import Generalhead from "../components/generalhead"; */
+
 import React from 'react';
 
 function Category() {
 
     return (
-        <div className="container">
+        <div >
 
-            <nav>
-                <Navigation />
-            </nav>
-
-            <div className="mainContent">
-                <header>
-                    
-                <Generalhead/>
-
-                </header>
-                <body>
-
-                </body>
-
-            </div>
-
+          
         </div>
 
     )
@@ -31,8 +16,4 @@ function Category() {
 
 }
 
-
-
-
-
-export { Category };
+export { Category }; 

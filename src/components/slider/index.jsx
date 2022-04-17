@@ -3,6 +3,11 @@ import { Navigation, Pagination, Scrollbar } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import One from '../../assets/img/one.png';
+import Two from '../../assets/img/two.png';
+import Three from '../../assets/img/three.png';
+import Four from '../../assets/img/four.png';
+
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
@@ -15,7 +20,7 @@ import styles from './Slider.module.scss';
 
 export default function Slider() {
   return (
-    <div>
+    <div className='sliderSW'>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar]}
         /* spaceBetween={50} */
@@ -33,24 +38,24 @@ export default function Slider() {
         //className='mySwiper'
       >
         <SwiperSlide>
-          <div>
+          <div className={styles.overlayContainer}>
             <div className={styles.overlayTwo}>
 
               <div className={styles.slideContainer}>
                 {/* <div className='greenContain'></div> */}
                 <h3 className={styles.slideH}>Бесплатная парковка</h3>
-                <p className={styles.slideText}>Оставляйте машину на платных городских<br></br> парковках и разрешенных местах, не <br></br> нарушая ПДД, а также в аэропортах.</p>
+                <p className={styles.slideText}>Оставляйте машину на платных городских{/* <br></br> */} парковках и разрешенных местах, не {/* <br></br> */} нарушая ПДД, а также в аэропортах.</p>
                 <button className={styles.informationOne}>Подробнее</button>
               </div>
 
             </div>
-            <img src='img/one.png' alt='slide' className={styles.slideImg}/>
+            <img src={One} alt='slide' className={styles.slideImg}/>
           </div>
         </SwiperSlide>
 
 
         <SwiperSlide>
-          <div>
+          <div className={styles.overlayContainer}>
             <div className={styles.overlayTwo}>
 
               <div className={styles.slideContainer}>
@@ -60,11 +65,11 @@ export default function Slider() {
               </div>
 
             </div>
-            <img src='img/two.png' alt='slide' className={styles.slideImg}/>
+            <img src={Two} alt='slide' className={styles.slideImg}/>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div>
+          <div className={styles.overlayContainer}>
             <div className={styles.overlayTwo}>
 
               <div className={styles.slideContainer}>
@@ -74,11 +79,11 @@ export default function Slider() {
               </div>
 
             </div>
-            <img src='img/three.png' alt='slide' className={styles.slideImg}/>
+            <img src={Three} alt='slide' className={styles.slideImg}/>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div>
+          <div >
             <div className={styles.overlayTwo}>
 
               <div className={styles.slideContainer}>
@@ -88,7 +93,7 @@ export default function Slider() {
               </div>
 
             </div>
-          <img src='img/four.png' alt='slide' className={styles.slideImg}/>
+          <img src={Four} alt='slide' className={styles.slideImg}/>
           </div>
           </SwiperSlide>
 
