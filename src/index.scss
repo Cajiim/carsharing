@@ -22,28 +22,42 @@
   --swiper-navigation-size: 30px;
 }
 
-.swiper-button-prev:hover {
-  /* color:white;
-  width: 10%;
-  height: 200%;
+div .swiper-button-prev {
+  background: none;
+  width: 64px;
+  height: 105%;
+  left: 0;
+  top: 0;
+}
+
+div .swiper-button-prev:hover {
   background: #0EC261;
-  opacity: 0.2; */
+  opacity: 0.2;
+}
+
+.swiper-button-prev:hover {
   cursor: url(./assets/svg/Cursor.svg), pointer;
 }
 
 .swiper-button-next {
-  //ok
   --swiper-theme-color: #EEEEEE;
   --swiper-navigation-size: 30px;
 }
 
-.swiper-button-next:hover {
-  //ok
-  /* color:white;
-  width: 10%;
-  height: 200%;
+div .swiper-button-next {
+  background: none;
+  width: 64px;
+  height: 105%;
+  right: 0;
+  top: 0;
+}
+
+div .swiper-button-next:hover {
   background: #0EC261;
-  opacity: 0.2; */
+  opacity: 0.2;
+}
+
+.swiper-button-next:hover {
   cursor: url(./assets/svg/Cursor.svg), pointer;
   z-index: 5;
 }
@@ -163,11 +177,33 @@
 
 
 @media screen and (max-width: 1024px) {
-  /* .mainContent {
+  div .swiper-button-prev {
+    background: none;
+    width: 32px;
+    height: 105%;
+    left: 0;
+    top: 0;
+  }
 
-    min-width: 100%;
-    min-height: 100%;
-  } */
+  div .swiper-button-prev:hover {
+    background: #0EC261;
+    opacity: 0.2;
+  }
+
+  div .swiper-button-next {
+    background: none;
+    width: 32px;
+    height: 105%;
+    right: 0;
+    top: 0;
+  }
+
+  div .swiper-button-next:hover {
+    background: #0EC261;
+    opacity: 0.2;
+  }
+
+
 
   .leftSide {
     width: 57%;
@@ -182,13 +218,13 @@
 
 @media screen and (max-width: 768px) {
 
-  
+
   .rightSide {
     display: none;
   }
 
   .leftSide {
-    min-width:100%;
+    min-width: 100%;
   }
 
   .mainContent {
@@ -199,19 +235,58 @@
 
 
 @media screen and (max-width: 370px) {
+
   .containerBurg::before,
   .containerBurg::after,
-  .containerBurg span{
-      background-color: black;
+  .containerBurg span {
+    background-color: black;
   }
+
   .containerBurg.active::before,
   .containerBurg.active::after,
-  .containerBurg.active span{
+  .containerBurg.active span {
     background-color: white;
   }
 
 
-  .mainContent{
-    margin-left:0;
+  .mainContent {
+    margin-left: 0;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///Category
+
+.mainContent__category {
+  width: calc(100% - 64px);
+  margin-left: 64px;
+}
+
+.header__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation__category {
+  display: flex;
+
+}
+
+.navigation__category_img {
+  margin-right: 1vw;
+  margin-left: 1vw;
 }

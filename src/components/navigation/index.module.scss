@@ -69,12 +69,15 @@
 }
 
 .aside__content__language:hover {
-    color:white;
-    border: 1px solid #EEEEEE;
-    box-sizing: border-box;
-    border-radius: 50%;
-   
- 
+    color: white;
+    border-radius: 100%;
+    transform: scale(1.3);
+    border: 2px solid #fff;
+    margin: 10px;
+    padding: 10px;
+}
+.aside__content__language:active {
+    color: #0EC261;
 }
 
 .aside {

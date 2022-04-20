@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 import styles from './index.scss'
 import Geo from '../../assets/svg/Group.svg'
 
@@ -24,7 +24,7 @@ function LeftSide() {
           <li className='leftContent__container_text '><span>Поминутная аренда авто твоего города</span>
           </li>
         </ul>
-        <button className='leftContent__container_button'>Забронировать</button>
+        <Link to='/category/map'><button className='leftContent__container_button'>Забронировать</button></Link>
       </div>
 
       <footer className='foot'>

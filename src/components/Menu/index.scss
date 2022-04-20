@@ -58,7 +58,11 @@
 .menu__content__items__img {
     margin-right: 10%;
     cursor: url(../../assets/svg/Cursor.svg), pointer;
+}
+.menu__content__items__img:hover{
     fill: #0EC261;
+     background-color: #0EC261;
+    border-radius: 100%; 
 }
 
 @media screen and (min-width: 2200px) {
