@@ -16,19 +16,19 @@ function Category() {
                 <header>
                     <div>
                         <div className='header__title'>
-                            <h1 className="title__name">
+                            <h1 className="header__title__name">
                                 Need for drive
                             </h1>
                             <ul className='clear'>
-                                <li >
+                                <li className='header__title__geolocation'>
                                     <img className='' src="\img\Group.svg" alt="Геолокация"></img>
-                                    <span>Ульяновск</span>
+                                    <span className='header__title__city'>Ульяновск</span>
                                 </li>
                             </ul>
                         </div>
                         <nav className="">
                             <ul className='navigation__category clear'>
-                                <li className="navigation__category_options">
+                                <li className="navigation__category_options margin-left">
                                     <span>Местоположение</span>
                                     <img src={Vector} alt='Vector' className='navigation__category_img'/>
                                 </li>
@@ -49,8 +49,12 @@ function Category() {
 
                 </header>
                 <div>
+                    <div>
 
+                    </div>
+                    <div>
 
+                    </div>
                 </div>
 
             </div>

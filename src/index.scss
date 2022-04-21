@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -279,11 +281,56 @@ div .swiper-button-next:hover {
 .header__title {
   display: flex;
   justify-content: space-between;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-top: 1%;
+}
+
+.header__title__name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: #0EC261
+}
+
+.header__title__city {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  margin-top: 2.5%;
+  margin-left:2.5%;
+}
+
+.header__title__geolocation {
+  margin-top: 2.5%;
+  display: flex;
+}
+
+.margin-left {
+  margin-left: 2.5%;
 }
 
 .navigation__category {
   display: flex;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 0.2vw;
+  border-color: #EEEEEE;
 
+}
+
+.navigation__category_options {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
 }
 
 .navigation__category_img {

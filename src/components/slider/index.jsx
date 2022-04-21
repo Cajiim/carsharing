@@ -42,7 +42,6 @@ export default function Slider() {
             <div className={styles.overlayTwo}>
 
               <div className={styles.slideContainer}>
-                {/* <div className='greenContain'></div> */}
                 <h3 className={styles.slideH}>Бесплатная парковка</h3>
                 <p className={styles.slideText}>Оставляйте машину на платных городских{/* <br></br> */} парковках и разрешенных местах, не {/* <br></br> */} нарушая ПДД, а также в аэропортах.</p>
                 <button className={styles.informationOne}>Подробнее</button>
