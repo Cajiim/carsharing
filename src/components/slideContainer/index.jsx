@@ -1,14 +1,15 @@
-import styles from '../slider/Slider.module.scss';
+import styles from './index.module.scss';
 
 
-function slideContainer () {
+
+function slideContainer (props) {
 
 return (
 
 <div className={styles.slideContainer}>
-    <h3 className={styles.slideH}>Бесплатная парковка</h3>
-    <p className={styles.slideText}>Оставляйте машину на платных городских{/* <br></br> */} парковках и разрешенных местах, не {/* <br></br> */} нарушая ПДД, а также в аэропортах.</p>
-    <button className={styles.informationOne}>Подробнее</button>
+    <h3 className={styles.slideH}>{props.title}</h3>
+    <p className={styles.slideText}>{props.text}</p>
+    <button className={styles.informationOne}>{props.buttonText}</button>
 </div>
 
 );

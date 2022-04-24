@@ -1,9 +1,13 @@
-/* import Navigation from "../components/navigation";
-import Generalhead from "../components/generalhead"; */
+
 
 import React from 'react';
 import Navigation from '../components/navigation';
-import Vector from '../assets/svg/Vector.svg';
+
+
+import YandexMap from '../components/map'
+import { Autocomplete } from '../components/Autocomplete';
+import RightSideBlock from '../components/RightSideBlock';
+import HeaderPage from '../components/HeaderPage';
 
 function Category() {
 
@@ -12,47 +16,16 @@ function Category() {
             <div className='navigation'>
                 <Navigation />
             </div>
-            <div className='mainContent__category'>
-                <header>
-                    <div>
-                        <div className='header__title'>
-                            <h1 className="header__title__name">
-                                Need for drive
-                            </h1>
-                            <ul className='clear'>
-                                <li className='header__title__geolocation'>
-                                    <img className='' src="\img\Group.svg" alt="Геолокация"></img>
-                                    <span className='header__title__city'>Ульяновск</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <nav className="">
-                            <ul className='navigation__category clear'>
-                                <li className="navigation__category_options margin-left">
-                                    <span>Местоположение</span>
-                                    <img src={Vector} alt='Vector' className='navigation__category_img'/>
-                                </li>
-                                <li className="navigation__category_options">
-                                    <span>Модель</span>
-                                    <img src={Vector} alt='Vector' className='navigation__category_img'/>
-                                </li>
-                                <li className="navigation__category_options">
-                                    <span>Дополнительно</span>
-                                    <img src={Vector} alt='Vector' className='navigation__category_img'/>
-                                </li>
-                                <li className="navigation__category_options">
-                                    <span>Итого</span>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+            <div className='mainContent__page'>
+                <HeaderPage/>
 
-                </header>
-                <div>
-                    <div>
-
+                <div className='category__container'>
+                    <div className='category__container_leftSide'>
+                         <Autocomplete />
+                        <YandexMap /> 
                     </div>
-                    <div>
+                    <div className='category__container_rightSide'>
+                        <RightSideBlock />
 
                     </div>
                 </div>

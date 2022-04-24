@@ -33,8 +33,7 @@ div .swiper-button-prev {
 }
 
 div .swiper-button-prev:hover {
-  background: #0EC261;
-  opacity: 0.2;
+  background: rgba(14, 194, 97, 0.2);
 }
 
 .swiper-button-prev:hover {
@@ -55,8 +54,8 @@ div .swiper-button-next {
 }
 
 div .swiper-button-next:hover {
-  background: #0EC261;
-  opacity: 0.2;
+  background: rgba(14, 194, 97, 0.2);
+
 }
 
 .swiper-button-next:hover {
@@ -273,67 +272,71 @@ div .swiper-button-next:hover {
 
 ///Category
 
-.mainContent__category {
-  width: calc(100% - 64px);
+.mainContent__page {
+  position: relative;
+  min-height: 100%;
+  min-width: calc(100% - 64px);
+  margin: 0;
+  padding: 0;
   margin-left: 64px;
 }
 
-.header__title {
+
+
+
+
+.category__container {
   display: flex;
-  justify-content: space-between;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
-  margin-top: 1%;
+  position: relative;
+  /* margin-left: 2.5%; */
+  /* margin-top: 5%; */
+  min-height: 100%;
 }
 
-.header__title__name {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 35px;
-  color: #0EC261
+
+.category__container_leftSide {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  margin:0;
+  padding:0;
 }
 
-.header__title__city {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: #999999;
-  margin-top: 2.5%;
-  margin-left:2.5%;
-}
-
-.header__title__geolocation {
-  margin-top: 2.5%;
-  display: flex;
-}
-
-.margin-left {
-  margin-left: 2.5%;
-}
-
-.navigation__category {
-  display: flex;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 0.2vw;
+.category__container_rightSide {
+  position: relative;
+  min-height: 100%;
+  width: 30%;
+  border-left-style: solid;
   border-color: #EEEEEE;
-
+  margin:0;
+  padding:0;
 }
 
-.navigation__category_options {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  color: #999999;
+
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.navigation__category_img {
-  margin-right: 1vw;
-  margin-left: 1vw;
+.NavLink .active {
+  color: #0EC261;
+}
+
+/////Store
+.mainContent__page_container{
+  display:flex;
+  min-width: 100%;
+}
+
+.rightSide_store{
+  position: relative;
+  width:30%;
+  border-left-style: solid;
+  border-color: #EEEEEE;
+}
+
+.leftSide_store{
+ width:70%;
+ position: relative;
 }
