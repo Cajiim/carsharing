@@ -21,32 +21,36 @@ import SlideContainer from '../slideContainer';
 
 const arr = [
   {
-    key:'1',
+    id: '1',
     title: 'Бесплатная парковка',
     text: 'Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.',
     buttonText: 'Подробнее',
-    img:One
+    img: One,
+    buttonStyle: 'One'
   },
-  { key:'2',
+  {
+    id: '2',
     title: 'Страховка',
     text: 'Полная страховка страховка автомобиля',
     buttonText: 'Подробнее',
-    img:Two
+    img: Two,
+    buttonStyle: 'Two'
   },
   {
-    key:'3',
+    id: '3',
     title: 'Бензин',
     text: 'Полный бак на любой заправке города за наш счет',
     buttonText: 'Подробнее',
-    img:Three
-
+    img: Three,
+    buttonStyle: 'Three'
   },
   {
-    key:'4',
+    id: '4',
     title: 'Обслуживание',
     text: 'Автомобиль проходит еженедельное ТО',
     buttonText: 'Подробнее',
-    img:Four
+    img: Four,
+    buttonStyle: 'Four'
   }
 ]
 
@@ -63,110 +67,30 @@ export default function Slider() {
         centeredSlides={true}
         navigation={true}
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        speed={2400}
+        /* scrollbar={{ draggable: true }} */
+        speed={1200}
         centeredSlidesBounds={true}
+        loop={true}
+
       >
-        {arr.map((obj) => 
-        
-        <SwiperSlide key={obj.key}>
+        {arr.map((obj) =>
 
-          <div className={styles.overlayContainer}>
-            <div className={styles.overlayTwo}>
+          <SwiperSlide key={obj.id}>
 
-              <SlideContainer
-                title={obj.title}
-                text={obj.text}
-                buttonText={obj.buttonText}
-              />
-              
-            </div>
-            <img src={obj.img} alt='slide' className={styles.slideImg} />
-          </div>
-        </SwiperSlide>)}
+            <div className={styles.overlayContainer}>
+              <div className={styles.overlayTwo}>
 
+                <SlideContainer
+                  title={obj.title}
+                  text={obj.text}
+                  buttonText={obj.buttonText}
+                  buttonStyle={obj.buttonStyle}
+                />
 
-        {/* <SwiperSlide>
-          <div className={styles.overlayContainer}>
-            <div className={styles.overlayTwo}>
-
-              <div className={styles.slideContainer}>
-                <h3 className={styles.slideH}>Бесплатная парковка</h3>
-                <p className={styles.slideText}>Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.</p>
-                <button className={styles.informationOne}>Подробнее</button>
               </div>
-
-              <SlideContainer
-                title='Бесплатная парковка'
-                text='Оставляйте машину на платных городских парковках и разрешенных местах, не нарушая ПДД, а также в аэропортах.'
-                buttonText='Подробнее'
-              />
-
-
+              <img src={obj.img} alt='slide' className={styles.slideImg} />
             </div>
-            <img src={One} alt='slide' className={styles.slideImg} />
-          </div>
-        </SwiperSlide>
-
-
-        <SwiperSlide>
-          <div className={styles.overlayContainer}>
-            <div className={styles.overlayTwo}>
-
-              {<div className={styles.slideContainer}>
-                <h3 className={styles.slideH}>Страховка</h3>
-                <p className={styles.slideText}>Полная страховка страховка автомобиля</p>
-                <button className={styles.informationTwo}>Подробнее</button>
-              </div>}
-              <SlideContainer
-                title='Страховка'
-                text='Полная страховка страховка автомобиля'
-                buttonText='Подробнее'
-              />
-
-            </div>
-            <img src={Two} alt='slide' className={styles.slideImg} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={styles.overlayContainer}>
-            <div className={styles.overlayTwo}>
-
-              <div className={styles.slideContainer}>
-                <h3 className={styles.slideH}>Бензин</h3>
-                <p className={styles.slideText}>Полный бак на любой заправке города за наш счет</p>
-                <button className={styles.informationThree}>Подробнее</button>
-              </div>
-              <SlideContainer
-                title='Бензин'
-                text='Полный бак на любой заправке города за наш счет'
-                buttonText='Подробнее'
-              />
-
-            </div>
-            <img src={Three} alt='slide' className={styles.slideImg} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div >
-            <div className={styles.overlayTwo}>
-
-              <div className={styles.slideContainer}>
-                <h3 className={styles.slideH}>Обслуживание</h3>
-                <p className={styles.slideText}>Автомобиль проходит еженедельное ТО</p>
-                <button className={styles.informationFour}>Подробнее</button>
-              </div>
-              <SlideContainer
-                title='Бензин'
-                text='Автомобиль проходит еженедельное ТО'
-                buttonText='Подробнее'
-              />
-
-            </div>
-            <img src={Four} alt='slide' className={styles.slideImg} />
-          </div>
-        </SwiperSlide> */}
-
+          </SwiperSlide>)}
       </Swiper>
 
     </div>

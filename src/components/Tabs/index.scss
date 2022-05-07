@@ -1,0 +1,155 @@
+.container_tabs {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.navigation__category {
+    display: flex;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #EEEEEE;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+
+
+}
+
+.nav_category__type {
+    cursor: pointer;
+}
+
+.navigation__category_options {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+    /*  margin-top: 0.5%;
+    margin-bottom: 0.5%; */
+}
+
+.navigation__category_img {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &.active {
+        color: #0EC261;
+
+    }
+
+    &.disabled {
+        /* pointer-events: none; */
+        color: #999999;
+
+    }
+
+    &.complete {
+        color: #121212;
+
+    }
+}
+
+
+.content-tabs {
+    display: none;
+}
+
+.active-tabs-content {
+    display: block;
+
+}
+
+.margin-left {
+    margin-left: 2.5%;
+}
+
+.tabs-maincontent {
+    display: flex;
+    height: calc(100% - 30px);
+
+}
+
+.tabs_left_content {
+    height: 100%;
+    width: 70%;
+}
+
+.tabs_right_content {
+    height: 100%;
+    width: 30%;
+}
+
+.tabs-img {
+    width: 800px;
+    height: 100%;
+    margin-left: 2.5%;
+    margin-top: 5%;
+}
+
+.tabs_right_content {
+    position: relative;
+    min-height: 100%;
+    border-left-style: solid;
+    border-color: #EEEEEE;
+    border-width: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.block-tabs {
+    height: 28px;
+}
+
+
+
+
+
+
+.active-tabs-content-model_cart {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 3%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+
+.tabs_left_content_radioContent {
+    display: flex;
+    margin-left: 3.5%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.radio_box {
+    margin-right: 5px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+}
+
+.radio_text {
+    margin-right: 15px;
+    color: #999999;
+}
+
+/* 
+.active-tabs-content_model_cart{
+    height: 100%;
+} */

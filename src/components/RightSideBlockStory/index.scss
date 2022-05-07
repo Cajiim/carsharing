@@ -4,15 +4,15 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top:10%;
-    margin-left:5%;
-    margin-right:5%;
+   /*  margin-top: 10%; */
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .rightSideBlock__text {
     display: flex;
-    margin-top:10%;
-    margin-bottom:10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 
 }
 
@@ -30,7 +30,7 @@
     font-size: 14px;
     line-height: 16px;
     color: #121212;
-    
+
 }
 
 .rightSideBlock__text_city_street {
@@ -42,8 +42,9 @@
     text-align: right;
     color: #999999;
 }
-.rightSideBlock__text_city-street{
-    display:flex;
+
+.rightSideBlock__text_city-street {
+    display: flex;
     flex-direction: column;
 }
 
@@ -51,7 +52,11 @@
     div {
         flex: 1;
         height: 1px;
-        border-bottom: 1px dashed #999999;
+        border-bottom: 1px dotted #999999;
+        margin-left: 2px;
+        margin-right: 3px;
+        margin-bottom: 1px;
+
     }
 }
 
@@ -67,7 +72,7 @@
     line-height: 16px;
     color: #121212;
     font-family: 'Roboto';
-    margin-bottom:10%;
+    margin-bottom: 10%;
 }
 
 .rightSideBlock__button {
@@ -76,7 +81,7 @@
     background: #EEEEEE;
     border-radius: 8px;
     align-self: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-size: 18px;
-    border:0;
+    border: 0;
 }

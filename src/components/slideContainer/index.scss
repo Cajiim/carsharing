@@ -1,0 +1,178 @@
+.slideH {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: #FFFFFF;
+    margin-bottom: 2%;
+  }
+  
+  .slideText {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 100%;
+    color: #EEEEEE;
+    margin-bottom: 3%;
+  }
+
+  .slideContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 7%;
+    margin-left: 12%;
+  
+  }
+
+
+  .information {
+    width: 164px;
+    height: 48px;
+    
+    border-radius: 4px;
+    color: white;
+    border: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+  }
+  .information.One {
+    background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
+  }
+
+  .information.One:hover {
+    background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+  }
+  
+  .information.One:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+    background-blend-mode: darken;
+  }
+
+  .information.Two {
+    background: linear-gradient(90deg, #132949 0%, #0C7B67 100%);
+  }
+  .information.Two:hover {
+    background: linear-gradient(90deg, #1645c6 2.61%, #031b7b 112.6%);
+  }
+  
+  .information.Two:active {
+    background: linear-gradient(90deg, #4713a8 2.61%, #180134 112.6%);
+    background-blend-mode: darken;
+  }
+  
+  
+  
+  .information.Three {
+    width: 164px;
+    height: 48px;
+    background: linear-gradient(90deg, #493013 0%, #7B0C3B 100%);
+    border-radius: 4px;
+    border: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+    color: white;
+  }
+  .information.Three:hover {
+    background: linear-gradient(90deg, #c1610d 2.61%, #6f4e03 112.6%);
+  }
+  
+  .information.Three:active {
+    background: linear-gradient(90deg, #c00f3e 2.61%, #420211 112.6%);
+    background-blend-mode: darken;
+  }
+  
+  .information.Four {
+    width: 164px;
+    height: 48px;
+    background: linear-gradient(90deg, #281349 0%, #720C7B 100%);
+    border-radius: 4px;
+    border: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+    color: white;
+  }
+  
+  .information.Four:hover {
+    background: linear-gradient(90deg, #9623e8 2.61%, #7b038b 112.6%);
+  }
+  
+  .information.Four:active {
+    background: linear-gradient(90deg, #f51d98 2.61%, #a60550 112.6%);
+    background-blend-mode: darken;
+  } 
+
+
+
+  @media screen and (max-width: 1024px) {
+
+    .slideH {
+      font-size: 32px;
+    }
+  
+    .slideText {
+      font-size: 22px;
+    }
+  
+  
+  }
+
+  @media screen and (min-width: 2200px) {
+    .slideH {
+      font-size: 3.5vw;
+      line-height: 3.5vw;
+    }
+  
+    .slideText {
+      font-size: 1.5vw;
+      line-height: 1.5vw;
+    }
+  
+    .information.One {
+      font-size: 1.5vw;
+      width: 15vw;
+      height: 4vw;
+      border-radius: 0.7vw;
+    }
+  
+    .information.Two {
+      font-size: 1.5vw;
+      width: 15vw;
+      height: 4vw;
+      border-radius: 0.7vw;
+    }
+  
+    .information.Three {
+      font-size: 1.5vw;
+      width: 15vw;
+      height: 4vw;
+      border-radius: 0.7vw;
+    }
+  
+    .information.Four {
+      font-size: 1.5vw;
+      width: 15vw;
+      height: 4vw;
+      border-radius: 0.7vw;
+    }
+  }

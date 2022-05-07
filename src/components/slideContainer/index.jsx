@@ -1,15 +1,18 @@
-import styles from './index.module.scss';
+import classNames from 'classnames';
+import styles from './index.scss';
 
 
 
 function slideContainer (props) {
 
 return (
+    
+    
 
-<div className={styles.slideContainer}>
-    <h3 className={styles.slideH}>{props.title}</h3>
-    <p className={styles.slideText}>{props.text}</p>
-    <button className={styles.informationOne}>{props.buttonText}</button>
+<div className='slideContainer'>
+    <h3 className='slideH'>{props.title}</h3>
+    <p className='slideText'>{props.text}</p>
+    <button className={classNames('information', [props.buttonStyle] )}>{props.buttonText}</button>
 </div>
 
 );

@@ -271,46 +271,34 @@ div .swiper-button-next:hover {
 
 
 ///Category
-
 .mainContent__page {
+  margin-left:64px;
+  height: 100%;
+}
+.container__category {
+  height: 100vh;
+}
+
+/* .mainContent__page{
   position: relative;
-  min-height: 100%;
+  height: calc(100% - 70px);
+} */
+
+/* .mainContent__page {
+  position: relative;
+  height: 100%;
   min-width: calc(100% - 64px);
+  min-height: 100%;
   margin: 0;
   padding: 0;
   margin-left: 64px;
-}
+} */
 
 
-
-
-
-.category__container {
-  display: flex;
+.mainContent__page_tabs {
   position: relative;
-  /* margin-left: 2.5%; */
-  /* margin-top: 5%; */
-  min-height: 100%;
-}
-
-
-.category__container_leftSide {
-  position: relative;
-  height: 100%;
-  width: 70%;
-  margin:0;
-  padding:0;
-}
-
-.category__container_rightSide {
-  position: relative;
-  min-height: 100%;
-  width: 30%;
-  border-left-style: solid;
-  border-color: #EEEEEE;
-  margin:0;
-  padding:0;
-}
+  height: calc(100% - 70px);
+} 
 
 
 
@@ -324,7 +312,7 @@ div .swiper-button-next:hover {
 }
 
 /////Store
-.mainContent__page_container{
+/* .mainContent__page_container{
   display:flex;
   min-width: 100%;
 }
@@ -339,4 +327,4 @@ div .swiper-button-next:hover {
 .leftSide_store{
  width:70%;
  position: relative;
-}
+} */
