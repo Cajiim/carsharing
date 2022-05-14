@@ -6,7 +6,6 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "some-other-config-you-use",
     "prettier"
   ],
   "parserOptions": {
@@ -17,7 +16,14 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+    "react/self-closing-comp": ["error", {
+      "component": false,
+      "html": false
+    }],
+    "react/prop-types": "off"   // убрать
+  }
 }
 
 

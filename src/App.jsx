@@ -18,17 +18,12 @@ function App() {
 
   return (
     <Provider store={store}>
-      <>
         <Router>
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/category/map' element={<Category />} />
           </Routes>
-
-
         </Router>
-
-      </>
     </Provider>
   );
 }

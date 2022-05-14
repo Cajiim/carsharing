@@ -1,6 +1,8 @@
-import s from "./index.scss";
+import React from 'react'
 
-import { useState } from "react";
+import "./index.scss";
+
+/* import { useState } from "react"; */
 import { useDispatch } from "react-redux";
 import { setModelInCart } from "../../redux/cart/reducer";
 

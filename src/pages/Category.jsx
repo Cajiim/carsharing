@@ -1,8 +1,8 @@
 import React from "react";
 import Navigation from "../components/navigation";
 
-import YandexMap from "../components/map";
-import { Autocomplete } from "../components/Autocomplete";
+/* import YandexMap from "../components/map";
+import { Autocomplete } from "../components/Autocomplete"; */
 import HeaderPage from "../components/HeaderPage";
 
 import Tabs from "../components/Tabs";
