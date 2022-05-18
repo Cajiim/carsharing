@@ -1,25 +1,20 @@
-
-import s from './index.scss';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import React from 'react'
 
 
-function YandexMap() {
+
+import'./index.scss';
+
+
+
+function Map() {
     return (
-        <YMaps className=''>
-
-            <div id="map" className="yandexMap">
-                <Map className='Ymap'
-                    defaultState={{
-                        center: [54.3282, 48.3866], zoom: 12
-                    }}>
-                        <Placemark geometry={[55.75, 37.57]} />
-
-                </Map>
-
-            </div>
-        </YMaps>
+        <img
+              className="tabs-img"
+              src="https://annamap.ru/karta-mira.jpg"
+              alt="карта"
+            ></img>
     );
 }
 
 
-export default YandexMap;
+export default Map;

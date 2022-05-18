@@ -1,0 +1,51 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:30px;
+}
+
+.modal__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #121212;
+}
+
+.modal__button_confirm {
+  width: 180px;
+  height: 50px;
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  border: 0;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.modal__button_refuse {
+  width: 180px;
+  height: 50px;
+  background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  border: 0;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.modal__button {
+    display:flex;
+    gap:20px;
+}

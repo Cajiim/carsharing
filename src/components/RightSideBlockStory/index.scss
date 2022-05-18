@@ -1,87 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
 
 .rightSideBlock_container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-   /*  margin-top: 10%; */
-    margin-left: 5%;
-    margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /*  margin-top: 10%; */
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .rightSideBlock__text {
-    display: flex;
-    margin-top: 5%;
-    margin-bottom: 5%;
-
+  display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .rightSideBlock_container_order {
-    font-size: 18px;
-    align-self: flex-end;
-    font-family: 'Roboto';
-
+  font-size: 18px;
+  align-self: flex-end;
+  font-family: "Roboto";
 }
 
 .rightSideBlock__text_post {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    color: #121212;
-
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
 }
 
 .rightSideBlock__text_city_street {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: right;
-    color: #999999;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  color: #999999;
 }
 
 .rightSideBlock__text_city-street {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .rightSideBlock_content {
-    div {
-        flex: 1;
-        height: 1px;
-        border-bottom: 1px dotted #999999;
-        margin-left: 2px;
-        margin-right: 3px;
-        margin-bottom: 1px;
-
-    }
+  div {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dotted #999999;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 1px;
+  }
 }
 
 .rightSideBlock__text {
-
-    display: flex;
-    align-items: flex-end;
-
+  display: flex;
+  align-items: flex-end;
 }
 
 .rightSideBlock__price {
-    font-size: 16px;
-    line-height: 16px;
-    color: #121212;
-    font-family: 'Roboto';
-    margin-bottom: 10%;
+  font-size: 16px;
+  line-height: 16px;
+  color: #121212;
+  font-family: "Roboto";
+  margin-bottom: 10%;
 }
 
 .rightSideBlock__button {
-    width: 287px;
-    height: 48px;
-    background: #EEEEEE;
-    border-radius: 8px;
-    align-self: center;
-    color: #FFFFFF;
-    font-size: 18px;
-    border: 0;
+  width: 287px;
+  height: 48px;
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  font-size: 18px;
+  border: 0;
+  color: #FFFFFF;
+  cursor:pointer;
+  align-self: center;
+}
+
+.rightSideBlock__button_disabled {
+  width: 287px;
+  height: 48px;
+  pointer-events: none;
+  background: #eeeeee;
+  border-radius: 8px;
+  font-size: 18px;
+  border: 0;
+  color: #FFFFFF;
+  align-self: center;
 }
