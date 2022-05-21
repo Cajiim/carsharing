@@ -5,8 +5,8 @@ const finalOrderSlice = createSlice({
   initialState: {
     modelInCart: null,
     arendTime: null,
-    checkedOne: false,
-    checkedTwo: false,
+    checkFuelState: false,
+    checkedBabyChairState: false,
     checkedThree: false,
     classCar: null,
     colorCar: null,
@@ -29,17 +29,18 @@ const finalOrderSlice = createSlice({
     deleteArendTime: (state) => {
       state.arendTime = null;
     },
-    setCheckOne: (state, action) => {
-      state.checkedOne = action.payload;
+    setCheckFuel: (state, action) => {
+      state.checkFuelState = action.payload;
+      
     },
-    deleteCheckedOne: (state) => {
-      state.checkedOne = false;
+    deleteCheckedFuel: (state) => {
+      state.checkFuelState = false;
     },
-    setCheckTwo: (state, action) => {
-      state.checkedTwo = action.payload;
+    setCheckBabyChair: (state, action) => {
+      state.checkedBabyChairState = action.payload;
     },
-    deleteCheckedTwo: (state) => {
-      state.checkedTwo = false;
+    deleteCheckedBabyChair: (state) => {
+      state.checkedBabyChairState = false;
     },
     setCheckThree: (state, action) => {
       state.checkedThree = action.payload;
@@ -79,10 +80,10 @@ export const {
   deleteModelFromCart,
   setArendTime,
   deleteArendTime,
-  setCheckOne,
-  deleteCheckedOne,
-  setCheckTwo,
-  deleteCheckedTwo,
+  setCheckFuel,
+  deleteCheckedFuel,
+  setCheckBabyChair,
+  deleteCheckedBabyChair,
   setCheckThree,
   deleteCheckedThree,
   setClass,

@@ -1,5 +1,7 @@
+import React from 'react'
+
 import {Link} from 'react-router-dom';
-import styles from './index.scss'
+import './index.scss'
 import Geo from '../../assets/svg/Group.svg'
 
 function LeftSide() {

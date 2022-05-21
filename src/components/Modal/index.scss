@@ -11,6 +11,11 @@
   align-items: center;
   justify-content: center;
   gap:30px;
+  transform: translateX(-100%);
+}
+
+.modal.active{
+  transform: translateX(0);
 }
 
 .modal__title {
@@ -33,6 +38,16 @@
   color: #ffffff;
   font-size: 18px;
 }
+.modal__button_confirm:hover{
+  background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+  cursor: pointer;
+}
+
+.modal__button_confirm:active {
+  background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+  background-blend-mode: darken;
+  cursor: pointer;
+}
 
 .modal__button_refuse {
   width: 180px;
@@ -48,4 +63,16 @@
 .modal__button {
     display:flex;
     gap:20px;
+}
+
+
+.modal__button_refuse:hover{
+    background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
+    cursor: pointer;
+}
+
+.modal__button_refuse:active{
+    background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
+    background-blend-mode: darken;
+    cursor: pointer;
 }

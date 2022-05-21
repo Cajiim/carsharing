@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
 
 * {
   margin: 0;
@@ -7,20 +7,18 @@
 
 ////Стили для слайдера
 
-
-
 .swiper-pagination-bullets {
-  --swiper-pagination-bullet-inactive-color: #EEEEEE;
+  --swiper-pagination-bullet-inactive-color: #eeeeee;
   margin-bottom: 3%;
 }
 
 .swiper-pagination-bullet-active {
-  --swiper-theme-color: #0EC261;
+  --swiper-theme-color: #0ec261;
 }
 
 .swiper-button-prev {
   //ok
-  --swiper-theme-color: #EEEEEE;
+  --swiper-theme-color: #eeeeee;
   --swiper-navigation-size: 30px;
 }
 
@@ -41,7 +39,7 @@ div .swiper-button-prev:hover {
 }
 
 .swiper-button-next {
-  --swiper-theme-color: #EEEEEE;
+  --swiper-theme-color: #eeeeee;
   --swiper-navigation-size: 30px;
 }
 
@@ -55,7 +53,6 @@ div .swiper-button-next {
 
 div .swiper-button-next:hover {
   background: rgba(14, 194, 97, 0.2);
-
 }
 
 .swiper-button-next:hover {
@@ -65,7 +62,7 @@ div .swiper-button-next:hover {
 
 .swiper-button-disabled {
   //ok
-  color: #EEEEEE;
+  color: #eeeeee;
 }
 
 .swiper-pointer-events {
@@ -77,7 +74,6 @@ div .swiper-button-next:hover {
 }
 
 ///@at-root
-
 
 .mainContent {
   display: flex;
@@ -97,7 +93,6 @@ div .swiper-button-next:hover {
   height: 100vh;
   margin: 0;
   padding: 0;
-
 }
 
 .rightSide {
@@ -110,11 +105,9 @@ div .swiper-button-next:hover {
   padding: 0;
 }
 
-
 /* .navigation {
   margin-left:64px;
 } */
-
 
 /////@at-root
 .containerBurg {
@@ -139,7 +132,7 @@ div .swiper-button-next:hover {
 
 .containerBurg::after,
 .containerBurg::before {
-  content: '';
+  content: "";
 }
 
 .containerBurg::before {
@@ -170,12 +163,7 @@ div .swiper-button-next:hover {
   transform: rotate(45deg) translate(0px, 50%);
 }
 
-
 //
-
-
-
-
 
 @media screen and (max-width: 1024px) {
   div .swiper-button-prev {
@@ -187,7 +175,7 @@ div .swiper-button-next:hover {
   }
 
   div .swiper-button-prev:hover {
-    background: #0EC261;
+    background: #0ec261;
     opacity: 0.2;
   }
 
@@ -200,26 +188,20 @@ div .swiper-button-next:hover {
   }
 
   div .swiper-button-next:hover {
-    background: #0EC261;
+    background: #0ec261;
     opacity: 0.2;
   }
 
-
-
   .leftSide {
     width: 57%;
-
   }
 
   .rightSide {
     width: 43%;
-
   }
 }
 
 @media screen and (max-width: 768px) {
-
-
   .rightSide {
     display: none;
   }
@@ -231,12 +213,9 @@ div .swiper-button-next:hover {
   .mainContent {
     margin-left: 64px;
   }
-
 }
 
-
 @media screen and (max-width: 370px) {
-
   .containerBurg::before,
   .containerBurg::after,
   .containerBurg span {
@@ -249,58 +228,24 @@ div .swiper-button-next:hover {
     background-color: white;
   }
 
-
   .mainContent {
     margin-left: 0;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///Category
 .mainContent__page {
-  margin-left:64px;
+  margin-left: 64px;
   height: 100%;
 }
 .container__category {
   height: 100vh;
 }
 
-/* .mainContent__page{
-  position: relative;
-  height: calc(100% - 70px);
-} */
-
-/* .mainContent__page {
-  position: relative;
-  height: 100%;
-  min-width: calc(100% - 64px);
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  margin-left: 64px;
-} */
-
-
 .mainContent__page_tabs {
   position: relative;
   height: calc(100% - 70px);
-} 
-
-
+}
 
 .link {
   text-decoration: none;
@@ -308,23 +253,38 @@ div .swiper-button-next:hover {
 }
 
 .NavLink .active {
-  color: #0EC261;
+  color: #0ec261;
 }
 
-/////Store
-/* .mainContent__page_container{
-  display:flex;
-  min-width: 100%;
+/////FinalOrder
+.container__finalOrder {
+  margin-left: 64px;
+  width: calc(100% - 64px);
+}
+.mainContent__finalOrder_page {
+  display: flex;
 }
 
-.rightSide_store{
-  position: relative;
-  width:30%;
-  border-left-style: solid;
-  border-color: #EEEEEE;
+.mainContent__finalOrder_number {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #eeeeee;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  margin-left: 2.5%;
+  width:100%   //Вместо спана сделать что то другое
+  
 }
 
-.leftSide_store{
- width:70%;
- position: relative;
-} */
+.mainContent__finalOrder_leftContent {
+  width: 70%;
+}
+
+.mainContent__finalOrder_rightContent {
+  width: 30%;
+}

@@ -77,9 +77,20 @@
   border-radius: 8px;
   font-size: 18px;
   border: 0;
-  color: #FFFFFF;
-  cursor:pointer;
+  color: #ffffff;
+  cursor: pointer;
   align-self: center;
+}
+
+.rightSideBlock__button:hover{
+  background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+  cursor: pointer;
+}
+
+.rightSideBlock__button:active {
+  background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+  background-blend-mode: darken;
+  cursor: pointer;
 }
 
 .rightSideBlock__button_disabled {
@@ -90,6 +101,26 @@
   border-radius: 8px;
   font-size: 18px;
   border: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   align-self: center;
+}
+.rightSideBlock__button_cancel {
+  width: 287px;
+  height: 48px;
+  background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+  border-radius: 8px;
+  font-size: 18px;
+  border: 0;
+  color: #ffffff;
+  align-self: center;
+}
+
+.rightSideBlock__button_cancel:hover {
+  background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
+  cursor: pointer;
+}
+.rightSideBlock__button_cancel:active {
+  background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
+  background-blend-mode: darken;
+  cursor: pointer;
 }

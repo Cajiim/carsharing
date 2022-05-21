@@ -25,8 +25,8 @@ function RightSideBlockStory() {
   const startDate = useSelector((state) => state.finalOrder.durationArend);
   const endDate = useSelector((state) => state.finalOrder.durationArendTwo);
   const arendRate = useSelector((state) => state.finalOrder.arendTime);
-  const checkedOne = useSelector((state) => state.finalOrder.checkedOne);
-  const checkedTwo = useSelector((state) => state.finalOrder.checkedTwo);
+  const checkedFuel = useSelector((state) => state.finalOrder.checkFuelState);
+  const checkedBabyChair = useSelector((state) => state.finalOrder.checkedBabyChairState);
   const checkedThree = useSelector((state) => state.finalOrder.checkedThree);
 
   const dispatch = useDispatch();
@@ -38,6 +38,9 @@ function RightSideBlockStory() {
   const handlClickButton = () => {
     dispatch(setTabIndex((String(Number(tabIndex) + 1))));
   };
+  const handlClickButtonDecrement = () => {
+    dispatch(setTabIndex((String(Number(tabIndex) - 1))))
+  }
 
   const minPrice = model?.minPrice;
   const maxPrice = model?.maxPrice;
@@ -66,8 +69,8 @@ function RightSideBlockStory() {
   let a = 0;
   let b = 0;
   let c = 0;
-  const gas = checkedOne === true ? (a += 500) : a;
-  const baby = checkedTwo === true ? (b += 200) : b;
+  const gas = checkedFuel === true ? (a += 500) : a;
+  const baby = checkedBabyChair === true ? (b += 200) : b;
   const rightHand = checkedThree === true ? (c += 1600) : c;
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
@@ -78,7 +81,9 @@ function RightSideBlockStory() {
 
   return (
     <div className="rightSideBlock_container">
+
       <Modal active={activeModal} setActive={setActiveModal} />
+
       <h4 className="rightSideBlock_container_order">Ваш заказ:</h4>
       <ul className="rightSideBlock_content clear">
         <li className="rightSideBlock__text">
@@ -147,7 +152,7 @@ function RightSideBlockStory() {
               </p>
             </li>
           )}
-        {checkedOne === false ? null : (
+        {checkedFuel === false ? null : (
           <li className="rightSideBlock__text">
             <span className="rightSideBlock__text_post">Полный бак</span>
             <div></div>
@@ -156,7 +161,7 @@ function RightSideBlockStory() {
             </p>
           </li>
         )}
-        {checkedTwo === false ? null : (
+        {checkedBabyChair === false ? null : (
           <li className="rightSideBlock__text">
             <span className="rightSideBlock__text_post">Детское кресло</span>
             <div></div>
@@ -187,7 +192,6 @@ function RightSideBlockStory() {
       {tabIndex === "1" ? (
         <button
           className="rightSideBlock__button"
-          type="button"
           onClick={() => handlClickButton()} 
         >
           Выбрать модель
@@ -200,7 +204,6 @@ function RightSideBlockStory() {
               ? "rightSideBlock__button_disabled"
               : "rightSideBlock__button"
           }
-          type="button"
         >
           Дополнительно
         </button>
@@ -212,19 +215,22 @@ function RightSideBlockStory() {
               ? "rightSideBlock__button_disabled"
               : "rightSideBlock__button"
           }
-          type="button"
         >
           Итого
         </button>
-      ) : (
+      ) : tabIndex === '4' ? (
         <button
           className="rightSideBlock__button"
-          type="button"
           onClick={() => setActiveModal(true)}
         >
           Заказать
         </button>
-      )}
+      ) : (<button
+        className="rightSideBlock__button_cancel"
+        onClick={() => handlClickButtonDecrement()} 
+      >
+        Отменить
+      </button>)}
       
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react'
 import "./index.scss";
 
 /* import { useState } from "react"; */
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setModelInCart } from "../../redux/cart/reducerFinalOrder";
 
 
@@ -13,10 +13,11 @@ function Model({ cart }) {
     dispatch(setModelInCart(cart));
     
     };
-    
+
+  const selectedModel = useSelector((state) =>  state.finalOrder.modelInCart)
   return (
     <div
-      className="cartModel"
+      className={selectedModel?.id === cart.id ? "cartModel__active" : "cartModel"}
       onClick={handleClick}
     >
       <div className="cartModel__text">

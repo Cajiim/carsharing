@@ -3,24 +3,26 @@
     height: 224px;
     border: 1px solid #EEEEEE;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor:pointer;
+}
+
+.cartModel__active {
+    width: 369px;
+    height: 224px;
+    border: 1px solid #0EC261;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     cursor:pointer;
 }
+
 .cartModel:hover{
     border: 1px solid #999999;
-}
-
- .cartModel:active {
-    border: 1px solid #0EC261
-} 
-.cartModelActive{
-    border: 1px solid #0EC261;
-}
-.cartModelActive:hover{
-    border:1px solid #0EC261;
 }
 
 

@@ -20,12 +20,12 @@
   font-size: 14px;
   line-height: 16px;
   color: #121212;
-  margin-left:7px;
+  margin-left: 7px;
 }
 .finalCard_text_content_carNumber_container {
   border: 1px solid #999999;
   border-radius: 4px;
-  width:50%;
+  width: 100px;
 }
 .finalCard_text_content_gas {
   font-family: "Roboto";
@@ -44,7 +44,7 @@
 
 .finalCard_text_content {
   margin-left: 3.5%;
-  margin-top: 3%;
+  margin-top: 2%;
   display: flex;
   flex-direction: column;
   row-gap: 7px;
@@ -56,3 +56,13 @@
   height: 116px;
   margin-right: 20%;
 }
+.finalCard_container_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #121212;
+  margin-bottom:10px;
+}
+

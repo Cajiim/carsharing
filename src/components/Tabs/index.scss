@@ -113,9 +113,6 @@ li {
   overflow: hidden;
 }
 
-
-
-
 .tabs_left_content_radioContent {
   display: flex;
   margin-left: 3.5%;
@@ -139,9 +136,15 @@ li {
   color: #999999;
 }
 
-/* 
-.active-tabs-content_model_cart{
-    height: 100%;
-} */
-
-
+.nav_category_orderNumber_block{
+  width:100%;
+}
+.nav_category__orderNumber {
+  margin-left: 2.5%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+} 
