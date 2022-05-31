@@ -29,8 +29,8 @@ const finalOrderSlice = createSlice({
     deleteArendTime: (state) => {
       state.arendTime = null;
     },
-    setCheckFuel: (state, action) => {
-      state.checkFuelState = action.payload;
+    setCheckFuel: (state) => {
+      state.checkFuelState = !state.checkFuelState;
       
     },
     deleteCheckedFuel: (state) => {

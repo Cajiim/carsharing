@@ -15,7 +15,7 @@ function Additionally() {
   const [inputOne, setInputOne] = useState("");
   const [inputTwo, setInputTwo] = useState("");
 
-  const [checkedFuel, setCheckedFuel] = useState(false);
+  
   const [checkedBabyChair, setCheckedBabyChair] = useState(false);
   const [checkedThree, setCheckedThree] = useState(false);
 
@@ -33,7 +33,7 @@ function Additionally() {
     dispatch(setArendTime(value));
   };
   const handleClickCheckboxFuel = () => {
-    dispatch(setCheckFuel(!checkedFuel));
+    dispatch(setCheckFuel());
   };
   const handleClickCheckboxBabyChair = () => {
     dispatch(setCheckBabyChair(!checkedBabyChair));
@@ -51,9 +51,6 @@ function Additionally() {
   const colorCar = useSelector((state) => state.finalOrder.colorCar);
 
 
-
-
-  
 
   return (
     <div>
@@ -166,12 +163,11 @@ function Additionally() {
             /* checked={Gas === false ? checkedFuel === false : checkedFuel}  */
             /* checked={checkedOne} */
             /* onChange={() => setCheckedOne(!checkedOne)} */
-            checked = {Gas === false ? false : checkedFuel}
+            checked = {Gas}
             onChange={() => {
-              setCheckedFuel(!checkedFuel);
               handleClickCheckboxFuel();
             }}
-          ></input>  {/* {console.log(Gas, checkedFuel)} */}
+          ></input>   
            
           <label
             htmlFor="gasoline"

@@ -32,7 +32,7 @@ useEffect (() => {
 }, []);
    
    
-console.log(contentCart)
+/* console.log(contentCart) */
 
   /* axios.get('https://6288c18410e93797c15e9916.mockapi.io/Model')
   .then((response) => {

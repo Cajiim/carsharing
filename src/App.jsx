@@ -8,8 +8,9 @@ import {
   Routes
 } from 'react-router-dom';
 
-import { Home } from './pages/Home';
-import { Category } from './pages/Category';
+import  Home  from './pages/Home';
+import  Category  from './pages/Category';
+import  FinalOrderPage  from './pages/FinalOrder';
 import { store } from './redux';
 
 
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/category/map' element={<Category />} />
+            <Route exact path='/myOrder' element={<FinalOrderPage />} /> 
           </Routes>
         </Router>
     </Provider>

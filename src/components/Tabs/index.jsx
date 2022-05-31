@@ -58,8 +58,6 @@ function Tabs() {
       <div className="block-tabs">
         <nav className="">
           <ul className="navigation__category clear">
-            {tabIndex <= 4 ? (
-              <>
                 <li
                   className={
                     tabIndex === "1"
@@ -142,14 +140,6 @@ function Tabs() {
                     Итого
                   </span>
                 </li>
-              </>
-            ) : (
-              <li className="nav_category_orderNumber_block">
-                <span className="nav_category__orderNumber" id="5">
-                  Заказ номер RU58491823
-                </span>
-              </li>
-            )}
           </ul>
         </nav>
       </div>
@@ -189,13 +179,7 @@ function Tabs() {
           >
             <FinalCart />
           </div>
-          <div
-            className={
-              tabIndex === "5" ? "active-tabs-content" : "content-tabs"
-            }
-          >
-            <FinalCart />
-          </div>
+          
           
 
         </div>

@@ -1,8 +1,8 @@
-import {NavLink, Link} from 'react-router-dom';
-import Vector from '../../assets/svg/Vector.svg';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 import Geo from '../../assets/svg/Group.svg';
 
-import s from './index.scss'
+import './index.scss'
 
 function HeaderPage() {
     return (
