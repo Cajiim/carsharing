@@ -15,7 +15,7 @@ import {
   deleteArendTime,
   deleteCheckedFuel,
   deleteCheckedBabyChair,
-  deleteCheckedThree,
+  deleteCheckedRightHand,
   deleteClass,
   deleteColor,
   deleteDurationArend,
@@ -32,7 +32,7 @@ function Tabs() {
     dispatch(deleteArendTime());
     dispatch(deleteCheckedFuel());
     dispatch(deleteCheckedBabyChair());
-    dispatch(deleteCheckedThree());
+    dispatch(deleteCheckedRightHand());
     dispatch(deleteClass());
     dispatch(deleteColor());
     dispatch(deleteDurationArend());
@@ -42,7 +42,7 @@ function Tabs() {
     dispatch(deleteArendTime());
     dispatch(deleteCheckedFuel());
     dispatch(deleteCheckedBabyChair());
-    dispatch(deleteCheckedThree());
+    dispatch(deleteCheckedRightHand());
     dispatch(deleteClass());
     dispatch(deleteColor());
     dispatch(deleteDurationArend());

@@ -1,7 +1,7 @@
-import axios from "axios";
+
 import "./index.scss";
 
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setModelInCart } from "../../redux/cart/reducerFinalOrder";
 

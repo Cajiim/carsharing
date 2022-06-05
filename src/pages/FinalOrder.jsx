@@ -32,6 +32,7 @@ function FinalOrderPage() {
           <div className="container__finalOrder_rightSide">
             <RightSideBlockStory />
           </div>
+          
         </div>
       </div>
     </div>

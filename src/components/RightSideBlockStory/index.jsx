@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 import { useSelector, useDispatch } from "react-redux";
 import { setTabIndex } from "../../redux/cart/reducerTableIndex";
 import Modal from "../Modal";
@@ -45,6 +46,9 @@ function RightSideBlockStory() {
       .catch((error) => console.log(error, "Ошибка"));
   };
 
+
+  
+
   const model = useSelector((state) => state.finalOrder.modelInCart);
   const color = useSelector((state) => state.finalOrder.colorCar);
   const startDate = useSelector((state) => state.finalOrder.durationArend);
@@ -54,86 +58,46 @@ function RightSideBlockStory() {
   const checkedBabyChair = useSelector(
     (state) => state.finalOrder.checkedBabyChairState
   );
-  const checkedThree = useSelector((state) => state.finalOrder.checkedThree);
+  const checkedRightHand = useSelector((state) => state.finalOrder.checkedRightHand);
 
-  const tabIndex = useSelector((state) => state.tableIndex.tabIndex);
+  const tabId = useSelector((state) => state.tableIndex.tabIndex);
 
-  const dispatch = useDispatch();
-  const handlClickButton = () => {
-    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
-  };
-  const handlClickButtonDecrement = () => {
-    dispatch(setTabIndex(String(Number(tabIndex) - 1)));
-  };
+  
 
   const minPrice = model?.minPrice;
   const maxPrice = model?.maxPrice;
   const carClass = model?.class;
 
-  const colorCarForBlock =
-    (color !== undefined
-      ? color
-      : additionallyOptionsFromBack.colorCarForBlock) === null
+  const colorCar =
+    color === null
       ? "Любой"
-      : (color !== undefined
-          ? color
-          : additionallyOptionsFromBack.colorCarForBlock) === "red"
+      : color === "red"
       ? "Красный"
-      : (color !== undefined
-          ? color
-          : additionallyOptionsFromBack.colorCarForBlock) === "blue"
+      : color === "blue"
       ? "Голубой"
       : "Любой";
 
   const diffTime = Math.abs(
-    new Date(
-      endDate !== undefined ? endDate : additionallyOptionsFromBack?.endDate
-    ).getTime() -
-      new Date(
-        startDate !== undefined
-          ? startDate
-          : additionallyOptionsFromBack?.startDate
-      ).getTime()
+    new Date(endDate).getTime() - new Date(startDate).getTime()
   );
+  /* console.log(diffTime) */
   const diffDays = Math.ceil(diffTime / (1000 * 3600 * 24));
   const diffMinutes = Math.ceil(diffTime / (1000 * 60));
 
-  const priceRate =
-    (arendRate !== undefined
-      ? arendRate
-      : additionallyOptionsFromBack?.arendRate) === "minut"
-      ? 7 * diffMinutes
-      : 1999 * diffDays;
+  const priceRate = arendRate === "minut" ? 7 * diffMinutes : 1999 * diffDays;
   /* console.log(arendRate) */
-  const rateRent =
-    (arendRate !== undefined
-      ? arendRate
-      : additionallyOptionsFromBack?.arendRate) === "minut"
-      ? "Поминутно"
-      : "На сутки";
+  const rateRent = arendRate === "minut" ? "Поминутно" : "На сутки";
   const correctPriceRate =
-    (carClass !== undefined ? carClass : CarFromBack?.class) === "business"
-      ? 10000 + priceRate
-      : 12000 + priceRate;
+    carClass === "business" ? 10000 + priceRate : 12000 + priceRate;
   let a = 0;
   let b = 0;
   let c = 0;
   const gas = checkedFuel === true ? (a += 500) : a;
   const baby = checkedBabyChair === true ? (b += 200) : b;
-  const rightHand = checkedThree === true ? (c += 1600) : c;
-  const additional =
-    (gas === undefined ? additionallyOptionsFromBack?.gas : gas) +
-    (baby === undefined ? additionallyOptionsFromBack?.baby : baby) +
-    (rightHand === undefined
-      ? additionallyOptionsFromBack?.rightHand
-      : rightHand);
+  const rightHand = checkedRightHand === true ? (c += 1600) : c;
+  const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
-  const arendTimeForBlock =
-    (arendRate !== undefined
-      ? arendRate
-      : additionallyOptionsFromBack?.arendRate) === "minut"
-      ? diffMinutes
-      : diffDays;
+  const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
 
   const [activeModal, setActiveModal] = useState(false);
 
@@ -142,6 +106,34 @@ function RightSideBlockStory() {
 
    console.log(carModel, 'модель')
   console.log(carName, 'имя')   */
+  
+  const colorCarFromBack = additionallyOptionsFromBack?.colorCarForBlock;
+  const arendTimeFromBack = additionallyOptionsFromBack?.arendTimeForBlock;
+  const rentalType = additionallyOptionsFromBack?.arendRate;
+  const rateRentFromBack = additionallyOptionsFromBack?.rateRent;
+  const checkedFuelFromBack = additionallyOptionsFromBack?.checkedFuel;
+  const checkedBabyChairFromBack = additionallyOptionsFromBack?.checkedBabyChair;
+  const checkedRightHandFromBack = additionallyOptionsFromBack?.checkedRightHand;
+  const totalPriceFromBack = additionallyOptionsFromBack?.totalPrice;
+  const tabIndexFromBack = additionallyOptionsFromBack?.tabIndex;
+  /* console.log(tabIndexFromBack)
+  console.log(tabIndex, 'локальный индекс') */
+  const tabIndex = tabIndexFromBack !== undefined ? tabIndexFromBack : tabId;
+
+  const dispatch = useDispatch();
+  const handlClickButton = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
+  };
+  const handlClickButtonFromBack = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) - 4)));
+  };
+  const handlClickButtonDecrement = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) - 1)));
+  };
+
+  const checkModel = model?.name;
+ 
+  
   return (
     <div className="rightSideBlock_container">
       <Modal active={activeModal} setActive={setActiveModal} />
@@ -172,64 +164,62 @@ function RightSideBlockStory() {
         )}
         {((((diffDays === 0 ? undefined : diffDays) ||
           (diffMinutes === 0 ? undefined : diffMinutes)) &&
-          startDate !== null &&
-          endDate !== null) ||
-          (color !== undefined
-            ? color
-            : additionallyOptionsFromBack.colorCarForBlock)) && (
+          startDate !== undefined &&
+          endDate !== undefined) ||
+          color ||
+          colorCarFromBack) && (
           <li className="rightSideBlock__text">
             <span className="rightSideBlock__text_post">Цвет</span>
             <div></div>
             <p className="rightSideBlock__text_city-street">
               <span className="rightSideBlock__text_city_street">
-                {additionallyOptionsFromBack?.colorCarForBlock === undefined
-                  ? colorCarForBlock
-                  : additionallyOptionsFromBack?.colorCarForBlock}
+                {colorCarFromBack !== undefined ? colorCarFromBack : colorCar}
               </span>
             </p>
           </li>
         )}
-        {((diffDays === 0 ? undefined : diffDays) ||
+        {((((diffDays === 0 ? undefined : diffDays) ||
           (diffMinutes === 0 ? undefined : diffMinutes)) &&
-          startDate !== null &&
-          endDate !== null && (
-            <li className="rightSideBlock__text">
-              <span className="rightSideBlock__text_post">
-                Длительность аренды
+          startDate !== undefined &&
+          endDate !== undefined) ||
+          (arendTimeFromBack !== undefined && rentalType !== undefined)) && (
+          <li className="rightSideBlock__text">
+            <span className="rightSideBlock__text_post">
+              Длительность аренды
+            </span>
+            <div></div>
+            <p className="rightSideBlock__text_city-street">
+              <span className="rightSideBlock__text_city_street">
+                {arendTimeFromBack !== undefined
+                  ? arendTimeFromBack
+                  : arendTimeForBlock}
+                {(rentalType !== undefined ? rentalType : arendRate) ===
+                "minut" ? (
+                  <span>мин.</span>
+                ) : (
+                  <span>д.</span>
+                )}
               </span>
-              <div></div>
-              <p className="rightSideBlock__text_city-street">
-                <span className="rightSideBlock__text_city_street">
-                  {arendTimeForBlock}
-                  {(arendRate !== undefined
-                    ? arendRate
-                    : additionallyOptionsFromBack?.arendRate) === "minut" ? (
-                    <span>мин.</span>
-                  ) : (
-                    <span>д.</span>
-                  )}
-                </span>
-              </p>
-            </li>
-          )}
-        {(priceRate === 0 ? undefined : priceRate) &&
-          (
-            startDate !== undefined ? startDate : additionallyOptionsFromBack?.startDate
-          ) !== null &&
-          (
-            endDate !== undefined ? endDate : additionallyOptionsFromBack?.endDate
-          ) !== null && (
-            <li className="rightSideBlock__text">
-              <span className="rightSideBlock__text_post">Тариф</span>
-              <div></div>
-              <p className="rightSideBlock__text_city-street">
-                <span className="rightSideBlock__text_city_street">
-                  {rateRent}
-                </span>
-              </p>
-            </li>
-          )}
-        {checkedFuel === false ? null : (
+            </p>
+          </li>
+        )}
+        {(((priceRate === 0 ? undefined : priceRate) &&
+          startDate !== undefined &&
+          endDate !== undefined) ||
+          rateRentFromBack) && (
+          <li className="rightSideBlock__text">
+            <span className="rightSideBlock__text_post">Тариф</span>
+            <div></div>
+            <p className="rightSideBlock__text_city-street">
+              <span className="rightSideBlock__text_city_street">
+                {rateRentFromBack !== undefined ? rateRentFromBack : rateRent}
+              </span>
+            </p>
+          </li>
+        )}
+        {(checkedFuelFromBack !== undefined
+          ? checkedFuelFromBack
+          : checkedFuel) === false ? null : (
           <li className="rightSideBlock__text">
             <span className="rightSideBlock__text_post">Полный бак</span>
             <div></div>
@@ -238,8 +228,8 @@ function RightSideBlockStory() {
             </p>
           </li>
         )}
-        {checkedBabyChair === false ? null : (
-          <li className="rightSideBlock__text">
+        {(checkedBabyChairFromBack !== undefined ? checkedBabyChairFromBack : checkedBabyChair ) === false ? null : (
+          <li className="rightSideBlock__text"> 
             <span className="rightSideBlock__text_post">Детское кресло</span>
             <div></div>
             <p className="rightSideBlock__text_city-street">
@@ -247,7 +237,7 @@ function RightSideBlockStory() {
             </p>
           </li>
         )}
-        {checkedThree === false ? null : (
+        {(checkedRightHandFromBack !== undefined ? checkedRightHandFromBack : checkedRightHand) === false ? null : (
           <li className="rightSideBlock__text">
             <span className="rightSideBlock__text_post">Правый руль</span>
             <div></div>
@@ -259,11 +249,11 @@ function RightSideBlockStory() {
       </ul>
       <b className="rightSideBlock__price">
         Цена:{" "}
-        {startDate !== null && endDate !== null
+        {totalPriceFromBack || (startDate !== undefined && endDate !== undefined
           ? totalPrice
           : minPrice === undefined && maxPrice === undefined
           ? null
-          : minPrice + "-" + maxPrice}{" "}
+          : minPrice + "-" + maxPrice)}{" "}
         Р
       </b>
       {tabIndex === "1" ? (
@@ -288,7 +278,7 @@ function RightSideBlockStory() {
         <button
           onClick={() => handlClickButton()}
           className={
-            (startDate && endDate) === null
+            (startDate && endDate) === undefined
               ? "rightSideBlock__button_disabled"
               : "rightSideBlock__button"
           }
@@ -301,19 +291,21 @@ function RightSideBlockStory() {
           onClick={() => setActiveModal(true)}
         >
           Заказать
-        </button>
-      ) : (
+        </button> 
+      ) : tabIndex === "5" ? (
         <Link to="/category/map" className="button_cancel">
           <button
             className="rightSideBlock__button_cancel"
             onClick={() => {
-              handleDelete(), handlClickButtonDecrement();
+              checkModel !== undefined ?
+              (handleDelete(), handlClickButtonDecrement())
+              :(handleDelete(), handlClickButtonFromBack())
             }}
           >
             Отменить
           </button>
         </Link>
-      )}
+      ) : null}
     </div>
   );
 }

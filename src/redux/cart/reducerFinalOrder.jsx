@@ -7,11 +7,11 @@ const finalOrderSlice = createSlice({
     arendTime: null,
     checkFuelState: false,
     checkedBabyChairState: false,
-    checkedThree: false,
+    checkedRightHand: false,
     classCar: null,
     colorCar: null,
-    durationArend: null,
-    durationArendTwo: null,
+    durationArend: undefined,
+    durationArendTwo: undefined,
   },
   reducers: {
     setModelInCart: (state, action) => {
@@ -36,17 +36,17 @@ const finalOrderSlice = createSlice({
     deleteCheckedFuel: (state) => {
       state.checkFuelState = false;
     },
-    setCheckBabyChair: (state, action) => {
-      state.checkedBabyChairState = action.payload;
+    setCheckBabyChair: (state) => {
+      state.checkedBabyChairState = !state.checkedBabyChairState;
     },
     deleteCheckedBabyChair: (state) => {
       state.checkedBabyChairState = false;
     },
-    setCheckThree: (state, action) => {
-      state.checkedThree = action.payload;
+    setCheckRightHand: (state) => {
+      state.checkedRightHand = !state.checkedRightHand;
     },
-    deleteCheckedThree: (state) => {
-      state.checkedThree = false;
+    deleteCheckedRightHand: (state) => {
+      state.checkedRightHand = false;
     },
     setClass: (state, action) => {
       state.classCar = action.payload;
@@ -64,13 +64,13 @@ const finalOrderSlice = createSlice({
       state.durationArend = action.payload;
     },
     deleteDurationArend: (state) => {
-      state.durationArend = null;
+      state.durationArend = undefined;
     },
     setDurationArendTwo: (state, action) => {
       state.durationArendTwo = action.payload;
     },
     deleteDurationArendTwo: (state) => {
-      state.durationArendTwo = null;
+      state.durationArendTwo = undefined;
     },
   },
 });
@@ -84,8 +84,8 @@ export const {
   deleteCheckedFuel,
   setCheckBabyChair,
   deleteCheckedBabyChair,
-  setCheckThree,
-  deleteCheckedThree,
+  setCheckRightHand,
+  deleteCheckedRightHand,
   setClass,
   deleteClass,
   setColor,

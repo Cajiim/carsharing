@@ -56,33 +56,45 @@ useEffect (() => {
   return (
     <div>
       <div className="tabs_left_content_radioContent">
+        <label className="radio_text" id="machineСlass">
         <input
           className="radio_box"
           name="elem"
           type="radio"
           value="all"
+          htmlFor='machineСlass'
           defaultChecked
           onClick={(e) => handleClickClassCar(e.target.value)}
-          onChange={() => console.log(1)}
         ></input>
-        <p className="radio_text">Все модели</p>
+        <span className="fake"></span>
+        <span className="radio_text_color">Все модели</span>
+        </label>
+
+        <label className="radio_text" id="machineСlass">
         <input
           className="radio_box"
           name="elem"
           type="radio"
           value="economy"
+          htmlFor='machineСlass'
           onClick={(e) => handleClickClassCar(e.target.value)}
         ></input>
-        <p className="radio_text">Эконом</p>
+        <span className="fake"></span>
+        <span className="radio_text_color">Эконом</span>
+        </label>
+
+        <label className="radio_text" id="machineСlass">
         <input
           className="radio_box"
           name="elem"
           type="radio"
           value="business"
-          color="secondary"
+          htmlFor='machineСlass'
           onClick={(e) => handleClickClassCar(e.target.value)}
         ></input>
-        <p className="radio_text">Бизнес</p>
+        <span className="fake"></span>
+        <span className="radio_text_color">Бизнес</span>
+        </label>
       </div>
 
       {classCart === "business" ? (

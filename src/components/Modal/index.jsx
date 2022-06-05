@@ -17,7 +17,7 @@ function Modal({ active, setActive }) {
   const checkedBabyChair = useSelector(
     (state) => state.finalOrder.checkedBabyChairState
   );
-  const checkedThree = useSelector((state) => state.finalOrder.checkedThree);
+  const checkedRightHand = useSelector((state) => state.finalOrder.checkedRightHand);
   const model = useSelector((state) => state.finalOrder.modelInCart);
 
   const carClass = model?.class;
@@ -44,11 +44,11 @@ function Modal({ active, setActive }) {
   let c = 0;
   const gas = checkedFuel === true ? (a += 500) : a;
   const baby = checkedBabyChair === true ? (b += 200) : b;
-  const rightHand = checkedThree === true ? (c += 1600) : c;
+  const rightHand = checkedRightHand === true ? (c += 1600) : c;
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
   const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
-
+  
   const additionalOptions = {
     colorCarForBlock,
     startDate,
@@ -56,7 +56,7 @@ function Modal({ active, setActive }) {
     arendRate,
     checkedFuel,
     checkedBabyChair,
-    checkedThree,
+    checkedRightHand,
     tabIndex: "5",
     correctPriceRate,
     rateRent,
