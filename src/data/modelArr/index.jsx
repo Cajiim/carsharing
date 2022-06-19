@@ -1,11 +1,9 @@
-import React, {useState} from 'react'
+
 
 import ImgOne from "../../assets/img/image 1.png";
 import ImgTwo from "../../assets/img/image 2.png";
 import ImgThree from "../../assets/img/image 3.png";
 import ImgFour from "../../assets/img/image 4.png";
-
-
 
 const arrModels = [
   {
@@ -66,9 +64,7 @@ const arrModels = [
 
 export default arrModels;
 
-
-
- /* [
+/* [
   {
     "id": "1",
     "name": "ELANTRA",

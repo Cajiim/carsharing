@@ -1,6 +1,5 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { useDispatch, useSelector } from "react-redux";
-/* import { getDefaultMiddleware } from '@reduxjs/toolkit'; */
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./index.scss";
@@ -12,11 +11,11 @@ import {
   setCheckFuel,
   setCheckBabyChair,
   setCheckRightHand,
+  deleteDurationArend,
+  deleteDurationArendTwo,
 } from "../../redux/cart/reducerFinalOrder";
 
 function Additionally() {
-  
-
   const dispatch = useDispatch();
   const handleClick = (value) => {
     dispatch(setColor(value));
@@ -26,10 +25,8 @@ function Additionally() {
   };
   const handleClickDurationTwo = (date) => {
     dispatch(setDurationArendTwo(Date.parse(date)));
-    
   };
-  /* console.log(selectedFirstDate, "Первое");
-  console.log(selectedSecondDate, "Второе"); */
+
   const handleClickFare = (value) => {
     dispatch(setArendTime(value));
   };
@@ -43,70 +40,64 @@ function Additionally() {
     dispatch(setCheckRightHand());
   };
 
-  const Fuel = useSelector((state) => state.finalOrder.checkFuelState);
-  const BabyChair = useSelector(
-    (state) => state.finalOrder.checkedBabyChairState
-  );
-  const RightHand = useSelector((state) => state.finalOrder.checkedRightHand);
-  const startDate = useSelector((state) => state.finalOrder.durationArend);
-  const endDate = useSelector((state) => state.finalOrder.durationArendTwo);
-  const tarifRate = useSelector((state) => state.finalOrder.arendTime);
-  const colorCar = useSelector((state) => state.finalOrder.colorCar);
+  const handleClickCloseFirstDate = () => {
+    dispatch(deleteDurationArend());
+  };
+  const handleClickCloseSecondDate = () => {
+    dispatch(deleteDurationArendTwo());
+  };
 
-/*    console.log(startDate, "Первое из редакса");
-  console.log(endDate, "Второе из редакса");  */
-  
-  /* const customizedMiddleware = getDefaultMiddleware({
-    serializableCheck: false
-  }) */
+  const {
+    checkFuelState: Fuel,
+    checkedBabyChairState: BabyChair,
+    checkedRightHand: RightHand,
+    durationArend: startDate,
+    durationArendTwo: endDate,
+    arendTime: tarifRate,
+    colorCar,
+  } = useSelector(({ finalOrder }) => finalOrder);
 
   return (
     <div>
       <p className="tabs_left_content_radioContent_title">Цвет</p>
 
       <div className="tabs_left_content_radioContent">
-        <label className="radio_text" id="allRadio">
+        <label className="radio_text" htmlFor="allRadio">
           <input
             className="radio_box"
             name="color"
             type="radio"
             value="all"
-            htmlFor="allRadio"
-            checked={
-              colorCar === null ? true : colorCar === "all" ? true : false
-            }
+            id="allRadio"
+            checked={colorCar === ("all" && null)}
             onChange={(e) => handleClick(e.target.value)}
           ></input>
           <span className="fake"></span>
           <span className="radio_text_color">Любой</span>
         </label>
 
-        <label className="radio_text" id="redRadio">
+        <label className="radio_text" htmlFor="redRadio">
           <input
             className="radio_box"
             name="color"
             type="radio"
             value="red"
-            htmlFor="redRadio"
-            checked={
-              colorCar === null ? false : colorCar === "red" ? true : false
-            }
+            id="redRadio"
+            checked={colorCar === "red"}
             onChange={(e) => handleClick(e.target.value)}
           ></input>
           <span className="fake"></span>
           <span className="radio_text_color">Красный</span>
         </label>
 
-        <label className="radio_text" id="blueRadio">
+        <label className="radio_text" htmlFor="blueRadio">
           <input
             className="radio_box"
             name="color"
             type="radio"
             value="blue"
-            htmlFor="blueRadio"
-            checked={
-              colorCar === null ? false : colorCar === "blue" ? true : false
-            }
+            id="blueRadio"
+            checked={colorCar === "blue"}
             onChange={(e) => handleClick(e.target.value)}
           ></input>
           <span className="fake"></span>
@@ -118,80 +109,80 @@ function Additionally() {
         <p className="tabs_left_content_date_title">Дата аренды</p>
         <div className="tabs_left_content_date_content">
           <p className="tabs_left_content_date_content_text">С</p>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => 
-               handleClickDuration(date)
-            }
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="d.MM.yyyy HH:mm"
-            isClearable
-            placeholderText="Введите дату и время"
-            /* onInputClick={() => 
-              handleClickDuration(selectedFirstDate)} */
-          />
-          {/* <input
-            type="datetime-local"
-            id="start-date"
-            value={startDate}
-            onInput={(e) => {
-              handleClickDuration(e.target.value);
-            }}
-            className="tabs_left_content_date_one"
-          ></input> */}
+          <div className="tabs_left_content_date_content_text_datapickerContainer">
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => handleClickDuration(date)}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="d.MM.yyyy HH:mm"
+              placeholderText="Введите дату и время"
+            />
+            <button
+              type="button"
+              className={
+                startDate === null || Number.isNaN(startDate)
+                  ? "tabs_left_content_date_content_text_datapickerContainer_button_datapicker_one tabs_left_content_date_content_text_datapickerContainer_button_datapicker_one_disabled"
+                  : "tabs_left_content_date_content_text_datapickerContainer_button_datapicker_one"
+              }
+              onClick={() => {
+                handleClickCloseFirstDate();
+              }}
+            >
+              &times;
+            </button>
+          </div>
         </div>
 
         <div className="tabs_left_content_date_content">
           <p>По</p>
-          <DatePicker
-            selected={endDate}
-            onChange={(date) => 
-               handleClickDurationTwo(date) 
-            }
-            showTimeSelect
-            timeFormat="HH:mm"
-            timeIntervals={15}
-            dateFormat="d.MM.yyyy HH:mm"
-            isClearable
-            placeholderText="Введите дату и время"
-            
-            /* onInputClick={(e) => {
-              handleClickDurationTwo(e.value);
-              console.log(e.target.value,'велью')
-            }} */
-            /* onInputClick={() => 
-              handleClickDurationTwo(selectedSecondDate)} */
-          />{/* {console.log({selectedSecondDate})} */}
-          {/* <input
-            type="datetime-local"
-            id="end-date"
-            value={endDate}
-            onInput={(e) => {
-              handleClickDurationTwo(e.target.value);
-            }}
-            className="tabs_left_content_date_two"
-          ></input> */}
+          <div className="tabs_left_content_date_content_text_datapickerContainer">
+            <DatePicker
+              selected={endDate}
+              onChange={(date) => handleClickDurationTwo(date)}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="d.MM.yyyy HH:mm"
+              placeholderText="Введите дату и время"
+            />
+            <button
+              type="button"
+              className={
+                endDate === null || Number.isNaN(endDate)
+                  ? "tabs_left_content_date_content_text_datapickerContainer_button_datapicker_two tabs_left_content_date_content_text_datapickerContainer_button_datapicker_two_disabled"
+                  : "tabs_left_content_date_content_text_datapickerContainer_button_datapicker_two"
+              }
+              onClick={() => {
+                handleClickCloseSecondDate();
+              }}
+            >
+              &times;
+            </button>
+            {startDate > endDate &&
+              startDate !== null &&
+              endDate !== null &&
+              Number.isNaN(endDate) === false &&
+              Number.isNaN(startDate) === false && (
+                <span className="tabs_left_content_date_content_text_datapickerContainer_datapicker_error">
+                  Введите корректную дату
+                </span>
+              )}
+          </div>
         </div>
       </div>
       <p className="tabs_left_content_radioContent_title">Тариф</p>
       <div className="tabs_left_content_radioContent_arend">
         <div className="tabs_left_content_radioContent_arend_content">
-          <label className="radio_text" id="fareType">
+          <label className="radio_text" htmlFor="fareTypeMin">
             <input
               className="radio_box"
               name="tax"
               type="radio"
               value="minut"
-              htmlFor="fareType"
-              checked={
-                tarifRate === null
-                  ? false
-                  : tarifRate === "minut"
-                  ? true
-                  : false
-              }
+              id="fareTypeMin"
+              checked={tarifRate === "minut"}
               onChange={(e) => handleClickFare(e.target.value)}
             ></input>
             <span className="fake"></span>
@@ -199,17 +190,15 @@ function Additionally() {
           </label>
         </div>
         <div className="tabs_left_content_radioContent_arend_content">
-          <label className="radio_text" id="fareType">
+          <label className="radio_text" htmlFor="fareTypeDay">
             <input
               className="radio_box"
               name="tax"
               type="radio"
               value="days"
-              htmlFor="fareType"
+              id="fareTypeDay"
               onChange={(e) => handleClickFare(e.target.value)}
-              checked={
-                tarifRate === null ? true : tarifRate === "days" ? true : false
-              }
+              checked={tarifRate === "days"}
             ></input>
             <span className="fake"></span>
             <span className="radio_text_color">На сутки, 1999Р/сутки</span>
@@ -276,7 +265,6 @@ function Additionally() {
             <span className="fake_checkbox_two"></span>
           </label>
         </form>
-        
       </div>
     </div>
   );

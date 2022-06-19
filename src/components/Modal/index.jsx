@@ -3,22 +3,29 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setTabIndex } from "../../redux/cart/reducerTableIndex";
+import { setOrderNumber } from "../../redux/cart/reducerFinalOrder"
 import "./index.scss";
 
 function Modal({ active, setActive }) {
   const dispatch = useDispatch();
 
-  const tabIndex = useSelector((state) => state.tableIndex.tabIndex);
-  const color = useSelector((state) => state.finalOrder.colorCar);
-  const startDate = useSelector((state) => state.finalOrder.durationArend);
-  const endDate = useSelector((state) => state.finalOrder.durationArendTwo);
-  const arendRate = useSelector((state) => state.finalOrder.arendTime);
-  const checkedFuel = useSelector((state) => state.finalOrder.checkFuelState);
-  const checkedBabyChair = useSelector(
-    (state) => state.finalOrder.checkedBabyChairState
-  );
-  const checkedRightHand = useSelector((state) => state.finalOrder.checkedRightHand);
-  const model = useSelector((state) => state.finalOrder.modelInCart);
+  const {
+    deliveryСity: cityAuto,
+    pointOfIssue: streetAuto,
+    colorCar: color,
+    durationArend: startDate,
+    durationArendTwo: endDate,
+    arendTime: arendRate,
+    checkFuelState: checkedFuel,
+    checkedBabyChairState: checkedBabyChair,
+    checkedRightHand,
+    modelInCart: model,
+  } = useSelector(({ finalOrder }) => finalOrder);
+
+  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
+  const handlClickButton = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
+  };
 
   const carClass = model?.class;
   const colorCarForBlock =
@@ -48,8 +55,32 @@ function Modal({ active, setActive }) {
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
   const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
-  
+  const orderNumberFunction = () => {
+    const now = new Date()
+    const year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    let day = now.getDate();
+    let hour = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    String(month).length < 2 ? (month = Number(`0${  month}`)) : month;
+    String(day).length < 2 ? (day = Number(`0${  day}`)) : day;
+    String(hour).length < 2 ? (hour = Number(`0${  hour}`)) : hour;
+    String(minutes).length < 2 ? (minutes = Number(`0${  minutes}`)) : minutes;
+    String(seconds).length < 2 ? (seconds = Number(`0${  seconds}`)) : seconds;
+    const yyyyMMddHHmmss = `${year}${month}${day}${hour}${minutes}${seconds}`;
+    return `${yyyyMMddHHmmss  }_${  Math.random().toString(36).substr(2, 9)}`;
+  };
+
+  const orderNumber = orderNumberFunction();
+  const handlSelectOrderNumber = () => {
+    dispatch(setOrderNumber(orderNumber));
+  }
+ 
   const additionalOptions = {
+    orderNumber,
+    cityAuto,
+    streetAuto,
     colorCarForBlock,
     startDate,
     endDate,
@@ -57,7 +88,7 @@ function Modal({ active, setActive }) {
     checkedFuel,
     checkedBabyChair,
     checkedRightHand,
-    tabIndex: "5",
+    tabIndex: '5',
     correctPriceRate,
     rateRent,
     gas,
@@ -67,61 +98,38 @@ function Modal({ active, setActive }) {
     totalPrice,
     arendTimeForBlock,
   };
-  /* console.log(additionalOptions); */
-
-  const handlClickButton = () => {
-    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
-  }; 
-
-  /* console.log(tabIndex); */
 
   const handleSelectCar = () => {
     axios
-      .post("https://6288c18410e93797c15e9916.mockapi.io/FinalOrder", {
+      .post(`https://6288c18410e93797c15e9916.mockapi.io/Cars/1/FinalOrder?orderNumber=${orderNumber}`, {
+        orderNumber,
         model,
         additionalOptions,
       })
       .then((Response) => console.log(Response, "posting data"))
       .catch((error) => console.log(error));
   };
-
-  /* function handlClickButton() {
-    return new Promise(function (resolve) {
-      setTimeout(function () {
-        dispatch(setTabIndex(String(Number(tabIndex) + 1)));
-        resolve();
-      }, 10);
-    });
-  }
-  function handleSelectCar() {
-    return new Promise(function (resolve) {
-      setTimeout(function () {
-        axios
-          .post("https://6288c18410e93797c15e9916.mockapi.io/FinalOrder", {
-            model,
-            additionalOptions,
-          })
-          .then((Response) => console.log(Response, "posting data"))
-          .catch((error) => console.log(error));
-        resolve();
-      }, 40);
-    });
-  } */
+ /*  function FunctionOrder () {
+    handlClickButton().then(handleSelectCar());
+  }; */
 
   return (
-    <div className={active ? "modal active" : "modal"}>
+    <div className={active ? "modal modal_active" : "modal"}>
       <h3 className="modal__title">Подтвердить заказ</h3>
       <div className="modal__button">
         <form>
-          <Link to="/myOrder">
+          <Link to={`/order/myOrder?orderNumber=${orderNumber}`}>
             <button
               className="modal__button_confirm"
               type="button"
               onClick={() => {
-                handlClickButton();
-                handleSelectCar();
-
-                /* handlClickButton().then(handleSelectCar) */
+                 handlClickButton();
+                 handleSelectCar();
+                 handlSelectOrderNumber();
+               /*  setTimeout(() => {
+                  handleSelectCar();  
+                }, 3000);  */
+                /* handlClickButton().then(handleSelectCar()); */
               }}
             >
               Подтвердить

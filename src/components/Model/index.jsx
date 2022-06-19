@@ -1,4 +1,3 @@
-
 import "./index.scss";
 
 import { React } from "react";
@@ -6,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setModelInCart } from "../../redux/cart/reducerFinalOrder";
 
 function Model({ cart }) {
-  
-
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(setModelInCart(cart));
@@ -18,9 +15,16 @@ function Model({ cart }) {
   return (
     <div
       className={
-        selectedModel?.id === cart.id ? "cartModel__active" : "cartModel"
+        selectedModel?.id === cart.id
+          ? "cartModel cartModel_active"
+          : "cartModel"
       }
       onClick={handleClick}
+      onKeyDown={() => {
+        handleClick();
+      }}
+      role="button"
+      tabIndex={0}
     >
       <div className="cartModel__text">
         <p className="cartModel__text_name">{cart.name}</p>

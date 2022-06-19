@@ -1,14 +1,163 @@
- .yandexMap{
-    width:736px;
-    height:352px;
+.map_mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.map_mainContent_autocomplete {
+  display: flex;
+  margin-right: 8px;
+}
+.map_mainContent_autocomplete_city {
+  margin-left: 54px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+.map_mainContent_autocomplete_storeIssue {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+.map_mainContent_autocomplete_map {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  margin-top: 20px;
+}
+/* .map_mainContent_autocomplete_city_input_blockBorder {
+  margin-left:8px;
+  border: 1px solid #999999;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+} */
+.map_mainContent_autocomplete_city_input {
+  border:none;
+  margin-left: 8px;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  width:240px;
+
+
+  border-bottom:1px solid #999999;
+}
+.map_mainContent_autocomplete_city_input_container input[type=textCity]{
+  padding-left: 8px;
+  padding-bottom:2px;
+}
+.map_mainContent_autocomplete_city_input_container input[type=pointOfIssue]{
+  padding-left: 8px;
+  padding-bottom:2px;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  border: 1px solid #eeeeee;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999999;
+  border-radius: 8px;
+  border: 2px solid #eeeeee;
+}
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
 }
 
-.yandexMap div {
-    width:736px;
-    height:352px;
+.map_mainContent_autocomplete_city_input::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
 }
 
-.Ymap {
-    width:800px;
-    height:500px;
+.map_mainContent_autocomplete_choice {
+  height: auto;
+  max-height: 105px;
+  min-height: 0px;
+  width: auto;
+  position: relative;
+  overflow: overlay;
+
+  border-bottom: 1px solid #eeeeee;
+  margin-left: 8px;
+  border-left: 1px solid #eeeeee;
+
+.map_mainContent_autocomplete_choice_disabled{
+  border:none;
+}  
+
+  /* display: flex;
+    flex-direction: column;
+    gap: 10px; */
+    position: absolute;
+    margin-top: 19px;
+    width: 247px;
+    background-color: white;
+     z-index: 3; 
+}
+.map_mainContent_autocomplete_choice_street{
+  z-index: 1;
+}
+.map_mainContent_autocomplete_city_input_container_received {
+  cursor: pointer;
+  /* border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee; */
+  background: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  margin-left: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.map_mainContent_autocomplete_city_input_container_received:hover {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0ec261;
+}
+
+.map_mainContent_autocomplete_city_input_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+}
+.map_mainContent_autocomplete_city_input_cancelButton {
+  width:8px;
+  height: 8px;
+  position: absolute;
+  right: 10px;
+  color: #121212;
+  border: 0;
+  display: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  font-size: 17px;
+  top:-1px;
+}
+.map_mainContent_autocomplete_city_input_cancelButton_active {
+  display: block;
 }

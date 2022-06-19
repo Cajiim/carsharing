@@ -3,22 +3,48 @@ import { createSlice } from "@reduxjs/toolkit";
 const finalOrderSlice = createSlice({
   name: "finalOrder",
   initialState: {
+    deliveryСity: null,
+    deliveryChangeCityInput:null,
+    pointOfIssue: null,
     modelInCart: null,
-    arendTime: null,
+    arendTime: 'days',
     checkFuelState: false,
     checkedBabyChairState: false,
     checkedRightHand: false,
     classCar: null,
     colorCar: null,
-    durationArend: undefined,
-    durationArendTwo: undefined,
+    durationArend: null,
+    durationArendTwo: null,
+    orderNumber:null,
   },
   reducers: {
+    setDeliveryCity: (state, action) => {
+      state.deliveryСity = action.payload;
+    },
+    deleteDeliveryCity: (state) => {
+      state.deliveryСity = null;
+    },
+    setDeliveryChangeCityInput: (state, action) => {
+      state.deliveryChangeCityInput = action.payload;
+    },
+    deleteDeliveryChangeCityInput: (state) => {
+      state.deliveryChangeCityInput = '';
+    },
+    setDeliveryChangeStreetInput: (state, action) => {
+      state.pointChangeOfIssue = action.payload;
+    },
+    deleteDeliveryChangeStreetInput: (state) => {
+      state.pointChangeOfIssue = '';
+    },
+    setPointIssue: (state, action) => {
+      state.pointOfIssue = action.payload;
+    },
+    deletePointOfIssue: (state) => {
+      state.pointOfIssue = null;
+    },
     setModelInCart: (state, action) => {
       state.modelInCart =
-        state.modelInCart?.id === action.payload.id
-          ? null
-          : action.payload;
+        state.modelInCart?.id === action.payload.id ? null : action.payload;
     },
     deleteModelFromCart: (state) => {
       state.modelInCart = null;
@@ -27,11 +53,10 @@ const finalOrderSlice = createSlice({
       state.arendTime = action.payload;
     },
     deleteArendTime: (state) => {
-      state.arendTime = null;
+      state.arendTime = 'days';
     },
     setCheckFuel: (state) => {
       state.checkFuelState = !state.checkFuelState;
-      
     },
     deleteCheckedFuel: (state) => {
       state.checkFuelState = false;
@@ -64,18 +89,29 @@ const finalOrderSlice = createSlice({
       state.durationArend = action.payload;
     },
     deleteDurationArend: (state) => {
-      state.durationArend = undefined;
+      state.durationArend = null;
     },
     setDurationArendTwo: (state, action) => {
       state.durationArendTwo = action.payload;
     },
     deleteDurationArendTwo: (state) => {
-      state.durationArendTwo = undefined;
+      state.durationArendTwo = null;
     },
+    setOrderNumber: (state, action) => {
+      state.orderNumber = action.payload;
+    }
   },
 });
 
 export const {
+  setDeliveryCity,
+  deleteDeliveryCity,
+  setDeliveryChangeCityInput,
+  deleteDeliveryChangeCityInput,
+  setDeliveryChangeStreetInput,
+  deleteDeliveryChangeStreetInput,
+  setPointIssue,
+  deletePointOfIssue,
   setModelInCart,
   deleteModelFromCart,
   setArendTime,
@@ -93,7 +129,8 @@ export const {
   setDurationArend,
   deleteDurationArend,
   setDurationArendTwo,
-  deleteDurationArendTwo
+  deleteDurationArendTwo,
+  setOrderNumber,
 } = finalOrderSlice.actions;
 
 export default finalOrderSlice.reducer;

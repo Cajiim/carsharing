@@ -1,4 +1,4 @@
-.slideH {
+.slideContainer_title {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -8,7 +8,7 @@
     margin-bottom: 2%;
   }
   
-  .slideText {
+  .slideContainer_text {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
@@ -28,7 +28,7 @@
   }
 
 
-  .information {
+  .slideContainer_button_information {
     width: 164px;
     height: 48px;
     
@@ -44,34 +44,34 @@
     text-align: center;
     cursor: url(../../assets/svg/Cursor.svg), pointer;
   }
-  .information.One {
+  .slideContainer_button_information.One {
     background: linear-gradient(90deg, #13493F 0%, #0C7B1B 100%);
   }
 
-  .information.One:hover {
+  .slideContainer_button_information.One:hover {
     background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
   }
   
-  .information.One:active {
+  .slideContainer_button_information.One:active {
     background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
     background-blend-mode: darken;
   }
 
-  .information.Two {
+  .slideContainer_button_information.Two {
     background: linear-gradient(90deg, #132949 0%, #0C7B67 100%);
   }
-  .information.Two:hover {
+  .slideContainer_button_information.Two:hover {
     background: linear-gradient(90deg, #1645c6 2.61%, #031b7b 112.6%);
   }
   
-  .information.Two:active {
+  .slideContainer_button_information.Two:active {
     background: linear-gradient(90deg, #4713a8 2.61%, #180134 112.6%);
     background-blend-mode: darken;
   }
   
   
   
-  .information.Three {
+  .slideContainer_button_information.Three {
     width: 164px;
     height: 48px;
     background: linear-gradient(90deg, #493013 0%, #7B0C3B 100%);
@@ -87,16 +87,16 @@
     cursor: url(../../assets/svg/Cursor.svg), pointer;
     color: white;
   }
-  .information.Three:hover {
+  .slideContainer_button_information.Three:hover {
     background: linear-gradient(90deg, #c1610d 2.61%, #6f4e03 112.6%);
   }
   
-  .information.Three:active {
+  .slideContainer_button_information.Three:active {
     background: linear-gradient(90deg, #c00f3e 2.61%, #420211 112.6%);
     background-blend-mode: darken;
   }
   
-  .information.Four {
+  .slideContainer_button_information.Four {
     width: 164px;
     height: 48px;
     background: linear-gradient(90deg, #281349 0%, #720C7B 100%);
@@ -113,11 +113,11 @@
     color: white;
   }
   
-  .information.Four:hover {
+  .slideContainer_button_information.Four:hover {
     background: linear-gradient(90deg, #9623e8 2.61%, #7b038b 112.6%);
   }
   
-  .information.Four:active {
+  .slideContainer_button_information.Four:active {
     background: linear-gradient(90deg, #f51d98 2.61%, #a60550 112.6%);
     background-blend-mode: darken;
   } 
@@ -126,11 +126,11 @@
 
   @media screen and (max-width: 1024px) {
 
-    .slideH {
+    .slideContainer_title {
       font-size: 32px;
     }
   
-    .slideText {
+    .slideContainer_text {
       font-size: 22px;
     }
   
@@ -138,38 +138,38 @@
   }
 
   @media screen and (min-width: 2200px) {
-    .slideH {
+    .slideContainer_title {
       font-size: 3.5vw;
       line-height: 3.5vw;
     }
   
-    .slideText {
+    .slideContainer_text {
       font-size: 1.5vw;
       line-height: 1.5vw;
     }
   
-    .information.One {
+    .slideContainer_button_information.One {
       font-size: 1.5vw;
       width: 15vw;
       height: 4vw;
       border-radius: 0.7vw;
     }
   
-    .information.Two {
+    .slideContainer_button_information.Two {
       font-size: 1.5vw;
       width: 15vw;
       height: 4vw;
       border-radius: 0.7vw;
     }
   
-    .information.Three {
+    .slideContainer_button_information.Three {
       font-size: 1.5vw;
       width: 15vw;
       height: 4vw;
       border-radius: 0.7vw;
     }
   
-    .information.Four {
+    .slideContainer_button_information.Four {
       font-size: 1.5vw;
       width: 15vw;
       height: 4vw;

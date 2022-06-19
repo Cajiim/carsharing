@@ -51,99 +51,118 @@ function Tabs() {
 
   const handlClickDetails = () => {};
 
-  const tabIndex = useSelector((state) => state.tableIndex.tabIndex);
+  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
 
   return (
     <div className="container_tabs">
       <div className="block-tabs">
         <nav className="">
           <ul className="navigation__category clear">
-                <li
-                  className={
-                    tabIndex === "1"
-                      ? "margin-left active"
-                      : " margin-left complete"
-                  }
-                >
-                  <span
-                    className="nav_category__type"
-                    id="1"
-                    onClick={(e) => {
-                      handleClickTab(e.target.id);
-                      handlClickLocation();
-                    }}
-                  >
-                    Местоположение
-                  </span>
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="navigation__category_img"
-                  />
-                </li>
-                <li
-                  className={
-                    tabIndex === "2"
-                      ? "active"
-                      : tabIndex < 2
-                      ? "disabled"
-                      : "complete"
-                  }
-                >
-                  <span
-                    className="nav_category__type"
-                    id="2"
-                    onClick={(e) => {
-                      handleClickTab(e.target.id);
-                      handlClickModel();
-                    }}
-                  >
-                    Модель
-                  </span>
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="navigation__category_img"
-                  />
-                </li>
-                <li
-                  className={
-                    tabIndex === "3"
-                      ? "active"
-                      : tabIndex < 3
-                      ? "disabled"
-                      : "complete"
-                  }
-                >
-                  <span
-                    className="nav_category__type"
-                    id="3"
-                    onClick={(e) => {
-                      handleClickTab(e.target.id);
-                      handlClickDetails();
-                    }}
-                  >
-                    Дополнительно
-                  </span>
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="navigation__category_img"
-                  />
-                </li>
-                <li className={tabIndex === "4" ? "active" : "disabled"}>
-                  <span
-                    className="nav_category__type"
-                    id="4"
-                    onClick={(e) => handleClickTab(e.target.id)}
-                  >
-                    Итого
-                  </span>
-                </li>
+            <li
+              className={
+                tabIndex === "1"
+                  ? "margin-left active"
+                  : " margin-left complete"
+              }
+            >
+              <span
+                className="nav_category__type"
+                id="1"
+                onClick={(e) => {
+                  handleClickTab(e.target.id);
+                  handlClickLocation();
+                }}
+                onKeyDown={() => {
+                  handlClickLocation();
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                Местоположение
+              </span>
+              <img
+                src={Vector}
+                alt="Vector"
+                className="navigation__category_img"
+              />
+            </li>
+            <li
+              className={
+                tabIndex === "2"
+                  ? "active"
+                  : tabIndex < 2
+                  ? "disabled"
+                  : "complete"
+              }
+            >
+              <span
+                className="nav_category__type"
+                id="2"
+                onClick={(e) => {
+                  handleClickTab(e.target.id);
+                  handlClickModel();
+                }}
+                onKeyDown={() => {
+                  handlClickModel();
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                Модель
+              </span>
+              <img
+                src={Vector}
+                alt="Vector"
+                className="navigation__category_img"
+              />
+            </li>
+            <li
+              className={
+                tabIndex === "3"
+                  ? "active"
+                  : tabIndex < 3
+                  ? "disabled"
+                  : "complete"
+              }
+            >
+              <span
+                className="nav_category__type"
+                id="3"
+                onClick={(e) => {
+                  handleClickTab(e.target.id);
+                  handlClickDetails();
+                }}
+                onKeyDown={() => {
+                  handlClickDetails();
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                Дополнительно
+              </span>
+              <img
+                src={Vector}
+                alt="Vector"
+                className="navigation__category_img"
+              />
+            </li>
+            <li className={tabIndex === "4" ? "active" : "disabled"}>
+              <span
+                className="nav_category__type"
+                id="4"
+                onClick={(e) => handleClickTab(e.target.id)}
+                onKeyDown={() => {
+                  handleClickTab();
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                Итого
+              </span>
+            </li>
           </ul>
         </nav>
       </div>
-
       <div className="tabs-maincontent">
         <div className="tabs_left_content">
           <div
@@ -179,9 +198,6 @@ function Tabs() {
           >
             <FinalCart />
           </div>
-          
-          
-
         </div>
         <div className="tabs_right_content">
           <RightSideBlockStory />
@@ -191,4 +207,3 @@ function Tabs() {
   );
 }
 export default Tabs;
-

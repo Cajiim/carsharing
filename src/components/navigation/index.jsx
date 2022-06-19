@@ -1,31 +1,35 @@
-import styles from './index.module.scss';
-import React from 'react';
-import Menu from '../Menu';
+import React, { useState } from "react";
+import "./index.scss";
+import Menu from "../Menu";
 
-import { useState } from 'react';
+function Navigation({ overflow, setOverflow  }) {
+  const [menuActive, setMenuActive] = useState(false);
 
-function Navigation() {
-
-
-
-    const [menuActive, setMenuActive] = useState(false);
-
-
-
-    return (
-        <div className={styles.aside}>
-            <div className={styles.aside__content}>
-                <div className={menuActive ? 'containerBurg active' : 'containerBurg'} onClick={() => { setMenuActive(!menuActive); console.log(123) }}>
-                    <span>
-                    </span>
-                </div>
-                <p className={styles.aside__content__language}>Eng</p>
-            </div>
-            <Menu active={menuActive} setActive={setMenuActive} />
+  return (
+    <div className="aside">
+      <div className="aside__content">
+        <div
+          className={
+            menuActive ? "containerBurg containerBurg_active" : "containerBurg"
+          }
+          onClick={() => setMenuActive(!menuActive)}
+          role="presentation"
+        >
+          <span></span>
         </div>
-    );
+        <div
+          className={
+            menuActive
+              ? "aside__content__language aside__content__language_active"
+              : "aside__content__language"
+          }
+        >
+          <p>Eng</p>
+        </div>
+      </div>
+      <Menu active={menuActive} setActive={setMenuActive} overflow={overflow} setOverflow={setOverflow} />
+    </div>
+  );
 }
 
-
 export default Navigation;
-

@@ -1,0 +1,148 @@
+.containerBurg {
+  cursor: url(../../assets/svg/Cursor.svg), pointer;
+  position: absolute;
+  width: 26px;
+  height: 18px;
+  z-index: 5;
+  margin-top: 35px;
+}
+
+.containerBurg::before,
+.containerBurg::after,
+.containerBurg span {
+  left: 0;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+  background-color: white;
+}
+
+.containerBurg::after,
+.containerBurg::before {
+  content: "";
+}
+
+.containerBurg::before {
+  top: 0;
+  border-radius: 10px;
+}
+
+.containerBurg::after {
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.containerBurg span {
+  top: 40%;
+  transform: scale(1) translate(0px, 50%);
+  border-radius: 10px;
+}
+
+.containerBurg_active span {
+  top: 40%;
+  transform: scale(0) translate(0px, 50%);
+}
+
+.containerBurg_active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0px, -80%);
+}
+
+.containerBurg_active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0px, 80%);
+}
+
+///
+.aside__content {
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #151b1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.aside__content__language {
+  cursor: url(../../assets/svg/Cursor.svg), pointer;
+  position: absolute;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  color: #0ec261;
+  bottom: 13.5px;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  /* border: 1px solid transparent; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+.aside__content__language:hover {
+  color: white;
+
+  border-color: white;
+}
+.aside__content__language:active {
+  color: #0ec261;
+}
+
+.aside {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 2200px) {
+  .aside__content__language {
+    font-size: 0.9vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .aside__content {
+        width:86px;
+    } */
+}
+
+@media screen and (max-width: 370px) {
+  .aside__content {
+    background: none;
+  }
+
+  .aside__content__language {
+    z-index: 0;
+  }
+  .containerBurg {
+    width: 20px;
+    height: 16px;
+  }
+  .containerBurg::before,
+  .containerBurg::after,
+  .containerBurg span {
+    background-color: black;
+  }
+  .aside__content__language {
+    display: none;
+  }
+  .aside__content__language_active {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+  }
+}

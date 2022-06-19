@@ -1,263 +1,305 @@
 .clear {
-    * {
-        box-sizing: border-box;
-        outline: none;
-    }
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    ul {
-        margin: 0;
-        padding: 0;
-    }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
-    li {
-        list-style-type: none
-    }
+  li {
+    list-style-type: none;
+  }
 }
 
 .left-Container {
-    height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 64px;
+  margin-right: 64px;
 }
 
-
-.head {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
+.left-Container_head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 27px;
 }
 
-.head__name {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
-    color: #0EC261;
+.left-Container_head__name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: #0ec261;
 }
 
-.head__geolocation_city {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-
-    color: #999999;
+.left-Container_head__geolocation {
+  display: flex;
+  margin-top: 9px;
+}
+.left-Container_head__geolocation_city {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-self: center;
+  margin-top: 1px;
 }
 
-.head__geolocation_img {
-    padding-top: 6%;
+.left-Container_head__geolocation_img {
+  align-self: center;
+  margin-right: 4px;
 }
 
-.leftContent__title {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 66px;
-    color: #121212;
-
+.left-Container_mainContent_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 66px;
+  color: #121212;
 }
 
 .leftContent h1 {
-    margin-bottom: 3%;
+  margin-bottom: 3%;
 }
 
-.leftContent-title {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 66px;
-    color: #0EC261;
-
+.left-Container_mainContent-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 66px;
+  color: #0ec261;
 }
 
-.leftContent__container_text {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 26px;
-    line-height: 30px;
-    color: #999999;
-    margin-bottom: 7%;
+.left-Container_mainContent__container_text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 30px;
+  color: #999999;
+  margin-bottom: 7%;
 }
 
-.leftContent__container_button {
-    background: linear-gradient(90deg, #0EC261 2.61%, #039F67 112.6%);
-    background-blend-mode: darken;
-    border-radius: 8px;
-    border: 0;
-    width: 250px;
-    height: 48px;
-    color: white;
-    font-size: 18px;
-    cursor: url(../../assets/svg/Cursor.svg), pointer;
+.left-Container_mainContent_button {
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  border: 0;
+  width: 250px;
+  height: 48px;
+  color: white;
+  font-size: 18px;
+  cursor: url(../../assets/svg/Cursor.svg), pointer;
 }
 
-.leftContent__container_button:hover{
-    background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+.left-Container_mainContent_button:hover {
+  background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
 }
 
-.leftContent__container_button:active {
-    background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
-    background-blend-mode: darken;
+.left-Container_mainContent_button:active {
+  background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+  background-blend-mode: darken;
 }
 
-.foot {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2.3%;
+.left-Container_foot {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 31px;
 }
 
-.foot__year {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-    color: #999999;
+.left-Container_foot__year {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #999999;
 }
 
-.foot__number {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-    color: #121212
+.left-Container_foot__number {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #121212;
 }
-.foot__number:hover{
-    color: #0EC261;
+.left-Container_foot__number:hover {
+  color: #0ec261;
 }
 
 @media screen and (min-width: 2200px) {
-    .head__name {
-        font-size: 1.5vw;
-    }
+  .left-Container_head__name {
+    font-size: 1.5vw;
+  }
 
-    .head__geolocation_img {
-        width: 1vw;
-        height: 1vw;
-    }
+  .left-Container_head__geolocation_img {
+    width: 1vw;
+    height: 1vw;
+  }
 
-    .head__geolocation_city {
-        font-size: 0.7vw;
-    }
+  .left-Container_head__geolocation_city {
+    font-size: 0.7vw;
+  }
 
-    .leftContent__title,
-    .leftContent-title {
-        font-size: 4vw;
-        line-height: 4vw;
-    }
+  .left-Container_mainContent_title,
+  .left-Container_mainContent-title {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
 
-    .leftContent__container_text {
-        font-size: 2vw;
-        line-height: 2vw;
-    }
+  .left-Container_mainContent__container_text {
+    font-size: 2vw;
+    line-height: 2vw;
+  }
 
-    .leftContent__container_button {
-        font-size: 1.5vw;
-        width: 20vw;
-        height: 4vw;
-        border-radius: 0.6vw;
+  .left-Container_mainContent_button {
+    font-size: 1.5vw;
+    width: 20vw;
+    height: 4vw;
+    border-radius: 0.6vw;
+  }
 
-    }
-
-    .foot__number,
-    .foot__year {
-        font-size: 0.9vw;
-    }
-
-
+  .left-Container_foot__number,
+  .left-Container_foot__year {
+    font-size: 0.9vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .left-Container {
+    margin-left: 33px;
+    margin-right: 33px;
+  }
 }
 
-@media screen and (max-width: 455px) {
-    .leftContent-title {
-        font-size: 50px;
-    }
+@media screen and (max-width: 850px) {
+  .left-Container_mainContent-title {
+    font-size: 60px;
+    line-height: none;
+  }
 
-    .leftContent__title {
-        font-size: 50px;
-    }
+  .left-Container_mainContent_title {
+    font-size: 60px;
+    line-height: none;
+  }
+}
 
+@media screen and (max-width: 495px) {
+  .left-Container_mainContent-title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .left-Container_mainContent_title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .left-Container_head__name {
+    font-size: 23px;
+    line-height: 35px;
+    color: #0ec261;
+  }
+  .left-Container_foot__number {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .left-Container_foot__year {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .left-Container_foot {
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 370px) {
-    .leftContent-title {
-        font-size: 32px;
-        line-height: 32px;
-    }
+  .left-Container_mainContent_title {
+    font-size: 32px;
+    line-height: 32px;
+  }
 
-    .leftContent__title {
-        font-size: 32px;
-        line-height: 32px;
-    }
+  .left-Container_mainContent-title {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .left-Container_head__geolocation_city{
+      margin-top:5px;
+  }
+  .left-Container_mainContent__container_text {
+    font-size: 18px;
+    line-height: 18px;
+  }
 
-    .leftContent__container_text {
-        font-size: 18px;
-        line-height: 18px;
-    }
+  .left-Container_head {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+  .left-Container_head__name {
+    font-size: 30px;
+    line-height: 35px;
+  }
 
-    .head {
-        flex-direction: column;
-        align-items: flex-end;
-        margin-right: 5%;
-    }
+  .left-Container_foot {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin: 0;
+    position: relative;
+    background-color: #151b1f;
+    font-size: 13px;
+  }
 
-    .foot {
-        flex-direction: column-reverse;
-        align-items: flex-end;
-        margin: 0;
-        position: relative;
-        background-color: #151B1F;
-        font-size: 13px;
+  .left-Container_foot__year {
+    line-height: 5vh;
+    margin-right: 10px;
+  }
 
+  .left-Container_foot__number {
+    line-height: 5vh;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    color: #0ec261;
+    margin-right: 10px;
+  }
 
+  .left-Container {
+    margin: 0;
+    padding: 0;
+  }
 
-    }
+  .left-Container_mainContent_title,
+  .left-Container_mainContent-title,
+  .left-Container_mainContent__container {
+    margin-right: 5%;
+    margin-left: 5%;
+  }
 
-    .foot__year {
-        line-height: 5vh;
-    }
-
-    .foot__number {
-        line-height: 5vh;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        color: #0EC261
-    }
-
-
-
-    .left-Container {
-        margin: 0;
-        padding: 0;
-    }
-
-    .leftContent__title,
-    .leftContent-title,
-    .leftContent__container {
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-
-    .leftContent__container_button {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-    }
-
+  .left-Container_mainContent_button {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+  }
 }

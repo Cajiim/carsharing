@@ -3,16 +3,16 @@
 .rightSideBlock_container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  /*  margin-top: 10%; */
-  margin-left: 5%;
-  margin-right: 5%;
+  height: calc(100% - 30px);
+  margin-right:64px;
+  margin-top:32px;
+  margin-left:32px;
 }
 
 .rightSideBlock__text {
   display: flex;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .rightSideBlock_container_order {
