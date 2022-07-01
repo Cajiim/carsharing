@@ -1,33 +1,51 @@
 import React, { useState } from "react";
-import "./index.scss";
+import classNames from "classnames";
+import PropTypes from 'prop-types';
 import Menu from "../Menu";
 
-function Navigation({ overflow, setOverflow  }) {
+import style from "./index.scss";
+
+const cn = classNames.bind(style);
+
+function Navigation({ overflow, setOverflow }) {
+
+  Navigation.propTypes = {
+    overflow: PropTypes.bool,
+    setOverflow: PropTypes.bool,
+  }
+  Navigation.defaultProps = {
+    overflow: false,
+    setOverflow: false,
+  }
   const [menuActive, setMenuActive] = useState(false);
+  const [language, setLangauge] = useState(false);
 
   return (
     <div className="aside">
       <div className="aside__content">
-        <div
-          className={
-            menuActive ? "containerBurg containerBurg_active" : "containerBurg"
-          }
+        <li
+          className={cn("aside__content_containerBurg", {
+            aside__content_containerBurg_active: menuActive,
+          })}
           onClick={() => setMenuActive(!menuActive)}
-          role="presentation"
         >
           <span></span>
-        </div>
-        <div
-          className={
-            menuActive
-              ? "aside__content__language aside__content__language_active"
-              : "aside__content__language"
-          }
+        </li>
+        <li
+          className={cn("aside__content__language", {
+            aside__content__language_active: menuActive,
+          })}
+          onClick={() => setLangauge(!language)}
         >
-          <p>Eng</p>
-        </div>
+          <p>{language ? "Рус" : "Eng"}</p>
+        </li>
       </div>
-      <Menu active={menuActive} setActive={setMenuActive} overflow={overflow} setOverflow={setOverflow} />
+      <Menu
+        active={menuActive}
+        setActive={setMenuActive}
+        overflow={overflow}
+        setOverflow={setOverflow}
+      />
     </div>
   );
 }

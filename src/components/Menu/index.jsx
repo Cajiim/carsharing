@@ -1,20 +1,39 @@
 import React from "react";
-import "./index.scss";
+import classNames from "classnames";
+import PropTypes from 'prop-types';
+import style from "./index.scss";
+
+const cn = classNames.bind(style);
 
 /* import Facebook from "../../assets/svg/FacebookWhite.svg";
 import Instagram from "../../assets/svg/InstagramWhite.svg";
 import Telegram from "../../assets/svg/TelegramWhite.svg"; */
 
-function Menu({ active, setActive, overflow, setOverflow }) {
+
+function Menu({ active, overflow }) {
+  
+  Menu.propTypes = {
+    active: PropTypes.bool,
+    overflow: PropTypes.bool
+  }
+  Menu.defaultProps = {
+    active: false,
+    overflow: false
+  }
   return (
-    <div className={active ? "menu active" : "menu"}>
+    
+    <div
+      className={cn("menu", {
+        menu_active: active,
+      })}
+    >
       <div className="overflow">
         <div
-          className={
-            overflow  ? "menu__content menu__content_catPage" : "menu__content"
+          className={cn("menu__content", {
+            menu__content_otherPage: overflow,
+          })
           }
         >
-          {console.log(overflow)}
           <div className="menu__content__items">
             <div className="menu__content__items__text">
               <p className="menu__content__items-text">ПАРКОВКА</p>

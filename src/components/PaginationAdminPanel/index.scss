@@ -1,0 +1,45 @@
+.pagination_container {
+  display: flex;
+  align-items: center;
+  bottom: 21px;
+  position: absolute;
+  gap: 7px;
+  width: 100%;
+  justify-content: center;
+}
+.pagination_container_numbers {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: -0.471429px;
+  color: #007bff;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination_container_numbers:hover {
+  color: white;
+  background: #007bff;
+}
+.pagination_container_numbers_active {
+  color: white;
+  background: #007bff;
+  border-radius: 50%;
+}
+
+.pagination_container_prevButton,
+.pagination_container_nextButton {
+  width: 8.5px;
+  height: 18px;
+}
+.pagination_container_prevButton_disabled,
+.pagination_container_nextButton_disabled {
+  pointer-events: none;
+}
+

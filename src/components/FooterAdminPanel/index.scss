@@ -1,0 +1,36 @@
+.footerAdminPanel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #ffffff;
+  align-self: end;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px -0.5px 0px #d7dae3;
+  bottom: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.footerAdminPanel_links {
+  margin: 26px 0 26px 26px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #007bff;
+  display: flex;
+  gap: 16px;
+}
+
+.footerAdminPanel_year {
+  margin: 26px 26px 26px 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  color: #818ea3;
+}

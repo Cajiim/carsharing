@@ -1,6 +1,6 @@
-/* eslint-disable no-shadow */
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setDeliveryCity,
@@ -12,7 +12,9 @@ import {
   setDeliveryChangeStreetInput,
   deleteDeliveryChangeStreetInput,
 } from "../../redux/cart/reducerFinalOrder";
-import "./index.scss";
+import style from "./index.scss";
+
+const cn = classNames.bind(style);
 
 function Map() {
   const [cityComplete, setCityComplete] = useState([]);
@@ -47,57 +49,48 @@ function Map() {
     (state) => state.finalOrder.pointChangeOfIssue
   );
 
-  const onChangeHandlInputCity = (textCityAutoChange) => {
+  const onChangeHandlInputCity = (value) => {
     let matches = [];
-    if (textCityAutoChange.length > 0) {
-      matches = cityComplete.filter((сities) => {
-        const reg = new RegExp(`${textCityAutoChange.toLowerCase()}`);
-        return сities.toLowerCase().match(reg);
+    if (value.length > 0) {
+      matches = cityComplete.filter((el) => {
+        const reg = new RegExp(`${value.toLowerCase()}`);
+        return el.сity.toLowerCase().match(reg);
       });
     }
     setSuggestions(matches);
-    dispatch(setDeliveryChangeCityInput(textCityAutoChange));
-    /* setText(); */
+    dispatch(setDeliveryChangeCityInput(value));
   };
 
-  const dispatchCity = (suggestions) => {
-    dispatch(setDeliveryCity(suggestions));
+  const dispatchCity = (sugg) => {
+    dispatch(setDeliveryCity(sugg));
   };
-
-  const dispatchPointOfIssue = (streets) => {
-    dispatch(setPointIssue(streets));
-  };
-
-  const cityHundler = (textCityAutoChange) => {
-    /* text */
-    /* setText(textCityAutoChange); */ /* text */
-    dispatch(setDeliveryChangeCityInput(textCityAutoChange));
+  const cityHundler = (sugg) => {
+    dispatch(setDeliveryChangeCityInput(sugg));
     setSuggestions([]);
   };
 
-  const onChangeHandlInputPointOfIssue = (
-    /* textPoint */ textStreetAutoChange
-  ) => {
+  const onChangeHandlInputPointOfIssue = (value) => {
     let pointOfIssue = [];
-    if (textStreetAutoChange.length > 0) {
-      pointOfIssue = pointOfIssueComplete.filter((streets) => {
-        const regex = new RegExp(`${textStreetAutoChange.toLowerCase()}`);
-        return streets.toLowerCase().match(regex);
+    if (value.length > 0) {
+      pointOfIssue = pointOfIssueComplete.filter((el) => {
+        const regex = new RegExp(`${value.toLowerCase()}`);
+        return el.street.toLowerCase().match(regex);
       });
     }
     setStreets(pointOfIssue);
-    dispatch(setDeliveryChangeStreetInput(textStreetAutoChange));
-    /* setTextPoint();  */
+    dispatch(setDeliveryChangeStreetInput(value));
   };
-
-  const streetHundler = (textStreetAutoChange) => {
-    /* setTextPoint(textPoint); */
-    dispatch(setDeliveryChangeStreetInput(textStreetAutoChange));
+  const streetHundler = (street) => {
+    dispatch(setDeliveryChangeStreetInput(street));
     setStreets([]);
   };
 
+  const dispatchPointOfIssue = (street) => {
+    dispatch(setPointIssue(street));
+  };
+
   const handlClearCity = () => {
-    dispatch(deleteDeliveryChangeCityInput()); // диспатч если что
+    dispatch(deleteDeliveryChangeCityInput());
     dispatch(deleteDeliveryCity());
   };
 
@@ -105,10 +98,6 @@ function Map() {
     dispatch(deleteDeliveryChangeStreetInput());
     dispatch(deletePointOfIssue());
   };
-
-  for (let i = 0; i <= suggestions.length; i += 1);
-  // eslint-disable-next-line no-unreachable-loop
-  for (let g = 0; g <= streets.length; g += 1);
 
   const Disabled = textCityAutoChange === null || textCityAutoChange === "";
 
@@ -129,11 +118,13 @@ function Map() {
           ></input>
           <button
             type="button"
-            className={
-              textCityAutoChange === "" || !textCityAutoChange
-                ? "map_mainContent_autocomplete_city_input_cancelButton"
-                : "map_mainContent_autocomplete_city_input_cancelButton map_mainContent_autocomplete_city_input_cancelButton_active"
-            }
+            className={cn(
+              "map_mainContent_autocomplete_city_input_cancelButton",
+              {
+                map_mainContent_autocomplete_city_input_cancelButton_disabled:
+                  textCityAutoChange === "" || !textCityAutoChange,
+              }
+            )}
             onClick={() => {
               handlClearCity();
               handlClearStreet();
@@ -142,30 +133,26 @@ function Map() {
             &times;
           </button>
           <div
-            className={
-              suggestions.length !== 0
-                ? "map_mainContent_autocomplete_choice"
-                : "map_mainContent_autocomplete_choice_disabled"
-            }
+            className={cn("map_mainContent_autocomplete_choice", {
+              map_mainContent_autocomplete_choice_disabled:
+                suggestions.length === 0,
+            })}
           >
-            {suggestions &&
-              suggestions.map((suggestions) => (
-                <div
-                  key={suggestions.i}
-                  className="map_mainContent_autocomplete_city_input_container_received"
-                  onClick={() => {
-                    cityHundler(suggestions);
-                    dispatchCity(suggestions);
-                  }}
-                  onKeyDown={() => {
-                    cityHundler(suggestions);
-                  }}
-                  role="button"
-                  tabIndex={0}
-                >
-                  {suggestions}
-                </div>
-              ))}
+            <ul>
+              {suggestions &&
+                suggestions.map((sugg) => (
+                  <li
+                    key={sugg.id}
+                    className="map_mainContent_autocomplete_city_input_container_received"
+                    onClick={() => {
+                      cityHundler(sugg.сity);
+                      dispatchCity(sugg.сity);
+                    }}
+                  >
+                    {sugg.сity}
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -184,11 +171,13 @@ function Map() {
           ></input>
           <button
             type="button"
-            className={
-              !textStreetAutoChange || textStreetAutoChange === ""
-                ? "map_mainContent_autocomplete_city_input_cancelButton"
-                : "map_mainContent_autocomplete_city_input_cancelButton map_mainContent_autocomplete_city_input_cancelButton_active"
-            }
+            className={cn(
+              "map_mainContent_autocomplete_city_input_cancelButton",
+              {
+                map_mainContent_autocomplete_city_input_cancelButton_disabled:
+                  !textStreetAutoChange || textStreetAutoChange === "",
+              }
+            )}
             onClick={() => {
               handlClearStreet();
             }}
@@ -196,30 +185,26 @@ function Map() {
             &times;
           </button>
           <div
-            className={
-              streets.length !== 0
-                ? "map_mainContent_autocomplete_choice"
-                : "map_mainContent_autocomplete_choice_disabled"
-            }
+            className={cn("map_mainContent_autocomplete_choice", {
+              map_mainContent_autocomplete_choice_disabled:
+                streets.length === 0,
+            })}
           >
-            {streets &&
-              streets.map((streets) => (
-                <div
-                  key={streets.g}
-                  className="map_mainContent_autocomplete_city_input_container_received"
-                  onClick={() => {
-                    streetHundler(streets);
-                    dispatchPointOfIssue(streets);
-                  }}
-                  onKeyDown={() => {
-                    streetHundler(streets);
-                  }}
-                  role="button"
-                  tabIndex={0}
-                >
-                  {streets}
-                </div>
-              ))}
+            <ul>
+              {streets &&
+                streets.map((street) => (
+                  <li
+                    key={street.id}
+                    className="map_mainContent_autocomplete_city_input_container_received"
+                    onClick={() => {
+                      streetHundler(street.street);
+                      dispatchPointOfIssue(street.street);
+                    }}
+                  >
+                    {street.street}
+                  </li>
+                ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -235,3 +220,98 @@ function Map() {
 }
 
 export default Map;
+
+/* "Ульяновск",
+   "Кострома",
+   "Гудермес",
+   "Гуково",
+   "Тольятти",
+   "Томск",
+   "Устюжна",
+   "Хабаровск",
+   "Чапаевск",
+   "Унеча",
+   "Шумерля",
+   "Щигры",
+   "Чадан",
+   "Уссурийск",
+   "Темрюк",
+   "Суздаль",
+   "Спасск",
+   "Соликамск" */
+/* 
+   {
+    "citi":"Ульяновск",
+    "id": "1"
+   },
+   {
+    "citi":"Кострома",
+    "id": "2"
+   },
+    {
+    "citi":"Гудермес",
+    "id": "3"
+   },
+    {
+    "citi":"Гуково",
+    "id": "4"
+   },
+    {
+    "citi":"Тольятти",
+    "id": "5"
+   },
+   {
+    "citi":"Томск",
+    "id": "6"
+   },
+   {
+    "citi":"Устюжна",
+    "id": "7"
+   },
+   {
+    "citi":"Хабаровск",
+    "id": "8"
+   },
+   {
+    "citi":"Чапаевск",
+    "id": "9"
+   },
+   {
+    "citi":"Унеча",
+    "id": "10"
+   },
+   {
+    "citi":"Шумерля",
+    "id": "11"
+   },
+   {
+    "citi":"Щигры",
+    "id": "12"
+   },
+   {
+    "citi":"Чадан",
+    "id": "13"
+   },
+   {
+    "citi":"Уссурийск",
+    "id": "14"
+   },
+   {
+    "citi":"Темрюк",
+    "id": "15"
+   },
+   {
+    "citi":"Суздаль",
+    "id": "16"
+   },
+   {
+    "citi":"Спасск",
+    "id": "17"
+   },
+   {
+    "citi":"Соликамск",
+    "id": "18"
+   }
+
+
+ */

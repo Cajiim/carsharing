@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import "./index.scss";
+import style from "./index.scss";
+
+const cn = classNames.bind(style);
 
 function slideContainer(props) {
   return (
@@ -8,9 +10,7 @@ function slideContainer(props) {
       <h3 className="slideContainer_title">{props.title}</h3>
       <p className="slideContainer_text">{props.text}</p>
       <button
-        className={classNames("slideContainer_button_information", [
-          props.buttonStyle,
-        ])}
+        className={cn("slideContainer_button_information", [props.buttonStyle])}
         type="button"
       >
         {props.buttonText}

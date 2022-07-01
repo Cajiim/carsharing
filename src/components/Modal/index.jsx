@@ -1,12 +1,22 @@
 import React from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
+import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setTabIndex } from "../../redux/cart/reducerTableIndex";
-import { setOrderNumber } from "../../redux/cart/reducerFinalOrder"
+import { setOrderNumber } from "../../redux/cart/reducerFinalOrder";
 import "./index.scss";
 
 function Modal({ active, setActive }) {
+  Modal.propTypes = {
+    active: PropTypes.bool,
+    setActive: PropTypes.bool,
+  };
+  Modal.defaultProps = {
+    active: false,
+    setActive: false,
+  };
+
   const dispatch = useDispatch();
 
   const {
@@ -19,24 +29,12 @@ function Modal({ active, setActive }) {
     checkFuelState: checkedFuel,
     checkedBabyChairState: checkedBabyChair,
     checkedRightHand,
-    modelInCart: model,
+    modelInCart: modelCar,
+    carNumber,
+    randomFuelLvl,
   } = useSelector(({ finalOrder }) => finalOrder);
-
-  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
-  const handlClickButton = () => {
-    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
-  };
-
-  const carClass = model?.class;
-  const colorCarForBlock =
-    color === null
-      ? "Любой"
-      : color === "red"
-      ? "Красный"
-      : color === "blue"
-      ? "Голубой"
-      : "Любой";
-
+  
+  const carClass = modelCar?.class;
   const diffTime = Math.abs(
     new Date(endDate).getTime() - new Date(startDate).getTime()
   );
@@ -55,40 +53,24 @@ function Modal({ active, setActive }) {
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
   const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
-  const orderNumberFunction = () => {
-    const now = new Date()
-    const year = now.getFullYear();
-    let month = now.getMonth() + 1;
-    let day = now.getDate();
-    let hour = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-    String(month).length < 2 ? (month = Number(`0${  month}`)) : month;
-    String(day).length < 2 ? (day = Number(`0${  day}`)) : day;
-    String(hour).length < 2 ? (hour = Number(`0${  hour}`)) : hour;
-    String(minutes).length < 2 ? (minutes = Number(`0${  minutes}`)) : minutes;
-    String(seconds).length < 2 ? (seconds = Number(`0${  seconds}`)) : seconds;
-    const yyyyMMddHHmmss = `${year}${month}${day}${hour}${minutes}${seconds}`;
-    return `${yyyyMMddHHmmss  }_${  Math.random().toString(36).substr(2, 9)}`;
-  };
 
-  const orderNumber = orderNumberFunction();
+  const orderNumber = uuidv4();
   const handlSelectOrderNumber = () => {
     dispatch(setOrderNumber(orderNumber));
-  }
- 
+  };
+
   const additionalOptions = {
-    orderNumber,
+    /*  orderNumber, */
     cityAuto,
     streetAuto,
-    colorCarForBlock,
+    color,
     startDate,
     endDate,
     arendRate,
     checkedFuel,
     checkedBabyChair,
     checkedRightHand,
-    tabIndex: '5',
+    tabIndex: "5",
     correctPriceRate,
     rateRent,
     gas,
@@ -97,43 +79,39 @@ function Modal({ active, setActive }) {
     additional,
     totalPrice,
     arendTimeForBlock,
+    carNumber,
+    randomFuelLvl,
   };
 
+  const CarId = modelCar?.id;
   const handleSelectCar = () => {
     axios
-      .post(`https://6288c18410e93797c15e9916.mockapi.io/Cars/1/FinalOrder?orderNumber=${orderNumber}`, {
-        orderNumber,
-        model,
-        additionalOptions,
-      })
+      .post(
+        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?orderNumber=${orderNumber}`,
+        {
+          orderNumber,
+          model: CarId,
+          additionalOptions,
+        }
+      )
       .then((Response) => console.log(Response, "posting data"))
       .catch((error) => console.log(error));
   };
- /*  function FunctionOrder () {
-    handlClickButton().then(handleSelectCar());
-  }; */
 
   return (
     <div className={active ? "modal modal_active" : "modal"}>
       <h3 className="modal__title">Подтвердить заказ</h3>
       <div className="modal__button">
         <form>
-          <Link to={`/order/myOrder?orderNumber=${orderNumber}`}>
-            <button
-              className="modal__button_confirm"
-              type="button"
-              onClick={() => {
-                 handlClickButton();
-                 handleSelectCar();
-                 handlSelectOrderNumber();
-               /*  setTimeout(() => {
-                  handleSelectCar();  
-                }, 3000);  */
-                /* handlClickButton().then(handleSelectCar()); */
-              }}
-            >
-              Подтвердить
-            </button>
+          <Link
+            to={`/myOrder?orderNumber=${orderNumber}`}
+            className="modal__button_confirm"
+            onClick={() => {
+              handleSelectCar();
+              handlSelectOrderNumber();
+            }}
+          >
+            Подтвердить
           </Link>
         </form>
         <form>

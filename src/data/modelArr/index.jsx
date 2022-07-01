@@ -44,7 +44,7 @@ const arrModels = [
   },
   {
     id: "5",
-    name: "Elantra",
+    name: "ELANTRA",
     minPrice: "12 000",
     maxPrice: "25 000",
     model: "Hyundai",

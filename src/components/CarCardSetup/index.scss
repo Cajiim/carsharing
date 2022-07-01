@@ -1,0 +1,119 @@
+.сarCardSetup_container {
+  width: 335px;
+  height: 506px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(90, 97, 105, 0.12);
+  border-radius: 9px;
+  margin: 30.5px 0 0 27px;
+}
+
+.сarCardSetup_container_carSetup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.сarCardSetup_container_carSetup_img {
+  width: 243px;
+  height: 110px;
+  margin: 34px 0 10px 0;
+}
+.сarCardSetup_container_carSetup_carName {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24.5px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: -0.6125px;
+  color: #3d5170;
+  margin-bottom: 4.5px;
+}
+.сarCardSetup_container_carSetup_carClass {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.3125px;
+  color: #818ea3;
+  margin-bottom: 10.5px;
+}
+
+.сarCardSetup_container_carSetup_input {
+  width: 231px;
+  height: 29px;
+  border: 0.5px solid #becad6;
+  border-radius: 4px;
+  outline: 0;
+  padding-left: 13px;
+  margin-bottom: 22.5px;
+}
+
+.сarCardSetup_container_progressSetup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.12), 0px 1px 0px rgba(0, 0, 0, 0.12);
+  margin-bottom: 22.5px;
+}
+progress {
+  width: 290px;
+  height: 5px;
+}
+
+.сarCardSetup_container_progressSetup_text {
+  display: flex;
+  justify-content: space-between;
+  width: 290px;
+  margin-bottom: 10px;
+}
+.сarCardSetup_container_progressSetup_text_completed {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.408571px;
+  color: #868e96;
+}
+.сarCardSetup_container_progressSetup_text_percentage {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.345714px;
+  color: #5a6169;
+}
+
+.сarCardSetup_container_progressSetup_description {
+  display: flex;
+  flex-direction: column;
+  margin: 0 22px 0 22px;
+}
+.сarCardSetup_container_progressSetup_description_title {
+  margin-bottom: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.408571px;
+  color: #868e96;
+}
+.сarCardSetup_container_progressSetup_description_text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: -0.408571px;
+  color: #5a6169;
+}

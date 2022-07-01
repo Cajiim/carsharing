@@ -1,21 +1,198 @@
-.tabs_left_content_radioContent {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .radio_box {
-    margin-right: 5px;
-    border: 1px solid #999999;
-    box-sizing: border-box;
-  }
-  
-  .radio_text {
-    margin-right: 15px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    color: #999999;
-  }
+.modelContainer_classSelection {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 1px;
+}
+.modelContainer_classSelection_all {
+  display: flex;
+  margin-right: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
+}
+.modelContainer_classSelection_all_input {
+  position: absolute;
+  opacity: 0;
+  margin-right: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+.modelContainer_classSelection_all_fakeCheckBox {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
+}
+.modelContainer_classSelection_all_fakeCheckBox::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #0ec261;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.modelContainer_classSelection_all_input:checked + .modelContainer_classSelection_all_fakeCheckBox::before {
+  opacity: 1;
+}
+
+input[type="radio"]:checked + span + .modelContainer_classSelection_all_textColor {
+  color: #121212;
+}
+span .modelContainer_classSelection_all {
+  margin-bottom: 5px;
+}
+
+
+
+.modelContainer_classSelection_economy{
+  display: flex;
+  margin-right: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
+}
+
+.modelContainer_classSelection_economy_input{
+  position: absolute;
+  opacity: 0;
+  margin-right: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+
+.modelContainer_classSelection_economy_fakeCheckBox{
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
+}
+.modelContainer_classSelection_economy_fakeCheckBox::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #0ec261;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.modelContainer_classSelection_economy_input:checked + .modelContainer_classSelection_economy_fakeCheckBox::before {
+  opacity: 1;
+}
+
+input[type="radio"]:checked + span + .modelContainer_classSelection_economy_textColor {
+  color: #121212;
+}
+span .modelContainer_classSelection_economy {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modelContainer_classSelection_business{
+  display: flex;
+  margin-right: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
+}
+
+.modelContainer_classSelection_business_input{
+  position: absolute;
+  opacity: 0;
+  margin-right: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+
+.modelContainer_classSelection_business_fakeCheckBox{
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
+}
+.modelContainer_classSelection_business_fakeCheckBox::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: 4px solid #0ec261;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.modelContainer_classSelection_business_input:checked + .modelContainer_classSelection_business_fakeCheckBox::before {
+  opacity: 1;
+}
+
+input[type="radio"]:checked + span + .modelContainer_classSelection_business_textColor {
+  color: #121212;
+}
+span .modelContainer_classSelection_business {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+.modelContainer_mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+

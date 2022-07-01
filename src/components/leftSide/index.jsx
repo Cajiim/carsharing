@@ -24,30 +24,31 @@ function LeftSide() {
       </header>
 
       <div className="left-Container_mainContent">
-        <h1>
+        <h1 className="left-Container_mainContent_title_container">
           <span className="left-Container_mainContent_title">Каршеринг</span>
-          <br></br>{" "}
+          <br></br>
           <span className="left-Container_mainContent-title">
             Need for drive
           </span>
         </h1>
-        <ul className="left-Container_mainContent__container clear">
-          <li className="left-Container_mainContent__container_text">
-            <span>Поминутная аренда авто твоего города</span>
-          </li>
-        </ul>
-        <Link to="/order">
-          <button className="left-Container_mainContent_button" type="button">
-            Забронировать
-          </button>
+        <p className="left-Container_mainContent__container_text">
+          Поминутная аренда авто твоего города
+        </p>
+        <Link to="/order" className="left-Container_mainContent_button">
+          Забронировать
         </Link>
       </div>
 
       <footer className="left-Container_foot">
-        <p className="left-Container_foot__year">
+        <span className="left-Container_foot__year">
           © 2016-2019 «Need for drive»
-        </p>
-        <p className="left-Container_foot__number">8 (495) 234-22-44</p>
+        </span>
+        <a
+          className="left-Container_foot__number"
+          href="tel:+7 (495) 234-22-44"
+        >
+          8 (495) 234-22-44
+        </a>
       </footer>
     </div>
   );

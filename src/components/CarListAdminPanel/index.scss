@@ -1,0 +1,146 @@
+.carListAdminPanel_container {
+  overflow: auto;
+  height: calc(100% - 68px - 67px);
+  background: #f5f6f8;
+}
+.carListAdminPanel_container_title {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 33px;
+  letter-spacing: -0.725px;
+  color: #3d5170;
+  margin: 28px 0 0 27px;
+}
+.carListAdminPanel_container_mainContent {
+  width: 1062px;
+  height: 446px;
+  background: #ffffff;
+  box-shadow: 0px 1px 0px rgba(90, 97, 105, 0.11),
+    0px 2px 4px rgba(90, 97, 105, 0.12), 0px 5px 5px rgba(90, 97, 105, 0.06),
+    0px 3.5px 35px rgba(90, 97, 105, 0.1);
+  border-radius: 9px;
+  margin: 30px 0 0 27px;
+  position: relative;
+}
+
+.carListAdminPanel_container_mainContent_titleList {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.377143px;
+  color: #3d5170;
+  padding-top: 25px;
+  margin-left: 20px;
+  display: flex;
+  gap: 100px;
+}
+
+.carListAdminPanel_container_mainContent_carOptions {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.377143px;
+  color: #3d5170;
+  margin: 25px 0 0 20px;
+  display: flex;
+  gap: 105px;
+}
+
+.carListAdminPanel_container_mainContent_table {
+  table-layout: fixed;
+   width: 65%; 
+  border-collapse: collapse;
+}
+
+
+th,
+td {
+  padding: 0 20px 20px 20px;
+}
+
+tbody td,
+.carListAdminPanel_container_mainContent_table_lines {
+  text-align: center;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.377143px;
+  color: #3d5170;
+}
+
+tr th {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.377143px;
+  color: #3d5170;
+}
+
+.carListAdminPanel_container_mainContent_sorting {
+  display: flex;
+  justify-content: space-between;
+}
+.carListAdminPanel_container_mainContent_sorting_input {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0 25px 20px;
+}
+.carListAdminPanel_container_mainContent_sorting_input_name,
+.carListAdminPanel_container_mainContent_sorting_input_maxPrice,
+.carListAdminPanel_container_mainContent_sorting_input_minPrice,
+.carListAdminPanel_container_mainContent_sorting_input_class {
+  background: #ffffff;
+  border: 0.5px solid #becad6;
+  border-radius: 4px;
+  width: 100px;
+  height: 30px;
+  outline:none;
+  padding-left:14px;
+}
+
+.carListAdminPanel_container_mainContent_sorting_bottons {
+  display: flex;
+  gap: 15px;
+  margin: 14.5px 21px 0 0;
+}
+
+.carListAdminPanel_container_mainContent_sorting_bottons_reset {
+  width: 95px;
+  height: 29px;
+  background: #c4183c;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #ffffff;
+}
+.carListAdminPanel_container_mainContent_sorting_bottons_apply {
+  width: 95px;
+  height: 29px;
+  background: #007bff;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #ffffff;
+}

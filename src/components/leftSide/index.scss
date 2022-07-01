@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
+
 .clear {
   * {
     box-sizing: border-box;
@@ -22,8 +24,8 @@
 .left-Container {
   height: 100%;
   width: auto;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: space-between;
   margin-left: 64px;
   margin-right: 64px;
@@ -32,7 +34,8 @@
 .left-Container_head {
   display: flex;
   justify-content: space-between;
-  margin-top: 27px;
+
+  margin-bottom: 163px;
 }
 
 .left-Container_head__name {
@@ -42,11 +45,13 @@
   font-size: 30px;
   line-height: 35px;
   color: #0ec261;
+  margin-top: 27px;
 }
 
 .left-Container_head__geolocation {
   display: flex;
-  margin-top: 9px;
+  /* margin-top: 9px; */
+  margin-top: 36px;
 }
 .left-Container_head__geolocation_city {
   font-family: "Roboto";
@@ -73,8 +78,8 @@
   color: #121212;
 }
 
-.leftContent h1 {
-  margin-bottom: 3%;
+.left-Container_mainContent_title_container {
+  margin-bottom: 34px;
 }
 
 .left-Container_mainContent-title {
@@ -93,19 +98,31 @@
   font-size: 26px;
   line-height: 30px;
   color: #999999;
-  margin-bottom: 7%;
+  margin-bottom: 60px;
+}
+.left-Container_mainContent__container {
+  margin-bottom: 60px;
 }
 
 .left-Container_mainContent_button {
+  display: flex;
   background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  text-decoration: none;
   background-blend-mode: darken;
   border-radius: 8px;
   border: 0;
   width: 250px;
   height: 48px;
-  color: white;
-  font-size: 18px;
   cursor: url(../../assets/svg/Cursor.svg), pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-Container_mainContent_button:hover {
@@ -118,9 +135,12 @@
 }
 
 .left-Container_foot {
+  position: absolute;
   display: flex;
+  left: 64px;
+  right: 64px;
+  bottom: 32px;
   justify-content: space-between;
-  margin-bottom: 31px;
 }
 
 .left-Container_foot__year {
@@ -133,6 +153,7 @@
 }
 
 .left-Container_foot__number {
+  text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -145,8 +166,9 @@
 }
 
 @media screen and (min-width: 2200px) {
+  
   .left-Container_head__name {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
   }
 
   .left-Container_head__geolocation_img {
@@ -160,25 +182,25 @@
 
   .left-Container_mainContent_title,
   .left-Container_mainContent-title {
-    font-size: 4vw;
-    line-height: 4vw;
+    font-size: 3.5vw;
+    line-height: 3.5vw;
   }
 
   .left-Container_mainContent__container_text {
-    font-size: 2vw;
-    line-height: 2vw;
+    font-size: 1.3vw;
+    line-height: 1.3vw;
   }
 
   .left-Container_mainContent_button {
-    font-size: 1.5vw;
-    width: 20vw;
-    height: 4vw;
+    font-size: 1vw;
+    width: 15vw;
+    height: 3vw;
     border-radius: 0.6vw;
   }
 
   .left-Container_foot__number,
   .left-Container_foot__year {
-    font-size: 0.9vw;
+    font-size: 0.7vw;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -186,9 +208,13 @@
     margin-left: 33px;
     margin-right: 33px;
   }
+  .left-Container_foot {
+    left: 33px;
+    right: 33px;
+  }
 }
 
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
   .left-Container_mainContent-title {
     font-size: 60px;
     line-height: none;
@@ -198,9 +224,9 @@
     font-size: 60px;
     line-height: none;
   }
-}
+} */
 
-@media screen and (max-width: 495px) {
+ @media screen and (max-width: 495px) {
   .left-Container_mainContent-title {
     font-size: 40px;
     line-height: 40px;
@@ -210,9 +236,9 @@
     font-size: 40px;
     line-height: 40px;
   }
-}
+} 
 
-@media screen and (max-width: 435px) {
+/* @media screen and (max-width: 435px) {
   .left-Container_head__name {
     font-size: 23px;
     line-height: 35px;
@@ -226,38 +252,45 @@
     font-size: 10px;
     line-height: 15px;
   }
-  .left-Container_foot {
-    margin-bottom: 30px;
-  }
-}
+} */
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 350px) {
   .left-Container_mainContent_title {
     font-size: 32px;
-    line-height: 32px;
+    line-height: 100%;
+    margin-right: 16px;
+    margin-left: 16px;
   }
 
   .left-Container_mainContent-title {
     font-size: 32px;
-    line-height: 32px;
+    line-height: 100%;
+    margin-right: 16px;
+    margin-left: 16px;
   }
-  .left-Container_head__geolocation_city{
-      margin-top:5px;
-  }
+  /* .left-Container_head__geolocation_city {
+    margin-top: 5px;
+  } */
   .left-Container_mainContent__container_text {
     font-size: 18px;
     line-height: 18px;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-bottom:32px;
   }
 
   .left-Container_head {
     flex-direction: column;
     align-items: flex-end;
-    margin-right: 10px;
-    margin-top: 25px;
+    margin-bottom:34px;
+    /*  margin-right: 10px;
+    margin-top: 25px; */
   }
   .left-Container_head__name {
     font-size: 30px;
     line-height: 35px;
+    margin-right: 16px;
+    margin-top:16px;
   }
 
   .left-Container_foot {
@@ -267,21 +300,30 @@
     position: relative;
     background-color: #151b1f;
     font-size: 13px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
   }
 
   .left-Container_foot__year {
-    line-height: 5vh;
-    margin-right: 10px;
+    font-size: 13px;
+    line-height: 15px;
+    margin-right: 16px;
+    margin-bottom:16px;
+    color: #EEEEEE;
   }
 
   .left-Container_foot__number {
-    line-height: 5vh;
+    line-height: 15px;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     color: #0ec261;
-    margin-right: 10px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    margin-top: 16px;
   }
 
   .left-Container {
@@ -289,11 +331,9 @@
     padding: 0;
   }
 
-  .left-Container_mainContent_title,
-  .left-Container_mainContent-title,
-  .left-Container_mainContent__container {
-    margin-right: 5%;
-    margin-left: 5%;
+  .left-Container_head__geolocation {
+    margin-top: 8px;
+    margin-right: 16px;
   }
 
   .left-Container_mainContent_button {
@@ -302,4 +342,13 @@
     height: 50px;
     border-radius: 0;
   }
+  .left-Container_mainContent_title_container{
+    margin-bottom:16px;
+  }
+
+
+
+
+
 }
+

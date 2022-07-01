@@ -41,7 +41,7 @@
   border-right: none;
 } */
 .map_mainContent_autocomplete_city_input {
-  border:none;
+  border: none;
   margin-left: 8px;
   outline: none;
   font-family: "Roboto";
@@ -50,18 +50,17 @@
   font-size: 14px;
   line-height: 16px;
   color: #121212;
-  width:240px;
+  width: 241px;
 
-
-  border-bottom:1px solid #999999;
+  border-bottom: 1px solid #999999;
 }
-.map_mainContent_autocomplete_city_input_container input[type=textCity]{
+.map_mainContent_autocomplete_city_input_container input[type="textCity"] {
   padding-left: 8px;
-  padding-bottom:2px;
+  padding-bottom: 2px;
 }
-.map_mainContent_autocomplete_city_input_container input[type=pointOfIssue]{
+.map_mainContent_autocomplete_city_input_container input[type="pointOfIssue"] {
   padding-left: 8px;
-  padding-bottom:2px;
+  padding-bottom: 2px;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -93,25 +92,20 @@
   width: auto;
   position: relative;
   overflow: overlay;
-
   border-bottom: 1px solid #eeeeee;
-  margin-left: 8px;
   border-left: 1px solid #eeeeee;
-
-.map_mainContent_autocomplete_choice_disabled{
-  border:none;
-}  
-
-  /* display: flex;
-    flex-direction: column;
-    gap: 10px; */
-    position: absolute;
-    margin-top: 19px;
-    width: 247px;
-    background-color: white;
-     z-index: 3; 
+  border-right: 1px solid #eeeeee;
+  margin-left: 8px;
+  position: absolute;
+  margin-top: 19px;
+  width: 247px;
+  background-color: white;
+  z-index: 3;
 }
-.map_mainContent_autocomplete_choice_street{
+.map_mainContent_autocomplete_choice_disabled {
+  border: none;
+}
+.map_mainContent_autocomplete_choice_street {
   z-index: 1;
 }
 .map_mainContent_autocomplete_city_input_container_received {
@@ -142,22 +136,26 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  
 }
+
 .map_mainContent_autocomplete_city_input_cancelButton {
-  width:8px;
+  display: block;
+  width: 8px;
   height: 8px;
   position: absolute;
   right: 10px;
   color: #121212;
   border: 0;
-  display: none;
   border-radius: 50%;
   cursor: pointer;
   background: none;
   font-size: 17px;
-  top:-1px;
+  top: -1px;
 }
-.map_mainContent_autocomplete_city_input_cancelButton_active {
-  display: block;
+.map_mainContent_autocomplete_city_input_cancelButton_disabled {
+  display: none;
+}
+.tabs-img {
+  width: 400px;
+  height: 400%;
 }

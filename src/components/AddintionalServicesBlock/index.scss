@@ -1,0 +1,60 @@
+.additionalServices_container {
+  margin-top: 30px;
+  width: 170px;
+}
+.additionalServices_container_form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.additionalServices_container_form_label {
+  display: flex;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
+}
+.additionalServices_container_form_label_input {
+  position: absolute;
+  opacity: 0;
+  margin-right: 5px;
+}
+.additionalServices_container_form_label_span_fakeCheckbox {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999999;
+  position: relative;
+  margin-right: 5px;
+}
+.additionalServices_container_form_label_span_fakeCheckbox::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background: url(../../assets/svg/VectorCheck.svg) no-repeat;
+  background-size: 100% 90%;
+}
+
+.additionalServices_container_form_label_input:checked
+  + .additionalServices_container_form_label_span_fakeCheckbox::before {
+  opacity: 1;
+}
+input[type="checkbox"]:checked
+  + .additionalServices_container_form_label_span_fakeCheckbox {
+  border: 2px solid #0ec261;
+}
+
+input[type="checkbox"]:checked
+  + span
+  + .additionalServices_container_form_label_span_radioTextColor {
+  color: #121212;
+}

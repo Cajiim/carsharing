@@ -1,4 +1,4 @@
-.containerBurg {
+.aside__content_containerBurg {
   cursor: url(../../assets/svg/Cursor.svg), pointer;
   position: absolute;
   width: 26px;
@@ -7,9 +7,9 @@
   margin-top: 35px;
 }
 
-.containerBurg::before,
-.containerBurg::after,
-.containerBurg span {
+.aside__content_containerBurg::before,
+.aside__content_containerBurg::after,
+.aside__content_containerBurg span {
   left: 0;
   position: absolute;
   height: 10%;
@@ -18,38 +18,38 @@
   background-color: white;
 }
 
-.containerBurg::after,
-.containerBurg::before {
+.aside__content_containerBurg::after,
+.aside__content_containerBurg::before {
   content: "";
 }
 
-.containerBurg::before {
+.aside__content_containerBurg::before {
   top: 0;
   border-radius: 10px;
 }
 
-.containerBurg::after {
+.aside__content_containerBurg::after {
   bottom: 0;
   border-radius: 10px;
 }
 
-.containerBurg span {
+.aside__content_containerBurg span {
   top: 40%;
   transform: scale(1) translate(0px, 50%);
   border-radius: 10px;
 }
 
-.containerBurg_active span {
+.aside__content_containerBurg_active span {
   top: 40%;
   transform: scale(0) translate(0px, 50%);
 }
 
-.containerBurg_active::before {
+.aside__content_containerBurg_active::before {
   top: 50%;
   transform: rotate(-45deg) translate(0px, -80%);
 }
 
-.containerBurg_active::after {
+.aside__content_containerBurg_active::after {
   bottom: 50%;
   transform: rotate(45deg) translate(0px, 80%);
 }
@@ -120,7 +120,7 @@
     } */
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 350px) {
   .aside__content {
     background: none;
   }
@@ -128,13 +128,15 @@
   .aside__content__language {
     z-index: 0;
   }
-  .containerBurg {
+  .aside__content_containerBurg {
     width: 20px;
     height: 16px;
+    left:20px;
+    margin-top: 25px;
   }
-  .containerBurg::before,
-  .containerBurg::after,
-  .containerBurg span {
+  .aside__content_containerBurg::before,
+  .aside__content_containerBurg::after,
+  .aside__content_containerBurg span {
     background-color: black;
   }
   .aside__content__language {
@@ -145,4 +147,12 @@
     display: flex;
     align-items: center;
   }
+  .aside__content_containerBurg_active::before,
+  .aside__content_containerBurg_active::after,
+  .aside__content_containerBurg_active span {
+    background-color: white;
+  }
+  /* .containerBurg_active{
+    left:28px;
+  } */
 }

@@ -10,11 +10,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:30px;
+  gap: 30px;
   transform: translateX(-100%);
 }
 
-.modal_active{
+.modal_active {
   transform: translateX(0);
 }
 
@@ -29,6 +29,9 @@
 }
 
 .modal__button_confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 180px;
   height: 50px;
   background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
@@ -36,15 +39,20 @@
   border-radius: 8px;
   border: 0;
   color: #ffffff;
+  text-decoration: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
   font-size: 18px;
+  line-height: 21px;
 }
-.modal__button_confirm:hover{
-  background: linear-gradient(90deg, #0B934A 2.61%, #026E47 112.6%);
+.modal__button_confirm:hover {
+  background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
   cursor: pointer;
 }
 
 .modal__button_confirm:active {
-  background: linear-gradient(90deg, #076432 2.61%, #013C27 112.6%);
+  background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
   background-blend-mode: darken;
   cursor: pointer;
 }
@@ -57,22 +65,25 @@
   border-radius: 8px;
   border: 0;
   color: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
   font-size: 18px;
+  line-height: 21px;
 }
 
 .modal__button {
-    display:flex;
-    gap:20px;
+  display: flex;
+  gap: 20px;
 }
 
-
-.modal__button_refuse:hover{
-    background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
-    cursor: pointer;
+.modal__button_refuse:hover {
+  background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
+  cursor: pointer;
 }
 
-.modal__button_refuse:active{
-    background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
-    background-blend-mode: darken;
-    cursor: pointer;
+.modal__button_refuse:active {
+  background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
+  background-blend-mode: darken;
+  cursor: pointer;
 }

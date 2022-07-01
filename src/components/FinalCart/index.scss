@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 
-.finalCard_text_content_title {
+.finalCard_container_text_content_title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -13,7 +13,7 @@
   color: #121212;
 }
 
-.finalCard_text_content_carNumber {
+.finalCard_container_text_content_carNumber {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -22,19 +22,19 @@
   color: #121212;
   margin-left: 7px;
 }
-.finalCard_text_content_carNumber_container {
+.finalCard_container_text_content_carNumber_container {
   border: 1px solid #999999;
   border-radius: 4px;
   width: 100px;
 }
-.finalCard_text_content_gas {
+.finalCard_container_text_content_gas {
   font-family: "Roboto";
   font-style: normal;
   font-size: 14px;
   line-height: 16px;
   color: #121212;
 }
-.finalCard_text_content_availableTime {
+.finalCard_container_text_content_availableTime {
   font-family: "Roboto";
   font-style: normal;
   font-size: 14px;
@@ -42,14 +42,14 @@
   color: #121212;
 }
 
-.finalCard_text_content {
+.finalCard_container_text_content {
   
   display: flex;
   flex-direction: column;
-  row-gap: 7px;
+  row-gap: 8px;
 }
 
-.finalCard_img {
+.finalCard_container_img {
  
   width: 256px;
   height: 116px;

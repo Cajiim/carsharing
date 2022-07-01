@@ -1,0 +1,20 @@
+.carCardAdminPanel_container {
+  overflow: auto;
+  height: calc(100% - 68px - 67px);
+  background: #F5F6F8;
+}
+.carCardAdminPanel_container_title {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 33px;
+  letter-spacing: -0.725px;
+  color: #3d5170;
+  margin: 28.5px 0 0 27px;
+}
+.carCardAdminPanel_container_autoCart {
+  display: flex;
+  gap: 28px;
+}
+

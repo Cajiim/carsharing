@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./index.scss";
-
+import classNames from "classnames";
 import ModelContainer from "../ModelContainer";
 import Additionally from "../Additionally";
 import RightSideBlockStory from "../RightSideBlockStory";
@@ -21,6 +20,9 @@ import {
   deleteDurationArend,
   deleteDurationArendTwo,
 } from "../../redux/cart/reducerFinalOrder";
+import style from "./index.scss";
+
+const cn = classNames.bind(style);
 
 function Tabs() {
   const dispatch = useDispatch();
@@ -55,107 +57,100 @@ function Tabs() {
 
   return (
     <div className="container_tabs">
-      <div className="block-tabs">
+      <div className="container_tabs_navigation">
         <nav className="">
-          <ul className="navigation__category clear">
+          <ul className="container_tabs_navigation_category clear">
             <li
-              className={
-                tabIndex === "1"
-                  ? "margin-left active"
-                  : " margin-left complete"
-              }
+              className={cn(
+                "container_tabs_navigation_category_tab margin-left",
+                {
+                  container_tabs_navigation_category_tab_active:
+                    tabIndex === "1",
+                  container_tabs_navigation_category_tab_complete:
+                    tabIndex !== "1",
+                }
+              )}
+              onClick={(e) => {
+                handleClickTab(e.target.id);
+                handlClickLocation();
+              }}
+              id="1"
             >
               <span
-                className="nav_category__type"
+                className="container_tabs_navigation_category_tabName"
                 id="1"
-                onClick={(e) => {
-                  handleClickTab(e.target.id);
-                  handlClickLocation();
-                }}
-                onKeyDown={() => {
-                  handlClickLocation();
-                }}
-                role="button"
-                tabIndex={0}
               >
                 Местоположение
               </span>
               <img
                 src={Vector}
                 alt="Vector"
-                className="navigation__category_img"
+                className="container_tabs_navigation_category_img"
               />
             </li>
+
             <li
-              className={
-                tabIndex === "2"
-                  ? "active"
-                  : tabIndex < 2
-                  ? "disabled"
-                  : "complete"
-              }
+              className={cn("container_tabs_navigation_category_tab", {
+                container_tabs_navigation_category_tab_active: tabIndex === "2",
+                container_tabs_navigation_category_tab_disabled: tabIndex < "2",
+                container_tabs_navigation_category_tab_complete: tabIndex > "2",
+              })}
+              onClick={(e) => {
+                handleClickTab(e.target.id);
+                handlClickModel();
+              }}
+              id="2"
             >
               <span
-                className="nav_category__type"
+                className="container_tabs_navigation_category_tabName"
                 id="2"
-                onClick={(e) => {
-                  handleClickTab(e.target.id);
-                  handlClickModel();
-                }}
-                onKeyDown={() => {
-                  handlClickModel();
-                }}
-                role="button"
-                tabIndex={0}
               >
                 Модель
               </span>
               <img
                 src={Vector}
                 alt="Vector"
-                className="navigation__category_img"
+                className="container_tabs_navigation_category_img"
               />
             </li>
+
             <li
-              className={
-                tabIndex === "3"
-                  ? "active"
-                  : tabIndex < 3
-                  ? "disabled"
-                  : "complete"
-              }
+              className={cn("container_tabs_navigation_category_tab", {
+                container_tabs_navigation_category_tab_active: tabIndex === "3",
+                container_tabs_navigation_category_tab_disabled: tabIndex < "3",
+                container_tabs_navigation_category_tab_complete: tabIndex > "3",
+              })}
+              onClick={(e) => {
+                handleClickTab(e.target.id);
+                handlClickDetails();
+              }}
+              id="3"
             >
               <span
-                className="nav_category__type"
+                className="container_tabs_navigation_category_tabName"
                 id="3"
-                onClick={(e) => {
-                  handleClickTab(e.target.id);
-                  handlClickDetails();
-                }}
-                onKeyDown={() => {
-                  handlClickDetails();
-                }}
-                role="button"
-                tabIndex={0}
               >
                 Дополнительно
               </span>
               <img
                 src={Vector}
                 alt="Vector"
-                className="navigation__category_img"
+                className="container_tabs_navigation_category_img"
               />
             </li>
-            <li className={tabIndex === "4" ? "active" : "disabled"}>
+
+            <li
+              className={cn("container_tabs_navigation_category_tab", {
+                container_tabs_navigation_category_tab_active: tabIndex === "4",
+                container_tabs_navigation_category_tab_disabled:
+                  tabIndex !== "4",
+              })}
+              onClick={(e) => handleClickTab(e.target.id)}
+              id="4"
+            >
               <span
-                className="nav_category__type"
+                className="container_tabs_navigation_category_tabName"
                 id="4"
-                onClick={(e) => handleClickTab(e.target.id)}
-                onKeyDown={() => {
-                  handleClickTab();
-                }}
-                role="button"
-                tabIndex={0}
               >
                 Итого
               </span>
@@ -163,43 +158,58 @@ function Tabs() {
           </ul>
         </nav>
       </div>
-      <div className="tabs-maincontent">
-        <div className="tabs_left_content">
+
+      <div className="container_tabs_tabs-maincontent">
+        <div className="container_tabs_tabs-maincontent_leftContent">
           <div
-            className={
-              tabIndex === "1" ? "active-tabs-content" : "content-tabs"
-            }
+            className={cn(
+              "container_tabs_tabs-maincontent_leftContent_content-tabs",
+              {
+                "container_tabs_tabs-maincontent_leftContent_content-tabs_active":
+                  tabIndex === "1",
+              }
+            )}
           >
             <Map />
           </div>
 
           <div
-            className={
-              tabIndex === "2"
-                ? "active-tabs-content active-tabs-content_model_cart"
-                : "content-tabs"
-            }
+            className={cn(
+              "container_tabs_tabs-maincontent_leftContent_content-tabs",
+              {
+                "container_tabs_tabs-maincontent_leftContent_content-tabs_active":
+                  tabIndex === "2",
+              }
+            )}
           >
             <ModelContainer />
           </div>
 
           <div
-            className={
-              tabIndex === "3" ? "active-tabs-content" : "content-tabs"
-            }
+            className={cn(
+              "container_tabs_tabs-maincontent_leftContent_content-tabs",
+              {
+                "container_tabs_tabs-maincontent_leftContent_content-tabs_active":
+                  tabIndex === "3",
+              }
+            )}
           >
             <Additionally />
           </div>
 
           <div
-            className={
-              tabIndex === "4" ? "active-tabs-content" : "content-tabs"
-            }
+            className={cn(
+              "container_tabs_tabs-maincontent_leftContent_content-tabs",
+              {
+                "container_tabs_tabs-maincontent_leftContent_content-tabs_active":
+                  tabIndex === "4",
+              }
+            )}
           >
             <FinalCart />
           </div>
         </div>
-        <div className="tabs_right_content">
+        <div className="container_tabs_tabs-maincontent_rightContent">
           <RightSideBlockStory />
         </div>
       </div>

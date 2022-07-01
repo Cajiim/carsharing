@@ -1,16 +1,12 @@
-.header__title {
+.header_container {
+  height: 90px;
+  position: relative;
+}
+.header_container_content {
   display: flex;
   justify-content: space-between;
-  
 }
-
-.header_content {
-  height: 80px;
-  position: relative;
- /*  margin-bottom:15px; */
-}
-
-.header__title__name {
+.header_container_content_title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -18,10 +14,18 @@
   line-height: 35px;
   color: #0ec261;
   margin-top: 27px;
-  margin-left:64px;
+  margin-left: 64px;
+}
+.header_container_content_geolocation {
+  margin-right: 64px;
+}
+.header_container_content_geolocation_title {
+  margin-top: 37px;
+  display: flex;
+  align-items: center;
 }
 
-.header__title__city {
+.header_container_content_geolocation_city {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -31,40 +35,3 @@
   margin-left: 4px;
   margin-top: 1px;
 }
-
-.header__title__geolocation {
-  margin-top: 37px;
-  display: flex;
-  align-items: center;
-}
-
-.header__geo {
-  margin-right: 64px; 
-}
-
-/* .navigation__category {
-  display: flex;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 0.2vw;
-  border-color: #EEEEEE;
-  
-
-
-}
-
-.navigation__category_options {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  color: #999999;
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-}
-
-.navigation__category_img {
-  margin-right: 1vw;
-  margin-left: 1vw;
-} */

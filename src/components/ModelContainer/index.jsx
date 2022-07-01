@@ -21,21 +21,19 @@ function ModelContainer() {
   useEffect(() => {
     fetchData();
   }, []);
-
+ 
   const dispatch = useDispatch();
   const handleClickClassCar = (value) => {
     dispatch(setClass(value));
   };
   const classCart = useSelector(({ finalOrder }) => finalOrder.classCar);
-  const economCar = contentCart.filter((cart) => cart.class === "economy");
-  const businessCar = contentCart.filter((cart) => cart.class === "business");
 
   return (
-    <div>
-      <div className="tabs_left_content_radioContent">
-        <label className="radio_text" htmlFor="classAll">
+    <div className="modelContainer">
+      <div className="modelContainer_classSelection">
+        <label className="modelContainer_classSelection_all" htmlFor="classAll">
           <input
-            className="radio_box"
+            className="modelContainer_classSelection_all_input"
             name="elem"
             type="radio"
             value="all"
@@ -43,57 +41,59 @@ function ModelContainer() {
             defaultChecked
             onClick={(e) => handleClickClassCar(e.target.value)}
           ></input>
-          <span className="fake"></span>
-          <span className="radio_text_color">Все модели</span>
+          <span className="modelContainer_classSelection_all_fakeCheckBox"></span>
+          <span className="modelContainer_classSelection_all_textColor">
+            Все модели
+          </span>
         </label>
 
-        <label className="radio_text" htmlFor="classEconom">
+        <label
+          className="modelContainer_classSelection_economy"
+          htmlFor="classEconom"
+        >
           <input
-            className="radio_box"
+            className="modelContainer_classSelection_economy_input"
             name="elem"
             type="radio"
             value="economy"
             id="classEconom"
             onClick={(e) => handleClickClassCar(e.target.value)}
           ></input>
-          <span className="fake"></span>
-          <span className="radio_text_color">Эконом</span>
+          <span className="modelContainer_classSelection_economy_fakeCheckBox"></span>
+          <span className="modelContainer_classSelection_economy_textColor">
+            Эконом
+          </span>
         </label>
 
-        <label className="radio_text" htmlFor="classBusiness">
+        <label
+          className="modelContainer_classSelection_business"
+          htmlFor="classBusiness"
+        >
           <input
-            className="radio_box"
+            className="modelContainer_classSelection_business_input"
             name="elem"
             type="radio"
             value="business"
             id="classBusiness"
             onClick={(e) => handleClickClassCar(e.target.value)}
           ></input>
-          <span className="fake"></span>
-          <span className="radio_text_color">Бизнес</span>
+          <span className="modelContainer_classSelection_business_fakeCheckBox"></span>
+          <span className="modelContainer_classSelection_business_textColor">
+            Бизнес
+          </span>
         </label>
       </div>
-      <div>
-        {classCart === "business" ? (
-          <div className="active-tabs-content-model_cart">
-            {businessCar.map((cart) => (
-              <Model cart={cart} key={cart.id} />
-            ))}
-          </div>
-        ) : classCart === "economy" ? (
-          <div className="active-tabs-content-model_cart">
-            {economCar.map((cart) => (
-              <Model cart={cart} key={cart.id} />
-            ))}
-          </div>
-        ) : (
-          <div className="active-tabs-content-model_cart">
-            {contentCart.map((cart) => (
-              <Model cart={cart} key={cart.id} />
-            ))}
-          </div>
-        )}
-      </div>
+
+      <ul className="modelContainer_mainContent">
+        {contentCart
+          .filter((el) => {
+            if (classCart !== "all") return el.class === classCart;
+            return el;
+          })
+          .map((cart) => (
+            <Model cart={cart} key={cart.id} />
+          ))}
+      </ul>
     </div>
   );
 }

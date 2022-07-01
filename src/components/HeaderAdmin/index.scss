@@ -1,0 +1,47 @@
+.headerAdmin_container {
+  display: flex;
+  height: 67px;
+  background: #ffffff;
+  box-shadow: 0px 2.5px 9.5px rgba(90, 97, 105, 0.12);
+  position: relative;
+  z-index: 1;
+}
+
+.headerAdmin_container_img {
+  margin: 0 9px 0 27px;
+  width: 14px;
+  align-self: center;
+}
+.headerAdmin_container_input {
+  align-self: center;
+  width: calc(100% - 14px - 67px - 217px);
+  border:none;
+  outline:none;
+}
+.headerAdmin_container_notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 67px;
+  box-shadow: 0.5px 0px 0px #CACEDB, -0.5px 0px 0px #CACEDB;
+}
+
+.headerAdmin_container_user {
+  width: 217px;
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+.headerAdmin_container_user_name {
+  align-self: center;
+  
+}
+.headerAdmin_container_user_photo{
+  margin: 0 13px 0 25px;
+}
+
+.headerAdmin_container_user_dropDown {
+  position: absolute;
+  right: 32px;
+  top: 19px;
+}

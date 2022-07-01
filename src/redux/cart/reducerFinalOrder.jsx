@@ -4,18 +4,20 @@ const finalOrderSlice = createSlice({
   name: "finalOrder",
   initialState: {
     deliveryСity: null,
-    deliveryChangeCityInput:null,
-    pointOfIssue: null,
+    deliveryChangeCityInput:'',
+    pointOfIssue: '',
     modelInCart: null,
     arendTime: 'days',
     checkFuelState: false,
     checkedBabyChairState: false,
     checkedRightHand: false,
-    classCar: null,
+    classCar: 'all',
     colorCar: null,
     durationArend: null,
     durationArendTwo: null,
     orderNumber:null,
+    carNumber:null,
+    randomFuelLvl:null,
   },
   reducers: {
     setDeliveryCity: (state, action) => {
@@ -77,7 +79,7 @@ const finalOrderSlice = createSlice({
       state.classCar = action.payload;
     },
     deleteClass: (state) => {
-      state.classCar = null;
+      state.classCar = 'all';
     },
     setColor: (state, action) => {
       state.colorCar = action.payload;
@@ -99,7 +101,13 @@ const finalOrderSlice = createSlice({
     },
     setOrderNumber: (state, action) => {
       state.orderNumber = action.payload;
-    }
+    },
+    setCarNumber: (state, action) => {
+      state.carNumber = action.payload;
+    },
+    setFuelLvl: (state, action) => {
+      state.randomFuelLvl = action.payload;
+    },
   },
 });
 
@@ -131,6 +139,8 @@ export const {
   setDurationArendTwo,
   deleteDurationArendTwo,
   setOrderNumber,
+  setCarNumber,
+  setFuelLvl,
 } = finalOrderSlice.actions;
 
 export default finalOrderSlice.reducer;

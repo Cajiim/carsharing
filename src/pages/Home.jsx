@@ -1,11 +1,7 @@
 import React from "react";
-
 import Slider from "../components/slider";
-
 import Navigation from "../components/navigation";
 import LeftSide from "../components/leftSide";
-/* import RightSide from '../components/rightSide' */
-/* import Overflow from '../components/overflow';  */
 
 function Home() {
   return (
@@ -26,4 +22,4 @@ function Home() {
   );
 }
 
-export default  Home ;
+export default Home;
