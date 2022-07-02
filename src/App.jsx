@@ -10,7 +10,7 @@ import FinalOrderPage from "./pages/FinalOrder";
 import AdminPanelCarCart from "./pages/AdminPanelCarCart";
 import AdminPanelCarList from "./pages/AdminPanelCarList";
 import AdminPanelCarOrders from "./pages/AdminPanelCarOrders";
-import { store } from "./redux";
+import  store  from "./redux";
 
 function App() {
   return (

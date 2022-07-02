@@ -115,7 +115,7 @@ function Map() {
             onChange={(e) => {
               onChangeHandlInputCity(e.target.value);
             }}
-          ></input>
+          ></input> 
           <button
             type="button"
             className={cn(

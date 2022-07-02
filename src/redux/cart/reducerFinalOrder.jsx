@@ -6,6 +6,7 @@ const finalOrderSlice = createSlice({
     deliveryСity: null,
     deliveryChangeCityInput:'',
     pointOfIssue: '',
+    pointChangeOfIssue:'',
     modelInCart: null,
     arendTime: 'days',
     checkFuelState: false,
