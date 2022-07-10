@@ -26,7 +26,6 @@ function CarListAdminPanel() {
   const firstCarIndex = lastCarIndex - carPerPage;
   const currentCars = contentCart.slice(firstCarIndex, lastCarIndex);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  
 
   return (
     <div className="carListAdminPanel_container">

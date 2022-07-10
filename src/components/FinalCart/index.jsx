@@ -8,36 +8,29 @@ import "./index.scss";
 function FinalCart() {
   const [contentModel, setContentModel] = useState([]);
 
-  /* const [urle, setUrle] = useState([]);
-  function url () {
-    return (
-  (async () => {
-    const urlFunc = await window.location.href
+  async function fetchData() {
+    const url = window.location.href
       .slice(window.location.href.indexOf("?"))
       .split(/[&?]{1}[\w\d]+=/);
-    setUrle(urlFunc);
-  })
-  )
-} */
-   const url = window.location.href
-    .slice(window.location.href.indexOf("?"))
-    .split(/[&?]{1}[\w\d]+=/); 
-  
-  
-  async function fetchData() {
     try {
       axios
         .get(
-          `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${url[1]}`
+          `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
+            url[1] ? url[1] : null
+          }`
         )
         .then((response) => {
           axios
             .get(
-              `https://6288c18410e93797c15e9916.mockapi.io/Cars/${response.data[0].model}`
+              `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
+                response.data[0] ? response.data[0].model : ""
+              }`
             )
             .then((res) => {
-              const fullOrder = response.data[0];
-              fullOrder.model = res.data;
+              const fullOrder = response.data[0] ? response.data[0] : null;
+              if (fullOrder !== null) {
+                fullOrder.model = res.data;
+              }
 
               setContentModel(fullOrder);
             });
@@ -105,7 +98,7 @@ function FinalCart() {
           <b>Топливо</b> {fuelLevel}
         </p>
         <p className="finalCard_container_text_content_availableTime">
-          <b>Доступна с</b>
+          <b>Доступна с </b>
           {startDate && startDate !== null
             ? startOfLease.toString()
             : startOfLeaseFromBack.toString()}

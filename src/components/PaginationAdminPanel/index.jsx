@@ -19,7 +19,7 @@ function Pagination({
     carPerPage: PropTypes.number,
     totalCars: PropTypes.number,
     paginate: PropTypes.func,
-    setCurrentPage: PropTypes.number,
+    setCurrentPage: PropTypes.func,
     currentPage: PropTypes.number,
   };
   Pagination.defaultProps = {
