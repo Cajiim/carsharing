@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .aside__content_containerBurg {
   cursor: url(../../assets/svg/Cursor.svg), pointer;
   position: absolute;
@@ -59,15 +64,11 @@
   position: absolute;
   width: 64px;
   height: 100%;
-  left: 0px;
-  top: 0px;
   background: #151b1f;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .aside__content__language {
@@ -83,11 +84,8 @@
   height: 48px;
   width: 48px;
   text-align: center;
-  display: inline-block;
   border: 1px solid transparent;
   border-radius: 50%;
-  /* border: 1px solid transparent; */
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -96,28 +94,16 @@
 
 .aside__content__language:hover {
   color: white;
-
   border-color: white;
 }
 .aside__content__language:active {
   color: #0ec261;
 }
 
-.aside {
-  margin: 0;
-  padding: 0;
-}
-
 @media screen and (min-width: 2200px) {
   .aside__content__language {
     font-size: 0.9vh;
   }
-}
-
-@media screen and (max-width: 768px) {
-  /* .aside__content {
-        width:86px;
-    } */
 }
 
 @media screen and (max-width: 350px) {
@@ -152,7 +138,4 @@
   .aside__content_containerBurg_active span {
     background-color: white;
   }
-  /* .containerBurg_active{
-    left:28px;
-  } */
 }

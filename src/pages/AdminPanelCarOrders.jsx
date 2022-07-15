@@ -3,7 +3,7 @@ import React from "react";
 import NavBar from "../components/NavBarAdminPanel";
 import Header from "../components/HeaderAdmin";
 import Footer from "../components/FooterAdminPanel";
-
+import CarOrders from '../components/CarOrdersAdminPanel'
 
 function AdminPanelCarOrders() {
   return (
@@ -12,7 +12,7 @@ function AdminPanelCarOrders() {
       <div className="adminPanelCarOrders_container_rightSide">
         <Header />
 
-   
+        <CarOrders/>
 
         <Footer />
       </div>

@@ -83,14 +83,13 @@ function Modal({ active, setActive }) {
     randomFuelLvl,
   };
 
-  const CarId = modelCar?.id;
   const handleSelectCar = () => {
     axios
       .post(
         `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?orderNumber=${orderNumber}`,
         {
           orderNumber,
-          model: CarId,
+          modelCar,
           additionalOptions,
         }
       )

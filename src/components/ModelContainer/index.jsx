@@ -21,7 +21,7 @@ function ModelContainer() {
   useEffect(() => {
     fetchData();
   }, []);
- 
+
   const dispatch = useDispatch();
   const handleClickClassCar = (value) => {
     dispatch(setClass(value));
@@ -87,7 +87,7 @@ function ModelContainer() {
       <ul className="modelContainer_mainContent">
         {contentCart
           .filter((el) => {
-            if (classCart !== "all") return el.class === classCart;
+            if (classCart !== "all") return el.typeCarCart === classCart;
             return el;
           })
           .map((cart) => (

@@ -4,15 +4,12 @@
   display: flex;
   flex-direction: column;
   height: calc(100% - 30px);
-  margin-right: 64px;
-  margin-top: 32px;
-  margin-left: 32px;
+  margin: 32px 64px 0 32px;
 }
 
 .rightSideBlock__text {
   display: flex;
   margin-top: 16px;
- /*  margin-bottom: 16px; */
 }
 
 .rightSideBlock_container_order {
@@ -23,7 +20,7 @@
   line-height: 21px;
   color: #121212;
   align-self: flex-end;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .rightSideBlock__text_name {
@@ -55,9 +52,7 @@
     flex: 1;
     height: 1px;
     border-bottom: 1px dotted #999999;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 1px;
+    margin: 0 10px 1px 10px;
   }
 }
 
@@ -121,7 +116,6 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
   line-height: 21px;
   text-align: center;
 }

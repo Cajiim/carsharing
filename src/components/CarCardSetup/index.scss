@@ -16,8 +16,8 @@
   align-items: center;
 }
 .сarCardSetup_container_carSetup_img {
-  width: 243px;
-  height: 110px;
+  max-width: 243.5px;
+  max-height: 110px;
   margin: 34px 0 10px 0;
 }
 .сarCardSetup_container_carSetup_carName {
@@ -43,14 +43,31 @@
   margin-bottom: 10.5px;
 }
 
-.сarCardSetup_container_carSetup_input {
-  width: 231px;
+.сarCardSetup_container_carSetup_formForInputFile_label_input {
+  width: 231.5px;
   height: 29px;
   border: 0.5px solid #becad6;
   border-radius: 4px;
   outline: 0;
-  padding-left: 13px;
+  padding: 0 0 1px 13px;
   margin-bottom: 22.5px;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 14px;
+  letter-spacing: -0.18421px;
+  color: #495057;
+}
+.сarCardSetup_container_carSetup_formForInputFile_label_input::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.175439px;
+  color: #495057;
 }
 
 .сarCardSetup_container_progressSetup {
@@ -97,6 +114,7 @@ progress {
   display: flex;
   flex-direction: column;
   margin: 0 22px 0 22px;
+  position: relative;
 }
 .сarCardSetup_container_progressSetup_description_title {
   margin-bottom: 14px;
@@ -109,6 +127,8 @@ progress {
   color: #868e96;
 }
 .сarCardSetup_container_progressSetup_description_text {
+  width: 285px;
+  height: 86.5px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -116,4 +136,79 @@ progress {
   line-height: 20px;
   letter-spacing: -0.408571px;
   color: #5a6169;
+  outline: none;
+  resize: none;
+  border: none;
+}
+.сarCardSetup_container_progressSetup_description_text::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: -0.408571px;
+  color: #5a6169;
+}
+
+.сarCardSetup_container_carSetup_formForInputFile_label_button {
+  background: #e9ecef;
+  border: 0.5px solid #becad6;
+  width: 65.5px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.175439px;
+  color: #495057;
+  position: relative;
+  right: -166px;
+  bottom: 51.5px;
+  box-sizing: border-box;
+}
+.сarCardSetup_container_carSetup_formForInputFile_label_button_error {
+  border: 0.5px solid #c4183c;
+  border-left: 0.5px solid #becad6;
+}
+.сarCardSetup_container_carSetup_formForInputFile {
+  width: 231.5px;
+  height: 29px;
+  margin-bottom: 22.5px;
+  position: relative;
+}
+.сarCardSetup_container_carSetup_formForInputFile_label {
+  position: relative;
+}
+
+.сarCardSetup_container_carSetup_formForInputFile_error {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: -0.175439px;
+  color: #c4183c;
+  position: absolute;
+  top: 30px;
+  margin-left: 13px;
+}
+.сarCardSetup_container_carSetup_formForInputFile_label_input_error {
+  border: 0.5px solid #c4183c;
+}
+
+.сarCardSetup_container_progressSetup_description_error {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: -0.175439px;
+  color: #c4183c;
+  position: absolute;
+  top: 118px;
 }

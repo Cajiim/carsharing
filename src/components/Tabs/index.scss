@@ -37,8 +37,7 @@
   color: #999999;
 }
 .container_tabs_navigation_category_tab {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 0 5px 0;
 
   &.container_tabs_navigation_category_tab_active {
     color: #0ec261;
@@ -59,8 +58,7 @@
 }
 
 .container_tabs_navigation_category_img {
-  margin-right: 1vw;
-  margin-left: 1vw;
+  margin: 0 16px 0 16px;
   pointer-events: none;
 }
 

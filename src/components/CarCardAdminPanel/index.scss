@@ -1,7 +1,7 @@
 .carCardAdminPanel_container {
   overflow: auto;
   height: calc(100% - 68px - 67px);
-  background: #F5F6F8;
+  background: #f5f6f8;
 }
 .carCardAdminPanel_container_title {
   font-family: "Helvetica";
@@ -18,3 +18,36 @@
   gap: 28px;
 }
 
+.carCardAdminPanel_container_confirmationBar {
+  position: absolute;
+  width: 100%;
+  height: 42px;
+  background: #0ec261;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.carCardAdminPanel_container_confirmationBar_active{
+display: flex;
+z-index: 1;
+}
+
+
+.carCardAdminPanel_container_confirmationBar_textContent_imgAccept {
+  margin-left:27.5px;
+}
+.carCardAdminPanel_container_confirmationBar_textContent_text {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.325px;
+  color: #ffffff;
+  margin-left:9px;
+}
+.carCardAdminPanel_container_confirmationBar_textContent_imgCancel {
+  margin-right:32.5px;
+  cursor:pointer;
+}

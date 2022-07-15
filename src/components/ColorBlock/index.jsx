@@ -8,8 +8,8 @@ function ColorBlock() {
   const handleClick = (value) => {
     dispatch(setColor(value));
   };
-  const { colorCar } = useSelector(({ finalOrder }) => finalOrder);
-
+  const { colorCar, modelInCart } = useSelector(({ finalOrder }) => finalOrder);
+  const colorsCurrentCar = modelInCart?.arrAllColors;
   return (
     <div className="colorBlock">
       <p className="colorBlock_title">Цвет</p>
@@ -29,38 +29,23 @@ function ColorBlock() {
             Любой
           </span>
         </label>
-
-        <label className="colorBlock_container_label" htmlFor="redRadio">
-          <input
-            className="colorBlock_container_label_input"
-            name="color"
-            type="radio"
-            value="Красный"
-            id="redRadio"
-            checked={colorCar === "Красный"}
-            onChange={(e) => handleClick(e.target.value)}
-          ></input>
-          <span className="colorBlock_container_label_span_fakeCheckbox"></span>
-          <span className="colorBlock_container_label_span_textColor">
-            Красный
-          </span>
-        </label>
-
-        <label className="colorBlock_container_label" htmlFor="blueRadio">
-          <input
-            className="colorBlock_container_label_input"
-            name="color"
-            type="radio"
-            value="Голубой"
-            id="blueRadio"
-            checked={colorCar === "Голубой"}
-            onChange={(e) => handleClick(e.target.value)}
-          ></input>
-          <span className="colorBlock_container_label_span_fakeCheckbox"></span>
-          <span className="colorBlock_container_label_span_textColor">
-            Голубой
-          </span>
-        </label>
+        {colorsCurrentCar && colorsCurrentCar.map((el) => (
+          <label className="colorBlock_container_label" htmlFor={el} key={el.toString()}>
+            <input
+              className="colorBlock_container_label_input"
+              name="color"
+              type="radio"
+              value={el}
+              id={el}
+              checked={colorCar === el}
+              onChange={(e) => handleClick(e.target.value)}
+            ></input>
+            <span className="colorBlock_container_label_span_fakeCheckbox"></span>
+            <span className="colorBlock_container_label_span_textColor">
+              {el}
+            </span>
+          </label>
+        ))}
       </div>
     </div>
   );
