@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { Navigation, Pagination, Scrollbar } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,7 +11,7 @@ import arr from "../../data/sliderArr";
 import styles from "./Slider.module.scss";
 import SlideContainer from "../slideContainer";
 
-export default function Slider() {
+function Slider() {
   return (
     <div className="sliderSW">
       <Swiper
@@ -43,3 +43,5 @@ export default function Slider() {
     </div>
   );
 }
+
+export default memo(Slider);

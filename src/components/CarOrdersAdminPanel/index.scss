@@ -1,0 +1,26 @@
+.carOrders_container {
+  overflow: auto;
+  height: calc(100% - 68px - 67px);
+  background: #f5f6f8;
+}
+.carOrders_container_title {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 33px;
+  letter-spacing: -0.725px;
+  color: #3d5170;
+  margin: 28px 0 30px 31.5px;
+}
+.carOrders_container_mainContent {
+  width: 1062px;
+  height: 386px;
+  background: #ffffff;
+  box-shadow: 0px 2px 0px rgba(90, 97, 105, 0.11),
+    0px 4px 8px rgba(90, 97, 105, 0.12), 0px 10px 10px rgba(90, 97, 105, 0.06),
+    0px 7px 70px rgba(90, 97, 105, 0.1);
+  border-radius: 9px;
+  margin-left:32px;
+  position: relative;
+}

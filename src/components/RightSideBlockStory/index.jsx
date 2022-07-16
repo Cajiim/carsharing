@@ -19,53 +19,28 @@ function RightSideBlockStory() {
     const url = window.location.href
       .slice(window.location.href.indexOf("?"))
       .split(/[&?]{1}[\w\d]+=/);
-    try {
-      axios
-        .get(
-          `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
-            url[1] ? url[1] : null
-          }`
-        )
-        .then((response) => {
-          axios
-            .get(
-              `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-                response.data[0] ? response.data[0].model : ""
-              }`
-            )
-            .then((res) => {
-              const fullOrder = response.data[0] ? response.data[0] : null;
-              if (fullOrder !== null) {
-                fullOrder.model = res.data;
-              }
-
-              setContentModel(fullOrder);
-            });
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  function idNumber() {
-    const y = contentModel?.id;
-    return y;
+    axios
+      .get(
+        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
+          url[1] ? url[1] : null
+        }`
+      )
+      .then((res) => setContentModel(res.data))
+      .catch((error) => console.log(error, "Ошибка"));
   }
 
   useEffect(() => {
     fetchData();
-    fetchData(() => {
-      idNumber();
-    });
   }, []);
-
-  const CarFromBack = contentModel?.model;
-  const additionallyOptionsFromBack = contentModel?.additionalOptions;
+  const CarFromBack = contentModel[0]?.modelCar;
+  const additionallyOptionsFromBack = contentModel[0]?.additionalOptions;
 
   const handleDelete = () => {
     axios
       .delete(
-        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder/${idNumber()}`
+        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder/${
+          contentModel[0]?.id ? contentModel[0]?.id : ""
+        }`
       )
       .then((res) => console.log("!!!!!delete data", res))
       .catch((error) => console.log(error, "Ошибка"));
@@ -173,7 +148,9 @@ function RightSideBlockStory() {
   const orderedPrice =
     !minPrice && !maxPrice
       ? " от 8 000 до 12 000 "
-      : `от ${minPrice} до ${maxPrice}`;
+      : `от ${Number(minPrice).toLocaleString()} до ${Number(
+          maxPrice
+        ).toLocaleString()}`;
 
   const handlClickButtonDecrement = () => {
     dispatch(
@@ -390,61 +367,3 @@ function RightSideBlockStory() {
 }
 
 export default RightSideBlockStory;
-
-/* [
-{
-"id":	"1",
-"name":	"ELANTRA",
-"minPrice":	"12 000",
-"maxPrice":	"25 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/c31940b4825e7de08c4523e9a81ebe8d0ad04616?fuid=1073273349188760991",
-"class":	"economy"
-},
-{
-"id":	"2",
-"name":	"i30 N",
-"minPrice":	"10 000",
-"maxPrice":	"32 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
-"class":	"business"
-},
-{
-"id":	"3",
-"name":	"CRETA",
-"minPrice":	"12 000",
-"maxPrice":	"25 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/fa7d238c33edb42d3aaf49466e5400c66da0415d?fuid=1073273349188760991",
-"class":	"economy"
-},
-{
-"id":	"4",
-"name":	"SONATA",
-"minPrice":	"10 000",
-"maxPrice":	"32 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/0050d35a3265deaece85bdd8cb88e6ae6c3b9401?fuid=1073273349188760991",
-"class":	"business"
-},
-{
-"id":	"5",
-"name":	"Elantra",
-"minPrice":	"12 000",
-"maxPrice":	"25 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/c31940b4825e7de08c4523e9a81ebe8d0ad04616?fuid=1073273349188760991",
-"class":	"economy"
-},
-{
-"id":	"6",
-"name":	"i30 N",
-"minPrice":	"10 000",
-"maxPrice":	"32 000",
-"model":	"Hyundai",
-"img":	"https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
-"class":	"business"
-}
-]
- */

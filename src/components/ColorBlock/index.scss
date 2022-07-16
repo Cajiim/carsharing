@@ -1,5 +1,5 @@
-.colorBlock{
-  margin-left:1px;
+.colorBlock {
+  margin-left: 1px;
 }
 
 .colorBlock_title {
@@ -10,18 +10,17 @@
   display: flex;
   margin-top: 15px;
   margin-bottom: 20px;
+  align-items: center;
 }
 .colorBlock_container_label_input {
   position: absolute;
   opacity: 0;
-  margin-right: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
 }
 
 .colorBlock_container_label {
-  display: flex;
-  margin-right: 15px;
+  display: inline-flex;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -29,38 +28,43 @@
   line-height: 16px;
   color: #999999;
   align-items: center;
+  margin-right: 15px;
 }
 
 span .colorBlock_container_label {
   margin-bottom: 5px;
 }
 .colorBlock_container_label_span_fakeCheckbox {
-  display: block;
+  display: inline-block;
   width: 12px;
   height: 12px;
   border: 1px solid #999999;
   border-radius: 50%;
   position: relative;
   margin-right: 5px;
+  box-sizing: border-box;
 }
 .colorBlock_container_label_span_fakeCheckbox::before {
   content: "";
   position: absolute;
-  display: block;
-  width: 8px;
-  height: 8px;
-  border: 4px solid #0ec261;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #0ec261;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  box-sizing: border-box;
 }
 
 .colorBlock_container_label_input:checked
   + .colorBlock_container_label_span_fakeCheckbox::before {
   opacity: 1;
 }
-input[type="radio"]:checked + span + .colorBlock_container_label_span_textColor {
+input[type="radio"]:checked
+  + span
+  + .colorBlock_container_label_span_textColor {
   color: #121212;
 }

@@ -8,44 +8,26 @@ import "./index.scss";
 function FinalCart() {
   const [contentModel, setContentModel] = useState([]);
 
-  async function fetchData() {
+  function fetchData() {
     const url = window.location.href
       .slice(window.location.href.indexOf("?"))
       .split(/[&?]{1}[\w\d]+=/);
-    try {
-      axios
-        .get(
-          `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
-            url[1] ? url[1] : null
-          }`
-        )
-        .then((response) => {
-          axios
-            .get(
-              `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-                response.data[0] ? response.data[0].model : ""
-              }`
-            )
-            .then((res) => {
-              const fullOrder = response.data[0] ? response.data[0] : null;
-              if (fullOrder !== null) {
-                fullOrder.model = res.data;
-              }
-
-              setContentModel(fullOrder);
-            });
-        });
-    } catch (error) {
-      console.error(error);
-    }
+    axios
+      .get(
+        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
+          url[1] ? url[1] : null
+        }`
+      )
+      .then((res) => setContentModel(res.data))
+      .catch((error) => console.log(error, "Ошибка"));
   }
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  const modelFromBack = contentModel?.model;
-  const additionallyOptionsFromBack = contentModel?.additionalOptions;
+  const modelFromBack = contentModel[0]?.modelCar;
+  const additionallyOptionsFromBack = contentModel[0]?.additionalOptions;
   const startDateFromBack = additionallyOptionsFromBack?.startDate;
 
   moment().format();
@@ -60,7 +42,8 @@ function FinalCart() {
   const nameCar = model?.name === undefined ? modelFromBack?.name : model?.name;
   const modelCar =
     model?.model === undefined ? modelFromBack?.model : model?.model;
-  const imgCar = model?.img === undefined ? modelFromBack?.img : model?.img;
+  const imgCar =
+    model?.imgCar === undefined ? modelFromBack?.imgCar : model?.imgCar;
 
   const randomFuelLvlForCart =
     additionallyOptionsFromBack?.randomFuelLvl || randomFuelLvl;
@@ -71,21 +54,19 @@ function FinalCart() {
       ? "100%"
       : `${randomFuelLvlForCart}%`;
   const carNumberForCart = additionallyOptionsFromBack?.carNumber || carNumber;
-
-  const tabIndex = useSelector((state) => state.tableIndex.tabIndex);
+  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
   const tabIndexFromBack = additionallyOptionsFromBack?.tabIndex;
-
   const startOfLease = moment(new Date(startDate)).format("DD.MM.YYYY h:mm");
   const startOfLeaseFromBack = moment(new Date(startDateFromBack)).format(
     "DD.MM.YYYY h:mm"
   );
+  
   return (
     <div className="finalCard_container">
       <div className="finalCard_container_text_content">
         {tabIndex === "5" || tabIndexFromBack === "5" ? (
           <h3 className="finalCard_container_title">Ваш заказ подтвержден</h3>
         ) : null}
-
         <p className="finalCard_container_text_content_title">
           {modelCar}, {nameCar}
         </p>

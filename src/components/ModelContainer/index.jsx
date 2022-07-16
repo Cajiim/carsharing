@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setClass } from "../../redux/cart/reducerFinalOrder";
@@ -21,7 +21,7 @@ function ModelContainer() {
   useEffect(() => {
     fetchData();
   }, []);
- 
+
   const dispatch = useDispatch();
   const handleClickClassCar = (value) => {
     dispatch(setClass(value));
@@ -87,7 +87,7 @@ function ModelContainer() {
       <ul className="modelContainer_mainContent">
         {contentCart
           .filter((el) => {
-            if (classCart !== "all") return el.class === classCart;
+            if (classCart !== "all") return el.typeCarCart === classCart;
             return el;
           })
           .map((cart) => (
@@ -98,4 +98,4 @@ function ModelContainer() {
   );
 }
 
-export default ModelContainer;
+export default memo(ModelContainer);

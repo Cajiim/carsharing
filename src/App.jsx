@@ -10,7 +10,9 @@ import FinalOrderPage from "./pages/FinalOrder";
 import AdminPanelCarCart from "./pages/AdminPanelCarCart";
 import AdminPanelCarList from "./pages/AdminPanelCarList";
 import AdminPanelCarOrders from "./pages/AdminPanelCarOrders";
-import  store  from "./redux";
+import AdminPanelError from "./pages/AdminPanelError";
+import AdminPanelAuthorization from "./pages/AdminPanelAuthorization";
+import store from "./redux";
 
 function App() {
   return (
@@ -19,14 +21,17 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/order" element={<Category />} />
+          <Route exact path="/myOrder" element={<FinalOrderPage />} />
+          
+          <Route exact path="/admin" element={<AdminPanelAuthorization />} />
+          <Route exact path="/admin/carCart" element={<AdminPanelCarCart />} />
+          <Route exact path="/admin/carList" element={<AdminPanelCarList />} />
           <Route
             exact
-            path="/myOrder"                   
-            element={<FinalOrderPage />}
+            path="/admin/carOrders"
+            element={<AdminPanelCarOrders />}
           />
-          <Route exact path="/admin/carCart" element={<AdminPanelCarCart  />} />
-          <Route exact path="/admin/carList" element={<AdminPanelCarList />} />
-          <Route exact path="/admin/carOrders" element={<AdminPanelCarOrders />} />
+          <Route exact path="*" element={<AdminPanelError />} />
         </Routes>
       </Router>
     </Provider>
@@ -34,9 +39,6 @@ function App() {
 }
 
 export default App;
-
-
-
 
 /* 
 

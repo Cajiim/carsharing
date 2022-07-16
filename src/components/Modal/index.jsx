@@ -1,10 +1,11 @@
-import React from "react";
+import React, {memo} from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setOrderNumber } from "../../redux/cart/reducerFinalOrder";
+import {setTabIndex} from '../../redux/cart/reducerTableIndex'
 import "./index.scss";
 
 function Modal({ active, setActive }) {
@@ -33,6 +34,7 @@ function Modal({ active, setActive }) {
     carNumber,
     randomFuelLvl,
   } = useSelector(({ finalOrder }) => finalOrder);
+  const {tabIndex} = useSelector(({ tableIndex }) => tableIndex);
   
   const carClass = modelCar?.class;
   const diffTime = Math.abs(
@@ -60,7 +62,6 @@ function Modal({ active, setActive }) {
   };
 
   const additionalOptions = {
-    /*  orderNumber, */
     cityAuto,
     streetAuto,
     color,
@@ -83,19 +84,22 @@ function Modal({ active, setActive }) {
     randomFuelLvl,
   };
 
-  const CarId = modelCar?.id;
   const handleSelectCar = () => {
     axios
       .post(
         `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?orderNumber=${orderNumber}`,
         {
           orderNumber,
-          model: CarId,
+          modelCar,
           additionalOptions,
         }
       )
       .then((Response) => console.log(Response, "posting data"))
       .catch((error) => console.log(error));
+  };
+
+  const handlClickButton = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
   };
 
   return (
@@ -109,6 +113,7 @@ function Modal({ active, setActive }) {
             onClick={() => {
               handleSelectCar();
               handlSelectOrderNumber();
+              handlClickButton();
             }}
           >
             Подтвердить
@@ -128,4 +133,4 @@ function Modal({ active, setActive }) {
   );
 }
 
-export default Modal;
+export default memo(Modal);

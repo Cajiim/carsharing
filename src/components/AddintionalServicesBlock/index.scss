@@ -29,19 +29,21 @@
   border: 1px solid #999999;
   position: relative;
   margin-right: 5px;
+  box-sizing: border-box;
 }
 .additionalServices_container_form_label_span_fakeCheckbox::before {
   content: "";
   display: inline-block;
   position: absolute;
-  width: 15px;
-  height: 25px;
-  top: 50%;
+  width: 13px;
+  height: 10px;
+  top: 40%;
   left: 80%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  background: url(../../assets/svg/VectorCheck.svg) no-repeat;
   background-size: 100% 90%;
+  box-sizing: border-box;
+  background: url(../../assets/svg/VectorCheck.svg) no-repeat;
 }
 
 .additionalServices_container_form_label_input:checked
@@ -50,11 +52,11 @@
 }
 input[type="checkbox"]:checked
   + .additionalServices_container_form_label_span_fakeCheckbox {
-  border: 2px solid #0ec261;
+  border: 1px solid #0ec261;
 }
 
 input[type="checkbox"]:checked
   + span
   + .additionalServices_container_form_label_span_radioTextColor {
-  color: #121212;
+  color: #121212; 
 }

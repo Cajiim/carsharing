@@ -9,9 +9,7 @@ function FooterAdminPanel() {
         <span>Главная страница</span>
         <span>Ссылка</span>
       </div>
-      <span className="footerAdminPanel_year">
-        Copyright © 2020
-      </span>
+      <span className="footerAdminPanel_year">Copyright © 2020</span>
     </footer>
   );
 }
