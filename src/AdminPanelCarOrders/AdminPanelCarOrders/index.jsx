@@ -4,6 +4,7 @@ import NavBar from "../../ui/NavBarAdminPanel";
 import Header from "../../common/HeaderAdmin";
 import Footer from "../../common/FooterAdminPanel";
 import CarOrders from "../components/CarOrdersAdminPanel";
+import './index.scss'
 
 function AdminPanelCarOrders() {
   return (
