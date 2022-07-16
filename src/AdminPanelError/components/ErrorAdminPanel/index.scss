@@ -1,0 +1,60 @@
+.ErrorAdminPanel_ErrorBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  height: calc(100% - 68px - 67px);
+  background: #f5f6f8;
+}
+.ErrorAdminPanel_ErrorBlock_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 75px;
+  line-height: 88px;
+  letter-spacing: -5.76923px;
+  color: #cacedb;
+  margin-bottom: 13px;
+}
+.ErrorAdminPanel_ErrorBlock_textOne {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 57px;
+  text-align: center;
+  letter-spacing: -2.5px;
+  color: #3d5170;
+  margin-bottom: 15px;
+}
+.ErrorAdminPanel_ErrorBlock_textTwo {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  color: #818ea3;
+  margin-bottom: 35px;
+}
+.ErrorAdminPanel_ErrorBlock_button {
+  width: 95px;
+  height: 29px;
+  background: #007bff;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.ErrorAdminPanel_ErrorBlock_button:hover {
+  background: #022c59;
+}

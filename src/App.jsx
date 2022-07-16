@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Category from "./pages/Category";
-import FinalOrderPage from "./pages/FinalOrder";
-import AdminPanelCarCart from "./pages/AdminPanelCarCart";
-import AdminPanelCarList from "./pages/AdminPanelCarList";
-import AdminPanelCarOrders from "./pages/AdminPanelCarOrders";
-import AdminPanelError from "./pages/AdminPanelError";
-import AdminPanelAuthorization from "./pages/AdminPanelAuthorization";
+import Home from "./Home/Home";
+import Category from "./Category/Category";
+import FinalOrderPage from "./FinalOrder/FinalOrder";
+import AdminPanelCarCart from "./AdminPanelCarCart/AdminPanelCarCart";
+import AdminPanelCarList from "./AdminPanelCarList/AdminPanelCarList";
+import AdminPanelCarOrders from "./AdminPanelCarOrders/AdminPanelCarOrders";
+import AdminPanelError from "./AdminPanelError/AdminPanelError";
+import AdminPanelAuthorization from "./AdminPanelAuthorization/AdminPanelAuthorization";
 import store from "./redux";
 
 function App() {
