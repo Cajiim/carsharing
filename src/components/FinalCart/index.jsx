@@ -54,14 +54,13 @@ function FinalCart() {
       ? "100%"
       : `${randomFuelLvlForCart}%`;
   const carNumberForCart = additionallyOptionsFromBack?.carNumber || carNumber;
-
-  const tabIndex = useSelector(({ tableIndex }) => tableIndex);
+  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
   const tabIndexFromBack = additionallyOptionsFromBack?.tabIndex;
-
   const startOfLease = moment(new Date(startDate)).format("DD.MM.YYYY h:mm");
   const startOfLeaseFromBack = moment(new Date(startDateFromBack)).format(
     "DD.MM.YYYY h:mm"
   );
+  
   return (
     <div className="finalCard_container">
       <div className="finalCard_container_text_content">

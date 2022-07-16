@@ -1,10 +1,11 @@
-import React from "react";
+import React, {memo} from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setOrderNumber } from "../../redux/cart/reducerFinalOrder";
+import {setTabIndex} from '../../redux/cart/reducerTableIndex'
 import "./index.scss";
 
 function Modal({ active, setActive }) {
@@ -33,6 +34,7 @@ function Modal({ active, setActive }) {
     carNumber,
     randomFuelLvl,
   } = useSelector(({ finalOrder }) => finalOrder);
+  const {tabIndex} = useSelector(({ tableIndex }) => tableIndex);
   
   const carClass = modelCar?.class;
   const diffTime = Math.abs(
@@ -60,7 +62,6 @@ function Modal({ active, setActive }) {
   };
 
   const additionalOptions = {
-    /*  orderNumber, */
     cityAuto,
     streetAuto,
     color,
@@ -97,6 +98,10 @@ function Modal({ active, setActive }) {
       .catch((error) => console.log(error));
   };
 
+  const handlClickButton = () => {
+    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
+  };
+
   return (
     <div className={active ? "modal modal_active" : "modal"}>
       <h3 className="modal__title">Подтвердить заказ</h3>
@@ -108,6 +113,7 @@ function Modal({ active, setActive }) {
             onClick={() => {
               handleSelectCar();
               handlSelectOrderNumber();
+              handlClickButton();
             }}
           >
             Подтвердить
@@ -127,4 +133,4 @@ function Modal({ active, setActive }) {
   );
 }
 
-export default Modal;
+export default memo(Modal);

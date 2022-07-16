@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import axios from "axios";
 
 import { useSelector } from "react-redux/es/exports";
@@ -104,4 +104,4 @@ function CarOrders() {
   );
 }
 
-export default CarOrders;
+export default memo(CarOrders);

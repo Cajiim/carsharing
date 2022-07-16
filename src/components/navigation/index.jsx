@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import classNames from "classnames";
 import PropTypes from 'prop-types';
 import Menu from "../Menu";
@@ -50,4 +50,4 @@ function Navigation({ overflow, setOverflow }) {
   );
 }
 
-export default Navigation;
+export default memo(Navigation);

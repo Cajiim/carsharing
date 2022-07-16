@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import moment from "moment";
 import PropTypes from "prop-types";
 import Complete from "../../assets/svg/adminPanelSvg/completeButton.svg";
@@ -151,4 +151,4 @@ function OrderCardLine({ dataCurrent }) {
   );
 }
 
-export default OrderCardLine;
+export default memo(OrderCardLine);

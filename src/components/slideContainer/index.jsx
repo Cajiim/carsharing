@@ -1,4 +1,4 @@
-import React from "react";
+import React,{memo} from "react";
 import classNames from "classnames";
 import style from "./index.scss";
 
@@ -19,4 +19,4 @@ function slideContainer(props) {
   );
 }
 
-export default slideContainer;
+export default memo(slideContainer);

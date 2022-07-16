@@ -1,5 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import dropDown from "../../assets/svg/adminPanelSvg/dropDown.svg";
@@ -234,4 +234,4 @@ function CarListFiltrInputs({
   );
 }
 
-export default CarListFiltrInputs;
+export default memo(CarListFiltrInputs);

@@ -39,7 +39,7 @@ function PriceSettings() {
 
   const handlChangeMinPrice = (value) => {
     const re = /[0-9]/g;
-    if (!re.test(String(value).toLowerCase()) &&  value.length <= 1) {
+    if (!re.test(String(value).toLowerCase()) && value.length <= 1) {
       dispatch(setMinPriceError("Введите корректно минимальную цену"));
       dispatch(setMinPrice(value));
     } else {
@@ -73,21 +73,41 @@ function PriceSettings() {
       .catch((error) => console.log(error, "Ошибка"));
   }
 
+
   const minPriceFromBack = contentModelBack?.minPrice;
   const maxPriceFromBack = contentModelBack?.maxPrice;
-  useEffect(() => {
-    fetchData();
-    setTimeout(() => {
+  const [state, setState] = useState();
+  function returnCar () {
+    setState(setTimeout(() => {
       dispatch(setMinPrice(minPriceFromBack || minPrice));
       dispatch(setMaxPrice(maxPriceFromBack || maxPrice));
-      dispatch(setMinPriceError(contentModelBack?.minPrice ? '' : "Поле не должно быть пустым"))
-      dispatch(setMaxPriceError(contentModelBack?.maxPrice ? '' : "Поле не должно быть пустым"))
-    }, 0); 
+      dispatch(
+        setMinPriceError(
+          contentModelBack?.minPrice ? "" : "Поле не должно быть пустым"
+        )
+      );
+      dispatch(
+        setMaxPriceError(
+          contentModelBack?.maxPrice ? "" : "Поле не должно быть пустым"
+        )
+      );
+    }, 0))
+  }
+
+  useEffect(() => {
+    fetchData();
+    returnCar();
+    
+    return () => {
+      setState();
+    };
   }, [minPriceFromBack, maxPriceFromBack]);
+
+
 
   return (
     <div className="priceSettings_container_setting">
-      <div className="priceSettings_container_setting_minPrice">
+      {state ? (<><div className="priceSettings_container_setting_minPrice">
         <span className="priceSettings_container_setting_minPrice_title">
           Минимальная цена
         </span>
@@ -95,8 +115,7 @@ function PriceSettings() {
           type="number"
           name="minPrice"
           className={cn("priceSettings_container_setting_minPrice_input", {
-            priceSettings_container_setting_minPrice_input_error:
-              minPriceDirty && minPriceError,
+            priceSettings_container_setting_minPrice_input_error: minPriceDirty && minPriceError,
           })}
           value={minPrice}
           onChange={(e) => handlChangeMinPrice(e.target.value)}
@@ -107,33 +126,31 @@ function PriceSettings() {
             {minPriceError}
           </div>
         )}
-      </div>
-      <div className="priceSettings_container_setting_maxPrice">
-        <span className="priceSettings_container_setting_maxPrice_title">
-          Максимальная цена
-        </span>
-        <input
-          type="number"
-          name="maxPrice"
-          className={cn("priceSettings_container_setting_maxPrice_input", {
-            priceSettings_container_setting_maxPrice_input_error:
-              maxPriceDirty && maxPriceError,
-          })}
-          value={maxPrice}
-          onChange={(e) => handlChangeMaxPrice(e.target.value)}
-          onBlur={(e) => handlClickBlur(e)}
-        ></input>
-        {maxPriceDirty && maxPriceError && (
-          <div className="priceSettings_container_setting_maxPrice_input_textError">
-            {maxPriceError}
-          </div>
-        )}
-        {maxPrice && minPrice && Number(maxPrice) <= Number(minPrice) ? (
-          <div className="priceSettings_container_setting_minMaxPrice_input_textError">
-            Максимальная цена должна быть больше минимальной
-          </div>
-        ) : null}
-      </div>
+      </div><div className="priceSettings_container_setting_maxPrice">
+          <span className="priceSettings_container_setting_maxPrice_title">
+            Максимальная цена
+          </span>
+          <input
+            type="number"
+            name="maxPrice"
+            className={cn("priceSettings_container_setting_maxPrice_input", {
+              priceSettings_container_setting_maxPrice_input_error: maxPriceDirty && maxPriceError,
+            })}
+            value={maxPrice}
+            onChange={(e) => handlChangeMaxPrice(e.target.value)}
+            onBlur={(e) => handlClickBlur(e)}
+          ></input>
+          {maxPriceDirty && maxPriceError && (
+            <div className="priceSettings_container_setting_maxPrice_input_textError">
+              {maxPriceError}
+            </div>
+          )}
+          {maxPrice && minPrice && Number(maxPrice) <= Number(minPrice) ? (
+            <div className="priceSettings_container_setting_minMaxPrice_input_textError">
+              Максимальная цена должна быть больше минимальной
+            </div>
+          ) : null}
+        </div></>) : null}
     </div>
   );
 }

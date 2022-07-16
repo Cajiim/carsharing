@@ -1,6 +1,6 @@
+import { React, memo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { React } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setModelInCart } from "../../redux/cart/reducerFinalOrder";
 
@@ -42,4 +42,4 @@ function Model({ cart }) {
   );
 }
 
-export default Model;
+export default memo(Model);

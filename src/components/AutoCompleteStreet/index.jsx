@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,/*  memo,  *//* useMemo */ } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import axios from "axios";
@@ -44,6 +44,7 @@ function AutoCompleteStreet() {
     setStreets(pointOfIssue);
     dispatch(setDeliveryChangeStreetInput(value));
   };
+
   const streetHundler = (street) => {
     dispatch(setDeliveryChangeStreetInput(street));
     setStreets([]);

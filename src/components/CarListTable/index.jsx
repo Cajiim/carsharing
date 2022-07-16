@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./index.scss";
@@ -76,4 +76,4 @@ function CarListTable({ dataCurrent }) {
   );
 }
 
-export default CarListTable;
+export default memo(CarListTable);

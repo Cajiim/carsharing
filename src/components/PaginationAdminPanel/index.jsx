@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import prev from "../../assets/svg/adminPanelSvg/prev.svg";
@@ -116,4 +116,4 @@ function Pagination({
   );
 }
 
-export default Pagination;
+export default memo(Pagination);

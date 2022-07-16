@@ -73,18 +73,21 @@ function CarCardSetup() {
   const name = choiseFromArr[1];
 
   const [contentModelBack, setContentModelBack] = useState([]);
+  const [state, setState] = useState();
   function fetchData() {
     const url = window.location.href
       .slice(window.location.href.indexOf("?"))
       .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          url[1] ? url[1] : ""
-        }`
-      )
-      .then((res) => setContentModelBack(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
+    setState(
+      axios
+        .get(
+          `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
+            url[1] ? url[1] : ""
+          }`
+        )
+        .then((res) => setContentModelBack(res.data))
+        .catch((error) => console.log(error, "Ошибка"))
+    );
   }
 
   const imgCarFromBack = contentModelBack?.imgCar;
@@ -101,101 +104,108 @@ function CarCardSetup() {
         )
       );
     }, 0);
+    return () => {
+      setState();
+    };
   }, [imgCarFromBack, descriptionCarFromBack]);
 
   return (
     <div className="сarCardSetup_container">
-      <div className="сarCardSetup_container_carSetup">
-        <img
-          src={imgCar}
-          alt="carImg"
-          className="сarCardSetup_container_carSetup_img"
-        ></img>
-        <span className="сarCardSetup_container_carSetup_carName">
-          {model && name ? (
-            <span>
-              {model}, {name}
-            </span>
-          ) : (
-            "Введите название и модель автомобиля"
-          )}
-        </span>
-        <span className="сarCardSetup_container_carSetup_carClass">
-          {typeCarCart}
-        </span>
-        <form className="сarCardSetup_container_carSetup_formForInputFile">
-          <label
-            htmlFor="inputFile"
-            className="сarCardSetup_container_carSetup_formForInputFile_label"
-          >
-            <input
-              className={cn(
-                "сarCardSetup_container_carSetup_formForInputFile_label_input",
-                {
-                  сarCardSetup_container_carSetup_formForInputFile_label_input_error:
-                    linkDirty && linkError,
-                }
+      {state ? (
+        <>
+          <div className="сarCardSetup_container_carSetup">
+            <img
+              src={imgCar}
+              alt="carImg"
+              className="сarCardSetup_container_carSetup_img"
+            ></img>
+            <span className="сarCardSetup_container_carSetup_carName">
+              {model && name ? (
+                <span>
+                  {model}, {name}
+                </span>
+              ) : (
+                "Введите название и модель автомобиля"
               )}
-              id="inputFile"
-              placeholder="Введите ссылку ..."
-              value={imgCar}
-              onChange={(e) => handlChangeImg(e.target.value)}
-              name="link"
+            </span>
+            <span className="сarCardSetup_container_carSetup_carClass">
+              {typeCarCart}
+            </span>
+            <form className="сarCardSetup_container_carSetup_formForInputFile">
+              <label
+                htmlFor="inputFile"
+                className="сarCardSetup_container_carSetup_formForInputFile_label"
+              >
+                <input
+                  className={cn(
+                    "сarCardSetup_container_carSetup_formForInputFile_label_input",
+                    {
+                      сarCardSetup_container_carSetup_formForInputFile_label_input_error:
+                        linkDirty && linkError,
+                    }
+                  )}
+                  id="inputFile"
+                  placeholder="Введите ссылку ..."
+                  value={imgCar}
+                  onChange={(e) => handlChangeImg(e.target.value)}
+                  name="link"
+                  onBlur={(e) => handlClickBlur(e)}
+                ></input>
+                {linkDirty && linkError && (
+                  <div className="сarCardSetup_container_carSetup_formForInputFile_error">
+                    {linkError}
+                  </div>
+                )}
+                <button
+                  type="button"
+                  className={cn(
+                    "сarCardSetup_container_carSetup_formForInputFile_label_button",
+                    {
+                      сarCardSetup_container_carSetup_formForInputFile_label_button_error:
+                        linkDirty && linkError,
+                    }
+                  )}
+                >
+                  Обзор
+                </button>
+              </label>
+            </form>
+          </div>
+          <div className="сarCardSetup_container_progressSetup">
+            <div className="сarCardSetup_container_progressSetup_text">
+              <span className="сarCardSetup_container_progressSetup_text_completed">
+                Заполнено
+              </span>
+              <p className="сarCardSetup_container_progressSetup_text_percentage">
+                {randomFuelLvl}%
+              </p>
+            </div>
+            <progress
+              className="сarCardSetup_container_progressSetup_fill"
+              max="100"
+              value={randomFuelLvl}
+            ></progress>
+          </div>
+          <div className="сarCardSetup_container_progressSetup_description">
+            <span className="сarCardSetup_container_progressSetup_description_title">
+              Описание
+            </span>
+            <textarea
+              className="сarCardSetup_container_progressSetup_description_text"
+              placeholder="Введите описание ..."
+              value={descriptionCar}
+              onChange={(e) => handlChangeDescription(e.target.value)}
+              name="description"
               onBlur={(e) => handlClickBlur(e)}
-            ></input>
-            {linkDirty && linkError && (
-              <div className="сarCardSetup_container_carSetup_formForInputFile_error">
-                {linkError}
+            ></textarea>
+            {descriptionDirty && descriptionError && (
+              <div className="сarCardSetup_container_progressSetup_description_error">
+                {descriptionError}
               </div>
             )}
-            <button
-              type="button"
-              className={cn(
-                "сarCardSetup_container_carSetup_formForInputFile_label_button",
-                {
-                  сarCardSetup_container_carSetup_formForInputFile_label_button_error:
-                    linkDirty && linkError,
-                }
-              )}
-            >
-              Обзор
-            </button>
-          </label>
-        </form>
-      </div>
-      <div className="сarCardSetup_container_progressSetup">
-        <div className="сarCardSetup_container_progressSetup_text">
-          <span className="сarCardSetup_container_progressSetup_text_completed">
-            Заполнено
-          </span>
-          <p className="сarCardSetup_container_progressSetup_text_percentage">
-            {randomFuelLvl}%
-          </p>
-        </div>
-        <progress
-          className="сarCardSetup_container_progressSetup_fill"
-          max="100"
-          value={randomFuelLvl}
-        ></progress>
-      </div>
-      <div className="сarCardSetup_container_progressSetup_description">
-        <span className="сarCardSetup_container_progressSetup_description_title">
-          Описание
-        </span>
-        <textarea
-          className="сarCardSetup_container_progressSetup_description_text"
-          placeholder="Введите описание ..."
-          value={descriptionCar}
-          onChange={(e) => handlChangeDescription(e.target.value)}
-          name="description"
-          onBlur={(e) => handlClickBlur(e)}
-        ></textarea>
-        {descriptionDirty && descriptionError && (
-          <div className="сarCardSetup_container_progressSetup_description_error">
-            {descriptionError}
           </div>
-        )}
-      </div>
+        </>
+      ) : null}
     </div>
   );
 }

@@ -1,41 +1,19 @@
-import React, { useState } from "react";
-import classNames from "classnames";
+import React, { useState, memo } from "react";
+
 import CarCardSetup from "../CarCardSetup";
 import CarSettings from "../CarSettings";
-import acceptImg from "../../assets/svg/adminPanelSvg/ShapeOk.svg";
-import cancelImg from "../../assets/svg/adminPanelSvg/ShapeCancel.svg";
-import style from "./index.scss";
+import ConfirmationBar from "../ConfirmationBar";
 
-const cn = classNames.bind(style);
+import "./index.scss";
 
 function CarCardAdminPanel() {
   const [activeConfirmation, setActiveConfirmation] = useState(false);
   return (
     <div className="carCardAdminPanel_container">
-      <div
-        className={cn("carCardAdminPanel_container_confirmationBar", {
-          carCardAdminPanel_container_confirmationBar_active:
-            activeConfirmation,
-        })}
-      >
-        <li className="carCardAdminPanel_container_confirmationBar_textContent">
-          <img
-            src={acceptImg}
-            className="carCardAdminPanel_container_confirmationBar_textContent_imgAccept"
-            alt="acceptImg"
-          ></img>
-          <span className="carCardAdminPanel_container_confirmationBar_textContent_text">
-            Успех! Машина сохранена
-          </span>
-        </li>
-        <img
-          src={cancelImg}
-          className="carCardAdminPanel_container_confirmationBar_textContent_imgCancel"
-          alt="cancelImg"
-          onClick={() => setActiveConfirmation(!activeConfirmation)}
-        ></img>
-      </div>
-
+      <ConfirmationBar
+        activeConfirmation={activeConfirmation}
+        setActiveConfirmation={setActiveConfirmation}
+      />
       <h2 className="carCardAdminPanel_container_title">Карточка автомобиля</h2>
       <div className="carCardAdminPanel_container_autoCart">
         <CarCardSetup />
@@ -45,4 +23,4 @@ function CarCardAdminPanel() {
   );
 }
 
-export default CarCardAdminPanel;
+export default memo(CarCardAdminPanel);

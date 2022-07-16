@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setClass } from "../../redux/cart/reducerFinalOrder";
@@ -98,4 +98,4 @@ function ModelContainer() {
   );
 }
 
-export default ModelContainer;
+export default memo(ModelContainer);

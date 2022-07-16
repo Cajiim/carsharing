@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +21,15 @@ import {
   setArrAllColorsForCar,
   setColorForCheckbox,
 } from "../../redux/cart/reducerCarCartSettings";
+import {
+  setLinkImgError,
+  setDescriptionError,
+  setCarNameError,
+  setCarTypeError,
+  setMinPriceError,
+  setMaxPriceError,
+  setColorError,
+} from "../../redux/cart/reducerValidateErrors";
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
@@ -140,20 +149,29 @@ function ButtonCarSettings({ setActiveConfirmation }) {
       .catch((error) => console.log(error));
   };
 
+  const [state, setState] = useState();
   const [contentCart, setContentCart] = useState([]);
   function fetchData() {
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          urlId[1] ? urlId[1] : ""
-        }`
-      )
-      .then((res) => setContentCart(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
+    setState(
+      axios
+        .get(
+          `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
+            urlId[1] ? urlId[1] : ""
+          }`
+        )
+        .then((res) => setContentCart(res.data))
+        .catch((error) => console.log(error, "Ошибка"))
+    );
   }
+
   useEffect(() => {
     fetchData();
+
+    return () => {
+      setState();
+    };
   }, []);
+
   const returnModel = contentCart?.model;
   const returnName = contentCart?.name;
   const returnCarModel = `${returnModel}, ${returnName}`;
@@ -167,38 +185,50 @@ function ButtonCarSettings({ setActiveConfirmation }) {
     dispatch(setDescriptionCar(contentCart?.descriptionCar));
     dispatch(setArrAllColorsForCar(contentCart?.arrAllColors));
     dispatch(setColorForCheckbox(contentCart?.arrAllColors));
+
+    dispatch(setLinkImgError(""));
+    dispatch(setDescriptionError(""));
+    dispatch(setCarNameError(""));
+    dispatch(setCarTypeError(""));
+    dispatch(setMinPriceError(""));
+    dispatch(setMaxPriceError(""));
+    dispatch(setColorError(""));
   };
 
   return (
     <div className="container_buttons">
-      <div className="container_buttons_control">
-        <button
-          type="button"
-          className={cn("container_buttons_control_save", {
-            container_buttons_control_save_active:
-              errorChecking && !correctErrorChecking,
-          })}
-          onClick={urlId[1] ? handleChangeCar : handleAddCar}
-        >
-          Сохранить
-        </button>
-        <button
-          type="button"
-          className="container_buttons_control_cancel"
-          onClick={urlId[1] ? handlReturnCar : handlClickClear}
-        >
-          Отменить
-        </button>
-      </div>
-      <button
-        type="button"
-        className="container_buttons_control_delete"
-        onClick={urlId[1] ? handleDeleteCar : handlClickClear}
-      >
-        Удалить
-      </button>
+      {state ? (
+        <>
+          <div className="container_buttons_control">
+            <button
+              type="button"
+              className={cn("container_buttons_control_save", {
+                container_buttons_control_save_active:
+                  errorChecking && !correctErrorChecking,
+              })}
+              onClick={urlId[1] ? handleChangeCar : handleAddCar}
+            >
+              Сохранить
+            </button>
+            <button
+              type="button"
+              className="container_buttons_control_cancel"
+              onClick={urlId[1] ? handlReturnCar : handlClickClear}
+            >
+              Отменить
+            </button>
+          </div>
+          <button
+            type="button"
+            className="container_buttons_control_delete"
+            onClick={urlId[1] ? handleDeleteCar : handlClickClear}
+          >
+            Удалить
+          </button>
+        </>
+      ) : null}
     </div>
   );
 }
 
-export default ButtonCarSettings;
+export default memo(ButtonCarSettings);

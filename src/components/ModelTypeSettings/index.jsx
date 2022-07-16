@@ -43,9 +43,11 @@ function ModelTypeSettings() {
     const re = /["a-zA-Z]+[, ]+["a-zA-Z]/g;
 
     if (!re.test(String(value).toLowerCase())) {
-      dispatch(setCarNameError(
-        "Введите корретно модель автомобиля, разделив марку с названием запятой"
-      ));
+      dispatch(
+        setCarNameError(
+          "Введите корретно модель автомобиля, разделив марку с названием запятой"
+        )
+      );
       dispatch(setModelCarCart(value));
     } else {
       dispatch(setModelCarCart(value));
@@ -65,76 +67,104 @@ function ModelTypeSettings() {
   };
 
   const [contentModelBack, setContentModelBack] = useState([]);
+  const [state, setState] = useState();
   function fetchData() {
     const url = window.location.href
       .slice(window.location.href.indexOf("?"))
       .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          url[1] ? url[1] : ""
-        }`
-      )
-      .then((res) => setContentModelBack(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
+    setState(
+      axios
+        .get(
+          `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
+            url[1] ? url[1] : ""
+          }`
+        )
+        .then((res) => setContentModelBack(res.data))
+        .catch((error) => console.log(error, "Ошибка"))
+    );
   }
 
   const modelCarFromBack = contentModelBack?.model;
   const nameCarFromBack = contentModelBack?.name;
   const typeCarFromBack = contentModelBack?.typeCarCart;
-  const fullModel = modelCarFromBack && nameCarFromBack ? `${modelCarFromBack  }, ${  nameCarFromBack}` : null;
+  const fullModel =
+    modelCarFromBack && nameCarFromBack
+      ? `${modelCarFromBack}, ${nameCarFromBack}`
+      : null;
   useEffect(() => {
     fetchData();
     setTimeout(() => {
       dispatch(setModelCarCart(fullModel || modelCarCart));
       dispatch(setTypeCarCart(typeCarFromBack || typeCarCart));
-      dispatch(setCarNameError(contentModelBack?.model ? '' : "Поле не должно быть пустым"));
-      dispatch(setCarTypeError(contentModelBack?.typeCarCart? '' : "Поле не должно быть пустым"));
-    }, 0); 
+      dispatch(
+        setCarNameError(
+          contentModelBack?.model ? "" : "Поле не должно быть пустым"
+        )
+      );
+      dispatch(
+        setCarTypeError(
+          contentModelBack?.typeCarCart ? "" : "Поле не должно быть пустым"
+        )
+      );
+    }, 0);
+
+    return () => {
+      setState();
+    };
   }, [fullModel, typeCarFromBack]);
 
   return (
     <div className="modelTypeSettings_container_setting">
-      <div className="modelTypeSettings_container_setting_carModel">
-        <span className="modelTypeSettings_container_setting_carModel_title">
-          Модель автомобиля
-        </span>
-        <input
-          className={cn("modelTypeSettings_container_setting_carModel_input", {
-            modelTypeSettings_container_setting_carModel_input_error:
-              modelCarDirty && carNameError,
-          })}
-          value={modelCarCart}
-          onChange={(e) => handlChangeModel(e.target.value)}
-          onBlur={(e) => handlClickBlur(e)}
-          name="carModel"
-        ></input>
-        {modelCarDirty && carNameError && (
-          <div className="modelTypeSettings_container_setting_carModel_input_textError">
-            {carNameError}
+      {state ? (
+        <>
+          <div className="modelTypeSettings_container_setting_carModel">
+            <span className="modelTypeSettings_container_setting_carModel_title">
+              Модель автомобиля
+            </span>
+            <input
+              className={cn(
+                "modelTypeSettings_container_setting_carModel_input",
+                {
+                  modelTypeSettings_container_setting_carModel_input_error:
+                    modelCarDirty && carNameError,
+                }
+              )}
+              value={modelCarCart}
+              onChange={(e) => handlChangeModel(e.target.value)}
+              onBlur={(e) => handlClickBlur(e)}
+              name="carModel"
+            ></input>
+            {modelCarDirty && carNameError && (
+              <div className="modelTypeSettings_container_setting_carModel_input_textError">
+                {carNameError}
+              </div>
+            )}
           </div>
-        )}
-      </div>
-      <div className="modelTypeSettings_container_setting_carType">
-        <span className="modelTypeSettings_container_setting_carType_title">
-          Тип автомобиля
-        </span>
-        <input
-          className={cn("modelTypeSettings_container_setting_carType_input", {
-            modelTypeSettings_container_setting_carType_input_error:
-              typeCarDirty && carTypeError,
-          })}
-          value={typeCarCart}
-          onBlur={(e) => handlClickBlur(e)}
-          onChange={(e) => handlChangeType(e.target.value)}
-          name="carType"
-        ></input>
-        {typeCarDirty && carTypeError && (
-          <div className="modelTypeSettings_container_setting_carType_input_textError">
-            {carTypeError}
+          <div className="modelTypeSettings_container_setting_carType">
+            <span className="modelTypeSettings_container_setting_carType_title">
+              Тип автомобиля
+            </span>
+            <input
+              className={cn(
+                "modelTypeSettings_container_setting_carType_input",
+                {
+                  modelTypeSettings_container_setting_carType_input_error:
+                    typeCarDirty && carTypeError,
+                }
+              )}
+              value={typeCarCart}
+              onBlur={(e) => handlClickBlur(e)}
+              onChange={(e) => handlChangeType(e.target.value)}
+              name="carType"
+            ></input>
+            {typeCarDirty && carTypeError && (
+              <div className="modelTypeSettings_container_setting_carType_input_textError">
+                {carTypeError}
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      ) : null}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import PropTypes from "prop-types";
 import ModelTypeSettings from "../ModelTypeSettings";
 import PriceSetting from "../PriceSettings";
@@ -25,4 +25,4 @@ function CarSettings({ setActiveConfirmation }) {
   );
 }
 
-export default CarSettings;
+export default memo(CarSettings);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
@@ -232,4 +232,4 @@ function CarOrdersInput({ contentOrder }) {
   );
 }
 
-export default CarOrdersInput;
+export default memo(CarOrdersInput);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import axios from "axios";
 
 import PaginationAdminPanel from "../PaginationAdminPanel";
@@ -15,16 +15,20 @@ function CarListAdminPanel() {
   const [minPriceForFiltr, setMinPriceForFiltr] = useState("");
   const [maxPriceForFiltr, setMaxPriceForFiltr] = useState("");
   const [carTypeForFiltr, setCarTypeForFiltr] = useState("");
-
+ 
+  const [state, setState] = useState();
   function fetchData() {
-    axios
+    setState(axios
       .get("https://6288c18410e93797c15e9916.mockapi.io/Cars")
       .then((res) => setContentCart(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
+      .catch((error) => console.log(error, "Ошибка")));
   }
 
   useEffect(() => {
     fetchData();
+    return () => {
+      setState();
+    };
   }, []);
 
   const lastCarIndex = currentPage * carPerPage;
@@ -72,7 +76,7 @@ function CarListAdminPanel() {
           uniqueTypeCars={uniqueTypeCars}
         />
 
-        <CarListTable dataCurrent={dataCurrent}/>
+        {state ? (<CarListTable dataCurrent={dataCurrent}/>) : null}
 
         <PaginationAdminPanel
           carPerPage={carPerPage}
@@ -86,4 +90,4 @@ function CarListAdminPanel() {
   );
 }
 
-export default CarListAdminPanel;
+export default memo(CarListAdminPanel);
