@@ -1,0 +1,132 @@
+.aside__menu {
+  cursor: url(../../assets/svg/Cursor.svg), pointer;
+  position: absolute;
+  width: 26px;
+  height: 18px;
+  z-index: 5;
+  margin-top: 35px;
+
+  &::after,
+  &::before,
+  & span {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+  }
+
+  &::before {
+    content: "";
+    top: 0;
+    border-radius: 10px;
+  }
+
+  &::after {
+    bottom: 0;
+    border-radius: 10px;
+    content: "";
+  }
+
+  & span {
+    top: 40%;
+    transform: scale(1) translate(0px, 50%);
+    border-radius: 10px;
+  }
+
+  &_active span {
+    transform: scale(0) translate(0px, 50%);
+  }
+
+  &_active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -80%);
+  }
+
+  &_active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 80%);
+  }
+
+  @media screen and (max-width: 350px) {
+    width: 20px;
+    height: 16px;
+    left: 20px;
+    margin-top: 25px;
+
+    &::after,
+    &::before,
+    & span {
+      background-color: black;
+    }
+
+    &_active {
+      &::before,
+      &::after,
+      & span {
+        background-color: white;
+      }
+    }
+  }
+}
+
+.aside__content {
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  background: #151b1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 350px) {
+    background: none;
+  }
+}
+
+.aside__language {
+  cursor: url(../../assets/svg/Cursor.svg), pointer;
+  position: absolute;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  color: #0ec261;
+  bottom: 13.5px;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+
+  &:hover {
+    color: white;
+    border-color: white;
+  }
+
+  &:active {
+    color: #0ec261;
+  }
+
+  @media screen and (min-width: 2200px) {
+    font-size: 0.9vh;
+  }
+
+  @media screen and (max-width: 350px) {
+    z-index: 0;
+    display: none;
+
+    &_active {
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

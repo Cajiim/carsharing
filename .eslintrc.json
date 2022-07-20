@@ -4,8 +4,13 @@
     "es2021": true
   },
   "extends": [
-    "plugin:react/recommended",
+    "eslint:recommended",
     "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
     "prettier"
   ],
   "parserOptions": {
@@ -15,21 +20,30 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
-    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
-    "react/self-closing-comp": ["error", {
-      "component": false,
-      "html": false
-    }],
-    
-      
-    
-    
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      { "props": true, "ignorePropertyModificationsFor": ["state"] }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": false,
+        "html": false
+      }
+    ],
+
     "jsx-a11y/click-events-have-key-events": "off",
-    "import/no-unresolved": [2, {"ignore":["swiper"]}],
+    "import/no-unresolved": [2, { "ignore": ["swiper"] }],
     "jsx-a11y/no-noninteractive-element-interactions": "off"
   }
 }
-
-

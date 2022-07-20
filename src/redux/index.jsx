@@ -5,6 +5,7 @@ import tableIndexReducer from "./cart/reducerTableIndex";
 import carCartSettingsReducer from "./cart/reducerCarCartSettings";
 import validateErrorsReducer from './cart/reducerValidateErrors'
 import carOrdersReducer from './cart/reducerCarOrders'
+import userReducer from './cart/reducerUserSlice'
 
 const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
     carSettings: carCartSettingsReducer,
     validateErrors: validateErrorsReducer,
     carOrders: carOrdersReducer,
+    user: userReducer,
   },
 });
 

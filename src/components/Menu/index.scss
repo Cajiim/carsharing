@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  z-index: 4;
+
+  &_active {
+    transform: translateX(0);
+  }
+}
+
+.menu__overflow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 27, 31, 0.81);
+  z-index: 10;
+}
+
+.menu__content {
+  position: absolute;
+  width: calc(50% + 33px);
+  height: 100%;
+  background-color: #111518;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  color: white;
+  z-index: 9;
+
+  &_completelyBlack {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 2200px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: calc(57% + 30px);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 350px) {
+    align-items: start;
+    justify-content: start;
+  }
+}
+
+.menu__navigation {
+  margin: 307px 64px 0 128px;
+
+  @media screen and (min-width: 2200px) {
+    margin-top: 307px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin: 307px 32px 0 96px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 317px 92px 0 97px;
+  }
+
+  @media screen and (max-width: 350px) {
+    margin: 80px 0 0 20px;
+  }
+}
+
+.menu__list {
+  margin-bottom: 38px;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu__items {
+  text-transform: uppercase;
+  &:hover {
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+    color: #0ec261;
+  }
+  @media screen and (min-width: 2200px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 22px;
+  }
+}
+
+.menu__social .social {
+  display: flex;
+}
+
+.social__telegram,
+.social__facebook,
+.social__instagram{
+  margin-right: 24px;
+  fill: white;
+  &:hover {
+    fill: #0ec261;
+    cursor: url(../../assets/svg/Cursor.svg), pointer;
+  }
+  @media screen and (min-width: 2200px) {
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-right: 1.5vw;
+  }
+}
