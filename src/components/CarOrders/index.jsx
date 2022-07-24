@@ -1,28 +1,24 @@
 import React, { useState, useEffect, memo } from "react";
-import axios from "axios";
-
-import { useSelector } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { fetchDataCarOrders } from "../../api/fetchDataThunk";
 import CarOrdersInput from "../CarOrdersInputs";
 import PaginationCarOrders from "../PaginationCarOrders";
 import OrderCardLine from "../OrderCardLine";
 import "./index.scss";
 
 const CarOrders = () => {
+  const dispatch = useDispatch();
   const now = new Date();
   const [currentPage, setCurrentPage] = useState(1);
   const [carPerPage] = useState(3);
-  const [contentOrder, setContentOrder] = useState([]);
 
-  async function fetchData() {
-    axios
-      .get("https://6288c18410e93797c15e9916.mockapi.io/FinalOrder")
-      .then((res) => setContentOrder(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
-  }
+  const { dataOrders, loadingOrders } = useSelector(
+    ({ getData }) => getData
+  );
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchDataCarOrders());
+  }, [dispatch]);
 
   const lastCarIndex = currentPage * carPerPage;
   const firstCarIndex = lastCarIndex - carPerPage;
@@ -34,7 +30,7 @@ const CarOrders = () => {
     orderStatusForFiltr,
   } = useSelector(({ carOrders }) => carOrders);
 
-  let data = contentOrder;
+  let data = dataOrders;
   if (carNameForFiltr !== "") {
     data = data.filter((el) => el.modelCar.name.includes(carNameForFiltr));
   }
@@ -77,22 +73,16 @@ const CarOrders = () => {
       ).includes(orderStatusForFiltr)
     );
   }
-
   const dataCurrent = data?.slice(firstCarIndex, lastCarIndex);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
     <div>
-      <CarOrdersInput contentOrder={contentOrder} />
-
-      <OrderCardLine dataCurrent={dataCurrent} />
-
-      {data && data.length === 0 ? (
-        <h3 className="carOrders_mainContent_notFound">
-          По вашему запросу ничего не найдено!
-        </h3>
-      ) : null}
-
+      <CarOrdersInput contentOrder={dataOrders} />
+      {!loadingOrders ? (
+        <OrderCardLine dataCurrent={dataCurrent} />
+      ) : (
+        <h3 className="carOrders-wrapper__notFound">Данные загружаются</h3>
+      )}
       <PaginationCarOrders
         carPerPage={carPerPage}
         totalCars={data.length}
@@ -102,6 +92,6 @@ const CarOrders = () => {
       />
     </div>
   );
-}
+};
 
 export default memo(CarOrders);

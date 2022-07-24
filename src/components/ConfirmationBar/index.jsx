@@ -10,24 +10,24 @@ const cn = classNames.bind(style);
 
 const ConfirmationBar = ({activeConfirmation, setActiveConfirmation}) => (
     <div
-        className={cn("confirmationBar", {
+        className={cn("confirmationBar", {   
           confirmationBar_active:
             activeConfirmation,
         })}
       >
-        <li className="confirmationBar_textContent">
+        <li> 
           <img
             src={acceptImg}
-            className="confirmationBar_textContent_imgAccept"
+            className="confirmationBar__imgAccept"
             alt="acceptImg"
           ></img>
-          <span className="confirmationBar_textContent_text">
+          <span className="confirmationBar__text">
             Успех! Машина сохранена
           </span>
         </li>
         <img
           src={cancelImg}
-          className="confirmationBar_textContent_imgCancel"
+          className="confirmationBar__imgCancel"
           alt="cancelImg"
           onClick={() => setActiveConfirmation(!activeConfirmation)}
         ></img>
@@ -36,11 +36,11 @@ const ConfirmationBar = ({activeConfirmation, setActiveConfirmation}) => (
 
 ConfirmationBar.propTypes = {
   activeConfirmation: PropTypes.bool,
-  setActiveConfirmation: PropTypes.bool,
+  setActiveConfirmation: PropTypes.func,
 }
 ConfirmationBar.defaultProps = {
   activeConfirmation: false,
-  setActiveConfirmation: false,
+  setActiveConfirmation: () => {},
 }
 
 export default memo(ConfirmationBar);

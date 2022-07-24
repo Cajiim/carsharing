@@ -1,18 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap");
 
-.rightSideBlock_container {
+.orderBlock {
   display: flex;
   flex-direction: column;
   height: calc(100% - 30px);
   margin: 32px 64px 0 32px;
 }
 
-.rightSideBlock__text {
-  display: flex;
-  margin-top: 16px;
-}
-
-.rightSideBlock_container_order {
+.orderBlock__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -23,16 +18,38 @@
   margin-bottom: 10px;
 }
 
-.rightSideBlock__text_name {
+.orderBlock__mainList {
+  div {
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dotted #999999;
+    margin: 0 10px 1px 10px;
+    align-self: flex-end;
+  }
+}
+
+.mainList__text {
+  display: flex;
+  margin-top: 16px;
+}
+
+
+.mainList__nameLine {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
   color: #121212;
+  align-self: flex-end;
 }
 
-.rightSideBlock__text_container_content {
+.mainList__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainList__container__content {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -42,66 +59,21 @@
   color: #999999;
 }
 
-.rightSideBlock__text_container {
-  display: flex;
-  flex-direction: column;
-}
-
-.rightSideBlock_content {
-  div {
-    flex: 1;
-    height: 1px;
-    border-bottom: 1px dotted #999999;
-    margin: 0 10px 1px 10px;
-  }
-}
-
-.rightSideBlock__text {
-  display: flex;
-  align-items: flex-end;
-}
-
-.rightSideBlock__price {
-  font-size: 16px;
-  line-height: 16px;
-  color: #121212;
-  font-family: "Roboto";
-  margin-bottom: 32px;
-}
-
-.rightSideBlock_container__button {
-  width: 100%;
-  height: 48px;
-  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
-  background-blend-mode: darken;
-  border-radius: 8px;
-  border: 0;
-  color: #ffffff;
-  cursor: pointer;
+.orderBlock__price {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 16px;
+  line-height: 16px;
+  color: #121212;
+  margin: 32px 0px 32px 0px;
 }
 
-.rightSideBlock_container__button:hover {
-  background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
-  cursor: pointer;
+.orderBlock__price__text {
+  font-weight: bold;
 }
 
-.rightSideBlock_container__button:active {
-  background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
-  background-blend-mode: darken;
-  cursor: pointer;
-}
-
-.rightSideBlock_container__button_disabled {
-  pointer-events: none;
-  background: #eeeeee;
-  color: #ffffff;
-}
-.rightSideBlock_container__button_cancel {
+.orderBlock__button_cancel {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,32 +90,17 @@
   font-weight: 500;
   line-height: 21px;
   text-align: center;
-}
 
-.rightSideBlock_container__button_cancel:hover {
-  background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
-  cursor: pointer;
-}
-.rightSideBlock_container__button_cancel:active {
-  background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
-  background-blend-mode: darken;
-  cursor: pointer;
-}
-
-.rightSideBlock_container__button_hidden {
-  display: none;
-}
-
-.rightSideBlock_container__price {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 16px;
-  color: #121212;
-  margin: 32px 0px 32px 0px;
-}
-
-.rightSideBlock_container__price_text {
-  font-weight: bold;
+  &:hover{
+    background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
+    cursor: pointer;
+  }
+  &:active{
+    background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
+    background-blend-mode: darken;
+    cursor: pointer;
+  }
+  &_hidden{
+    display:none;
+  }
 }

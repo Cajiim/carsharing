@@ -9,12 +9,6 @@ import style from "./index.scss";
 const cn = classNames.bind(style);
 
 const Model = ({ cart }) => {
-  Model.propTypes = {
-    cart: PropTypes.array,
-  };
-  Model.defaultProps = {
-    cart: [],
-  };
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(setModelInCart(cart));
@@ -39,6 +33,33 @@ const Model = ({ cart }) => {
       <img src={cart.imgCar} className="cartModel__img" alt="car"></img>
     </li>
   );
-}
+};
+
+Model.propTypes = {
+  cart: PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      minPrice: PropTypes.string,
+      maxPrice: PropTypes.string,
+      model: PropTypes.string,
+      imgCar: PropTypes.string,
+      typeCarCart: PropTypes.string,
+      descriptionCar: PropTypes.string,
+      arrAllColors: PropTypes.arrayOf(PropTypes.string),
+    }),
+};
+Model.defaultProps = {
+  cart: PropTypes.shape({
+      id: "",
+      name: "",
+      minPrice: "",
+      maxPrice: "",
+      model: "",
+      imgCar: "",
+      typeCarCart: "",
+      descriptionCar: "",
+      arrAllColors: [],
+    }),
+};
 
 export default memo(Model);

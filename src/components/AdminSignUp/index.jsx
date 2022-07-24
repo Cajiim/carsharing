@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/cart/reducerUserSlice";
 import AuthorizationForm from "../../ui/AuthorizationForm";
-
+import HeaderAuthorization from '../common/HeaderAuthorization';
 import "./index.scss";
 
 const AdminSignUp = () => {
@@ -29,15 +29,7 @@ const AdminSignUp = () => {
 
   return (
     <>
-      <h2 className="adminAuthorization_title">
-        <div id="adminAuthorization_title_circleContainer">
-          <div id="adminAuthorization_title_circleContainer_circleSmall"></div>
-          <div id="adminAuthorization_title_circleContainer_circleLarge">
-            <div id="adminAuthorization_title_circleContainer_circleLarge_circleSmallTwo"></div>
-          </div>
-        </div>
-        Need for drive
-      </h2>
+      <HeaderAuthorization/>
       <AuthorizationForm
         title="Зарегистрироваться"
         handleClick={handlSignUp}

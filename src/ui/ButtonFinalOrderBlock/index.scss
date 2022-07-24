@@ -1,0 +1,34 @@
+.buttonFinalOrder {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  background-blend-mode: darken;
+  border-radius: 8px;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  &:hover{
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+    cursor: pointer;
+  }
+  &:active{
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+    background-blend-mode: darken;
+    cursor: pointer;
+  }
+  &_disabled{
+    pointer-events: none;
+    background: #eeeeee;
+    color: #ffffff;
+  }
+  &_hidden{
+    display: none;
+  }
+
+}

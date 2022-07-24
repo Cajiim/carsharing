@@ -4,9 +4,9 @@ import CarOrders from "../CarOrders";
 import "./index.scss";
 
 const CarOrdersAdminPanel = () => (
-    <div className="carOrders_container">
-      <h3 className="carOrders_container_title">Заказы</h3>
-      <div className="carOrders_container_mainContent">
+    <div className="ordersContainer-wrapper">
+      <h3 className="ordersContainer-wrapper__title">Заказы</h3>
+      <div className="ordersContainer-wrapper__mainContent">
         <CarOrders />
       </div>
     </div>

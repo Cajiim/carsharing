@@ -127,11 +127,11 @@ const Modal = ({ active, setActive }) => {
 
 Modal.propTypes = {
   active: PropTypes.bool,
-  setActive: PropTypes.bool,
+  setActive: PropTypes.func,
 };
 Modal.defaultProps = {
   active: false,
-  setActive: false,
+  setActive: () => {},
 };
 
 export default memo(Modal);

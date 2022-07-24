@@ -1,6 +1,7 @@
-import React, { useState, useEffect, memo } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import PaginationAdminPanel from "../PaginationAdminPanel";
+import { fetchDataFullCarList } from "../../api/fetchDataThunk";
 import CarListFiltrInputs from "../CarListFiltrInputs";
 import CarListTable from "../CarListTable";
 import "./index.scss";
@@ -8,74 +9,55 @@ import "./index.scss";
 const carPerPage = 8;
 
 const CarListAdminPanel = () => {
+  const dispatch = useDispatch();
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [contentCart, setContentCart] = useState([]);
+  const {
+    filtrCarListName,
+    filtrCarListMinPrice,
+    filtrCarListMaxPrice,
+    filtrCarListCarType,
+  } = useSelector(({ filterCarList }) => filterCarList);
 
-  const [carNameForFiltr, setCarNameForFiltr] = useState("");
-  const [minPriceForFiltr, setMinPriceForFiltr] = useState("");
-  const [maxPriceForFiltr, setMaxPriceForFiltr] = useState("");
-  const [carTypeForFiltr, setCarTypeForFiltr] = useState("");
-
-  function fetchData() {
-    axios
-      .get("https://6288c18410e93797c15e9916.mockapi.io/Cars")
-      .then((res) => setContentCart(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
-  }
+  const { loadingFullCarList, dataFullCarList } = useSelector(
+    ({ getData }) => getData
+  );
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchDataFullCarList());
+  }, [dispatch]);
 
   const lastCarIndex = currentPage * carPerPage;
   const firstCarIndex = lastCarIndex - carPerPage;
 
-  let data = contentCart;
+  let data = dataFullCarList;
 
-  if (carNameForFiltr !== "") {
-    data = data.filter((el) => el.name.includes(carNameForFiltr));
+  if (filtrCarListName !== "") {
+    data = data.filter((el) => el.name.includes(filtrCarListName));
   }
-  if (minPriceForFiltr !== "") {
-    data = data.filter((el) => el.minPrice.includes(minPriceForFiltr));
+  if (filtrCarListMinPrice !== "") {
+    data = data.filter((el) => el.minPrice.includes(filtrCarListMinPrice));
   }
-  if (maxPriceForFiltr !== "") {
-    data = data.filter((el) => el.maxPrice.includes(maxPriceForFiltr));
+  if (filtrCarListMaxPrice !== "") {
+    data = data.filter((el) => el.maxPrice.includes(filtrCarListMaxPrice));
   }
-  if (carTypeForFiltr !== "") {
-    data = data.filter((el) => el.typeCarCart.includes(carTypeForFiltr));
+  if (filtrCarListCarType !== "") {
+    data = data.filter((el) => el.typeCarCart.includes(filtrCarListCarType));
   }
 
   const dataCurrent = data.slice(firstCarIndex, lastCarIndex);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const allNames = contentCart.map((el) => el.name);
-  const allMinPrice = contentCart.map((el) => el.minPrice);
-  const allMaxPrice = contentCart.map((el) => el.maxPrice);
-  const allTypeCars = contentCart.map((el) => el.typeCarCart);
-  const uniqueNames = [...new Set(allNames)];
-  const uniqueMinPrice = [...new Set(allMinPrice)];
-  const uniqueMaxPrice = [...new Set(allMaxPrice)];
-  const uniqueTypeCars = [...new Set(allTypeCars)];
-  
-  const asdas = 123
-  console.log(asdas)
   return (
-    <div className="carListAdminPanel_container">
-      <h2 className="carListAdminPanel_container_title">Список автомобилей</h2>
-      <div className="carListAdminPanel_container_mainContent">
-        <CarListFiltrInputs
-          setCarNameForFiltr={setCarNameForFiltr}
-          setMinPriceForFiltr={setMinPriceForFiltr}
-          setMaxPriceForFiltr={setMaxPriceForFiltr}
-          setCarTypeForFiltr={setCarTypeForFiltr}
-          uniqueNames={uniqueNames}
-          uniqueMinPrice={uniqueMinPrice}
-          uniqueMaxPrice={uniqueMaxPrice}
-          uniqueTypeCars={uniqueTypeCars}
-        />
-
-        {/* {state ?  */}<CarListTable dataCurrent={dataCurrent} /> {/* : null} */}
-
+    <div className="carListAdminPanel-wrapper">
+      <h2 className="carListAdminPanel-wrapper__title">Список автомобилей</h2>
+      <div className="carListAdminPanel-wrapper__mainContent">
+        <CarListFiltrInputs />
+        {!loadingFullCarList ? (
+          <CarListTable dataCurrent={dataCurrent} />
+        ) : (
+          <h3 className="carListAdminPanel-wrapper_notFound">Загрузка данных</h3>
+        )}
         <PaginationAdminPanel
           carPerPage={carPerPage}
           totalCars={data.length}
@@ -88,4 +70,4 @@ const CarListAdminPanel = () => {
   );
 };
 
-export default memo(CarListAdminPanel);
+export default CarListAdminPanel;

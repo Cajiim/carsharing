@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect, memo, useCallback } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import prev from "../../assets/svg/prev.svg";
@@ -15,14 +15,13 @@ const PaginationCarOrders = ({
   setCurrentPage,
   currentPage,
 }) => {
-
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalCars / carPerPage); i += 1) {
     pageNumbers.push(i);
   }
   const [arrOfCurrentButtons, setArrOfCurrentButtons] = useState([]);
 
-  /* function paginationNumbers() {
+  const paginationNumbers = () => {
     let tempNumberOfPages = [...arrOfCurrentButtons];
     const dotsInitial = "...";
     const dotsLeft = " ...";
@@ -65,8 +64,8 @@ const PaginationCarOrders = ({
 
   useEffect(() => {
     paginationNumbers();
-  }, [currentPage, totalCars, carPerPage, paginationNumbers]);
- */
+  }, [currentPage, totalCars, carPerPage]);
+
   const lastListPage = Math.ceil(totalCars / carPerPage);
   const nextPage = () => setCurrentPage((pre) => pre + 1);
   const prevPage = () => setCurrentPage((pre) => pre - 1);
@@ -104,7 +103,7 @@ const PaginationCarOrders = ({
       ></img>
     </ul>
   );
-}
+};
 
 PaginationCarOrders.propTypes = {
   carPerPage: PropTypes.number,

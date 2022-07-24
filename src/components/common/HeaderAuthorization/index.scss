@@ -1,0 +1,51 @@
+.authorizationTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16.5px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #3d5170;
+  margin-top: 167px;
+}
+
+.authorizationTitle__circle {
+  position: relative;
+  margin-right: 11.5px;
+}
+
+.circle__circleSmall {
+  background-color: #0ec261;
+  width: 18.5px;
+  height: 18.5px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.circle__circleLarge {
+  background: #0ec261;
+  width: 44.5px;
+  height: 44.5px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle__circleSmallTwo {
+  width: 18.5px;
+  height: 18.5px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

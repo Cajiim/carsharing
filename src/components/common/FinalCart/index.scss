@@ -1,60 +1,16 @@
-.finalCard_container {
+.finalCard-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.finalCard_container_text_content_title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-  color: #121212;
-}
-
-.finalCard_container_text_content_carNumber {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: #121212;
-  margin-left: 7px;
-}
-.finalCard_container_text_content_carNumber_container {
-  border: 1px solid #999999;
-  border-radius: 4px;
-  width: 100px;
-}
-.finalCard_container_text_content_gas {
-  font-family: "Roboto";
-  font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #121212;
-}
-.finalCard_container_text_content_availableTime {
-  font-family: "Roboto";
-  font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #121212;
-}
-
-.finalCard_container_text_content {
-  
+.finalCard-wrapper__main {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
 
-.finalCard_container_img {
-  width: 256px;
-  height: 116px;
-  margin-right: 192px;
-}
-.finalCard_container_title {
+.finalCard-wrapper__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -64,3 +20,50 @@
   margin-bottom:10px;
 }
 
+.finalCard-wrapper__name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #121212;
+}
+
+.finalCard-wrapper__carNumber {
+  border: 1px solid #999999;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.finalCard-wrapper__carNumber__text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  margin-left: 7px;
+}
+
+.finalCard-wrapper__gas {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+
+.finalCard-wrapper__availableTime {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+
+
+.finalCard-wrapper__imgCar {
+  width: 256px;
+  height: 116px;
+  margin-right: 192px;
+}

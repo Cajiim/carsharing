@@ -1,36 +1,21 @@
-import { React, useState, useEffect } from "react";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import { React, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
-
+import { fetchDataSelectivelyCarOrders } from "../../../api/fetchDataThunk";
 import "./index.scss";
 
 const FinalCart = () => {
-  const [contentModel, setContentModel] = useState([]);
-
-  function fetchData() {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
-          url[1] ? url[1] : null
-        }`
-      )
-      .then((res) => setContentModel(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
-  }
+  const dispatch = useDispatch();
+  moment().format();
 
   useEffect(() => {
-    fetchData();
+    dispatch(fetchDataSelectivelyCarOrders());
   }, []);
 
-  const modelFromBack = contentModel[0]?.modelCar;
-  const additionallyOptionsFromBack = contentModel[0]?.additionalOptions;
+  const { dataSelectOrder } = useSelector(({ getData }) => getData);
+  const modelFromBack = dataSelectOrder[0]?.modelCar;
+  const additionallyOptionsFromBack = dataSelectOrder[0]?.additionalOptions;
   const startDateFromBack = additionallyOptionsFromBack?.startDate;
-
-  moment().format();
   const {
     checkFuelState: checkedOne,
     modelInCart: model,
@@ -60,32 +45,35 @@ const FinalCart = () => {
   const startOfLeaseFromBack = moment(new Date(startDateFromBack)).format(
     "DD.MM.YYYY h:mm"
   );
+  const lastIndex = tabIndex === "5" || tabIndexFromBack === "5";
+  const correctStartDate =
+    startDate && startDate !== null
+      ? startOfLease.toString()
+      : startOfLeaseFromBack.toString();
 
   return (
-    <div className="finalCard_container">
-      <div className="finalCard_container_text_content">
-        {tabIndex === "5" || tabIndexFromBack === "5" ? (
-          <h3 className="finalCard_container_title">Ваш заказ подтвержден</h3>
+    <div className="finalCard-wrapper">
+      <div className="finalCard-wrapper__main">
+        {lastIndex ? (
+          <h3 className="finalCard-wrapper__title">Ваш заказ подтвержден</h3>
         ) : null}
-        <p className="finalCard_container_text_content_title">
+        <p className="finalCard-wrapper__name">
           {modelCar}, {nameCar}
         </p>
-        <div className="finalCard_container_text_content_carNumber_container">
-          <span className="finalCard_container_text_content_carNumber">
+        <div className="finalCard-wrapper__carNumber">
+          <span className="finalCard-wrapper__carNumber__text">
             {carNumberForCart} 73
           </span>
         </div>
-        <p className="finalCard_container_text_content_gas">
+        <p className="finalCard-wrapper__gas">
           <b>Топливо</b> {fuelLevel}
         </p>
-        <p className="finalCard_container_text_content_availableTime">
+        <p className="finalCard-wrapper__availableTime">
           <b>Доступна с </b>
-          {startDate && startDate !== null
-            ? startOfLease.toString()
-            : startOfLeaseFromBack.toString()}
+          {correctStartDate}
         </p>
       </div>
-      <img src={imgCar} alt="car" className="finalCard_container_img"></img>
+      <img src={imgCar} alt="car" className="finalCard-wrapper__imgCar"></img>
     </div>
   );
 };

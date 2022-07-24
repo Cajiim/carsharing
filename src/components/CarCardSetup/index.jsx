@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setImgForCar,
   setDescriptionCar,
 } from "../../redux/cart/reducerCarCartSettings";
+import { fetchDataCarList } from "../../api/fetchDataThunk";
 import {
   setLinkImgError,
   setDescriptionError,
@@ -40,7 +40,6 @@ const CarCardSetup = () => {
       case "description":
         setDescriptionDirty(true);
         break;
-
       default:
     }
   };
@@ -72,148 +71,86 @@ const CarCardSetup = () => {
   const model = choiseFromArr[0];
   const name = choiseFromArr[1];
 
-  const [contentModelBack, setContentModelBack] = useState([]);
-  const [state, setState] = useState();
-  function fetchData() {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    setState(
-      axios
-        .get(
-          `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-            url[1] ? url[1] : ""
-          }`
-        )
-        .then((res) => setContentModelBack(res.data))
-        .catch((error) => console.log(error, "Ошибка"))
-    );
-  }
+  const { dataCarList } = useSelector(({ getData }) => getData);
+  const imgCarFromBack = dataCarList?.imgCar;
+  const descriptionCarFromBack = dataCarList?.descriptionCar;
 
-  const imgCarFromBack = contentModelBack?.imgCar;
-  const descriptionCarFromBack = contentModelBack?.descriptionCar;
   useEffect(() => {
-    fetchData();
+    dispatch(fetchDataCarList());
     setTimeout(() => {
       dispatch(setImgForCar(imgCarFromBack || imgCar));
       dispatch(setDescriptionCar(descriptionCarFromBack || descriptionCar));
-      dispatch(setLinkImgError(contentModelBack?.imgCar ? "" : ""));
+      dispatch(setLinkImgError(""));
       dispatch(
         setDescriptionError(
-          contentModelBack?.descriptionCar ? "" : "Поле не должно быть пустым"
+          descriptionCarFromBack ? "" : "Поле не должно быть пустым"
         )
       );
     }, 0);
-    return () => {
-      setState();
-    };
-  }, [
-    imgCarFromBack,
-    descriptionCarFromBack,
-    dispatch,
-    imgCar,
-    descriptionCar,
-    contentModelBack?.imgCar,
-    contentModelBack?.descriptionCar,
-  ]);
+  }, [imgCarFromBack, descriptionCarFromBack]);
 
   return (
-    <div className="сarCardSetup_container">
-      {state ? (
-        <>
-          <div className="сarCardSetup_container_carSetup">
-            <img
-              src={imgCar}
-              alt="carImg"
-              className="сarCardSetup_container_carSetup_img"
-            ></img>
-            <span className="сarCardSetup_container_carSetup_carName">
-              {model && name ? (
-                <span>
-                  {model}, {name}
-                </span>
-              ) : (
-                "Введите название и модель автомобиля"
-              )}
+    <div className="сarCardSetup-wrapper">
+      <div className="сarCardSetup-wrapper__carSetup carSetup">
+        <img src={imgCar} alt="carImg" className="carSetup__img"></img>
+        <span className="carSetup__carName">
+          {model && name ? (
+            <span>
+              {model}, {name}
             </span>
-            <span className="сarCardSetup_container_carSetup_carClass">
-              {typeCarCart}
-            </span>
-            <form className="сarCardSetup_container_carSetup_formForInputFile">
-              <label
-                htmlFor="inputFile"
-                className="сarCardSetup_container_carSetup_formForInputFile_label"
-              >
-                <input
-                  className={cn(
-                    "сarCardSetup_container_carSetup_formForInputFile_label_input",
-                    {
-                      сarCardSetup_container_carSetup_formForInputFile_label_input_error:
-                        linkDirty && linkError,
-                    }
-                  )}
-                  id="inputFile"
-                  placeholder="Введите ссылку ..."
-                  value={imgCar}
-                  onChange={(e) => handlChangeImg(e.target.value)}
-                  name="link"
-                  onBlur={(e) => handlClickBlur(e)}
-                ></input>
-                {linkDirty && linkError && (
-                  <div className="сarCardSetup_container_carSetup_formForInputFile_error">
-                    {linkError}
-                  </div>
-                )}
-                <button
-                  type="button"
-                  className={cn(
-                    "сarCardSetup_container_carSetup_formForInputFile_label_button",
-                    {
-                      сarCardSetup_container_carSetup_formForInputFile_label_button_error:
-                        linkDirty && linkError,
-                    }
-                  )}
-                >
-                  Обзор
-                </button>
-              </label>
-            </form>
-          </div>
-          <div className="сarCardSetup_container_progressSetup">
-            <div className="сarCardSetup_container_progressSetup_text">
-              <span className="сarCardSetup_container_progressSetup_text_completed">
-                Заполнено
-              </span>
-              <p className="сarCardSetup_container_progressSetup_text_percentage">
-                {randomFuelLvl}%
-              </p>
-            </div>
-            <progress
-              className="сarCardSetup_container_progressSetup_fill"
-              max="100"
-              value={randomFuelLvl}
-            ></progress>
-          </div>
-          <div className="сarCardSetup_container_progressSetup_description">
-            <span className="сarCardSetup_container_progressSetup_description_title">
-              Описание
-            </span>
-            <textarea
-              className="сarCardSetup_container_progressSetup_description_text"
-              placeholder="Введите описание ..."
-              value={descriptionCar}
-              onChange={(e) => handlChangeDescription(e.target.value)}
-              name="description"
+          ) : (
+            "Введите название и модель автомобиля"
+          )}
+        </span>
+        <span className="carSetup__carClass">{typeCarCart}</span>
+        <form className="carSetup__formForInputFile formForInputFile">
+          <label htmlFor="inputFile" className="formForInputFile__label">
+            <input
+              className={cn("formForInputFile__input", {
+                formForInputFile__input_error: linkDirty && linkError,
+              })}
+              id="inputFile"
+              placeholder="Введите ссылку ..."
+              value={imgCar}
+              onChange={(e) => handlChangeImg(e.target.value)}
+              name="link"
               onBlur={(e) => handlClickBlur(e)}
-            ></textarea>
-            {descriptionDirty && descriptionError && (
-              <div className="сarCardSetup_container_progressSetup_description_error">
-                {descriptionError}
-              </div>
+            ></input>
+            {linkDirty && linkError && (
+              <div className="formForInputFile__textError">{linkError}</div>
             )}
-          </div>
-        </>
-      ) : null}
+            <button
+              type="button"
+              className={cn("formForInputFile__button", {
+                formForInputFile__button_error: linkDirty && linkError,
+              })}
+            >
+              Обзор
+            </button>
+          </label>
+        </form>
+      </div>
+      <div className="сarCardSetup-wrapper__progressSetup progressSetup">
+        <div className="progressSetup__text">
+          <span className="progressSetup__text__completed">Заполнено</span>
+          <p className="progressSetup__text__percentage">{randomFuelLvl}%</p>
+        </div>
+        <progress max="100" value={randomFuelLvl}></progress>
+      </div>
+      <div className="сarCardSetup-wrapper__description description">
+        <span className="description__title">Описание</span>
+        <textarea
+          className="description__text"
+          placeholder="Введите описание ..."
+          value={descriptionCar}
+          onChange={(e) => handlChangeDescription(e.target.value)}
+          name="description"
+          onBlur={(e) => handlClickBlur(e)}
+        ></textarea>
+        {descriptionDirty && descriptionError && (
+          <div className="description__textError">{descriptionError}</div>
+        )}
+      </div>
     </div>
   );
 };

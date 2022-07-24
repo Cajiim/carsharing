@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const ValidateErrorsSlice = createSlice({
+const validateErrorsSlice = createSlice({
   name: "ValidateErrors",
   initialState: {
-    linkError:"",
-    descriptionError:"Поле не должно быть пустым",
-    carNameError:"Поле не должно быть пустым",
-    carTypeError:"Поле не должно быть пустым",
-    minPriceError:"Поле не должно быть пустым" ,
-    maxPriceError:"Поле не должно быть пустым" , 
-    colorError:"Выберите хотябы один цвет",
+    linkError: "",
+    descriptionError: "Поле не должно быть пустым",
+    carNameError: "Поле не должно быть пустым",
+    carTypeError: "Поле не должно быть пустым",
+    minPriceError: "Поле не должно быть пустым",
+    maxPriceError: "Поле не должно быть пустым",
+    colorError: "Выберите хотябы один цвет",
   },
   reducers: {
     setLinkImgError: (state, action) => {
@@ -33,7 +33,15 @@ const ValidateErrorsSlice = createSlice({
     setColorError: (state, action) => {
       state.colorError = action.payload;
     },
-    
+    clearErrors: (state) => {
+      state.linkError = "";
+      state.descriptionError = "";
+      state.carNameError = "";
+      state.carTypeError = "";
+      state.minPriceError = "";
+      state.maxPriceError = "";
+      state.colorError = "";
+    },
   },
 });
 
@@ -44,7 +52,8 @@ export const {
   setCarTypeError,
   setMinPriceError,
   setMaxPriceError,
-  setColorError
-} = ValidateErrorsSlice.actions; 
+  setColorError,
+  clearErrors
+} = validateErrorsSlice.actions;
 
-export default ValidateErrorsSlice.reducer;
+export default validateErrorsSlice.reducer;

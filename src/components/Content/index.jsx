@@ -3,52 +3,49 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Geo from "../../assets/svg/Group.svg";
-
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
 
 const Content = ({ overflow }) => (
   <div
-    className={cn("left-Container", {
-      left_Container_disabled: overflow,
+    className={cn("content__wrapper", {         
+    content__wrapper_disabled: overflow,
     })}
   >
-    <header className="left-Container_head">
-      <h2 className="left-Container_head__name">Need for drive</h2>
-      <ul className="clear">
-        <li className="left-Container_head__geolocation">
+    <header className="content__wrapper__header header">    
+      <h2 className="header__title">Need for drive</h2> 
+        <li className="header__container">       
           <img
-            className="left-Container_head__geolocation_img"
+            className="header__imgGeo"      
             src={Geo}
-            alt="Геолокация"
+            alt="geo"
           ></img>
-          <span className="left-Container_head__geolocation_city">
+          <span className="header__city">
             Ульяновск
           </span>
         </li>
-      </ul>
     </header>
 
-    <div className="left-Container_mainContent">
-      <h1 className="left-Container_mainContent_title_container">
-        <span className="left-Container_mainContent_title">Каршеринг</span>
+    <main className="content__wrapper__mainContent mainContent">                              
+      <h1 className="mainContent__titleContainer">          
+        <span className="mainContent__title">Каршеринг</span>    
         <br></br>
-        <span className="left-Container_mainContent-title">Need for drive</span>
+        <span className="mainContent-title">Need for drive</span>  
       </h1>
-      <p className="left-Container_mainContent__container_text">
+      <p className="mainContent__text">             
         Поминутная аренда авто твоего города
       </p>
-      <Link to="/order" className="left-Container_mainContent_button">
+      <Link to="/order" className="mainContent__link">     
         Забронировать
       </Link>
-    </div>
+    </main>
 
-    <footer className="left-Container_foot">
-      <span className="left-Container_foot__year">
+    <footer className="content__wrapper__footer footer">                  
+      <span className="footer__year">          
         © 2016-2019 «Need for drive»
       </span>
-      <a className="left-Container_foot__number" href="tel:+7 (495) 234-22-44">
+      <a className="footer__phoneNumber" href="tel:+7 (495) 234-22-44"> 
         8 (495) 234-22-44
       </a>
     </footer>

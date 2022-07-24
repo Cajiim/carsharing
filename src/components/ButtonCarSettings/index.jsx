@@ -1,17 +1,10 @@
-import React, { useState, useEffect, memo } from "react";
-import classNames from "classnames";
+import React, { useEffect, memo } from "react";
 import PropTypes from "prop-types";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { fetchDataCarList } from "../../api/fetchDataThunk";
 import {
-  deleteModelCarCart,
-  deleteTypeCarCart,
-  deleteMinPrice,
-  deleteMaxPrice,
-  deleteImgForCar,
-  deleteDescriptionCar,
-  deleteArrAllColorsForCar,
-  deleteColorForCheckbox,
   setModelCarCart,
   setTypeCarCart,
   setMinPrice,
@@ -20,30 +13,13 @@ import {
   setDescriptionCar,
   setArrAllColorsForCar,
   setColorForCheckbox,
+  clearData,
 } from "../../redux/cart/reducerCarCartSettings";
-import {
-  setLinkImgError,
-  setDescriptionError,
-  setCarNameError,
-  setCarTypeError,
-  setMinPriceError,
-  setMaxPriceError,
-  setColorError,
-} from "../../redux/cart/reducerValidateErrors";
-import style from "./index.scss";
-
-const cn = classNames.bind(style);
+import { clearErrors } from "../../redux/cart/reducerValidateErrors";
+import ButtonCarSetting from "../../ui/ButtonCarSetting";
+import "./index.scss";
 
 const ButtonCarSettings = ({ setActiveConfirmation }) => {
-  ButtonCarSettings.propTypes = {
-    setActiveConfirmation: PropTypes.bool,
-  };
-  ButtonCarSettings.defaultProps = {
-    setActiveConfirmation: false,
-  };
-  const urlId = window.location.href
-    .slice(window.location.href.indexOf("?"))
-    .split(/[&?]{1}[\w\d]+=/);
   const dispatch = useDispatch();
   const {
     modelCarCart,
@@ -81,24 +57,19 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
   const name = choiseFromArr[1];
 
   const handlClickClear = () => {
-    dispatch(deleteModelCarCart());
-    dispatch(deleteTypeCarCart());
-    dispatch(deleteMinPrice());
-    dispatch(deleteMaxPrice());
-    dispatch(deleteImgForCar());
-    dispatch(deleteDescriptionCar());
-    dispatch(deleteArrAllColorsForCar());
-    dispatch(deleteColorForCheckbox());
+    dispatch(clearData());
   };
 
+  const location = useLocation();
+  const urlId = location.search
+    .slice(location.search.indexOf("?"))
+    .split(/[&?]{1}[\w\d]+=/);
+
   const handleChangeCar = () => {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
     axios
       .put(
         `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          url[1] ? url[1] : ""
+          urlId[1] ? urlId[1] : ""
         }`,
         {
           model,
@@ -136,6 +107,7 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
       )
       .catch((error) => console.log(error));
   };
+
   const handleDeleteCar = () => {
     axios
       .delete(
@@ -149,91 +121,61 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
       .catch((error) => console.log(error));
   };
 
-  const [state, setState] = useState();
-  const [contentCart, setContentCart] = useState([]);
-
-  function fetchData() {
-    setState(
-      axios
-        .get(
-          `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-            urlId[1] ? urlId[1] : ""
-          }`
-        )
-        .then((res) => setContentCart(res.data))
-        .catch((error) => console.log(error, "Ошибка"))
-    );
-  }
-
   useEffect(() => {
-    fetchData();
+    dispatch(fetchDataCarList());
+  }, [dispatch]);
 
-    return () => {
-      setState();
-    };
-  }, []);
+  const { dataCarList } = useSelector(({ getData }) => getData);
 
-  const returnModel = contentCart?.model;
-  const returnName = contentCart?.name;
+  const returnModel = dataCarList?.model;
+  const returnName = dataCarList?.name;
   const returnCarModel = `${returnModel}, ${returnName}`;
 
   const handlReturnCar = () => {
     dispatch(setModelCarCart(returnCarModel));
-    dispatch(setTypeCarCart(contentCart?.typeCarCart));
-    dispatch(setMinPrice(contentCart?.minPrice));
-    dispatch(setMaxPrice(contentCart?.maxPrice));
-    dispatch(setImgForCar(contentCart?.imgCar));
-    dispatch(setDescriptionCar(contentCart?.descriptionCar));
-    dispatch(setArrAllColorsForCar(contentCart?.arrAllColors));
-    dispatch(setColorForCheckbox(contentCart?.arrAllColors));
-
-    dispatch(setLinkImgError(""));
-    dispatch(setDescriptionError(""));
-    dispatch(setCarNameError(""));
-    dispatch(setCarTypeError(""));
-    dispatch(setMinPriceError(""));
-    dispatch(setMaxPriceError(""));
-    dispatch(setColorError(""));
+    dispatch(setTypeCarCart(dataCarList?.typeCarCart));
+    dispatch(setMinPrice(dataCarList?.minPrice));
+    dispatch(setMaxPrice(dataCarList?.maxPrice));
+    dispatch(setImgForCar(dataCarList?.imgCar));
+    dispatch(setDescriptionCar(dataCarList?.descriptionCar));
+    dispatch(setArrAllColorsForCar(dataCarList?.arrAllColors));
+    dispatch(setColorForCheckbox(dataCarList?.arrAllColors));
+    dispatch(clearErrors());
   };
 
   return (
-    <div className="container_buttons">
-      {state ? (
-        <>
-          <div className="container_buttons_control">
-            <button
-              type="button"
-              className={cn("container_buttons_control_save", {
-                container_buttons_control_save_active:
-                  errorChecking && !correctErrorChecking,
-              })}
-              onClick={
-                urlId[1]
-                  ? handleChangeCar
-                  : handleAddCar
-              }
-            >
-              Сохранить
-            </button>
-            <button
-              type="button"
-              className="container_buttons_control_cancel"
-              onClick={urlId[1] ? handlReturnCar : handlClickClear}
-            >
-              Отменить
-            </button>
-          </div>
-          <button
-            type="button"
-            className="container_buttons_control_delete"
-            onClick={urlId[1] ? handleDeleteCar : handlClickClear}
-          >
-            Удалить
-          </button>
-        </>
-      ) : null}
+    <div className="containerButtons">
+      <div className="containerButtons__control control">
+        <ButtonCarSetting
+          handlClick={urlId[1] ? handleChangeCar : handleAddCar}
+          buttonControl="control__save"
+          active={
+            (errorChecking && !correctErrorChecking) === true
+              ? "control__save_active"
+              : ""
+          }
+          name="Сохранить"
+        />
+        <ButtonCarSetting
+          handlClick={urlId[1] ? handlReturnCar : handlClickClear}
+          buttonControl="control__cancel"
+          name="Отменить"
+        />
+      </div>
+      <ButtonCarSetting
+        handlClick={urlId[1] ? handleDeleteCar : handlClickClear}
+        buttonControl="control__delete"
+        name="Удалить"
+      />
     </div>
   );
-}
+};
+
+ButtonCarSettings.propTypes = {
+  setActiveConfirmation: PropTypes.func,
+};
+ButtonCarSettings.defaultProps = {
+  setActiveConfirmation: () => {},
+};
 
 export default memo(ButtonCarSettings);

@@ -3,43 +3,34 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
-import { setCarNumber, setFuelLvl } from "../../../redux/cart/reducerFinalOrder";
+import {
+  setCarNumber,
+  setFuelLvl,
+} from "../../../redux/cart/reducerFinalOrder";
 import { setTabIndex } from "../../../redux/cart/reducerTableIndex";
-
+import { fetchDataSelectivelyCarOrders } from "../../../api/fetchDataThunk";
 import Modal from "../../Modal";
+import Button from "../../../ui/ButtonFinalOrderBlock";
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
 
 const RightSideBlockStory = () => {
   const dispatch = useDispatch();
-  const [contentModel, setContentModel] = useState([]);
-
-  async function fetchData() {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?search=${
-          url[1] ? url[1] : null
-        }`
-      )
-      .then((res) => setContentModel(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
-  }
+  const { dataSelectOrder } = useSelector(({ getData }) => getData);
 
   useEffect(() => {
-    fetchData();
+    dispatch(fetchDataSelectivelyCarOrders());
   }, []);
-  const CarFromBack = contentModel[0]?.modelCar;
-  const additionallyOptionsFromBack = contentModel[0]?.additionalOptions;
+
+  const CarFromBack = dataSelectOrder[0]?.modelCar;
+  const additionallyOptionsFromBack = dataSelectOrder[0]?.additionalOptions;
 
   const handleDelete = () => {
     axios
       .delete(
         `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder/${
-          contentModel[0]?.id ? contentModel[0]?.id : ""
+          dataSelectOrder[0]?.id ? dataSelectOrder[0]?.id : ""
         }`
       )
       .then((res) => console.log("!!!!!delete data", res))
@@ -91,10 +82,6 @@ const RightSideBlockStory = () => {
       )}`
     );
   }
-  const handlClickButtonTotal = () => {
-    dispatch(setCarNumber(carNumberTotal()));
-    dispatch(setFuelLvl(levelFuel));
-  };
 
   const minPrice = model?.minPrice;
   const maxPrice = model?.maxPrice;
@@ -159,201 +146,212 @@ const RightSideBlockStory = () => {
       )
     );
   };
+
+  const citySelected =
+    cityAutoFromBack ||
+    (textCityAutoChange && cityAuto && textCityAutoChange === cityAuto
+      ? cityAuto
+      : "Выберите город");
+  const streetSelected =
+    streetAutoFromBack ||
+    (textStreetAutoChange && streetAuto && textStreetAutoChange === streetAuto
+      ? streetAuto
+      : "Выберите пункт выдачи");
+  const modelSelected =
+    model?.name === undefined ? CarFromBack?.name : model?.name;
+  const correctModelModel =
+    model?.model === undefined ? CarFromBack?.model : model?.model;
+  const correactModelName =
+    model?.name === undefined ? CarFromBack?.name : model?.name;
+  const colorSelected =
+    colorCarFromBack !== undefined ? colorCarFromBack : color;
+  const arendTimeSelected =
+    (correctPriceRate && startDate < endDate) || totalPriceFromBack;
+  const rentalTypeSelect =
+    arendTimeFromBack !== undefined ? arendTimeFromBack : arendTimeForBlock;
+  const rentalTypeCorrect =
+    (rentalType !== undefined ? rentalType : arendRate) === "minut" ? (
+      <span>&nbsp;мин.</span>
+    ) : (
+      <span>&nbsp;д.</span>
+    );
+  const tarifRateSelected =
+    ((priceRate === 0 ? undefined : priceRate) &&
+      startDate !== undefined &&
+      endDate !== undefined) ||
+    rateRentFromBack;
+
+  const fullGasSelected =
+    checkedFuelFromBack !== undefined ? checkedFuelFromBack : checkedFuel;
+
+  const babyChairSelected =
+    checkedBabyChairFromBack !== undefined
+      ? checkedBabyChairFromBack
+      : checkedBabyChair;
+
+  const rightHandSelected =
+    checkedRightHandFromBack !== undefined
+      ? checkedRightHandFromBack
+      : checkedRightHand;
+
+  const correctPriceSelect =
+    resultCorrectPriceFromBack ||
+    (startDate && endDate && startDate < endDate
+      ? resultCorrectPrice
+      : orderedPrice);
+
+  const modelButtonDisabled =
+    textCityAutoChange &&
+    cityAuto &&
+    textCityAutoChange === cityAuto &&
+    textStreetAutoChange &&
+    streetAuto &&
+    textStreetAutoChange === streetAuto;
+
+  const totalSelect =
+    endDate === null ||
+    Number.isNaN(endDate) ||
+    startDate === null ||
+    Number.isNaN(startDate) ||
+    endDate <= startDate ||
+    color === null;
+  const handlClickButtonTotal = () => {
+    dispatch(setCarNumber(carNumberTotal()));
+    dispatch(setFuelLvl(levelFuel));
+    dispatch(setTabIndex(String(Number(tabIndex) + 1)));
+  };
+  const handlClickOrder = () => setActiveModal(true);
+
   return (
-    <div className="rightSideBlock_container">
+    <div className="orderBlock">
       <Modal active={activeModal} setActive={setActiveModal} />
-      <h4 className="rightSideBlock_container_order">Ваш заказ:</h4>
-      <ul className="rightSideBlock_content clear">
-        <li className="rightSideBlock__text">
-          <span className="rightSideBlock__text_name">Пункт выдачи</span>
+      <h4 className="orderBlock__title">Ваш заказ:</h4>
+      <ul className="orderBlock__mainList mainList">
+        <li className="mainList__text">
+          <span className="mainList__nameLine">Пункт выдачи</span>
           <div></div>
-          <p className="rightSideBlock__text_container">
-            <span className="rightSideBlock__text_container_content">
-              {cityAutoFromBack ||
-                (textCityAutoChange &&
-                cityAuto &&
-                textCityAutoChange === cityAuto
-                  ? cityAuto
-                  : "Выберите город")}
-              ,
+          <p className="mainList__container">
+            <span className="mainList__container__content">
+              {citySelected},
             </span>
-            <span className="rightSideBlock__text_container_content">
-              {streetAutoFromBack ||
-                (textStreetAutoChange &&
-                streetAuto &&
-                textStreetAutoChange === streetAuto
-                  ? streetAuto
-                  : "Выберите пункт выдачи")}
+            <span className="mainList__container__content">
+              {streetSelected}
             </span>
           </p>
         </li>
 
-        {(model?.name === undefined ? CarFromBack?.name : model?.name) && (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Модель</span>
+        {modelSelected && (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Модель</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">
-                {model?.model === undefined ? CarFromBack?.model : model?.model}
-                , {model?.name === undefined ? CarFromBack?.name : model?.name}
+            <p className="mainList__container">
+              <span className="mainList__container__content">
+                {correctModelModel}, {correactModelName}
               </span>
             </p>
           </li>
         )}
-
         {(colorCarFromBack || color) && (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Цвет</span>
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Цвет</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">
-                {colorCarFromBack !== undefined ? colorCarFromBack : color}
+            <p className="mainList__container">
+              <span className="mainList__container__content">
+                {colorSelected}
               </span>
             </p>
           </li>
         )}
-
-        {((correctPriceRate && startDate < endDate) || totalPriceFromBack) && (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">
-              Длительность аренды
-            </span>
+        {arendTimeSelected && (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Длительность аренды</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">
-                {arendTimeFromBack !== undefined
-                  ? arendTimeFromBack
-                  : arendTimeForBlock}
-                {(rentalType !== undefined ? rentalType : arendRate) ===
-                "minut" ? (
-                  <span>&nbsp;мин.</span>
-                ) : (
-                  <span>&nbsp;д.</span>
-                )}
+            <p className="mainList__container">
+              <span className="mainList__container__content">
+                {rentalTypeSelect}
+                {rentalTypeCorrect}
               </span>
             </p>
           </li>
         )}
-        {(((priceRate === 0 ? undefined : priceRate) &&
-          startDate !== undefined &&
-          endDate !== undefined) ||
-          rateRentFromBack) && (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Тариф</span>
+        {tarifRateSelected && (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Тариф</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">
+            <p className="mainList__container">
+              <span className="mainList__container__content">
                 {rateRentFromBack !== undefined ? rateRentFromBack : rateRent}
               </span>
             </p>
           </li>
         )}
-        {(checkedFuelFromBack !== undefined
-          ? checkedFuelFromBack
-          : checkedFuel) === false ? null : (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Полный бак</span>
+        {!fullGasSelected ? null : (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Полный бак</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">Да</span>
+            <p className="mainList__container">
+              <span className="mainList__container__content">Да</span>
             </p>
           </li>
         )}
-        {(checkedBabyChairFromBack !== undefined
-          ? checkedBabyChairFromBack
-          : checkedBabyChair) === false ? null : (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Детское кресло</span>
+        {!babyChairSelected ? null : (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Детское кресло</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">Да</span>
+            <p className="mainList__container">
+              <span className="mainList__container__content">Да</span>
             </p>
           </li>
         )}
-        {(checkedRightHandFromBack !== undefined
-          ? checkedRightHandFromBack
-          : checkedRightHand) === false ? null : (
-          <li className="rightSideBlock__text">
-            <span className="rightSideBlock__text_name">Правый руль</span>
+        {!rightHandSelected ? null : (
+          <li className="mainList__text">
+            <span className="mainList__nameLine">Правый руль</span>
             <div></div>
-            <p className="rightSideBlock__text_container">
-              <span className="rightSideBlock__text_container_content">Да</span>
+            <p className="mainList__container">
+              <span className="mainList__container__content">Да</span>
             </p>
           </li>
         )}
       </ul>
 
-      <div className="rightSideBlock_container__price">
-        <span className="rightSideBlock_container__price_text">Цена:</span>
+      <div className="orderBlock__price">
+        <span className="orderBlock__price__text">Цена:</span>
         &nbsp;
-        {resultCorrectPriceFromBack ||
-          (startDate && endDate && startDate < endDate
-            ? resultCorrectPrice
-            : orderedPrice)}
+        {correctPriceSelect}
         &nbsp;₽
       </div>
 
-      <button
-        type="button"
-        className={cn("rightSideBlock_container__button", {
-          rightSideBlock_container__button_disabled:
-            (textCityAutoChange &&
-              cityAuto &&
-              textCityAutoChange === cityAuto &&
-              textStreetAutoChange &&
-              streetAuto &&
-              textStreetAutoChange === streetAuto) !== true,
-          rightSideBlock_container__button_hidden: tabIndex !== "1",
-        })}
-        onClick={() => handlClickButton()}
-      >
-        Выбрать модель
-      </button>
-
-      <button
-        onClick={() => handlClickButton()}
-        className={cn("rightSideBlock_container__button", {
-          rightSideBlock_container__button_disabled: model === null,
-          rightSideBlock_container__button_hidden: tabIndex !== "2",
-        })}
-        type="button"
-      >
-        Дополнительно
-      </button>
-
-      <button
-        onClick={() => {
-          handlClickButton();
-          handlClickButtonTotal();
-        }}
-        className={cn("rightSideBlock_container__button", {
-          rightSideBlock_container__button_disabled:
-            endDate === null ||
-            Number.isNaN(endDate) ||
-            startDate === null ||
-            Number.isNaN(startDate) ||
-            endDate <= startDate ||
-            color === null,
-          rightSideBlock_container__button_hidden: tabIndex !== "3",
-        })}
-        type="button"
-      >
-        Итого
-      </button>
-
-      <button
-        className={cn("rightSideBlock_container__button", {
-          rightSideBlock_container__button_hidden: tabIndex !== "4",
-        })}
-        onClick={() => setActiveModal(true)}
-        type="button"
-      >
-        Заказать
-      </button>
+      <Button
+        handlClick={handlClickButton}
+        buttonControl="buttonFinalOrder"
+        disabled={!modelButtonDisabled ? "buttonFinalOrder_disabled" : ""}
+        hidden={tabIndex !== "1" ? "buttonFinalOrder_hidden" : ""}
+        name="Выбрать модель"
+      />
+      <Button
+        handlClick={handlClickButton}
+        buttonControl="buttonFinalOrder"
+        disabled={model === null ? "buttonFinalOrder_disabled" : ""}
+        hidden={tabIndex !== "2" ? "buttonFinalOrder_hidden" : ""}
+        name="Дополнительно"
+      />
+      <Button
+        handlClick={handlClickButtonTotal}
+        buttonControl="buttonFinalOrder"
+        disabled={totalSelect ? "buttonFinalOrder_disabled" : ""}
+        hidden={tabIndex !== "3" ? "buttonFinalOrder_hidden" : ""}
+        name="Итого"
+      />
+      <Button
+        handlClick={handlClickOrder}
+        buttonControl="buttonFinalOrder"
+        hidden={tabIndex !== "4" ? "buttonFinalOrder_hidden" : ""}
+        name="Заказать"
+      />
       <Link
         to="/order"
-        className={cn("rightSideBlock_container__button_cancel", {
-          rightSideBlock_container__button_hidden: tabIndex !== "5",
+        className={cn("orderBlock__button_cancel", {
+          orderBlock__button_cancel_hidden: tabIndex !== "5",
         })}
         onClick={() => {
           handleDelete();
@@ -364,6 +362,6 @@ const RightSideBlockStory = () => {
       </Link>
     </div>
   );
-}
+};
 
 export default RightSideBlockStory;

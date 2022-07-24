@@ -1,4 +1,4 @@
-.сarCardSetup_container {
+.сarCardSetup-wrapper {
   width: 335px;
   height: 506px;
   display: flex;
@@ -10,17 +10,19 @@
   margin: 30.5px 0 0 27px;
 }
 
-.сarCardSetup_container_carSetup {
+.сarCardSetup-wrapper__carSetup {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.сarCardSetup_container_carSetup_img {
+
+.carSetup__img {
   max-width: 243.5px;
   max-height: 110px;
   margin: 34px 0 10px 0;
 }
-.сarCardSetup_container_carSetup_carName {
+
+.carSetup__carName {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -31,7 +33,8 @@
   color: #3d5170;
   margin-bottom: 4.5px;
 }
-.сarCardSetup_container_carSetup_carClass {
+
+.carSetup__carClass {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -43,7 +46,18 @@
   margin-bottom: 10.5px;
 }
 
-.сarCardSetup_container_carSetup_formForInputFile_label_input {
+.carSetup__formForInputFile {
+  width: 231.5px;
+  height: 29px;
+  margin-bottom: 22.5px;
+  position: relative;
+}
+
+.formForInputFile__label {
+  position: relative;
+}
+
+.formForInputFile__input {
   width: 231.5px;
   height: 29px;
   border: 0.5px solid #becad6;
@@ -59,98 +73,35 @@
   line-height: 14px;
   letter-spacing: -0.18421px;
   color: #495057;
-}
-.сarCardSetup_container_carSetup_formForInputFile_label_input::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
-  letter-spacing: -0.175439px;
-  color: #495057;
+
+  &::placeholder {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.175439px;
+    color: #495057;
+  }
+  &_error {
+    border: 0.5px solid #c4183c;
+  }
 }
 
-.сarCardSetup_container_progressSetup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 60px;
-  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.12), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  margin-bottom: 22.5px;
-}
-progress {
-  width: 290px;
-  height: 5px;
-}
-
-.сarCardSetup_container_progressSetup_text {
-  display: flex;
-  justify-content: space-between;
-  width: 290px;
-  margin-bottom: 10px;
-}
-.сarCardSetup_container_progressSetup_text_completed {
+.formForInputFile__textError {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.408571px;
-  color: #868e96;
-}
-.сarCardSetup_container_progressSetup_text_percentage {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.345714px;
-  color: #5a6169;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: -0.175439px;
+  color: #c4183c;
+  position: absolute;
+  top: 30px;
+  margin-left: 13px;
 }
 
-.сarCardSetup_container_progressSetup_description {
-  display: flex;
-  flex-direction: column;
-  margin: 0 22px 0 22px;
-  position: relative;
-}
-.сarCardSetup_container_progressSetup_description_title {
-  margin-bottom: 14px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.408571px;
-  color: #868e96;
-}
-.сarCardSetup_container_progressSetup_description_text {
-  width: 285px;
-  height: 86.5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13.5px;
-  line-height: 20px;
-  letter-spacing: -0.408571px;
-  color: #5a6169;
-  outline: none;
-  resize: none;
-  border: none;
-}
-.сarCardSetup_container_progressSetup_description_text::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13.5px;
-  line-height: 20px;
-  letter-spacing: -0.408571px;
-  color: #5a6169;
-}
-
-.сarCardSetup_container_carSetup_formForInputFile_label_button {
+.formForInputFile__button {
   background: #e9ecef;
   border: 0.5px solid #becad6;
   width: 65.5px;
@@ -170,38 +121,94 @@ progress {
   right: -166px;
   bottom: 51.5px;
   box-sizing: border-box;
-}
-.сarCardSetup_container_carSetup_formForInputFile_label_button_error {
-  border: 0.5px solid #c4183c;
-  border-left: 0.5px solid #becad6;
-}
-.сarCardSetup_container_carSetup_formForInputFile {
-  width: 231.5px;
-  height: 29px;
-  margin-bottom: 22.5px;
-  position: relative;
-}
-.сarCardSetup_container_carSetup_formForInputFile_label {
-  position: relative;
+
+  &_error {
+    border: 0.5px solid #c4183c;
+    border-left: 0.5px solid #becad6;
+  }
 }
 
-.сarCardSetup_container_carSetup_formForInputFile_error {
+.сarCardSetup-wrapper__progressSetup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.12), 0px 1px 0px rgba(0, 0, 0, 0.12);
+  margin-bottom: 22.5px;
+}
+
+.progressSetup__text {
+  display: flex;
+  justify-content: space-between;
+  width: 290px;
+  margin-bottom: 10px;
+}
+
+.progressSetup__text__completed {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 11px;
-  letter-spacing: -0.175439px;
-  color: #c4183c;
-  position: absolute;
-  top: 30px;
-  margin-left: 13px;
-}
-.сarCardSetup_container_carSetup_formForInputFile_label_input_error {
-  border: 0.5px solid #c4183c;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.408571px;
+  color: #868e96;
 }
 
-.сarCardSetup_container_progressSetup_description_error {
+.progressSetup__text__percentage {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.345714px;
+  color: #5a6169;
+}
+
+.сarCardSetup-wrapper__description {
+  display: flex;
+  flex-direction: column;
+  margin: 0 22px 0 22px;
+  position: relative;
+}
+
+.description__title {
+  margin-bottom: 14px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.408571px;
+  color: #868e96;
+}
+
+.description__text {
+  width: 285px;
+  height: 86.5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: -0.408571px;
+  color: #5a6169;
+  outline: none;
+  resize: none;
+  border: none;
+  &::placeholder{
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 20px;
+    letter-spacing: -0.408571px;
+    color: #5a6169;
+  }
+}
+
+.description__textError {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -211,4 +218,9 @@ progress {
   color: #c4183c;
   position: absolute;
   top: 118px;
+}
+
+progress {
+  width: 290px;
+  height: 5px;
 }

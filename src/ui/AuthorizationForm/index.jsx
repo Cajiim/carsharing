@@ -59,44 +59,30 @@ const AuthorizationForm = ({
   const checkError = emailError === "" && passwordError === "";
 
   return (
-    <form className="adminAuthorization_fillField">
-      <p className="adminAuthorization_fillField_title">{authType}</p>
-      <div className="adminAuthorization_fillField_mailEntryFields">
-        <span className="adminAuthorization_fillField_mailEntryFields_mail">
-          Почта
-        </span>
+    <form className="adminAuthorizationForm">
+      <p className="adminAuthorizationForm__title">{authType}</p>
+      <div className="adminAuthorizationForm__mail mail">
+        <span className="mail__text">Почта</span>
         <input
-          className={cn(
-            "adminAuthorization_fillField_mailEntryFields_inputMail",
-            {
-              adminAuthorization_fillField_mailEntryFields_inputMail_error:
-                emailDirty && emailError,
-            }
-          )}
+          className={cn("mail__inputMail", {
+            mail__inputMail_error: emailDirty && emailError,
+          })}
           name="email"
           value={email}
           onChange={(e) => handlChangeEmail(e)}
           onBlur={(e) => handlClickBlur(e)}
         ></input>
         {emailDirty && emailError && (
-          <div className="adminAuthorization_fillField_mailEntryFields_error">
-            {emailError}
-          </div>
+          <div className="mail__errorText">{emailError}</div>
         )}
       </div>
 
-      <div className="adminAuthorization_fillField_passwordEntryFields">
-        <span className="adminAuthorization_fillField_passwordEntryFields_password">
-          Пароль
-        </span>
+      <div className="adminAuthorizationForm__password password">
+        <span className="password__text">Пароль</span>
         <input
-          className={cn(
-            "adminAuthorization_fillField_passwordEntryFields_inputPassword",
-            {
-              adminAuthorization_fillField_passwordEntryFields_inputPassword_error:
-                passwordDirty && passwordError,
-            }
-          )}
+          className={cn("password__inputPassword", {
+            password__inputPassword_error: passwordDirty && passwordError,
+          })}
           name="password"
           type="password"
           value={password}
@@ -104,24 +90,20 @@ const AuthorizationForm = ({
           onBlur={(e) => handlClickBlur(e)}
         ></input>
         {passwordDirty && passwordError && (
-          <div className="adminAuthorization_fillField_inputPassword_error">
-            {passwordError}
-          </div>
+          <div className="password__errorText">{passwordError}</div>
         )}
       </div>
 
-      <div className="adminAuthorization_fillField_entryBlock">
-        <span className="adminAuthorization_fillField_entryBlock_linkEntry">
-          Запросить доступ
-        </span>
-        <Link to={handleLink} className="linkAuth">
+      <div className="adminAuthorization__entryBlock entryBlock">
+        <span className="entryBlock__linkEntry">Запросить доступ</span>
+        <Link to={handleLink} className="entryBlock__linkAuth">
           {linkName}
         </Link>
         <Link
           to="/admin/carCart"
           type="button"
-          className={cn("adminAuthorization_fillField_entryBlock_botton", {
-            adminAuthorization_fillField_entryBlock_botton_active: checkError,
+          className={cn("entryBlock__button", {
+            entryBlock__button_active: checkError,
           })}
           onClick={() => handleClick(email, password)}
         >
@@ -136,14 +118,14 @@ AuthorizationForm.propTypes = {
   title: PropTypes.string,
   handleClick: PropTypes.func,
   authType: PropTypes.string,
-  handleLink: PropTypes.func,
+  handleLink: PropTypes.string,
   linkName: PropTypes.string,
 };
 AuthorizationForm.defaultProps = {
   title: "",
   handleClick: () => {},
   authType: "",
-  handleLink: () => {},
+  handleLink: "",
   linkName: "",
 };
 

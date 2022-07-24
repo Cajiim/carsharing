@@ -1,0 +1,123 @@
+.control__save {
+  width: 110px;
+  height: 30px;
+  margin-right: 12.5px;
+  background: #007bff;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.0821429px;
+  color: #ffffff;
+  pointer-events: none;
+  &_active {
+    pointer-events: all;
+    cursor: pointer;
+  }
+  &:hover {
+    background: #005aaa;
+  }
+  &:active {
+    background: #001bff;
+  }
+}
+
+.control__cancel {
+  width: 110px;
+  height: 30px;
+  background: #e9ecef;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.0821429px;
+  color: #3d5170;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: #b9b9ba;
+  }
+  &:active {
+    background: #909090;
+  }
+}
+
+.control__delete {
+  width: 110px;
+  height: 30px;
+  margin-right: 36px;
+  background: #cb3656;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.0821429px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: #f0375f;
+  }
+  &:active {
+    background: #ff1548;
+  }
+}
+
+.buttons__reset {
+  width: 95px;
+  height: 29px;
+  background: #c4183c;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #ffffff;
+
+  &:active {
+    background: #c4444c;
+  }
+  &:hover {
+    background: #c9311a;
+  }
+}
+
+.buttons__apply {
+  width: 95px;
+  height: 29px;
+  background: #007bff;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #ffffff;
+
+  &:active {
+    background: #005bff;
+  }
+  &:hover {
+    background: #009bff;
+  }
+  &_nextPosition {
+    margin: 15.5px 21px 0 0;
+  }
+}

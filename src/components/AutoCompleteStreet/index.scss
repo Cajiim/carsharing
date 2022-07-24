@@ -1,8 +1,9 @@
-.autoCompleteStreet {
+.autoCompleteStreet-wrapper {
   display: flex;
   margin-right: 8px;
 }
-.autoCompleteStreet_street {
+
+.autoCompleteStreet-wrapper__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -10,17 +11,18 @@
   line-height: 16px;
   color: #121212;
 }
-.autoCompleteStreet_container {
+.autoCompleteStreet-wrapper__container {
   position: relative;
   display: flex;
   flex-direction: column;
+
+  & input[type="pointOfIssue"] {
+    padding-left: 8px;
+    padding-bottom: 2px;
+  }
 }
 
-.autoCompleteStreet_container input[type="pointOfIssue"] {
-  padding-left: 8px;
-  padding-bottom: 2px;
-}
-.autoCompleteStreet_container_input {
+.container__inputStreet {
   border: none;
   outline: none;
   font-family: "Roboto";
@@ -33,9 +35,18 @@
   width: 224px;
   box-sizing: border-box;
   margin-left: 4.5px;
+
+  &::placeholder {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+  }
 }
 
-.autoCompleteStreet_container_cancelButton {
+.container__cancelButton {
   display: block;
   width: 8px;
   height: 8px;
@@ -48,12 +59,13 @@
   background: none;
   font-size: 17px;
   top: -1px;
-}
-.autoCompleteStreet_container_cancelButton_disabled {
-  display: none;
+
+  &_disabled {
+    display: none;
+  }
 }
 
-.autoCompleteStreet_container_choice {
+.container__choice {
   height: auto;
   max-height: 105px;
   min-height: 0px;
@@ -68,11 +80,13 @@
   box-sizing: border-box;
   margin-top: 19px;
   margin-left: 5px;
+
+  &_disabled {
+    border: none;
+  }
 }
-.autoCompleteStreet_container_choice_disabled {
-  border: none;
-}
-.autoCompleteStreet_container_choice_received {
+
+.choice__received {
   cursor: pointer;
   background: #ffffff;
   font-family: "Roboto";
@@ -84,23 +98,10 @@
   margin-left: 8px;
   margin-top: 6px;
   margin-bottom: 6px;
-}
-.autoCompleteStreet_container_choice_received:hover {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #0ec261;
-}
 
-.autoCompleteStreet_container_input::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #999999;
+  &:hover {
+    color: #0ec261;
+  }
 }
 
 ::-webkit-scrollbar {

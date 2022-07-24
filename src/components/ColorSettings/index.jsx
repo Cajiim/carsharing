@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import classNames from "classnames";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setColorForCar,
@@ -35,20 +34,17 @@ const ColorSettings = () => {
   };
 
   const [colorDirty, setColorDirty] = useState(false);
-
   const handlClickBlur = (e) => {
     switch (e.target.name) {
       case "colorCar":
         setColorDirty(true);
         break;
-
       default:
     }
   };
 
   const handlAddColor = (value) => {
     const re = /^[а-яА-ЯёЁ\s-]+$/;
-
     if (!re.test(String(value).toLowerCase()) && value !== "") {
       dispatch(setColorError("Введите корректно цвет автомобиля"));
       dispatch(setColorForCar(value));
@@ -58,50 +54,42 @@ const ColorSettings = () => {
     }
   };
 
-  function fetchData() {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          url[1] ? url[1] : ""
-        }`
-      )
-      .then((res) => {
-        dispatch(
-          setArrAllColorsForCar(
-            res.data.arrAllColors ? res.data.arrAllColors : []
-          )
-        );
-        dispatch(
-          setColorForCheckbox(
-            res.data.arrAllColors ? res.data.arrAllColors : []
-          )
-        );
-        dispatch(
-          setColorError(
-            res.data.arrAllColors ? "" : "Выберите хотябы один цвет"
-          )
-        );
-      })
-      .catch((error) => console.log(error, "Ошибка"));
-  }
-
+  const { dataCarList } = useSelector(({ getData }) => getData);
+  const arrColors = dataCarList?.arrAllColors;
   useEffect(() => {
-    fetchData();
-  }, []);
+    setTimeout(() => {
+      dispatch(setArrAllColorsForCar(arrColors || []));
+      dispatch(setColorForCheckbox(arrColors || []));
+      dispatch(setColorError(arrColors ? "" : "Выберите хотябы один цвет"));
+    }, 0);
+  }, [arrColors, dataCarList?.arrAllColors]);
+
+  const noСolors =
+    minPrice &&
+    maxPrice &&
+    arrAllColors &&
+    colorError === "" &&
+    arrAllColors.length === 0;
+
+  const handlAddColorForArr = () =>
+    arrAllColors.includes(colorForCar.trim()) ||
+    colorForCheckbox.includes(colorForCar.trim()) ||
+    colorForCar === "" ||
+    colorError !== ""
+      ? null
+      : (dispatch(setArrAllColorsForCar([...arrAllColors, colorForCar.trim()])),
+        dispatch(
+          setColorForCheckbox([...colorForCheckbox, colorForCar.trim()])
+        ),
+        handlDeleteColorForm());
 
   return (
     <>
-      <div className="colorSettings_container_availableСolors">
-        <span className="colorSettings_container_availableСolors_title">
-          Доступные цвета
-        </span>
+      <div className="addСolor">
+        <span className="addСolor__title">Доступные цвета</span>
         <input
-          className={cn("colorSettings_container_availableСolors_input", {
-            colorSettings_container_availableСolors_input_error:
-              colorDirty && colorError,
+          className={cn("addСolor__input ", {
+            addСolor__input_error: colorDirty && colorError,
           })}
           value={colorForCar}
           onInput={(e) => handlAddColor(e.target.value)}
@@ -110,64 +98,38 @@ const ColorSettings = () => {
           onBlur={handlClickBlur}
         ></input>
         {colorDirty && colorError && (
-          <div className="colorSettings_container_availableСolors_input_textError">
-            {colorError}
-          </div>
+          <div className="addСolor__textError">{colorError}</div>
         )}
-        {minPrice &&
-          maxPrice &&
-          arrAllColors &&
-          colorError === "" &&
-          arrAllColors.length === 0 && (
-            <div className="colorSettings_container_availableСolors_input_textError">
-              Выберите хотябы один цвет
-            </div>
-          )}
+        {noСolors && (
+          <div className="addСolor__textError">Выберите хотябы один цвет</div>
+        )}
         <button
           type="button"
-          className="colorSettings_container_availableСolors_button"
+          className="addСolor__addColorButton"
           aria-label="addColor"
-          onClick={() =>
-            arrAllColors.includes(colorForCar.trim()) ||
-            colorForCheckbox.includes(colorForCar.trim()) ||
-            colorForCar === "" ||
-            colorError !== ""
-              ? null
-              : (dispatch(
-                  setArrAllColorsForCar([...arrAllColors, colorForCar.trim()])
-                ),
-                dispatch(
-                  setColorForCheckbox([...colorForCheckbox, colorForCar.trim()])
-                ),
-                handlDeleteColorForm())
-          }
+          onClick={handlAddColorForArr}
         ></button>
       </div>
-      <div className="colorSettings_container_checkBoxColors">
-        <form
-          className="colorSettings_container_checkBoxColors_form"
-          id="colorForm"
-        >
+      <div className="checkBoxColors">
+        <form id="colorForm">
           {colorForCheckbox &&
             colorForCheckbox.map((el) => (
               <label
                 htmlFor={el}
-                className="colorSettings_container_checkBoxColors_form_label"
+                className="checkBoxColors__label"
                 key={el.toString()}
               >
                 <input
                   value={el}
                   id={el}
                   type="checkbox"
-                  className="colorSettings_container_checkBoxColors_form_label_checkBox"
+                  className="checkBoxColors__input"
                   checked={arrAllColors.includes(el)}
                   onChange={handleChangeColor}
                 ></input>
 
-                <span className="colorSettings_container_checkBoxColors_form_label_fakeCheckBox"></span>
-                <span className="colorSettings_container_checkBoxColors_form_label_text">
-                  {el}
-                </span>
+                <span className="checkBoxColors__fakeCheckbox"></span>
+                <span className="checkBoxColors__text">{el}</span>
               </label>
             ))}
         </form>

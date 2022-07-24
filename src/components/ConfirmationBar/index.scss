@@ -7,16 +7,18 @@
   justify-content: space-between;
   align-items: center;
   display: none;
-}
-.confirmationBar_active {
-  display: flex;
-  z-index: 1;
+
+  &_active {
+    display: flex;
+    z-index: 1;
+  }
 }
 
-.confirmationBar_textContent_imgAccept {
+.confirmationBar__imgAccept {
   margin-left: 27.5px;
 }
-.confirmationBar_textContent_text {
+
+.confirmationBar__text {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -26,7 +28,8 @@
   color: #ffffff;
   margin-left: 9px;
 }
-.confirmationBar_textContent_imgCancel {
+
+.confirmationBar__imgCancel {
   margin-right: 32.5px;
   cursor: pointer;
 }

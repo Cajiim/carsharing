@@ -3,7 +3,8 @@
   margin-right: 8px;
   margin-bottom: 13px;
 }
-.autoCompleteCity_city {
+
+.autoCompleteCity__title {
   margin-left: 50px;
   font-family: "Roboto";
   font-style: normal;
@@ -12,17 +13,18 @@
   line-height: 16px;
   color: #121212;
 }
-.autoCompleteCity_container {
+
+.autoCompleteCity__container {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-.autoCompleteCity_container input[type="textCity"] {
-  padding-left: 8px;
-  padding-bottom: 2px;
+  & input[type="textCity"] {
+    padding-left: 8px;
+    padding-bottom: 2px;
+  }
 }
 
-.autoCompleteCity_container_input {
+.container__inputCity {
   border: none;
   outline: none;
   font-family: "Roboto";
@@ -35,8 +37,17 @@
   border-bottom: 1px solid #999999;
   box-sizing: border-box;
   margin-left: 8px;
+  &::placeholder{
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+  }
 }
-.autoCompleteCity_container_cancelButton {
+
+.container__cancelButton {
   display: block;
   width: 8px;
   height: 8px;
@@ -49,12 +60,14 @@
   background: none;
   font-size: 17px;
   top: -1px;
-}
-.autoCompleteCity_container_cancelButton_disabled {
-  display: none;
+
+  &_disabled{
+    display: none;
+  }
 }
 
-.autoCompleteCity_container_choice {
+
+.container__choice {
   height: auto;
   max-height: 105px;
   min-height: 0px;
@@ -69,11 +82,13 @@
   box-sizing: border-box;
   margin-left: 8px;
   margin-top: 19px;
+
+  &_disabled{
+    border: none;
+  }
 }
-.autoCompleteCity_container_choice_disabled {
-  border: none;
-}
-.autoCompleteCity_container_choice_received {
+
+.choice__received {
   cursor: pointer;
   background: #ffffff;
   font-family: "Roboto";
@@ -85,24 +100,11 @@
   margin-left: 8px;
   margin-top: 6px;
   margin-bottom: 6px;
-}
-.autoCompleteCity_container_choice_received:hover {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #0ec261;
+  &:hover{
+    color: #0ec261;
+  }
 }
 
-.autoCompleteCity_container_input::placeholder {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #999999;
-}
 
 ::-webkit-scrollbar {
   width: 6px;

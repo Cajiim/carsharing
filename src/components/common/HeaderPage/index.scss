@@ -1,12 +1,11 @@
-.header_container {
+.header-container {
   height: 90px;
   position: relative;
-}
-.header_container_content {
   display: flex;
   justify-content: space-between;
 }
-.header_container_content_title {
+
+.header-container__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -16,16 +15,18 @@
   margin-top: 27px;
   margin-left: 64px;
 }
-.header_container_content_geolocation {
+
+.header-container__geolocation {
   margin-right: 64px;
 }
-.header_container_content_geolocation_title {
+
+.geolocation__title {
   margin-top: 37px;
   display: flex;
   align-items: center;
 }
 
-.header_container_content_geolocation_city {
+.geolocation__city {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

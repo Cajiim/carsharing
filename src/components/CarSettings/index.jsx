@@ -6,23 +6,20 @@ import ColorSettings from "../ColorSettings";
 import ButtonCarSettings from "../ButtonCarSettings";
 import "./index.scss";
 
-const CarSettings = ({ setActiveConfirmation }) => {
-  CarSettings.propTypes = {
-    setActiveConfirmation: PropTypes.bool,
-  };
-  CarSettings.defaultProps = {
-    setActiveConfirmation: false,
-  };
-
-  return (
-    <div className="carSettings_container">
-      <h2 className="carSettings_container_title">Настройки автомобиля</h2>
-      <ModelTypeSettings />
-      <PriceSetting />
-      <ColorSettings />
-      <ButtonCarSettings setActiveConfirmation={setActiveConfirmation} />
-    </div>
-  );
+const CarSettings = ({ setActiveConfirmation }) => (
+  <div className="carSettingsContainer">
+    <h2 className="carSettingsContainer__title">Настройки автомобиля</h2>
+    <ModelTypeSettings />
+    <PriceSetting />
+    <ColorSettings />
+    <ButtonCarSettings setActiveConfirmation={setActiveConfirmation} />
+  </div>
+);
+CarSettings.propTypes = {
+  setActiveConfirmation: PropTypes.func,
+};
+CarSettings.defaultProps = {
+  setActiveConfirmation: () => {},
 };
 
 export default memo(CarSettings);

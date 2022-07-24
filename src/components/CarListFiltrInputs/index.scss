@@ -1,126 +1,16 @@
-.carListFiltrInputs_container_mainContent_sorting {
+.carListFiltrInputs-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.carListFiltrInputs_container_mainContent_sorting_input {
+.carListFiltrInputs-wrapper__form {
   display: flex;
   gap: 20px;
   margin: 15px 0 25px 20px;
 }
-.carListFiltrInputs_container_mainContent_sorting_categories {
-  position: relative;
-}
 
-.carListFiltrInputs_container_mainContent_sorting_input_name,
-.carListFiltrInputs_container_mainContent_sorting_input_maxPrice,
-.carListFiltrInputs_container_mainContent_sorting_input_minPrice,
-.carListFiltrInputs_container_mainContent_sorting_input_class {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: -0.345714px;
-  color: #3D5170;
-  background: #ffffff;
-  border: 0.5px solid #becad6;
-  border-radius: 4px;
-  width: 110.5px;
-  height: 29px;
-  outline: none;
-  padding-left: 14px;
-  box-sizing: border-box;
-}
-.carListFiltrInputs_container_mainContent_sorting_input_name::placeholder,
-.carListFiltrInputs_container_mainContent_sorting_input_maxPrice::placeholder,
-.carListFiltrInputs_container_mainContent_sorting_input_minPrice::placeholder,
-.carListFiltrInputs_container_mainContent_sorting_input_class::placeholder{
-  color: #868e96;
-  font-size: 9px;
-}
-
-.carListFiltrInputs_container_mainContent_sorting_input_imgDropDown {
-  position: absolute;
-  left: 98px;
-  top: 11.5px;
-  cursor: pointer;
-}
-
-.carListFiltrInputs_container_mainContent_sorting_input_name_minPriceList,
-.carListFiltrInputs_container_mainContent_sorting_input_name_maxPriceList,
-.carListFiltrInputs_container_mainContent_sorting_input_name_typeCarList,
-.carListFiltrInputs_container_mainContent_sorting_input_name_nameList {
-  border: 1px solid #becad6;
-  position: absolute;
-  top: 26px;
-  background: #f5f6f8;
-  width: 110.5px;
-  box-sizing: border-box;
-  display: none;
-  border-radius: 0 0 4px 4px;
-}
-.carListFiltrInputs_container_mainContent_sorting_input_name_minPriceList_active,
-.carListFiltrInputs_container_mainContent_sorting_input_name_maxPriceList_active,
-.carListFiltrInputs_container_mainContent_sorting_input_name_typeCarList_active,
-.carListFiltrInputs_container_mainContent_sorting_input_name_nameList_active {
-  display: block;
-}
-
-.carListFiltrInputs_container_mainContent_sorting_input_name_nameList_carName,
-.carListFiltrInputs_container_mainContent_sorting_input_name_minPriceList_minPrice,
-.carListFiltrInputs_container_mainContent_sorting_input_name_maxPriceList_maxPrice,
-.carListFiltrInputs_container_mainContent_sorting_input_name_typeCarList_typeCar {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.377143px;
-  color: #3d5170;
-  margin: 5px 0 5px 14px;
-  cursor: pointer;
-}
-.carListFiltrInputs_container_mainContent_sorting_input_name_nameList_carName:hover,
-.carListFiltrInputs_container_mainContent_sorting_input_name_minPriceList_minPrice:hover,
-.carListFiltrInputs_container_mainContent_sorting_input_name_maxPriceList_maxPrice:hover,
-.carListFiltrInputs_container_mainContent_sorting_input_name_typeCarList_typeCar:hover {
-  color: #ddadaf;
-}
-
-.carListFiltrInputs_container_mainContent_sorting_bottons {
+.carListFiltrInputs-wrapper__buttons {
   display: flex;
   gap: 15px;
   margin: 14.5px 21px 0 0;
-}
-
-.carListFiltrInputs_container_mainContent_sorting_bottons_reset {
-  width: 95px;
-  height: 29px;
-  background: #c4183c;
-  border: 0.5px solid #007bff;
-  border-radius: 4px;
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
-  text-align: center;
-  letter-spacing: -0.345714px;
-  color: #ffffff;
-}
-.carListFiltrInputs_container_mainContent_sorting_bottons_apply {
-  width: 95px;
-  height: 29px;
-  background: #007bff;
-  border: 0.5px solid #007bff;
-  border-radius: 4px;
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 13px;
-  text-align: center;
-  letter-spacing: -0.345714px;
-  color: #ffffff;
 }

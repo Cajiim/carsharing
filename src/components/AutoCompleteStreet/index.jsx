@@ -1,7 +1,7 @@
-import React, { useState, useEffect,/*  memo,  *//* useMemo */ } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
-import axios from "axios";
+import { fetchDataStreets } from "../../api/fetchCityStreet";
 import {
   setPointIssue,
   deletePointOfIssue,
@@ -13,20 +13,13 @@ import style from "./index.scss";
 const cn = classNames.bind(style);
 
 const AutoCompleteStreet = () => {
-  const [pointOfIssueComplete, setPointOfIssue] = useState([]);
-  const [streets, setStreets] = useState([]);
   const dispatch = useDispatch();
-
-  const loadPointOfIssue = async () => {
-    const response = await axios.get(
-      "https://6288c18410e93797c15e9916.mockapi.io/Cities"
-    );
-    setPointOfIssue(response.data[0].streets);
-  };
+  const [streets, setStreets] = useState([]);
+  const { dataStreets } = useSelector(({ cityStreetData }) => cityStreetData);
 
   useEffect(() => {
-    loadPointOfIssue();
-  }, []);
+    dispatch(fetchDataStreets());
+  }, [dispatch]);
 
   const {
     pointChangeOfIssue: textStreetAutoChange,
@@ -36,7 +29,7 @@ const AutoCompleteStreet = () => {
   const onChangeHandlInputPointOfIssue = (value) => {
     let pointOfIssue = [];
     if (value.length > 0) {
-      pointOfIssue = pointOfIssueComplete.filter((el) => {
+      pointOfIssue = dataStreets.filter((el) => {
         const regex = new RegExp(`${value.toLowerCase()}`);
         return el.street.toLowerCase().match(regex);
       });
@@ -62,11 +55,11 @@ const AutoCompleteStreet = () => {
   const Disabled = textCityAutoChange === null || textCityAutoChange === "";
 
   return (
-    <div className="autoCompleteStreet">
-      <p className="autoCompleteStreet_street">Пункт выдачи</p>
-      <div className="autoCompleteStreet_container">
+    <div className="autoCompleteStreet-wrapper">
+      <h3 className="autoCompleteStreet-wrapper__title">Пункт выдачи</h3>
+      <div className="autoCompleteStreet-wrapper__container container">
         <input
-          className="autoCompleteStreet_container_input"
+          className="container__inputStreet"
           placeholder="Начните вводить пункт ..."
           type="pointOfIssue"
           value={textStreetAutoChange}
@@ -75,8 +68,8 @@ const AutoCompleteStreet = () => {
         ></input>
         <button
           type="button"
-          className={cn("autoCompleteStreet_container_cancelButton", {
-            autoCompleteStreet_container_cancelButton_disabled:
+          className={cn("container__cancelButton", {
+            container__cancelButton_disabled:
               !textStreetAutoChange || textStreetAutoChange === "",
           })}
           onClick={() => {
@@ -86,8 +79,8 @@ const AutoCompleteStreet = () => {
           &times;
         </button>
         <div
-          className={cn("autoCompleteStreet_container_choice", {
-            autoCompleteStreet_container_choice_disabled: streets.length === 0,
+          className={cn("container__choice choice", {
+            container__choice_disabled: streets.length === 0,
           })}
         >
           <ul>
@@ -95,7 +88,7 @@ const AutoCompleteStreet = () => {
               streets.map((street) => (
                 <li
                   key={street.id}
-                  className="autoCompleteStreet_container_choice_received"
+                  className="choice__received"
                   onClick={() => {
                     streetHundler(street.street);
                     dispatchPointOfIssue(street.street);
@@ -109,6 +102,6 @@ const AutoCompleteStreet = () => {
       </div>
     </div>
   );
-}
+};
 
 export default AutoCompleteStreet;

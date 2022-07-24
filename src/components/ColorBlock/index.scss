@@ -2,24 +2,19 @@
   margin-left: 1px;
 }
 
-.colorBlock_title {
+.colorBlock__title {
   margin-top: 30px;
   margin-bottom: 15px;
 }
-.colorBlock_container {
+
+.colorBlock__container {
   display: flex;
   margin-top: 15px;
   margin-bottom: 20px;
   align-items: center;
 }
-.colorBlock_container_label_input {
-  position: absolute;
-  opacity: 0;
-  border: 1px solid #999999;
-  box-sizing: border-box;
-}
 
-.colorBlock_container_label {
+.container__label {
   display: inline-flex;
   font-family: "Roboto";
   font-style: normal;
@@ -31,10 +26,14 @@
   margin-right: 15px;
 }
 
-span .colorBlock_container_label {
-  margin-bottom: 5px;
+.container__label__input {
+  position: absolute;
+  opacity: 0;
+  border: 1px solid #999999;
+  box-sizing: border-box;
 }
-.colorBlock_container_label_span_fakeCheckbox {
+
+.container__label__fakeCheckbox {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -43,28 +42,30 @@ span .colorBlock_container_label {
   position: relative;
   margin-right: 5px;
   box-sizing: border-box;
-}
-.colorBlock_container_label_span_fakeCheckbox::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border: 3px solid #0ec261;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #0ec261;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    box-sizing: border-box;
+  }
 }
 
-.colorBlock_container_label_input:checked
-  + .colorBlock_container_label_span_fakeCheckbox::before {
+.container__label__input:checked + .container__label__fakeCheckbox::before {
   opacity: 1;
 }
-input[type="radio"]:checked
-  + span
-  + .colorBlock_container_label_span_textColor {
+input[type="radio"]:checked + span + .container__label__textColor {
   color: #121212;
+}
+
+span .container__label {
+  margin-bottom: 5px;
 }

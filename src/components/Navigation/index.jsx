@@ -46,13 +46,13 @@ const Navigation = ({ overflow, setOverflow, setOverflowHome }) => {
 
 Navigation.propTypes = {
   overflow: PropTypes.bool,
-  setOverflow: PropTypes.bool,
-  setOverflowHome: PropTypes.bool,
+  setOverflow: PropTypes.func,
+  setOverflowHome: PropTypes.func,
 };
 Navigation.defaultProps = {
   overflow: false,
-  setOverflow: false,
-  setOverflowHome: false,
+  setOverflow: () => {},
+  setOverflowHome: () => {},
 };
 
 export default memo(Navigation);

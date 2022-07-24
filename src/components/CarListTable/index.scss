@@ -1,16 +1,11 @@
-.carListTable_container_mainContent_table {
+.table-wrapper {
   table-layout: fixed;
   width: 65%;
   border-collapse: collapse;
 }
 
-th,
-td {
-  padding: 0 20px 20px 20px;
-}
-
 tbody td,
-.carListTable_container_mainContent_table_lines {
+.table-wrapper__lines {
   text-align: center;
   font-family: "Helvetica";
   font-style: normal;
@@ -21,6 +16,18 @@ tbody td,
   color: #3d5170;
 }
 
+.table-wrapper__links,
+.table-wrapper__links:active,
+.table-wrapper__links:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+th,
+td {
+  padding: 0 20px 20px 20px;
+}
+
 tr th {
   font-family: "Helvetica";
   font-style: normal;
@@ -29,19 +36,4 @@ tr th {
   line-height: 14px;
   letter-spacing: -0.377143px;
   color: #3d5170;
-}
-
-.carListTable_container_mainContent_table_links,
-.carListTable_container_mainContent_table_links:active,
-.carListTable_container_mainContent_table_links:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-.carListTable_container_mainContent_table_links_string {
-  display: flex;
-  gap: 60px;
-  text-decoration: none;
-  margin-left: 20.5px;
 }

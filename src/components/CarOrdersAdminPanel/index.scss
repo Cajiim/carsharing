@@ -1,9 +1,9 @@
-.carOrders_container {
+.ordersContainer-wrapper {
   overflow: auto;
   height: calc(100% - 68px - 67px);
   background: #f5f6f8;
 }
-.carOrders_container_title {
+.ordersContainer-wrapper__title {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -13,7 +13,7 @@
   color: #3d5170;
   margin: 28px 0 30px 31.5px;
 }
-.carOrders_container_mainContent {
+.ordersContainer-wrapper__mainContent {
   width: 1062px;
   height: 386px;
   background: #ffffff;

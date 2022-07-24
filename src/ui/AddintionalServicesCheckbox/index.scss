@@ -1,0 +1,59 @@
+.additionalServicesCheckbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.additionalServicesCheckbox__label {
+  display: flex;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  align-items: center;
+}
+
+.additionalServicesCheckbox__input {
+  position: absolute;
+  opacity: 0;
+  margin-right: 5px;
+}
+
+.additionalServicesCheckbox__fakeCheckbox {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999999;
+  position: relative;
+  margin-right: 5px;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 13px;
+    height: 10px;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-size: 100% 90%;
+    box-sizing: border-box;
+    background: url(../../assets/svg/VectorCheck.svg) no-repeat;
+  }
+}
+
+.additionalServicesCheckbox__input:checked
+  + .additionalServicesCheckbox__fakeCheckbox::before {
+  opacity: 1;
+}
+input[type="checkbox"]:checked + .additionalServicesCheckbox__fakeCheckbox {
+  border: 1px solid #0ec261;
+}
+
+input[type="checkbox"]:checked + span + .additionalServicesCheckbox__text {
+  color: #121212;
+}

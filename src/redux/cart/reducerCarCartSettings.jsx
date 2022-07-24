@@ -8,91 +8,69 @@ const CarCartSettingsSlice = createSlice({
     minPrice: "",
     maxPrice: "",
     colorForCar: "",
-    colorForCheckbox:[],
+    colorForCheckbox: [],
     imgCar:
       "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/c31940b4825e7de08c4523e9a81ebe8d0ad04616?fuid=1073273349188760991",
     descriptionCar: "",
-    arrAllColors:[],
-
+    arrAllColors: [],
   },
   reducers: {
     setModelCarCart: (state, action) => {
       state.modelCarCart = action.payload;
     },
-    deleteModelCarCart: (state) => {
-      state.modelCarCart = "";
-    },
     setTypeCarCart: (state, action) => {
       state.typeCarCart = action.payload;
-    },
-    deleteTypeCarCart: (state) => {
-      state.typeCarCart = "";
     },
     setMinPrice: (state, action) => {
       state.minPrice = action.payload;
     },
-    deleteMinPrice: (state) => {
-      state.minPrice = "";
-    },
     setMaxPrice: (state, action) => {
       state.maxPrice = action.payload;
-    },
-    deleteMaxPrice: (state) => {
-      state.maxPrice = "";
     },
     setColorForCar: (state, action) => {
       state.colorForCar = action.payload;
     },
-    deleteColorFromCar: (state) => {
-      state.colorForCar = "";
-    },
     setArrAllColorsForCar: (state, action) => {
       state.arrAllColors = action.payload;
-    },
-    deleteArrAllColorsForCar: (state) => {
-      state.arrAllColors = [];
     },
     setImgForCar: (state, action) => {
       state.imgCar = action.payload;
     },
-    deleteImgForCar: (state) => {
-      state.imgCar =
-        "";
-    },
     setDescriptionCar: (state, action) => {
       state.descriptionCar = action.payload;
     },
-    deleteDescriptionCar: (state) => {
-      state.descriptionCar = "";
-    },
-    setColorForCheckbox:(state, action) => {
+    setColorForCheckbox: (state, action) => {
       state.colorForCheckbox = action.payload;
     },
-    deleteColorForCheckbox:(state) =>{
+    deleteColorFromCar: (state) => {
+      state.colorForCar = "";
+    },
+    clearData: (state) => {
+      state.modelCarCart = "";
+      state.typeCarCart = "";
+      state.minPrice = "";
+      state.maxPrice = "";
+      state.colorForCar = "";
+      state.arrAllColors = [];
+      state.imgCar = "";
+      state.descriptionCar = "";
       state.colorForCheckbox = [];
-    }
+    },
   },
 });
 
 export const {
   setModelCarCart,
-  deleteModelCarCart,
   setTypeCarCart,
-  deleteTypeCarCart,
   setMinPrice,
-  deleteMinPrice,
   setMaxPrice,
-  deleteMaxPrice,
   setColorForCar,
-  deleteColorFromCar,
   setImgForCar,
-  deleteImgForCar,
   setDescriptionCar,
-  deleteDescriptionCar,
   setArrAllColorsForCar,
-  deleteArrAllColorsForCar,
   setColorForCheckbox,
-  deleteColorForCheckbox
+  deleteColorFromCar,
+  clearData,
 } = CarCartSettingsSlice.actions;
 
 export default CarCartSettingsSlice.reducer;

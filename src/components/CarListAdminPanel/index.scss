@@ -1,9 +1,10 @@
-.carListAdminPanel_container {
+.carListAdminPanel-wrapper {
   overflow: auto;
   height: calc(100% - 68px - 67px);
   background: #f5f6f8;
 }
-.carListAdminPanel_container_title {
+
+.carListAdminPanel-wrapper__title {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -13,7 +14,8 @@
   color: #3d5170;
   margin: 28px 0 0 27px;
 }
-.carListAdminPanel_container_mainContent {
+
+.carListAdminPanel-wrapper__mainContent {
   width: 1062px;
   height: 446px;
   background: #ffffff;
@@ -25,29 +27,6 @@
   position: relative;
 }
 
-.carListAdminPanel_container_mainContent_titleList {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.377143px;
-  color: #3d5170;
-  padding-top: 25px;
-  margin-left: 20px;
-  display: flex;
-  gap: 100px;
-}
-
-.carListAdminPanel_container_mainContent_carOptions {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.377143px;
-  color: #3d5170;
-  margin: 25px 0 0 20px;
-  display: flex;
-  gap: 105px;
+.carListAdminPanel-wrapper_notFound{
+  margin-left:21.5px;
 }

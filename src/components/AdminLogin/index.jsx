@@ -1,14 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/cart/reducerUserSlice";
 import AuthorizationForm from "../../ui/AuthorizationForm";
+import HeaderAuthorization from "../common/HeaderAuthorization";
 import "./index.scss";
-
 
 const AdminLogin = () => {
   const dispatch = useDispatch();
@@ -18,7 +15,6 @@ const AdminLogin = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-       
         dispatch(
           setUser({
             email: user.email,
@@ -33,15 +29,7 @@ const AdminLogin = () => {
 
   return (
     <>
-      <h2 className="adminAuthorization_title">
-        <div id="adminAuthorization_title_circleContainer">
-          <div id="adminAuthorization_title_circleContainer_circleSmall"></div>
-          <div id="adminAuthorization_title_circleContainer_circleLarge">
-            <div id="adminAuthorization_title_circleContainer_circleLarge_circleSmallTwo"></div>
-          </div>
-        </div>
-        Need for drive
-      </h2>
+      <HeaderAuthorization />
       <AuthorizationForm
         title="Войти"
         handleClick={handlLogin}

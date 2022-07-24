@@ -1,0 +1,137 @@
+.adminAuthorizationForm {
+  width: 376.5px;
+  height: 253.5px;
+  background: #ffffff;
+  box-shadow: 0px 1px 0px rgba(90, 97, 105, 0.11),
+    0px 2px 4px rgba(90, 97, 105, 0.12), 0px 5px 5px rgba(90, 97, 105, 0.06),
+    0px 3.5px 35px rgba(90, 97, 105, 0.1);
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminAuthorizationForm__title {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.4375px;
+  color: #3d5170;
+  margin-top: 19px;
+}
+
+.adminAuthorizationForm__mail {
+  margin-top: 35.5px;
+}
+
+.mail__text,
+.password__text {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 12px;
+  letter-spacing: -0.18421px;
+  color: #495057;
+  margin-bottom: 8.5px;
+}
+
+.mail__inputMail,
+.password__inputPassword {
+  width: 341.5px;
+  height: 29px;
+  outline: none;
+  background: #ffffff;
+  border: 0.5px solid #becad6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding-left: 11.5px;
+
+  &_error {
+    border: 0.5px solid #c4183c;
+  }
+}
+
+.mail__errorText,
+.password__errorText {
+  position: absolute;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: -0.175439px;
+  color: #c4183c;
+  bottom: -12px;
+  left: 11.5px;
+}
+
+.adminAuthorizationForm__password {
+  margin-top: 15px;
+}
+.adminAuthorizationForm__mail,
+.adminAuthorizationForm__password {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.adminAuthorization__entryBlock {
+  display: flex;
+  justify-content: space-between;
+  width: 341.5px;
+  margin-top: 15px;
+  align-items: center;
+  position: relative;
+}
+
+.entryBlock__linkEntry {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 12px;
+  letter-spacing: -0.18421px;
+  color: #007bff;
+}
+
+.entryBlock__linkAuth {
+  position: absolute;
+  right: 120px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.entryBlock__button {
+  width: 110px;
+  height: 29px;
+  background: #007bff;
+  border: 0.5px solid #007bff;
+  border-radius: 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 13px;
+  letter-spacing: -0.0821429px;
+  color: #ffffff;
+  pointer-events: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &_active {
+    pointer-events: all;
+    cursor: pointer;
+  }
+  &_active:hover {
+    background: #034489;
+  }
+  &_active:active {
+    background: #02264d;
+  }
+}

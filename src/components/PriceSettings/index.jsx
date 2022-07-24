@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import classNames from "classnames";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setMinPrice,
   setMaxPrice,
 } from "../../redux/cart/reducerCarCartSettings";
+import { fetchDataCarList } from "../../api/fetchDataThunk";
 import {
   setMinPriceError,
   setMaxPriceError,
@@ -58,57 +58,27 @@ const PriceSettings = () => {
     }
   };
 
-  const [contentModelBack, setContentModelBack] = useState([]);
-  function fetchData() {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    axios
-      .get(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          url[1] ? url[1] : ""
-        }`
-      )
-      .then((res) => setContentModelBack(res.data))
-      .catch((error) => console.log(error, "Ошибка"));
-  }
+  const { dataCarList } = useSelector(({ getData }) => getData);
 
+  const minPriceFromBack = dataCarList?.minPrice;
+  const maxPriceFromBack = dataCarList?.maxPrice;
 
-  const minPriceFromBack = contentModelBack?.minPrice;
-  const maxPriceFromBack = contentModelBack?.maxPrice;
-  const [state, setState] = useState();
-  
-  /* function returnCar () {
-    setState(setTimeout(() => {
+  useEffect(() => {
+    setTimeout(() => {
       dispatch(setMinPrice(minPriceFromBack || minPrice));
       dispatch(setMaxPrice(maxPriceFromBack || maxPrice));
       dispatch(
-        setMinPriceError(
-          contentModelBack?.minPrice ? "" : "Поле не должно быть пустым"
-        )
+        setMinPriceError(minPriceFromBack ? "" : "Поле не должно быть пустым")
       );
       dispatch(
-        setMaxPriceError(
-          contentModelBack?.maxPrice ? "" : "Поле не должно быть пустым"
-        )
+        setMaxPriceError(maxPriceFromBack ? "" : "Поле не должно быть пустым")
       );
-    }, 0))
-  } */
-
-  useEffect(() => {
-    fetchData();
-  /*   returnCar(); */
-    
-    return () => {
-      setState();
-    };
-  }, [/* minPriceFromBack, maxPriceFromBack, returnCar */]);
-
-
+    }, 0);
+  }, [minPriceFromBack, maxPriceFromBack]);
 
   return (
     <div className="priceSettings_container_setting">
-      {state ? (<><div className="priceSettings_container_setting_minPrice">
+      <div className="priceSettings_container_setting_minPrice">
         <span className="priceSettings_container_setting_minPrice_title">
           Минимальная цена
         </span>
@@ -116,7 +86,8 @@ const PriceSettings = () => {
           type="number"
           name="minPrice"
           className={cn("priceSettings_container_setting_minPrice_input", {
-            priceSettings_container_setting_minPrice_input_error: minPriceDirty && minPriceError,
+            priceSettings_container_setting_minPrice_input_error:
+              minPriceDirty && minPriceError,
           })}
           value={minPrice}
           onChange={(e) => handlChangeMinPrice(e.target.value)}
@@ -127,33 +98,35 @@ const PriceSettings = () => {
             {minPriceError}
           </div>
         )}
-      </div><div className="priceSettings_container_setting_maxPrice">
-          <span className="priceSettings_container_setting_maxPrice_title">
-            Максимальная цена
-          </span>
-          <input
-            type="number"
-            name="maxPrice"
-            className={cn("priceSettings_container_setting_maxPrice_input", {
-              priceSettings_container_setting_maxPrice_input_error: maxPriceDirty && maxPriceError,
-            })}
-            value={maxPrice}
-            onChange={(e) => handlChangeMaxPrice(e.target.value)}
-            onBlur={(e) => handlClickBlur(e)}
-          ></input>
-          {maxPriceDirty && maxPriceError && (
-            <div className="priceSettings_container_setting_maxPrice_input_textError">
-              {maxPriceError}
-            </div>
-          )}
-          {maxPrice && minPrice && Number(maxPrice) <= Number(minPrice) ? (
-            <div className="priceSettings_container_setting_minMaxPrice_input_textError">
-              Максимальная цена должна быть больше минимальной
-            </div>
-          ) : null}
-        </div></>) : null}
+      </div>
+      <div className="priceSettings_container_setting_maxPrice">
+        <span className="priceSettings_container_setting_maxPrice_title">
+          Максимальная цена
+        </span>
+        <input
+          type="number"
+          name="maxPrice"
+          className={cn("priceSettings_container_setting_maxPrice_input", {
+            priceSettings_container_setting_maxPrice_input_error:
+              maxPriceDirty && maxPriceError,
+          })}
+          value={maxPrice}
+          onChange={(e) => handlChangeMaxPrice(e.target.value)}
+          onBlur={(e) => handlClickBlur(e)}
+        ></input>
+        {maxPriceDirty && maxPriceError && (
+          <div className="priceSettings_container_setting_maxPrice_input_textError">
+            {maxPriceError}
+          </div>
+        )}
+        {maxPrice && minPrice && Number(maxPrice) <= Number(minPrice) ? (
+          <div className="priceSettings_container_setting_minMaxPrice_input_textError">
+            Максимальная цена должна быть больше минимальной
+          </div>
+        ) : null}
+      </div>
     </div>
   );
-}
+};
 
 export default PriceSettings;

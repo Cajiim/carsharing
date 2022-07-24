@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setColor } from "../../redux/cart/reducerFinalOrder";
-
 import "./index.scss";
 
 const ColorBlock = () => {
@@ -13,11 +12,11 @@ const ColorBlock = () => {
   const colorsCurrentCar = modelInCart?.arrAllColors;
   return (
     <div className="colorBlock">
-      <p className="colorBlock_title">Цвет</p>
-      <div className="colorBlock_container">
-        <label className="colorBlock_container_label" htmlFor="allRadio">
+      <p className="colorBlock__title">Цвет</p>
+      <div className="colorBlock__container container">
+        <label className="container__label" htmlFor="allRadio">
           <input
-            className="colorBlock_container_label_input"
+            className="container__label__input"
             name="color"
             type="radio"
             value="Любой"
@@ -25,31 +24,32 @@ const ColorBlock = () => {
             checked={colorCar === "Любой"}
             onChange={(e) => handleClick(e.target.value)}
           ></input>
-          <span className="colorBlock_container_label_span_fakeCheckbox"></span>
-          <span className="colorBlock_container_label_span_textColor">
-            Любой
-          </span>
+          <span className="container__label__fakeCheckbox"></span>
+          <span className="container__label__textColor">Любой</span>
         </label>
-        {colorsCurrentCar && colorsCurrentCar.map((el) => (
-          <label className="colorBlock_container_label" htmlFor={el} key={el.toString()}>
-            <input
-              className="colorBlock_container_label_input"
-              name="color"
-              type="radio"
-              value={el}
-              id={el}
-              checked={colorCar === el}
-              onChange={(e) => handleClick(e.target.value)}
-            ></input>
-            <span className="colorBlock_container_label_span_fakeCheckbox"></span>
-            <span className="colorBlock_container_label_span_textColor">
-              {el}
-            </span>
-          </label>
-        ))}
+        {colorsCurrentCar &&
+          colorsCurrentCar.map((el) => (
+            <label
+              className="container__label"
+              htmlFor={el}
+              key={el.toString()}
+            >
+              <input
+                className="container__label__input"
+                name="color"
+                type="radio"
+                value={el}
+                id={el}
+                checked={colorCar === el}
+                onChange={(e) => handleClick(e.target.value)}
+              ></input>
+              <span className="container__label__fakeCheckbox"></span>
+              <span className="container__label__textColor">{el}</span>
+            </label>
+          ))}
       </div>
     </div>
   );
-}
+};
 
 export default ColorBlock;
