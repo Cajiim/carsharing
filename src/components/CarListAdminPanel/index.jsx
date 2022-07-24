@@ -57,6 +57,8 @@ const CarListAdminPanel = () => {
   const uniqueMaxPrice = [...new Set(allMaxPrice)];
   const uniqueTypeCars = [...new Set(allTypeCars)];
   
+  const asdas = 123
+  console.log(asdas)
   return (
     <div className="carListAdminPanel_container">
       <h2 className="carListAdminPanel_container_title">Список автомобилей</h2>
