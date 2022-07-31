@@ -1,91 +1,55 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect, memo, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { fetchDataCarOrders } from "../../api/fetchDataThunk";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { fetchDataCarOrders } from "../../redux/dataThunk/fetchDataThunk";
 import CarOrdersInput from "../CarOrdersInputs";
-import PaginationCarOrders from "../PaginationCarOrders";
+import PaginationCarOrders from "../Common/PaginationAdminPanel";
 import OrderCardLine from "../OrderCardLine";
 import "./index.scss";
 
+const limitCarsPerPage = 3;
+
 const CarOrders = () => {
   const dispatch = useDispatch();
-  const now = new Date();
+  const [searchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
-  const [carPerPage] = useState(3);
+  const { dataOrders, loadingOrders } = useSelector(({ getData }) => getData);
+  const { totalCars } = dataOrders;
+  const { data } = dataOrders;
+  const location = useLocation();
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const { dataOrders, loadingOrders } = useSelector(
-    ({ getData }) => getData
+  const stringFilter = useCallback(
+    () => ({
+      name: searchParams.get("name") || "",
+      periodOfTime: searchParams.get("periodOfTime") || "",
+      cityAuto: searchParams.get("city") || "",
+      orderStatus: searchParams.get("orderStatus") || "",
+    }),
+    [searchParams]
   );
 
   useEffect(() => {
-    dispatch(fetchDataCarOrders());
-  }, [dispatch]);
-
-  const lastCarIndex = currentPage * carPerPage;
-  const firstCarIndex = lastCarIndex - carPerPage;
-
-  const {
-    periodOfTimeForFiltr,
-    carNameForFiltr,
-    cityForFiltr,
-    orderStatusForFiltr,
-  } = useSelector(({ carOrders }) => carOrders);
-
-  let data = dataOrders;
-  if (carNameForFiltr !== "") {
-    data = data.filter((el) => el.modelCar.name.includes(carNameForFiltr));
-  }
-  if (periodOfTimeForFiltr !== "") {
-    data = data.filter((el) =>
-      // eslint-disable-next-line no-nested-ternary
-      (Math.ceil(
-        Math.abs(
-          new Date(now).getTime() -
-            new Date(el.additionalOptions.startDate).getTime()
-        ) /
-          (1000 * 3600 * 24)
-      ) < 7
-        ? "За неделю"
-        : Math.ceil(
-            Math.abs(
-              new Date(now).getTime() -
-                new Date(el.additionalOptions.startDate).getTime()
-            ) /
-              (1000 * 3600 * 24)
-          ) < 30
-        ? "За месяц"
-        : "За год"
-      ).includes(periodOfTimeForFiltr)
+    dispatch(
+      fetchDataCarOrders({
+        urlFilter: stringFilter(),
+        page: currentPage,
+        limit: limitCarsPerPage,
+      })
     );
-  }
-  if (cityForFiltr !== "") {
-    data = data.filter((el) =>
-      el.additionalOptions.cityAuto.includes(cityForFiltr)
-    );
-  }
-  if (orderStatusForFiltr !== "") {
-    data = data.filter((el) =>
-      (Math.abs(
-        new Date(now).getTime() <
-          new Date(el.additionalOptions.endDate).getTime()
-      )
-        ? "В процессе"
-        : "Завершен"
-      ).includes(orderStatusForFiltr)
-    );
-  }
-  const dataCurrent = data?.slice(firstCarIndex, lastCarIndex);
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  }, [dispatch, location.search, currentPage, stringFilter]);
+
   return (
     <div>
-      <CarOrdersInput contentOrder={dataOrders} />
+      <CarOrdersInput />
       {!loadingOrders ? (
-        <OrderCardLine dataCurrent={dataCurrent} />
+        <OrderCardLine dataCurrent={data || []} />
       ) : (
-        <h3 className="carOrders-wrapper__notFound">Данные загружаются</h3>
+        <h3 className="carOrders__notFound">Данные загружаются</h3>
       )}
       <PaginationCarOrders
-        carPerPage={carPerPage}
-        totalCars={data.length}
+        carPerPage={limitCarsPerPage}
+        totalCars={totalCars}
         paginate={paginate}
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}

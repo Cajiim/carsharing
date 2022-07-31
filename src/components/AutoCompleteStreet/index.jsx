@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
-import { fetchDataStreets } from "../../api/fetchCityStreet";
+import { fetchDataStreets } from "../../redux/dataThunk/fetchCityStreet";
 import {
   setPointIssue,
   deletePointOfIssue,
   setDeliveryChangeStreetInput,
   deleteDeliveryChangeStreetInput,
 } from "../../redux/cart/reducerFinalOrder";
+import InputAutocomplete from "../../ui/InputAutocomplete";
+import Button from "../../ui/ButtonClose";
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
@@ -53,52 +55,47 @@ const AutoCompleteStreet = () => {
   };
 
   const Disabled = textCityAutoChange === null || textCityAutoChange === "";
-
+  const handleClickButton = () => {
+    handlClearStreet();
+  };
   return (
-    <div className="autoCompleteStreet-wrapper">
-      <h3 className="autoCompleteStreet-wrapper__title">Пункт выдачи</h3>
-      <div className="autoCompleteStreet-wrapper__container container">
-        <input
-          className="container__inputStreet"
+    <div className="autoCompleteStreet">
+      <div className="autoCompleteStreet__container">
+        <InputAutocomplete
+          id="inputStreet"
+          labelText="Пункт выдачи"
+          classNameLabel="inputStreet__label"
           placeholder="Начните вводить пункт ..."
-          type="pointOfIssue"
+          type="textStreet"
           value={textStreetAutoChange}
-          onChange={(e) => onChangeHandlInputPointOfIssue(e.target.value)}
+          className="inputStreet"
+          onChange={onChangeHandlInputPointOfIssue}
           disabled={Disabled}
-        ></input>
-        <button
-          type="button"
-          className={cn("container__cancelButton", {
-            container__cancelButton_disabled:
-              !textStreetAutoChange || textStreetAutoChange === "",
-          })}
-          onClick={() => {
-            handlClearStreet();
-          }}
-        >
-          &times;
-        </button>
-        <div
-          className={cn("container__choice choice", {
-            container__choice_disabled: streets.length === 0,
+        />
+        <Button
+          className="clearStreetButton"
+          handlClick={handleClickButton}
+          isDisabled={!textStreetAutoChange || textStreetAutoChange === ""}
+        />
+        <ul
+          className={cn("autoCompleteStreet__choice", {
+            autoCompleteStreet__choice_disabled: streets.length === 0,
           })}
         >
-          <ul>
-            {streets &&
-              streets.map((street) => (
-                <li
-                  key={street.id}
-                  className="choice__received"
-                  onClick={() => {
-                    streetHundler(street.street);
-                    dispatchPointOfIssue(street.street);
-                  }}
-                >
-                  {street.street}
-                </li>
-              ))}
-          </ul>
-        </div>
+          {streets &&
+            streets.map((street) => (
+              <li
+                key={street.id}
+                className="autoCompleteStreet__received"
+                onClick={() => {
+                  streetHundler(street.street);
+                  dispatchPointOfIssue(street.street);
+                }}
+              >
+                {street.street}
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

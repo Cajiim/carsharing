@@ -1,0 +1,48 @@
+.tabsNavigation {
+  height: 28px;
+  position: relative;
+}
+
+.tabsNavigation__container {
+  display: flex;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #eeeeee;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.tabsNavigation__tab {
+  margin: 5px 0 5px 0;
+
+  &_active {
+    color: #0ec261;
+  }
+
+  &_disabled {
+    pointer-events: none;
+    color: #999999;
+  }
+
+  &_complete {
+    color: #121212;
+  }
+}
+
+.tabsNavigation__tabName {
+  cursor: pointer;
+}
+
+.tabsNavigation__img {
+  margin: 0 16px 0 16px;
+  pointer-events: none;
+}
+
+.margin-left {
+  margin-left: 64px;
+}

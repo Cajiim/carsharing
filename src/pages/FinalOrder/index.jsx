@@ -1,41 +1,32 @@
 import React, { useState } from "react";
-
 import Navigation from "../../components/Navigation";
-import HeaderPage from "../../components/common/HeaderPage";
-import FinalCart from "../../components/common/FinalCart";
-import RightSideBlockStory from "../../components/common/RightSideBlockStory";
+import HeaderPage from "../../components/Common/HeaderPage";
+import FinalCart from "../../components/Common/FinalCart";
+import RightSideBlockStory from "../../components/Common/RightSideBlockStory";
+import OrderNumber from "../../components/OrderNumber";
 import "./index.scss";
 
 const FinalOrderPage = () => {
   const [overflowActive, setOverflowActive] = useState(true);
-  const url = window.location.href
-    .slice(window.location.href.indexOf("?"))
-    .split(/[&?]{1}[\w\d]+=/);
   return (
-    <div className="container_finalOrder">
-      <div>
+    <div className="finalOrder">
+      <nav>
         <Navigation overflow={overflowActive} setOverflow={setOverflowActive} />
-      </div>
-      <div className="container_finalOrder_page">
+      </nav>
+      <main className="finalOrder__main">
         <HeaderPage />
-        <div className="container_finalOrder_page_numberBlock">
-          <ul className="container_finalOrder_page_numberBlock_orderNumber clear">
-            <li className="container_finalOrder_page_numberBlock_orderNumber_text">
-              <span>Заказ номер {url[1]}</span>
-            </li>
-          </ul>
-        </div>
-        <div className="container_finalOrder_page_content">
-          <div className="container_finalOrder_page_content_leftSide">
+        <OrderNumber />
+        <div className="finalOrder__content">
+          <div className="finalOrder__finalCart">
             <FinalCart />
           </div>
-          <div className="container_finalOrder_page_content_rightSide">
+          <div className="finalOrder__storyBlock">
             <RightSideBlockStory />
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
-}
+};
 
 export default FinalOrderPage;

@@ -1,15 +1,15 @@
-.carListFiltrInputs-wrapper {
+.carListFiltrInputs {
   display: flex;
   justify-content: space-between;
 }
 
-.carListFiltrInputs-wrapper__form {
+.carListFiltrInputs__select {
   display: flex;
   gap: 20px;
   margin: 15px 0 25px 20px;
 }
 
-.carListFiltrInputs-wrapper__buttons {
+.carListFiltrInputs__buttons {
   display: flex;
   gap: 15px;
   margin: 14.5px 21px 0 0;

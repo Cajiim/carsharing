@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Slider from "../../components/Slider";
 import Navigation from "../../components/Navigation";
 import Content from "../../components/Content";
-
 import "./index.scss";
 
 const Home = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
-import { fetchDataCitys } from "../../api/fetchCityStreet";
+import { fetchDataCitys } from "../../redux/dataThunk/fetchCityStreet";
 import {
   setDeliveryCity,
   deleteDeliveryCity,
@@ -10,6 +10,8 @@ import {
   deleteDeliveryChangeStreetInput,
   deletePointOfIssue,
 } from "../../redux/cart/reducerFinalOrder";
+import InputAutocomplete from "../../ui/InputAutocomplete";
+import Button from "../../ui/ButtonClose";
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
@@ -57,53 +59,49 @@ const AutoCompleteCity = () => {
     dispatch(deletePointOfIssue());
   };
 
+  const handlClickButton = () => {
+    handlClearCity();
+    handlClearStreet();
+  };
+
   return (
     <div className="autoCompleteCity">
-      <h3 className="autoCompleteCity__title">Город</h3>
-      <div className="autoCompleteCity__container container">
-        <input
+      <div className="autoCompleteCity__container">
+        <InputAutocomplete
+          id="cityInput"
+          labelText="Город"
+          classNameLabel="inputCity__label"
           placeholder="Начните вводить город ..."
           type="textCity"
           value={textCityAutoChange}
-          className="container__inputCity"
-          onChange={(e) => {
-            onChangeHandlInputCity(e.target.value);
-          }}
-        ></input>
-        <button
-          type="button"
-          className={cn("container__cancelButton", {
-            container__cancelButton_disabled:
-              textCityAutoChange === "" || !textCityAutoChange,
-          })}
-          onClick={() => {
-            handlClearCity();
-            handlClearStreet();
-          }}
-        >
-          &times;
-        </button>
-        <div
-          className={cn("container__choice choice", {
-            container__choice_disabled: suggestions.length === 0,
+          className="inputCity"
+          onChange={onChangeHandlInputCity}
+          disabled={false}
+        />
+        <Button
+          className="clearCityButton"
+          handlClick={handlClickButton}
+          isDisabled={textCityAutoChange === "" || !textCityAutoChange}
+        />
+        <ul
+          className={cn("autoCompleteCity__choice", {
+            autoCompleteCity__choice_disabled: suggestions.length === 0,
           })}
         >
-          <ul>
-            {suggestions &&
-              suggestions.map((sugg) => (
-                <li
-                  key={sugg.id}
-                  className="choice__received"
-                  onClick={() => {
-                    cityHundler(sugg.сity);
-                    dispatchCity(sugg.сity);
-                  }}
-                >
-                  {sugg.сity}
-                </li>
-              ))}
-          </ul>
-        </div>
+          {suggestions &&
+            suggestions.map((sugg) => (
+              <li
+                key={sugg.id}
+                className="autoCompleteCity__received"
+                onClick={() => {
+                  cityHundler(sugg.сity);
+                  dispatchCity(sugg.сity);
+                }}
+              >
+                {sugg.сity}
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

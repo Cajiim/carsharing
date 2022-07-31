@@ -7,14 +7,17 @@ const cn = classNames.bind(style);
 
 const ButtonFinalOrder = ({
   handlClick,
-  buttonControl,
-  disabled,
-  hidden,
+  className,
+  isDisabled,
+  isHidden,
   name,
 }) => (
   <button
     type="button"
-    className={cn(buttonControl, disabled, hidden)}
+    className={cn(className, {
+      [`${className}_disabled`]: isDisabled,
+      [`${className}_hidden`]: isHidden,
+    })}
     onClick={() => {
       handlClick();
     }}
@@ -25,16 +28,16 @@ const ButtonFinalOrder = ({
 
 ButtonFinalOrder.propTypes = {
   handlClick: PropTypes.func,
-  buttonControl: PropTypes.string,
-  disabled: PropTypes.string,
-  hidden: PropTypes.string,
+  className: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  isHidden: PropTypes.bool,
   name: PropTypes.string,
 };
 ButtonFinalOrder.defaultProps = {
   handlClick: () => {},
-  buttonControl: "",
-  disabled: "",
-  hidden: "",
+  className: "",
+  isDisabled: false,
+  isHidden: false,
   name: "",
 };
 

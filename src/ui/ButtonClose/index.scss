@@ -1,0 +1,33 @@
+.clearStreetButton,
+.clearCityButton {
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  right: 10px;
+  color: #121212;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  font-size: 17px;
+  top: 1.5px;
+
+  &_disabled {
+    display: none;
+  }
+}
+
+.clearDateButton {
+  position: absolute;
+  left: 232px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-top: -1px;
+  cursor: pointer;
+
+  &_disabled {
+    display: none;
+  }
+}

@@ -1,4 +1,4 @@
-.addСolor {
+.addСolorBlock {
   position: relative;
   width: 296px;
   display: flex;
@@ -6,7 +6,7 @@
   margin: 0 0 15px 18px;
 }
 
-.addСolor__title {
+.addСolorBlock__title {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -17,7 +17,7 @@
   margin-bottom: 4.5px;
 }
 
-.addСolor__input {
+.addСolorBlock__input {
   width: 270px;
   height: 28px;
   background: #ffffff;
@@ -31,7 +31,7 @@
   }
 }
 
-.addСolor__textError {
+.addСolorBlock__textError {
   position: absolute;
   font-family: "Helvetica";
   font-style: normal;
@@ -43,7 +43,7 @@
   margin: 49px 0 0 10.5px;
 }
 
-.addСolor__addColorButton {
+.addСolorBlock__addColorButton {
   width: 30px;
   height: 30px;
   position: absolute;

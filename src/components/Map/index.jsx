@@ -5,7 +5,7 @@ import MapWithAuto from "../MapWithAuto";
 import "./index.scss";
 
 const Map = () => (
-    <div className="map_mainContent">
+    <div className="map">
       <div>
         <AutoCompleteCity />
         <AutoCompleteStreet />

@@ -1,10 +1,10 @@
-.carListAdminPanel-wrapper {
+.carListAdminPanel {
   overflow: auto;
   height: calc(100% - 68px - 67px);
   background: #f5f6f8;
 }
 
-.carListAdminPanel-wrapper__title {
+.carListAdminPanel__title {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -15,7 +15,7 @@
   margin: 28px 0 0 27px;
 }
 
-.carListAdminPanel-wrapper__mainContent {
+.carListAdminPanel__mainContent {
   width: 1062px;
   height: 446px;
   background: #ffffff;
@@ -27,6 +27,6 @@
   position: relative;
 }
 
-.carListAdminPanel-wrapper_notFound{
+.carListAdminPanel__notFound{
   margin-left:21.5px;
 }

@@ -9,21 +9,19 @@ const AdditionalServicesCheckBox = ({
   htmlFor,
   id,
 }) => (
-  <form className="additionalServicesCheckbox">
-    <label htmlFor={htmlFor} className="additionalServicesCheckbox__label">
-      <input
-        id={id}
-        type="checkbox"
-        className="additionalServicesCheckbox__input"
-        checked={checkState}
-        onChange={() => {
-          handlClick();
-        }}
-      ></input>
-      <span className="additionalServicesCheckbox__fakeCheckbox"></span>
-      <span className="additionalServicesCheckbox__text">{text}</span>
-    </label>
-  </form>
+  <label htmlFor={htmlFor} className="additionalServicesCheckbox">
+    <input
+      id={id}
+      type="checkbox"
+      className="additionalServicesCheckbox__input"
+      checked={checkState}
+      onChange={() => {
+        handlClick();
+      }}
+    ></input>
+    <span className="additionalServicesCheckbox__fakeCheckbox"></span>
+    <span className="additionalServicesCheckbox__text">{text}</span>
+  </label>
 );
 
 AdditionalServicesCheckBox.propTypes = {

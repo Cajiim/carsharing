@@ -1,0 +1,53 @@
+.inputCity {
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  width: 224px;
+  border-bottom: 1px solid #999999;
+  box-sizing: border-box;
+  margin-left: 8px;
+  &::placeholder {
+    color: #999999;
+  }
+}
+
+.inputStreet {
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+  width: 224px;
+  border-bottom: 1px solid #999999;
+  box-sizing: border-box;
+  margin-left: 4.5px;
+  &::placeholder {
+    color: #999999;
+  }
+}
+
+.inputCity__label {
+  margin-left: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}
+.inputStreet__label{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
+}

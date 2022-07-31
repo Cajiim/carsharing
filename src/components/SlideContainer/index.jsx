@@ -7,10 +7,12 @@ const cn = classNames.bind(style);
 
 const SlideContainer = ({ title, text, buttonStyle, buttonText }) => (
   <div className="slideContainer">
-    <h3 className="slideContainer_title">{title}</h3>
-    <p className="slideContainer_text">{text}</p>
+    <h3 className="slideContainer__title">{title}</h3>
+    <p className="slideContainer__text">{text}</p>
     <button
-      className={cn("slideContainer_button_information", [buttonStyle])}
+      className={cn("slideContainer__button", [
+        `slideContainer__button_${buttonStyle}`,
+      ])}
       type="button"
     >
       {buttonText}
@@ -25,10 +27,10 @@ SlideContainer.propTypes = {
   buttonText: PropTypes.string,
 };
 SlideContainer.defaultProps = {
-  title:'',
-  text: '',
-  buttonStyle: '',
-  buttonText: '',
+  title: "",
+  text: "",
+  buttonStyle: "",
+  buttonText: "",
 };
 
 export default memo(SlideContainer);

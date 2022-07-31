@@ -1,70 +1,19 @@
-.rentalRentBlock_title {
+.rentalRentBlock__name {
   margin: 30px 0 15px 0;
-}
-.rentalRentBlock_mainContent_minutRent {
-  display: flex;
-  margin: 10px 0 10px 1px;
-}
-.rentalRentBlock_mainContent_minutRent_label {
-  display: flex;
-  margin-right: 15px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
-  color: #999999;
-  align-items: center;
-}
-span .rentalRentBlock_mainContent_minutRent_label {
-  margin-bottom: 5px;
-}
-input[type="radio"]:checked
-  + span
-  + .rentalRentBlock_mainContent_minutRent_label_textColor {
   color: #121212;
-}
-.rentalRentBlock_mainContent_minutRent_label_input {
-  position: absolute;
-  opacity: 0;
-  margin-right: 5px;
-  border: 1px solid #999999;
-  box-sizing: border-box;
-}
-.rentalRentBlock_mainContent_minutRent_label_input:checked
-  + .rentalRentBlock_mainContent_minutRent_label_fakeCheckBox::before {
-  opacity: 1;
-}
-.rentalRentBlock_mainContent_minutRent_label_fakeCheckBox {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border: 1px solid #999999;
-  border-radius: 50%;
-  position: relative;
-  margin-right: 5px;
-  box-sizing: border-box;
-}
-.rentalRentBlock_mainContent_minutRent_label_fakeCheckBox::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border: 3px solid #0ec261;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  box-sizing: border-box;
 }
 
-.rentalRentBlock_mainContent_daysRent {
+.rentalRentBlock__rentRate {
   display: flex;
   margin: 10px 0 10px 1px;
 }
-.rentalRentBlock_mainContent_daysRent_label {
+
+.rentalRentBlock__label {
   display: flex;
   margin-right: 15px;
   font-family: "Roboto";
@@ -75,26 +24,22 @@ input[type="radio"]:checked
   color: #999999;
   align-items: center;
 }
-span .rentalRentBlock_mainContent_daysRent_label {
+span .rentalRentBlock__label {
   margin-bottom: 5px;
 }
-input[type="radio"]:checked
-  + span
-  + .rentalRentBlock_mainContent_daysRent_label_textColor {
-  color: #121212;
-}
-.rentalRentBlock_mainContent_daysRent_label_input {
+
+.rentalRentBlock__input {
   position: absolute;
   opacity: 0;
   margin-right: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
 }
-.rentalRentBlock_mainContent_daysRent_label_input:checked
-  + .rentalRentBlock_mainContent_daysRent_label_fakeCheckBox::before {
+.rentalRentBlock__input:checked + .rentalRentBlock__fake::before {
   opacity: 1;
 }
-.rentalRentBlock_mainContent_daysRent_label_fakeCheckBox {
+
+.rentalRentBlock__fake {
   display: block;
   width: 12px;
   height: 12px;
@@ -103,18 +48,22 @@ input[type="radio"]:checked
   position: relative;
   margin-right: 5px;
   box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #0ec261;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    box-sizing: border-box;
+  }
 }
-.rentalRentBlock_mainContent_daysRent_label_fakeCheckBox::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 12px;
-  height: 12px;
-  border: 3px solid #0ec261;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  box-sizing: border-box;
+
+input[type="radio"]:checked + span + .rentalRentBlock__text {
+  color: #121212;
 }

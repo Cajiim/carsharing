@@ -1,4 +1,4 @@
-.сarCardSetup-wrapper {
+.сarCardSetup {
   width: 335px;
   height: 506px;
   display: flex;
@@ -10,19 +10,19 @@
   margin: 30.5px 0 0 27px;
 }
 
-.сarCardSetup-wrapper__carSetup {
+.сarCardSetup__carSetup {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.carSetup__img {
+.сarCardSetup__img {
   max-width: 243.5px;
   max-height: 110px;
   margin: 34px 0 10px 0;
 }
 
-.carSetup__carName {
+.сarCardSetup__carName {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -34,7 +34,7 @@
   margin-bottom: 4.5px;
 }
 
-.carSetup__carClass {
+.сarCardSetup__carClass {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -46,18 +46,18 @@
   margin-bottom: 10.5px;
 }
 
-.carSetup__formForInputFile {
+.сarCardSetup__formForInputFile {
   width: 231.5px;
   height: 29px;
   margin-bottom: 22.5px;
   position: relative;
 }
 
-.formForInputFile__label {
+.сarCardSetup__label {
   position: relative;
 }
 
-.formForInputFile__input {
+.сarCardSetup__input {
   width: 231.5px;
   height: 29px;
   border: 0.5px solid #becad6;
@@ -88,7 +88,7 @@
   }
 }
 
-.formForInputFile__textError {
+.сarCardSetup__textError {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -101,7 +101,7 @@
   margin-left: 13px;
 }
 
-.formForInputFile__button {
+.сarCardSetup__button {
   background: #e9ecef;
   border: 0.5px solid #becad6;
   width: 65.5px;
@@ -128,7 +128,7 @@
   }
 }
 
-.сarCardSetup-wrapper__progressSetup {
+.сarCardSetup__progressSetup {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,14 +139,14 @@
   margin-bottom: 22.5px;
 }
 
-.progressSetup__text {
+.сarCardSetup__textContainer {
   display: flex;
   justify-content: space-between;
   width: 290px;
   margin-bottom: 10px;
 }
 
-.progressSetup__text__completed {
+.сarCardSetup__textCompleted {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -156,7 +156,7 @@
   color: #868e96;
 }
 
-.progressSetup__text__percentage {
+.сarCardSetup__textPercentage {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -166,14 +166,14 @@
   color: #5a6169;
 }
 
-.сarCardSetup-wrapper__description {
+.сarCardSetup__description {
   display: flex;
   flex-direction: column;
   margin: 0 22px 0 22px;
   position: relative;
 }
 
-.description__title {
+.сarCardSetup__titleDescription {
   margin-bottom: 14px;
   font-family: "Roboto";
   font-style: normal;
@@ -184,7 +184,7 @@
   color: #868e96;
 }
 
-.description__text {
+.сarCardSetup__textArea {
   width: 285px;
   height: 86.5px;
   font-family: "Roboto";
@@ -197,18 +197,13 @@
   outline: none;
   resize: none;
   border: none;
-  &::placeholder{
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
+  &::placeholder {
     font-size: 13.5px;
-    line-height: 20px;
-    letter-spacing: -0.408571px;
     color: #5a6169;
   }
 }
 
-.description__textError {
+.сarCardSetup__textError {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;

@@ -1,0 +1,2493 @@
+{
+  "Cars": [
+    {
+      "id": "1",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Аметистовый",
+        "Баклажановый"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Аметистовый",
+        "Баклажановый"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "CRETA",
+      "minPrice": "12000",
+      "maxPrice": "25000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/fa7d238c33edb42d3aaf49466e5400c66da0415d?fuid=1073273349188760991",
+      "typeCarCart": "economy",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Черный",
+        "Серебристый"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "SONATA",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/0050d35a3265deaece85bdd8cb88e6ae6c3b9401?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Оранжевый",
+        "Розовый"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "ELANTRA",
+      "minPrice": "12000",
+      "maxPrice": "25000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/c31940b4825e7de08c4523e9a81ebe8d0ad04616?fuid=1073273349188760991",
+      "typeCarCart": "economy",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "27",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "28",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "29",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "30",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "31",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "32",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "34",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "35",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "36",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "37",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "38",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "39",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "40",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "41",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "42",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "43",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "44",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "45",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "46",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "47",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "48",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "49",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "50",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "51",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "52",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "53",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "54",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "55",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "56",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "57",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "58",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "59",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "60",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "61",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "62",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "63",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "64",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "65",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "66",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "67",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "68",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "69",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "70",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "71",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "72",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "73",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "74",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "75",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "76",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "77",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "78",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "79",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "80",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "81",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "82",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "83",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "84",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "85",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    },
+    {
+      "id": "86",
+      "name": "i30 N",
+      "minPrice": "10000",
+      "maxPrice": "32000",
+      "model": "Hyundai",
+      "imgCar": "https://www.figma.com/file/654FNQuhGQxrLOT4ByXeoA/image/4e4ea22ab31217afaaad6cc7af61ec4ca2f2f058?fuid=1073273349188760991",
+      "typeCarCart": "business",
+      "descriptionCar": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+      "arrAllColors": [
+        "Желтый",
+        "Зеленый",
+        "Синий",
+        "Черный"
+      ]
+    }
+  ],
+  "Cities": [
+    {
+      "сity": "Ульяновск",
+      "id": "1"
+    },
+    {
+      "сity": "Кострома",
+      "id": "2"
+    },
+    {
+      "сity": "Гудермес",
+      "id": "3"
+    },
+    {
+      "сity": "Гуково",
+      "id": "4"
+    },
+    {
+      "сity": "Тольятти",
+      "id": "5"
+    },
+    {
+      "сity": "Томск",
+      "id": "6"
+    },
+    {
+      "сity": "Устюжна",
+      "id": "7"
+    },
+    {
+      "сity": "Хабаровск",
+      "id": "8"
+    },
+    {
+      "сity": "Чапаевск",
+      "id": "9"
+    },
+    {
+      "сity": "Унеча",
+      "id": "10"
+    },
+    {
+      "сity": "Шумерля",
+      "id": "11"
+    },
+    {
+      "сity": "Щигры",
+      "id": "12"
+    },
+    {
+      "сity": "Чадан",
+      "id": "13"
+    },
+    {
+      "сity": "Уссурийск",
+      "id": "14"
+    },
+    {
+      "сity": "Темрюк",
+      "id": "15"
+    },
+    {
+      "сity": "Суздаль",
+      "id": "16"
+    },
+    {
+      "сity": "Спасск",
+      "id": "17"
+    },
+    {
+      "сity": "Соликамск",
+      "id": "18"
+    }
+  ],
+  "Streets": [
+    {
+      "street": "Нариманова, 42",
+      "id": "1"
+    },
+    {
+      "street": "Зои Космодемьянской, 5",
+      "id": "2"
+    },
+    {
+      "street": "Федерация, 20",
+      "id": "3"
+    },
+    {
+      "street": "Плеханова, 112",
+      "id": "4"
+    },
+    {
+      "street": "Тверская, 22",
+      "id": "5"
+    },
+    {
+      "street": "Пушкинская, 233",
+      "id": "6"
+    },
+    {
+      "street": "Любови Шевцовой, 59",
+      "id": "7"
+    },
+    {
+      "street": "Олега Кошевого, 42",
+      "id": "8"
+    },
+    {
+      "street": "Сергей Тюленева, 15",
+      "id": "9"
+    },
+    {
+      "street": "Металлистов, 122",
+      "id": "10"
+    },
+    {
+      "street": "Центральная, 93/3",
+      "id": "11"
+    },
+    {
+      "street": "Молодежная, 1",
+      "id": "12"
+    },
+    {
+      "street": "Лесная, 531",
+      "id": "13"
+    },
+    {
+      "street": "Кирова, 212",
+      "id": "14"
+    },
+    {
+      "street": "Чапаева, 908",
+      "id": "15"
+    },
+    {
+      "street": "Совхозная, 218",
+      "id": "16"
+    },
+    {
+      "street": "Дружбы, 298",
+      "id": "17"
+    },
+    {
+      "street": "Дачная, 89",
+      "id": "18"
+    }
+  ],
+  "FinalOrders": [
+    {
+      "id": "1",
+      "orderNumber": "3edda207-8e64-43ba-b0b7-e7b4d46a5a21",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Устюжна",
+        "streetAuto": "Кирова, 212",
+        "color": "Черный",
+        "startDate": 1657051200000,
+        "endDate": 1658952000000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": true,
+        "checkedRightHand": true,
+        "tabIndex": "5",
+        "correctPriceRate": 55978,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 200,
+        "rightHand": 1600,
+        "additional": 2300,
+        "totalPrice": 58278,
+        "arendTimeForBlock": 22,
+        "carNumber": "Г 618 ОЖ",
+        "randomFuelLvl": 15
+      }
+    },
+    {
+      "id": "2",
+      "orderNumber": "172fd2e0-bf56-4e0f-9f44-580916ce9c3e",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Кострома",
+        "streetAuto": "Федерация, 20",
+        "color": "Черный",
+        "startDate": 1657051200000,
+        "endDate": 1658347200000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 41985,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 41985,
+        "arendTimeForBlock": 15,
+        "carNumber": "Х 646 ШШ",
+        "randomFuelLvl": 39
+      }
+    },
+    {
+      "id": "3",
+      "orderNumber": "172fd2e0-bf56-4e0f-9f44-580916ce9c3e",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Кострома",
+        "streetAuto": "Федерация, 20",
+        "color": "Черный",
+        "startDate": 1657051200000,
+        "endDate": 1658347200000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 41985,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 41985,
+        "arendTimeForBlock": 15,
+        "carNumber": "Х 646 ШШ",
+        "randomFuelLvl": 39
+      }
+    },
+    {
+      "id": "4",
+      "orderNumber": "c1d6a0aa-24a1-44ed-8c5f-cff6fa400aff",
+      "CarsId": "4",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Совхозная, 218",
+        "color": "Оранжевый",
+        "startDate": 1656964800000,
+        "endDate": 1658865600000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": false,
+        "checkedRightHand": true,
+        "tabIndex": "5",
+        "correctPriceRate": 55978,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 0,
+        "rightHand": 1600,
+        "additional": 2100,
+        "totalPrice": 58078,
+        "arendTimeForBlock": 22,
+        "carNumber": "Т 358 ЕЕ",
+        "randomFuelLvl": 37
+      }
+    },
+    {
+      "id": "5",
+      "orderNumber": "727c1574-c341-4f6e-be6c-e578e615480a",
+      "CarsId": "6",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Зеленый",
+        "startDate": 1657051200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 57977,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 57977,
+        "arendTimeForBlock": 23,
+        "carNumber": "Д 158 КВ",
+        "randomFuelLvl": 33
+      }
+    },
+    {
+      "id": "6",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "7",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "8",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "9",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "10",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "11",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "12",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "13",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "14",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "15",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "16",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "17",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "18",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "19",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "20",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "21",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "22",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "23",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "24",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "25",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "26",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "27",
+      "orderNumber": "d9483c47-e930-4931-a4bb-6de5937695ff",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Чапаева, 908",
+        "color": "Желтый",
+        "startDate": 1657915200000,
+        "endDate": 1659038400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 37987,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 37987,
+        "arendTimeForBlock": 13,
+        "carNumber": "Ш 807 СЕ",
+        "randomFuelLvl": 26
+      }
+    },
+    {
+      "id": "28",
+      "orderNumber": "4cf6f626-49f2-497e-bf39-0fe2dd8ea7c9",
+      "CarsId": "4",
+      "additionalOptions": {
+        "cityAuto": "Кострома",
+        "streetAuto": "Лесная, 531",
+        "color": "Зеленый",
+        "startDate": 1602619200000,
+        "endDate": 1606420800000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": true,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 99956,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 200,
+        "rightHand": 0,
+        "additional": 700,
+        "totalPrice": 100656,
+        "arendTimeForBlock": 44,
+        "carNumber": "С 879 ШМ",
+        "randomFuelLvl": 35
+      }
+    },
+    {
+      "id": "29",
+      "orderNumber": "7b2a6e65-68de-40a2-a67e-db3cdef69c60",
+      "CarsId": "1",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Плеханова, 112",
+        "color": "Вишневый",
+        "startDate": 1654891200000,
+        "endDate": 1654977600000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 13999,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 13999,
+        "arendTimeForBlock": 1,
+        "carNumber": "Г 925 ЖЖ",
+        "randomFuelLvl": 23
+      }
+    },
+    {
+      "id": "30",
+      "orderNumber": "bd1016c1-7589-4c31-b4cd-e5a30da914e4",
+      "CarsId": "6",
+      "additionalOptions": {
+        "cityAuto": "Кострома",
+        "streetAuto": "Совхозная, 218",
+        "color": "Черный",
+        "startDate": 1652817600000,
+        "endDate": 1656273600000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 91960,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 500,
+        "totalPrice": 92460,
+        "arendTimeForBlock": 40,
+        "carNumber": "Т 415 АЗ",
+        "randomFuelLvl": 15
+      }
+    },
+    {
+      "orderNumber": "a50df468-4b70-4e4d-aa07-258fe13c0c8e",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Кострома",
+        "streetAuto": "Тверская, 22",
+        "color": "Черный",
+        "startDate": 1659038400000,
+        "endDate": 1659470400000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 21995,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 21995,
+        "arendTimeForBlock": 5,
+        "carNumber": "С 405 ЗФ",
+        "randomFuelLvl": 26
+      },
+      "id": "GREYuUD"
+    },
+    {
+      "orderNumber": "e5578f3b-30d3-491c-afb6-d9af4c33f7fb",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Устюжна",
+        "streetAuto": "Тверская, 22",
+        "color": "Черный",
+        "startDate": 1657051200000,
+        "endDate": 1658347200000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 41985,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 41985,
+        "arendTimeForBlock": 15,
+        "carNumber": "Ч 252 АС",
+        "randomFuelLvl": 39
+      },
+      "id": "wvWLV1i"
+    },
+    {
+      "orderNumber": "814ac05a-6a03-4f24-8a6f-1edec2833a95",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Устюжна",
+        "streetAuto": "Тверская, 22",
+        "color": "Серебристый",
+        "startDate": 1659124800000,
+        "endDate": 1659729600000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": true,
+        "checkedRightHand": true,
+        "tabIndex": "5",
+        "correctPriceRate": 25993,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 200,
+        "rightHand": 1600,
+        "additional": 2300,
+        "totalPrice": 28293,
+        "arendTimeForBlock": 7,
+        "carNumber": "Н 671 СТ",
+        "randomFuelLvl": 23
+      },
+      "id": "9ufEyOZ"
+    },
+    {
+      "orderNumber": "233fd019-f428-4c8e-822a-64ffb0ab23c1",
+      "CarsId": "5",
+      "additionalOptions": {
+        "cityAuto": "Унеча",
+        "streetAuto": "Федерация, 20",
+        "color": "Желтый",
+        "startDate": 1658260800000,
+        "endDate": 1659643200000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 43984,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 43984,
+        "arendTimeForBlock": 16,
+        "carNumber": "С 854 НР",
+        "randomFuelLvl": 36
+      },
+      "id": "9i-UeUi"
+    },
+    {
+      "orderNumber": "040135ab-17dc-4408-9694-3c5e6ded27d6",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Хабаровск",
+        "streetAuto": "Тверская, 22",
+        "color": "Черный",
+        "startDate": 1657656000000,
+        "endDate": 1659470400000,
+        "arendRate": "days",
+        "checkedFuel": true,
+        "checkedBabyChair": true,
+        "checkedRightHand": true,
+        "tabIndex": "5",
+        "correctPriceRate": 53979,
+        "rateRent": "На сутки",
+        "gas": 500,
+        "baby": 200,
+        "rightHand": 1600,
+        "additional": 2300,
+        "totalPrice": 56279,
+        "arendTimeForBlock": 21,
+        "carNumber": "Ч 720 ЛМ",
+        "randomFuelLvl": 22
+      },
+      "id": "D_P-1qU"
+    },
+    {
+      "orderNumber": "8b75cd99-c7fc-43fb-ad92-f96d57bdf50a",
+      "CarsId": "3",
+      "additionalOptions": {
+        "cityAuto": "Устюжна",
+        "streetAuto": "Плеханова, 112",
+        "color": "Черный",
+        "startDate": 1658260800000,
+        "endDate": 1658865600000,
+        "arendRate": "days",
+        "checkedFuel": false,
+        "checkedBabyChair": false,
+        "checkedRightHand": false,
+        "tabIndex": "5",
+        "correctPriceRate": 25993,
+        "rateRent": "На сутки",
+        "gas": 0,
+        "baby": 0,
+        "rightHand": 0,
+        "additional": 0,
+        "totalPrice": 25993,
+        "arendTimeForBlock": 7,
+        "carNumber": "Д 594 СБ",
+        "randomFuelLvl": 11
+      },
+      "id": "VS1yMb3"
+    }
+  ]
+}

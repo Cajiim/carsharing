@@ -12,9 +12,9 @@ const HeaderPage = () => (
       </NavLink>
     </h1>
     <div className="header-container__geolocation">
-      <li className="geolocation__title">
+      <li className="header-container__geolocationLine">
         <img src={Geo} alt="Геолокация"></img>
-        <span className="geolocation__city">Ульяновск</span>
+        <span className="header-container__city">Ульяновск</span>
       </li>
     </div>
   </header>

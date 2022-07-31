@@ -1,9 +1,8 @@
-import React, { useState, useEffect, memo, useCallback} from "react";
+import React, { useState, useEffect, memo} from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import prev from "../../assets/svg/prev.svg";
-import next from "../../assets/svg/next.svg";
-
+import prev from "../../../assets/svg/prev.svg";
+import next from "../../../assets/svg/next.svg";
 import style from "./index.scss";
 
 const cn = classNames.bind(style);
@@ -71,21 +70,21 @@ const Pagination = ({
   const prevPage = () => setCurrentPage((pre) => pre - 1);
 
   return (
-    <ul className="pagination_container">
+    <ul className="pagination"> 
       <img
         src={prev}
         alt="prev"
         onClick={prevPage}
-        className={cn("pagination_container_prevButton", {
-          pagination_container_prevButton_disabled: currentPage === 1,
+        className={cn("pagination__prevButton", {
+          pagination__prevButton_disabled: currentPage === 1,
         })}
       ></img>
       {arrOfCurrentButtons.map((page) => (
         <li
           key={page}
           onClick={() => paginate(page)}
-          className={cn("pagination_container_numbers", {
-            pagination_container_numbers_active: currentPage === page,
+          className={cn("pagination__numbers", {
+            pagination__numbers_active: currentPage === page,
           })}
         >
           {page}
@@ -96,8 +95,8 @@ const Pagination = ({
         src={next}
         alt="next"
         onClick={nextPage}
-        className={cn("pagination_container_nextButton", {
-          pagination_container_nextButton_disabled:
+        className={cn("pagination__nextButton", {
+          pagination__nextButton_disabled:
             lastListPage === currentPage,
         })}
       ></img>
@@ -107,16 +106,16 @@ const Pagination = ({
 
 Pagination.propTypes = {
   carPerPage: PropTypes.number,
-  totalCars: PropTypes.number,
+  totalCars: PropTypes.string,
   paginate: PropTypes.func,
   setCurrentPage: PropTypes.func,
   currentPage: PropTypes.number,
 };
 Pagination.defaultProps = {
-  carPerPage: null,
-  totalCars: null,
-  paginate: null,
-  setCurrentPage: null,
+  carPerPage: 1,
+  totalCars: '',
+  paginate: () => {},
+  setCurrentPage: () => {},
   currentPage: 1,
 };
 

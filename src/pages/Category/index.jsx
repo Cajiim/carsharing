@@ -1,23 +1,22 @@
 import { React, useState } from "react";
 import Navigation from "../../components/Navigation";
-import HeaderPage from "../../components/common/HeaderPage";
+import HeaderPage from "../../components/Common/HeaderPage";
 import Tabs from "../../components/Tabs";
 import "./index.scss";
 
 const Category = () => {
   const [overflowActive, setOverflowActive] = useState(true);
-
   return (
-    <div className="container_category">
-      <div>
+    <div className="category">
+      <nav>
         <Navigation overflow={overflowActive} setOverflow={setOverflowActive} />
-      </div>
-      <div className="container_category_mainContent_page">
+      </nav>
+      <main className="category__content">
         <HeaderPage />
-        <div className="container_category_mainContent_page_tabs">
+        <div className="category__tabs">
           <Tabs />
         </div>
-      </div>
+      </main>
     </div>
   );
 };

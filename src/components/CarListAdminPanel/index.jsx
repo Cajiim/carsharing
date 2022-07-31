@@ -1,70 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import PaginationAdminPanel from "../PaginationAdminPanel";
-import { fetchDataFullCarList } from "../../api/fetchDataThunk";
+import { useLocation, useSearchParams } from "react-router-dom";
+import PaginationAdminPanel from "../Common/PaginationAdminPanel";
+import { fetchDataFullCarList } from "../../redux/dataThunk/fetchDataThunk";
 import CarListFiltrInputs from "../CarListFiltrInputs";
 import CarListTable from "../CarListTable";
 import "./index.scss";
 
-const carPerPage = 8;
-
+const limitCarsPerPage = 8;
 const CarListAdminPanel = () => {
   const dispatch = useDispatch();
-
   const [currentPage, setCurrentPage] = useState(1);
-  const {
-    filtrCarListName,
-    filtrCarListMinPrice,
-    filtrCarListMaxPrice,
-    filtrCarListCarType,
-  } = useSelector(({ filterCarList }) => filterCarList);
-
+  const [searchParams] = useSearchParams();
   const { loadingFullCarList, dataFullCarList } = useSelector(
     ({ getData }) => getData
   );
+  const { totalCars } = dataFullCarList;
+  const { data } = dataFullCarList;
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const location = useLocation();
+
+  const stringFilter = useCallback(
+    () => ({
+      name: searchParams.get("name") || "",
+      minPrice: searchParams.get("minPrice") || "",
+      maxPrice: searchParams.get("maxPrice") || "",
+      typeCarCart: searchParams.get("typeCarCart") || "",
+    }),
+    [searchParams]
+  );
 
   useEffect(() => {
-    dispatch(fetchDataFullCarList());
-  }, [dispatch]);
-
-  const lastCarIndex = currentPage * carPerPage;
-  const firstCarIndex = lastCarIndex - carPerPage;
-
-  let data = dataFullCarList;
-
-  if (filtrCarListName !== "") {
-    data = data.filter((el) => el.name.includes(filtrCarListName));
-  }
-  if (filtrCarListMinPrice !== "") {
-    data = data.filter((el) => el.minPrice.includes(filtrCarListMinPrice));
-  }
-  if (filtrCarListMaxPrice !== "") {
-    data = data.filter((el) => el.maxPrice.includes(filtrCarListMaxPrice));
-  }
-  if (filtrCarListCarType !== "") {
-    data = data.filter((el) => el.typeCarCart.includes(filtrCarListCarType));
-  }
-
-  const dataCurrent = data.slice(firstCarIndex, lastCarIndex);
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    dispatch(
+      fetchDataFullCarList({
+        urlFilter: stringFilter(),
+        page: currentPage,
+        limit: limitCarsPerPage,
+      })
+    );
+  }, [currentPage, dispatch, location.search, stringFilter]);
 
   return (
-    <div className="carListAdminPanel-wrapper">
-      <h2 className="carListAdminPanel-wrapper__title">Список автомобилей</h2>
-      <div className="carListAdminPanel-wrapper__mainContent">
+    <div className="carListAdminPanel">
+      <h2 className="carListAdminPanel__title">Список автомобилей</h2>
+      <div className="carListAdminPanel__mainContent">
         <CarListFiltrInputs />
         {!loadingFullCarList ? (
-          <CarListTable dataCurrent={dataCurrent} />
+          <>
+            <CarListTable dataCurrent={data || []} />
+            <PaginationAdminPanel
+              carPerPage={limitCarsPerPage}
+              totalCars={totalCars}
+              paginate={paginate}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </>
         ) : (
-          <h3 className="carListAdminPanel-wrapper_notFound">Загрузка данных</h3>
+          <h3 className="carListAdminPanel__notFound">Загрузка данных</h3>
         )}
-        <PaginationAdminPanel
-          carPerPage={carPerPage}
-          totalCars={data.length}
-          paginate={paginate}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
       </div>
     </div>
   );

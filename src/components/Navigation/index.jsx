@@ -2,7 +2,6 @@ import React, { useState, memo } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import Menu from "../Menu";
-
 import style from "./index.scss";
 
 const cn = classNames.bind(style);

@@ -11,10 +11,10 @@
   justify-content: center;
   gap: 30px;
   transform: translateX(-100%);
-}
 
-.modal_active {
-  transform: translateX(0);
+  &_active {
+    transform: translateX(0);
+  }
 }
 
 .modal__title {
@@ -27,7 +27,12 @@
   color: #121212;
 }
 
-.modal__button_confirm {
+.modal__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.modal__buttonConfirm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,19 +49,19 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-}
-.modal__button_confirm:hover {
-  background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
-  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+    cursor: pointer;
+  }
+  &:active {
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+    background-blend-mode: darken;
+    cursor: pointer;
+  }
 }
 
-.modal__button_confirm:active {
-  background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
-  background-blend-mode: darken;
-  cursor: pointer;
-}
-
-.modal__button_refuse {
+.modal__buttonRefuse {
   width: 180px;
   height: 50px;
   background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
@@ -69,20 +74,14 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-}
 
-.modal__button {
-  display: flex;
-  gap: 20px;
-}
-
-.modal__button_refuse:hover {
-  background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
-  cursor: pointer;
-}
-
-.modal__button_refuse:active {
-  background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
-  background-blend-mode: darken;
-  cursor: pointer;
+  &:hover {
+    background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
+    cursor: pointer;
+  }
+  &:active {
+    background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
+    background-blend-mode: darken;
+    cursor: pointer;
+  }
 }

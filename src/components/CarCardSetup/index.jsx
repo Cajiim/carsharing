@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   setImgForCar,
   setDescriptionCar,
 } from "../../redux/cart/reducerCarCartSettings";
-import { fetchDataCarList } from "../../api/fetchDataThunk";
+import {  fetchDataCarList  } from "../../redux/dataThunk/fetchDataThunk";
 import {
   setLinkImgError,
   setDescriptionError,
 } from "../../redux/cart/reducerValidateErrors";
 import style from "./index.scss";
+
 
 const cn = classNames.bind(style);
 
@@ -74,7 +76,8 @@ const CarCardSetup = () => {
   const { dataCarList } = useSelector(({ getData }) => getData);
   const imgCarFromBack = dataCarList?.imgCar;
   const descriptionCarFromBack = dataCarList?.descriptionCar;
-
+  
+  const location = useLocation();
   useEffect(() => {
     dispatch(fetchDataCarList());
     setTimeout(() => {
@@ -87,13 +90,13 @@ const CarCardSetup = () => {
         )
       );
     }, 0);
-  }, [imgCarFromBack, descriptionCarFromBack]);
+  }, [imgCarFromBack, descriptionCarFromBack, location]);
 
   return (
-    <div className="сarCardSetup-wrapper">
-      <div className="сarCardSetup-wrapper__carSetup carSetup">
-        <img src={imgCar} alt="carImg" className="carSetup__img"></img>
-        <span className="carSetup__carName">
+    <div className="сarCardSetup">
+      <div className="сarCardSetup__carSetup">
+        <img src={imgCar} alt="carImg" className="сarCardSetup__img"></img>
+        <span className="сarCardSetup__carName">
           {model && name ? (
             <span>
               {model}, {name}
@@ -102,12 +105,12 @@ const CarCardSetup = () => {
             "Введите название и модель автомобиля"
           )}
         </span>
-        <span className="carSetup__carClass">{typeCarCart}</span>
-        <form className="carSetup__formForInputFile formForInputFile">
-          <label htmlFor="inputFile" className="formForInputFile__label">
+        <span className="сarCardSetup__carClass">{typeCarCart}</span>
+        <form className="сarCardSetup__formForInputFile ">
+          <label htmlFor="inputFile" className="сarCardSetup__label">
             <input
-              className={cn("formForInputFile__input", {
-                formForInputFile__input_error: linkDirty && linkError,
+              className={cn("сarCardSetup__input", {
+                сarCardSetup__input_error: linkDirty && linkError,
               })}
               id="inputFile"
               placeholder="Введите ссылку ..."
@@ -117,12 +120,12 @@ const CarCardSetup = () => {
               onBlur={(e) => handlClickBlur(e)}
             ></input>
             {linkDirty && linkError && (
-              <div className="formForInputFile__textError">{linkError}</div>
+              <div className="сarCardSetup__textError">{linkError}</div>
             )}
             <button
               type="button"
-              className={cn("formForInputFile__button", {
-                formForInputFile__button_error: linkDirty && linkError,
+              className={cn("сarCardSetup__button", {
+                сarCardSetup__button_error: linkDirty && linkError,
               })}
             >
               Обзор
@@ -130,17 +133,17 @@ const CarCardSetup = () => {
           </label>
         </form>
       </div>
-      <div className="сarCardSetup-wrapper__progressSetup progressSetup">
-        <div className="progressSetup__text">
-          <span className="progressSetup__text__completed">Заполнено</span>
-          <p className="progressSetup__text__percentage">{randomFuelLvl}%</p>
+      <div className="сarCardSetup__progressSetup">
+        <div className="сarCardSetup__textContainer">
+          <span className="сarCardSetup__textCompleted">Заполнено</span>
+          <p className="сarCardSetup__textPercentage">{randomFuelLvl}%</p>
         </div>
         <progress max="100" value={randomFuelLvl}></progress>
       </div>
-      <div className="сarCardSetup-wrapper__description description">
-        <span className="description__title">Описание</span>
+      <div className="сarCardSetup__description">
+        <span className="сarCardSetup__titleDescription">Описание</span>
         <textarea
-          className="description__text"
+          className="сarCardSetup__textArea"
           placeholder="Введите описание ..."
           value={descriptionCar}
           onChange={(e) => handlChangeDescription(e.target.value)}
@@ -148,7 +151,7 @@ const CarCardSetup = () => {
           onBlur={(e) => handlClickBlur(e)}
         ></textarea>
         {descriptionDirty && descriptionError && (
-          <div className="description__textError">{descriptionError}</div>
+          <div className="сarCardSetup__textError">{descriptionError}</div>
         )}
       </div>
     </div>

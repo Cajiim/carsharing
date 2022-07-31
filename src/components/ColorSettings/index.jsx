@@ -85,10 +85,10 @@ const ColorSettings = () => {
 
   return (
     <>
-      <div className="addСolor">
-        <span className="addСolor__title">Доступные цвета</span>
+      <div className="addСolorBlock">
+        <span className="addСolorBlock__title">Доступные цвета</span>
         <input
-          className={cn("addСolor__input ", {
+          className={cn("addСolorBlock__input ", {
             addСolor__input_error: colorDirty && colorError,
           })}
           value={colorForCar}
@@ -98,14 +98,14 @@ const ColorSettings = () => {
           onBlur={handlClickBlur}
         ></input>
         {colorDirty && colorError && (
-          <div className="addСolor__textError">{colorError}</div>
+          <div className="addСolorBlock__textError">{colorError}</div>
         )}
         {noСolors && (
-          <div className="addСolor__textError">Выберите хотябы один цвет</div>
+          <div className="addСolorBlock__textError">Выберите хотябы один цвет</div>
         )}
         <button
           type="button"
-          className="addСolor__addColorButton"
+          className="addСolorBlock__addColorButton"
           aria-label="addColor"
           onClick={handlAddColorForArr}
         ></button>

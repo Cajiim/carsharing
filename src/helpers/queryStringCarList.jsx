@@ -3,8 +3,6 @@ import { useSelector } from "react-redux/es/exports";
 
 const queryString = require("query-string");
 
-
-
 export const QueryStringCarList = () => {
   const {
     filtrCarListName,
@@ -22,12 +20,8 @@ export const QueryStringCarList = () => {
   const stringified = queryString.stringify(parsed);
   location.search = stringified;
   const totalUrl = location.search 
-
   return totalUrl;
-
-  /*   return totalUrl; */
 };
 
-console.log(QueryStringCarList, "что тут алоо");
 
 export const queryStringCarOrders = 12;

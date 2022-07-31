@@ -5,26 +5,26 @@ import style from "./index.scss";
 
 const cn = classNames.bind(style);
 
-const ButtonCarSettings = ({ handlClick, buttonControl, active, name }) => (
+const ButtonCarSettings = ({ handlClick, className, isActive, name }) => (
   <button
     type="button"
-    className={cn(buttonControl, active)}
+    className={cn(className,{ [`${className}_active`]: isActive })}
     onClick={handlClick}
   >
     {name}
   </button>
-);
+); 
 
 ButtonCarSettings.propTypes = {
   handlClick: PropTypes.func,
-  buttonControl: PropTypes.string,
-  active: PropTypes.string,
+  className: PropTypes.string,
+  isActive: PropTypes.bool,
   name: PropTypes.string,
 };
 ButtonCarSettings.defaultProps = {
   handlClick: () => {},
-  buttonControl: "",
-  active: "",
+  className: "",
+  isActive: false,
   name: "",
 };
 

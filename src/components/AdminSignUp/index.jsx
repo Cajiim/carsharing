@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/cart/reducerUserSlice";
 import AuthorizationForm from "../../ui/AuthorizationForm";
-import HeaderAuthorization from '../common/HeaderAuthorization';
+import HeaderAuthorization from '../Common/HeaderAuthorization';
 import "./index.scss";
 
 const AdminSignUp = () => {
@@ -22,6 +22,8 @@ const AdminSignUp = () => {
             token: user.accessToken,
           })
         );
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("token", user.accessToken);
         history("/admin/carCart");
       })
       .catch(console.error);

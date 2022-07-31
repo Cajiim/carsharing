@@ -64,8 +64,8 @@ const CarListTable = ({ dataCurrent }) => (
 );
 
 CarListTable.propTypes = {
-  dataCurrent: PropTypes.shape([
-    {
+  dataCurrent: PropTypes.arrayOf(
+    PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
       minPrice: PropTypes.string,
@@ -75,12 +75,12 @@ CarListTable.propTypes = {
       typeCarCart: PropTypes.string,
       descriptionCar: PropTypes.string,
       arrAllColors: PropTypes.arrayOf(PropTypes.string),
-    },
-  ]),
+    })
+  ),
 };
 CarListTable.defaultProps = {
-  dataCurrent: PropTypes.shape([
-    {
+  dataCurrent: PropTypes.arrayOf(
+    PropTypes.shape({
       id: "",
       name: "",
       minPrice: "",
@@ -89,9 +89,9 @@ CarListTable.defaultProps = {
       imgCar: "",
       typeCarCart: "",
       descriptionCar: "",
-      arrAllColors: '',
-    },
-  ]),
+      arrAllColors: [],
+    })
+  ),
 };
 
 export default memo(CarListTable);

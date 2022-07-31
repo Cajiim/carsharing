@@ -1,69 +1,92 @@
-import React, { useState, memo } from "react";
-import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
+import React, { useState, memo, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { fetchOrderFilter } from "../../redux/dataThunk/fetchFiltrInputs";
+import useParameters from "../../hooks/useParametersCarOrders";
 import Select from "../../ui/SelectedList";
 import Button from "../../ui/ButtonCarSetting";
-import {
-  setPeriodOfTimeForFiltr,
-  setCarNameForFiltr,
-  setCityForFiltr,
-  setOrderStatusForFiltr,
-} from "../../redux/cart/reducerCarOrders";
 import "./index.scss";
 
-const CarOrdersInput = ({ contentOrder }) => {
-  console.log(contentOrder, "что тут");
+const CarOrdersInput = () => {
   const dispatch = useDispatch();
   const [periodOfTimeFromList, setPeriodOfTimeFromList] = useState("");
   const [carNameFromList, setCarNameFromList] = useState("");
   const [cityFromList, setCityFromList] = useState("");
   const [orderStatusFromList, setOrderStatusFromList] = useState("");
+  const { setCarOrdersQuery, deleteCarOrdersQuery } = useParameters();
+  const { dataOrdersInput } = useSelector(({filterInputs}) => filterInputs)
+
+  useEffect(() => {
+    dispatch(fetchOrderFilter());
+  }, []);
 
   const now = new Date();
-  const allPeriodOfTimes = contentOrder.map((el) => {
-    if (
-      Math.ceil(
-        Math.abs(
-          new Date(now).getTime() -
-            new Date(el.additionalOptions.startDate).getTime()
-        ) /
-          (1000 * 3600 * 24)
-      ) < 7
-    )
+  const nowDate = new Date(now).getTime();
+  
+  const allPeriodOfTimes = dataOrdersInput.map((el) => {
+    if (Math.ceil(Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) / (1000 * 3600 * 24)) < 7)
       return "За неделю";
-    if (
-      Math.ceil(
-        Math.abs(
-          new Date(now).getTime() -
-            new Date(el.additionalOptions.startDate).getTime()
-        ) /
-          (1000 * 3600 * 24)
-      ) < 30
-    )
+    if (Math.ceil(Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) /(1000 * 3600 * 24)) < 30)
       return "За месяц";
     return "За год";
   });
-
-  const allCarNames = contentOrder.map((el) => el.modelCar.name);
-  const allCities = contentOrder.map((el) => el.additionalOptions.cityAuto);
-  const allOrderStatus = contentOrder.map((el) =>
-    Math.abs(
-      new Date(now).getTime() < new Date(el.additionalOptions.endDate).getTime()
-    )
+  const allOrderStatus = dataOrdersInput.map((el) => Math.abs(nowDate < new Date(el.additionalOptions.endDate).getTime())
       ? "В процессе"
       : "Завершен"
   );
 
   const uniquePeriodOfTimes = [...new Set(allPeriodOfTimes)];
-  const uniqueCarNames = [...new Set(allCarNames)];
-  const uniqueCities = [...new Set(allCities)];
+  const uniqueCarNames = [...new Set(dataOrdersInput.map((el) => el.Cars.name))];
+  const uniqueCities = [...new Set(dataOrdersInput.map((el) => el.additionalOptions.cityAuto)),];
   const uniqueOrderStatus = [...new Set(allOrderStatus)];
 
+  const weekMicroseconds = 604800000;
+  const periodOfWeek = new Date(now).getTime() - weekMicroseconds;
+  const month = 2629700000;
+  const periodOfMonth = new Date(now).getTime() - month;
+  const year = 31556952000;
+  const periodOfYear = new Date(now).getTime() - year;
+  const statusPeriod = 1280508033000;
+  const endStatusPeriod = nowDate + year;
+  /* http://localhost:3001/FinalOrders?_expand=Cars&CarsId=3 */
+  /* http://localhost:3001/FinalOrders?_expand=Cars&filter[Cars.name]=CRETA */
+
   const handlAccept = () => {
-    dispatch(setPeriodOfTimeForFiltr(periodOfTimeFromList));
-    dispatch(setCarNameForFiltr(carNameFromList));
-    dispatch(setCityForFiltr(cityFromList));
-    dispatch(setOrderStatusForFiltr(orderStatusFromList));
+    setCarOrdersQuery("name", carNameFromList);
+    if (carNameFromList === "") {
+      deleteCarOrdersQuery("name");
+    }
+    if (periodOfTimeFromList === "За неделю") {
+      setCarOrdersQuery(`additionalOptions.startDate_gte`, periodOfWeek);
+      setCarOrdersQuery(`additionalOptions.startDate_lte`, nowDate);
+    }
+    if (periodOfTimeFromList === "За месяц") {
+      setCarOrdersQuery(`additionalOptions.startDate_gte`, periodOfMonth);
+      setCarOrdersQuery(`additionalOptions.startDate_lte`, nowDate);
+    }
+    if (periodOfTimeFromList === "За год") {
+      setCarOrdersQuery(`additionalOptions.startDate_gte`, periodOfYear);
+      setCarOrdersQuery(`additionalOptions.startDate_lte`, nowDate);
+    }
+    if (periodOfTimeFromList === "") {
+      deleteCarOrdersQuery(`additionalOptions.startDate_gte`);
+      deleteCarOrdersQuery(`additionalOptions.startDate_lte`);
+    }
+    setCarOrdersQuery("additionalOptions.cityAuto", cityFromList);
+    if (cityFromList === "") {
+      deleteCarOrdersQuery("additionalOptions.cityAuto");
+    }
+    if (orderStatusFromList === "Завершен") {
+      setCarOrdersQuery(`additionalOptions.endDate_gte`, statusPeriod);
+      setCarOrdersQuery(`additionalOptions.endDate_lte`, nowDate);
+    }
+    if (orderStatusFromList === "В процессе") {
+      setCarOrdersQuery(`additionalOptions.endDate_gte`, nowDate);
+      setCarOrdersQuery(`additionalOptions.endDate_lte`, endStatusPeriod);
+    }
+    if (orderStatusFromList === "") {
+      deleteCarOrdersQuery("additionalOptions.endDate_gte");
+      deleteCarOrdersQuery("additionalOptions.endDate_lte");
+    }
   };
 
   return (
@@ -92,99 +115,11 @@ const CarOrdersInput = ({ contentOrder }) => {
       </form>
       <Button
         handlClick={handlAccept}
-        buttonControl="buttons__apply"
+        className="buttonApplyNextPosition"
         name="Применить"
-        active="buttons__apply_nextPosition"
       />
     </div>
   );
-};
-
-CarOrdersInput.propTypes = {
-  contentOrder: PropTypes.shape([
-    {
-      id: PropTypes.string,
-      orderNumber: PropTypes.string,
-      additionalOptions: PropTypes.shape({
-        cityAuto: PropTypes.string,
-        streetAuto: PropTypes.string,
-        color: PropTypes.string,
-        startDate: PropTypes.number,
-        endDate: PropTypes.number,
-        arendRate: PropTypes.string,
-        checkedFuel: PropTypes.bool,
-        checkedBabyChair: PropTypes.bool,
-        checkedRightHand: PropTypes.bool,
-        tabIndex: PropTypes.string,
-        correctPriceRate: PropTypes.number,
-        rateRent: PropTypes.string,
-        gas: PropTypes.number,
-        baby: PropTypes.number,
-        rightHand: PropTypes.number,
-        additional: PropTypes.number,
-        totalPrice: PropTypes.number,
-        arendTimeForBlock: PropTypes.number,
-        carNumber: PropTypes.string,
-        randomFuelLvl: PropTypes.number,
-      }),
-      modelCar: PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-        minPrice: PropTypes.string,
-        maxPrice: PropTypes.string,
-        model: PropTypes.string,
-        imgCar: PropTypes.string,
-        typeCarCart: PropTypes.string,
-        descriptionCar: PropTypes.string,
-        arrAllColors: PropTypes.arrayOf(PropTypes.string),
-      }),
-    },
-  ]),
-};
-CarOrdersInput.defaultProps = {
-  contentOrder: PropTypes.shape([
-    {
-      id: "",
-      orderNumber: "",
-      additionalOptions: PropTypes.shape([
-        {
-          cityAuto: "",
-          streetAuto: "",
-          color: "",
-          startDate: null,
-          endDate: null,
-          arendRate: "",
-          checkedFuel: false,
-          checkedBabyChair: false,
-          checkedRightHand: false,
-          tabIndex: "",
-          correctPriceRate: null,
-          rateRent: "",
-          gas: null,
-          baby: null,
-          rightHand: null,
-          additional: null,
-          totalPrice: null,
-          arendTimeForBlock: null,
-          carNumber: "",
-          randomFuelLvl: null,
-        },
-      ]),
-      modelCar: PropTypes.shape([
-        {
-          id: "",
-          name: "",
-          minPrice: "",
-          maxPrice: "",
-          model: "",
-          imgCar: "",
-          typeCarCart: "",
-          descriptionCar: "",
-          arrAllColors: [],
-        },
-      ]),
-    },
-  ]),
 };
 
 export default memo(CarOrdersInput);

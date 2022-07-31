@@ -1,0 +1,45 @@
+
+
+.navBarLink:link {
+  text-decoration: none;
+  color: #3D5170;
+
+}
+.navBarLink:visited {
+  color: #3D5170;
+}
+
+.navBarLink_active {
+  box-shadow: inset 0px -1px 0px #e1e5eb, inset 4px 0px 0px #007bff;
+  color: #007bff;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navBarLink__line {
+  display: flex;
+  height: 57px;
+  width: 285px;
+  position: relative;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px #e1e5eb;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: -0.234375px;
+
+  &_first{
+    border-top: 1px solid #e1e5eb;;
+  }
+}
+
+.navBarLink__img {
+  margin-left: 28.5px;
+  height: 16px;
+  width: 16px;
+}
+.navBarLink__text {
+  margin-left: 16px;
+}

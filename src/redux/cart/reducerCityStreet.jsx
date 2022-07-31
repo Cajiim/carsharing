@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchDataCitys, fetchDataStreets } from "../../api/fetchCityStreet";
+import { fetchDataCitys, fetchDataStreets } from "../dataThunk/fetchCityStreet";
 
 const initialState = {
   dataCitys: [],

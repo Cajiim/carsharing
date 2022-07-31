@@ -1,4 +1,4 @@
-.authorizationTitle {
+.authorizationHead {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,12 +12,12 @@
   margin-top: 167px;
 }
 
-.authorizationTitle__circle {
+.authorizationHead__externalCircle {
   position: relative;
   margin-right: 11.5px;
 }
 
-.circle__circleSmall {
+.authorizationHead__interiorСircleSmall {
   background-color: #0ec261;
   width: 18.5px;
   height: 18.5px;
@@ -28,7 +28,7 @@
   right: 0;
 }
 
-.circle__circleLarge {
+.authorizationHead__interiorСircleLarge {
   background: #0ec261;
   width: 44.5px;
   height: 44.5px;
@@ -40,7 +40,7 @@
   overflow: hidden;
 }
 
-.circle__circleSmallTwo {
+.authorizationHead__interiorСircleSmallTwo {
   width: 18.5px;
   height: 18.5px;
   background: white;

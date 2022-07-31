@@ -17,3 +17,9 @@ li {
 .NavLink .active {
   color: #0ec261;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

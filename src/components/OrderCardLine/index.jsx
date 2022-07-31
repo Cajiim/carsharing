@@ -4,30 +4,30 @@ import PropTypes from "prop-types";
 import Complete from "../../assets/svg/completeButton.svg";
 import Cancel from "../../assets/svg/cancelButton.svg";
 import Change from "../../assets/svg/changeButton.svg";
+import CardLineCheckBox from "../../ui/OrderCardLineCheckBox";
+import OrderCardLineButton from "../../ui/OrderCardLineButton";
 import "./index.scss";
 
 const OrderCardLine = ({ dataCurrent }) => (
-  <ul>
+  <ul className="orderCardLine">
     {dataCurrent &&
       dataCurrent.map((el) => (
-        <li className="orderCardLine_mainContent" key={el.id}>
+        <li className="orderCardLine__line" key={el.id}>
           <img
             alt="carImg"
-            src={el.modelCar.imgCar}
-            className="orderCardLine_mainContent_img"
+            src={el.Cars?.imgCar}
+            className="orderCardLine__imgCar"
           ></img>
-          <div className="orderCardLine_mainContent_orderDescription">
-            <span className="orderCardLine_mainContent_orderDescription_text">
-              <span className="orderCardLine_mainContent_orderDescription_text_name">
-                {el.modelCar.name}
-              </span>
+          <div className="orderCardLine__orderDescription">
+            <span>
+              <span className="orderCardLine__carName">{el.Cars?.name}</span>
               &nbsp; в &nbsp;
-              <span className="orderCardLine_mainContent_orderDescription_text_city">
+              <span className="orderCardLine__placeOfDelivery">
                 {el.additionalOptions?.cityAuto},&nbsp;
               </span>
               {el.additionalOptions?.streetAuto}
             </span>
-            <span className="orderCardLine_mainContent_orderDescription_date">
+            <span>
               {moment(new Date(el.additionalOptions?.startDate)).format(
                 "DD.MM.YYYY h:mm"
               )}
@@ -36,106 +36,64 @@ const OrderCardLine = ({ dataCurrent }) => (
                 "DD.MM.YYYY h:mm"
               )}
             </span>
-            <span className="orderCardLine_mainContent_orderDescription_color">
+            <span>
               Цвет:&nbsp;
-              <span className="orderCardLine_mainContent_orderDescription_color_text">
+              <span className="orderCardLine__colorText">
                 {el.additionalOptions?.color}
               </span>
             </span>
           </div>
-          <div className="orderCardLine_mainContent_checkbox">
-            <label
-              htmlFor="gas"
-              className="orderCardLine_mainContent_checkbox_container"
-            >
-              <input
-                value="gasoline"
-                id="gas"
-                type="checkbox"
-                className="orderCardLine_mainContent_checkbox_container_input"
-                readOnly
-                checked={el.additionalOptions?.gas !== 0}
-              ></input>
-              <span className="orderCardLine_mainContent_checkbox_container_input_fakeCheckbox"></span>
-              <span className="orderCardLine_mainContent_checkbox_container_input_text">
-                Полный бак
-              </span>
-            </label>
-
-            <label
-              htmlFor="chair"
-              className="orderCardLine_mainContent_checkbox_container"
-            >
-              <input
-                value="babyChair"
-                id="chair"
-                type="checkbox"
-                className="orderCardLine_mainContent_checkbox_container_input"
-                checked={el.additionalOptions?.baby !== 0}
-                readOnly
-              ></input>
-              <span className="orderCardLine_mainContent_checkbox_container_input_fakeCheckbox"></span>
-              <span className="orderCardLine_mainContent_checkbox_container_input_text">
-                Детское кресло
-              </span>
-            </label>
-
-            <label
-              htmlFor="rightHandDrive"
-              className="orderCardLine_mainContent_checkbox_container"
-            >
-              <input
-                value="rightHand"
-                id="rightHandDrive"
-                type="checkbox"
-                className="orderCardLine_mainContent_checkbox_container_input"
-                checked={el.additionalOptions?.rightHand !== 0}
-                readOnly
-              ></input>
-              <span className="orderCardLine_mainContent_checkbox_container_input_fakeCheckbox"></span>
-              <span className="orderCardLine_mainContent_checkbox_container_input_text">
-                Правый руль
-              </span>
-            </label>
+          <div className="orderCardLine__checkboxBlock">
+            <CardLineCheckBox
+              classNameLabel="cardLineCheckbox"
+              classNameInput="cardLineCheckbox__input"
+              classNameFake="cardLineCheckbox__fake"
+              classNameText="cardLineCheckbox__text"
+              id="gas"
+              isChecked={el.additionalOptions?.gas !== 0}
+              text="Полный бак"
+            />
+            <CardLineCheckBox
+              classNameLabel="cardLineCheckbox"
+              classNameInput="cardLineCheckbox__input"
+              classNameFake="cardLineCheckbox__fake"
+              classNameText="cardLineCheckbox__text"
+              id="chair"
+              isChecked={el.additionalOptions?.baby !== 0}
+              text="Детское кресло"
+            />
+            <CardLineCheckBox
+              classNameLabel="cardLineCheckbox"
+              classNameInput="cardLineCheckbox__input"
+              classNameFake="cardLineCheckbox__fake"
+              classNameText="cardLineCheckbox__text"
+              id="rightHandDrive"
+              isChecked={el.additionalOptions?.rightHand !== 0}
+              text="Правый руль"
+            />
           </div>
-          <span className="orderCardLine_mainContent_textPrice">
+          <span className="orderCardLine__textPrice">
             {Number(el.additionalOptions?.totalPrice).toLocaleString()}
           </span>
-
-          <div className="orderCardLine_mainContent_bottons">
-            <button
-              type="button"
-              className="orderCardLine_mainContent_bottons_ready"
-            >
-              <img
-                src={Complete}
-                alt="complete"
-                className="orderCardLine_mainContent_bottons_imgComplete"
-              ></img>
-              Готово
-            </button>
-            <button
-              type="button"
-              className="orderCardLine_mainContent_bottons_cancel"
-            >
-              <img
-                src={Cancel}
-                alt="cancel"
-                className="orderCardLine_mainContent_bottons_imgCancel"
-              ></img>
-              Отмена
-            </button>
-            <button
-              type="button"
-              className="orderCardLine_mainContent_bottons_change"
-            >
-              <img
-                src={Change}
-                alt="change"
-                className="orderCardLine_mainContent_bottons_imgChange"
-              ></img>
-              Изменить
-            </button>
+          <div className="orderCardLine__buttons">
+            <OrderCardLineButton
+              className="orderButtonReady"
+              classNameImg="cardLineOrderButton__imgComplete"
+              src={Complete}
+              text="Готово"
+            />
+            <OrderCardLineButton
+              className="orderButtonCancel"
+              classNameImg="cardLineOrderButton__imgCancel"
+              src={Cancel}
+              text="Отмена"
+            />
+            <OrderCardLineButton
+              className="orderButtonChange"
+              classNameImg="cardLineOrderButton__imgChange"
+              src={Change}
+              text="Изменить"
+            />
           </div>
         </li>
       ))}
@@ -143,8 +101,8 @@ const OrderCardLine = ({ dataCurrent }) => (
 );
 
 OrderCardLine.propTypes = {
-  dataCurrent: PropTypes.shape([
-    {
+  dataCurrent: PropTypes.arrayOf(
+    PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
       minPrice: PropTypes.string,
@@ -154,12 +112,12 @@ OrderCardLine.propTypes = {
       typeCarCart: PropTypes.string,
       descriptionCar: PropTypes.string,
       arrAllColors: PropTypes.arrayOf(PropTypes.string),
-    },
-  ]),
+    })
+  ),
 };
 OrderCardLine.defaultProps = {
-  dataCurrent: PropTypes.shape([
-    {
+  dataCurrent: PropTypes.arrayOf(
+    PropTypes.shape({
       id: "",
       name: "",
       minPrice: "",
@@ -169,8 +127,8 @@ OrderCardLine.defaultProps = {
       typeCarCart: "",
       descriptionCar: "",
       arrAllColors: [],
-    },
-  ]),
+    })
+  ),
 };
 
 export default memo(OrderCardLine);

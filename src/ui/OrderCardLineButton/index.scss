@@ -1,0 +1,63 @@
+.orderButtonReady {
+  width: 71.5px;
+  height: 24px;
+  background: #ffffff;
+  border: 0.5px solid #becad6;
+  border-radius: 4px 0px 0px 4px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #5a6169;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.orderButtonCancel {
+  width: 71.5px;
+  height: 24px;
+  background: #ffffff;
+  border: none;
+  border-top: 0.5px solid #becad6;
+  border-bottom: 0.5px solid #becad6;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #5a6169;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.orderButtonChange {
+  width: 71.5px;
+  height: 24px;
+  background: #ffffff;
+  border: 0.5px solid #becad6;
+  border-radius: 0px 4px 4px 0px;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: -0.345714px;
+  color: #5a6169;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardLineOrderButton__imgComplete {
+  margin: 0 3.4px 0 8px;
+}
+.cardLineOrderButton__imgCancel {
+  margin: 0 4.86px 0 8px;
+}
+
+.cardLineOrderButton__imgChange {
+  margin: 0 0.5px 0 3.65px;
+}

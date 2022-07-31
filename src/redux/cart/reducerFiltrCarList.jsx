@@ -7,6 +7,7 @@ const filtrCarListSlice = createSlice({
     filtrCarListMinPrice: "",
     filtrCarListMaxPrice: "",
     filtrCarListCarType: "",
+    searchString:'',
   },
   reducers: {
     setFiltrCarListName: (state, action) => {
@@ -31,6 +32,9 @@ const filtrCarListSlice = createSlice({
       state.filtrCarListMaxPrice = "";
       state.filtrCarListCarType = "";
     },
+    setSearchString: (state, action) => {
+      state.searchString = action.payload;
+    },
   },
 });
 
@@ -40,6 +44,7 @@ export const {
   setFiltrCarListMaxPrice,
   setFiltrCarListCarType,
   deleteFiltrsCarList,
+  setSearchString
 } = filtrCarListSlice.actions;
 
 export default filtrCarListSlice.reducer;

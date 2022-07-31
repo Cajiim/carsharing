@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Authorization = () => {
+const useAuthorization = () => {
   const {email, token, id} = useSelector(({user}) => user)
   return {
     isAuthorization: !!email,
@@ -10,4 +10,4 @@ const Authorization = () => {
   };
 }
 
-export default Authorization;
+export default useAuthorization;

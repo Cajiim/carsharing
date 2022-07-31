@@ -1,18 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
-import classNames from "classnames";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setMinPrice,
   setMaxPrice,
 } from "../../redux/cart/reducerCarCartSettings";
-import { fetchDataCarList } from "../../api/fetchDataThunk";
 import {
   setMinPriceError,
   setMaxPriceError,
 } from "../../redux/cart/reducerValidateErrors";
-import style from "./index.scss";
-
-const cn = classNames.bind(style);
+import Input from "../../ui/InputCarSettings";
+import "./index.scss";
 
 const PriceSettings = () => {
   const dispatch = useDispatch();
@@ -20,7 +17,6 @@ const PriceSettings = () => {
   const { minPriceError, maxPriceError } = useSelector(
     ({ validateErrors }) => validateErrors
   );
-
   const [minPriceDirty, setMinPriceDirty] = useState(false);
   const [maxPriceDirty, setMaxPriceDirty] = useState(false);
 
@@ -32,7 +28,6 @@ const PriceSettings = () => {
       case "maxPrice":
         setMaxPriceDirty(true);
         break;
-
       default:
     }
   };
@@ -59,7 +54,6 @@ const PriceSettings = () => {
   };
 
   const { dataCarList } = useSelector(({ getData }) => getData);
-
   const minPriceFromBack = dataCarList?.minPrice;
   const maxPriceFromBack = dataCarList?.maxPrice;
 
@@ -76,51 +70,48 @@ const PriceSettings = () => {
     }, 0);
   }, [minPriceFromBack, maxPriceFromBack]);
 
+  const priceValidate =
+    maxPrice && minPrice && Number(maxPrice) <= Number(minPrice);
+
   return (
-    <div className="priceSettings_container_setting">
-      <div className="priceSettings_container_setting_minPrice">
-        <span className="priceSettings_container_setting_minPrice_title">
+    <div className="priceSettings">
+      <div className="priceSettings__minPrice">
+        <span className="priceSettings__inputName">
           Минимальная цена
         </span>
-        <input
-          type="number"
-          name="minPrice"
-          className={cn("priceSettings_container_setting_minPrice_input", {
-            priceSettings_container_setting_minPrice_input_error:
-              minPriceDirty && minPriceError,
-          })}
+        <Input
+          className="inputCarSettings"
+          isError={minPriceDirty && minPriceError}
           value={minPrice}
-          onChange={(e) => handlChangeMinPrice(e.target.value)}
-          onBlur={(e) => handlClickBlur(e)}
-        ></input>
+          onChange={handlChangeMinPrice}
+          onBlur={handlClickBlur}
+          name="minPrice"
+        />
         {minPriceDirty && minPriceError && (
-          <div className="priceSettings_container_setting_minPrice_input_textError">
+          <div className="priceSettings__error">
             {minPriceError}
           </div>
         )}
       </div>
-      <div className="priceSettings_container_setting_maxPrice">
-        <span className="priceSettings_container_setting_maxPrice_title">
+      <div className="priceSettings__maxPrice">
+        <span className="priceSettings__inputName">
           Максимальная цена
         </span>
-        <input
-          type="number"
-          name="maxPrice"
-          className={cn("priceSettings_container_setting_maxPrice_input", {
-            priceSettings_container_setting_maxPrice_input_error:
-              maxPriceDirty && maxPriceError,
-          })}
+        <Input
+          className="inputCarSettings"
+          isError={maxPriceDirty && maxPriceError}
           value={maxPrice}
-          onChange={(e) => handlChangeMaxPrice(e.target.value)}
-          onBlur={(e) => handlClickBlur(e)}
-        ></input>
+          onChange={handlChangeMaxPrice}
+          onBlur={handlClickBlur}
+          name="maxPrice"
+        />
         {maxPriceDirty && maxPriceError && (
-          <div className="priceSettings_container_setting_maxPrice_input_textError">
+          <div className="priceSettings__error">
             {maxPriceError}
           </div>
         )}
-        {maxPrice && minPrice && Number(maxPrice) <= Number(minPrice) ? (
-          <div className="priceSettings_container_setting_minMaxPrice_input_textError">
+        {priceValidate ? (
+          <div className="priceSettings__textError">
             Максимальная цена должна быть больше минимальной
           </div>
         ) : null}

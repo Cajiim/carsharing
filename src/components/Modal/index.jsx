@@ -1,17 +1,15 @@
-import React, {memo} from "react";
-import axios from "axios";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setOrderNumber } from "../../redux/cart/reducerFinalOrder";
-import {setTabIndex} from '../../redux/cart/reducerTableIndex'
+import { setTabIndex } from "../../redux/cart/reducerTableIndex";
+import { postHandleSelectCar } from "../../api/api";
 import "./index.scss";
 
 const Modal = ({ active, setActive }) => {
-
   const dispatch = useDispatch();
-
   const {
     deliveryСity: cityAuto,
     pointOfIssue: streetAuto,
@@ -26,8 +24,8 @@ const Modal = ({ active, setActive }) => {
     carNumber,
     randomFuelLvl,
   } = useSelector(({ finalOrder }) => finalOrder);
-  const {tabIndex} = useSelector(({ tableIndex }) => tableIndex);
-  
+  const { tabIndex } = useSelector(({ tableIndex }) => tableIndex);
+
   const carClass = modelCar?.class;
   const diffTime = Math.abs(
     new Date(endDate).getTime() - new Date(startDate).getTime()
@@ -47,7 +45,6 @@ const Modal = ({ active, setActive }) => {
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
   const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
-
   const orderNumber = uuidv4();
   const handlSelectOrderNumber = () => {
     dispatch(setOrderNumber(orderNumber));
@@ -75,55 +72,43 @@ const Modal = ({ active, setActive }) => {
     carNumber,
     randomFuelLvl,
   };
-
+  const CarsId = modelCar?.id;
   const handleSelectCar = () => {
-    axios
-      .post(
-        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder?orderNumber=${orderNumber}`,
-        {
-          orderNumber,
-          modelCar,
-          additionalOptions,
-        }
-      )
+    postHandleSelectCar(orderNumber, CarsId, additionalOptions)
       .then((Response) => console.log(Response, "posting data"))
       .catch((error) => console.log(error));
   };
-
   const handlClickButton = () => {
     dispatch(setTabIndex(String(Number(tabIndex) + 1)));
+  };
+  const handlClickLink = () => {
+    handleSelectCar();
+    handlSelectOrderNumber();
+    handlClickButton();
   };
 
   return (
     <div className={active ? "modal modal_active" : "modal"}>
       <h3 className="modal__title">Подтвердить заказ</h3>
-      <div className="modal__button">
-        <form>
-          <Link
-            to={`/myOrder?orderNumber=${orderNumber}`}
-            className="modal__button_confirm"
-            onClick={() => {
-              handleSelectCar();
-              handlSelectOrderNumber();
-              handlClickButton();
-            }}
-          >
-            Подтвердить
-          </Link>
-        </form>
-        <form>
-          <button
-            className="modal__button_refuse"
-            onClick={() => setActive(false)}
-            type="button"
-          >
-            Вернуться
-          </button>
-        </form>
+      <div className="modal__buttons">
+        <Link
+          to={`/myOrder?orderNumber=${orderNumber}`}
+          className="modal__buttonConfirm"
+          onClick={handlClickLink}
+        >
+          Подтвердить
+        </Link>
+        <button
+          className="modal__buttonRefuse"
+          onClick={() => setActive(false)}
+          type="button"
+        >
+          Вернуться
+        </button>
       </div>
     </div>
   );
-}
+};
 
 Modal.propTypes = {
   active: PropTypes.bool,

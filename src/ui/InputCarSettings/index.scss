@@ -1,0 +1,13 @@
+.inputCarSettings {
+  width: 307px;
+  height: 28px;
+  background: #ffffff;
+  border: 1px solid #becad6;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 11px;
+
+  &_error {
+    border: 0.5px solid #c4183c;
+  }
+}

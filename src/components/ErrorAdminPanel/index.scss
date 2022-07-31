@@ -1,4 +1,4 @@
-.ErrorAdminPanel_ErrorBlock {
+.ErrorAdminPanel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,7 @@
   height: calc(100% - 68px - 67px);
   background: #f5f6f8;
 }
-.ErrorAdminPanel_ErrorBlock_title {
+.ErrorAdminPanel__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -17,7 +17,7 @@
   color: #cacedb;
   margin-bottom: 13px;
 }
-.ErrorAdminPanel_ErrorBlock_textOne {
+.ErrorAdminPanel__textOne {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -28,7 +28,7 @@
   color: #3d5170;
   margin-bottom: 15px;
 }
-.ErrorAdminPanel_ErrorBlock_textTwo {
+.ErrorAdminPanel__textTwo {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -39,7 +39,7 @@
   color: #818ea3;
   margin-bottom: 35px;
 }
-.ErrorAdminPanel_ErrorBlock_button {
+.ErrorAdminPanel__button {
   width: 95px;
   height: 29px;
   background: #007bff;
@@ -54,7 +54,8 @@
   letter-spacing: -0.345714px;
   color: #ffffff;
   cursor: pointer;
-}
-.ErrorAdminPanel_ErrorBlock_button:hover {
-  background: #022c59;
+
+  &:hover {
+    background: #022c59;
+  }
 }

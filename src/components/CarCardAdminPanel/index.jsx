@@ -7,13 +7,13 @@ import "./index.scss";
 const CarCardAdminPanel = () => {
   const [activeConfirmation, setActiveConfirmation] = useState(false);
   return (
-    <div className="carCardAdminPanel-wrapper">
+    <div className="carCardAdminPanel">
       <ConfirmationBar
         activeConfirmation={activeConfirmation}
         setActiveConfirmation={setActiveConfirmation}
       />
-      <h2 className="carCardAdminPanel-wrapper__title">Карточка автомобиля</h2>
-      <main className="carCardAdminPanel-wrapper__main">
+      <h2 className="carCardAdminPanel__title">Карточка автомобиля</h2>
+      <main className="carCardAdminPanel__main">
         <CarCardSetup />
         <CarSettings setActiveConfirmation={setActiveConfirmation} />
       </main>

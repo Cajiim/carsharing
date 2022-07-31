@@ -1,71 +1,18 @@
-.autoCompleteStreet-wrapper {
+.autoCompleteStreet {
   display: flex;
   margin-right: 8px;
+  margin-bottom: 13px;
 }
 
-.autoCompleteStreet-wrapper__title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #121212;
-}
-.autoCompleteStreet-wrapper__container {
+.autoCompleteStreet__container {
   position: relative;
-  display: flex;
-  flex-direction: column;
-
-  & input[type="pointOfIssue"] {
+  & input[type="textStreet"] {
     padding-left: 8px;
     padding-bottom: 2px;
   }
 }
 
-.container__inputStreet {
-  border: none;
-  outline: none;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #121212;
-  border-bottom: 1px solid #999999;
-  width: 224px;
-  box-sizing: border-box;
-  margin-left: 4.5px;
-
-  &::placeholder {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    color: #999999;
-  }
-}
-
-.container__cancelButton {
-  display: block;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  right: 10px;
-  color: #121212;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  background: none;
-  font-size: 17px;
-  top: -1px;
-
-  &_disabled {
-    display: none;
-  }
-}
-
-.container__choice {
+.autoCompleteStreet__choice {
   height: auto;
   max-height: 105px;
   min-height: 0px;
@@ -78,15 +25,14 @@
   background-color: white;
   z-index: 3;
   box-sizing: border-box;
-  margin-top: 19px;
-  margin-left: 5px;
+  left: 95.5px;
 
   &_disabled {
     border: none;
   }
 }
 
-.choice__received {
+.autoCompleteStreet__received {
   cursor: pointer;
   background: #ffffff;
   font-family: "Roboto";

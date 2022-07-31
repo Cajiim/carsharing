@@ -51,21 +51,19 @@ const AuthorizationForm = ({
       case "password":
         setPasswordDirty(true);
         break;
-
       default:
     }
   };
-
   const checkError = emailError === "" && passwordError === "";
 
   return (
-    <form className="adminAuthorizationForm">
-      <p className="adminAuthorizationForm__title">{authType}</p>
-      <div className="adminAuthorizationForm__mail mail">
-        <span className="mail__text">Почта</span>
+    <form className="authorizationForm">
+      <p className="authorizationForm__authType">{authType}</p>
+      <div className="authorizationForm__mail">      
+        <span className="authorizationForm__text">Почта</span>
         <input
-          className={cn("mail__inputMail", {
-            mail__inputMail_error: emailDirty && emailError,
+          className={cn("authorizationForm__input", {
+            authorizationForm__input_error: emailDirty && emailError,
           })}
           name="email"
           value={email}
@@ -73,15 +71,15 @@ const AuthorizationForm = ({
           onBlur={(e) => handlClickBlur(e)}
         ></input>
         {emailDirty && emailError && (
-          <div className="mail__errorText">{emailError}</div>
+          <div className="authorizationForm__errorText">{emailError}</div>
         )}
       </div>
 
-      <div className="adminAuthorizationForm__password password">
-        <span className="password__text">Пароль</span>
+      <div className="authorizationForm__password">
+        <span className="authorizationForm__text">Пароль</span>
         <input
-          className={cn("password__inputPassword", {
-            password__inputPassword_error: passwordDirty && passwordError,
+          className={cn("authorizationForm__input", {
+            authorizationForm__input_error: passwordDirty && passwordError,
           })}
           name="password"
           type="password"
@@ -90,20 +88,20 @@ const AuthorizationForm = ({
           onBlur={(e) => handlClickBlur(e)}
         ></input>
         {passwordDirty && passwordError && (
-          <div className="password__errorText">{passwordError}</div>
+          <div className="authorizationForm__errorText">{passwordError}</div>
         )}
       </div>
 
-      <div className="adminAuthorization__entryBlock entryBlock">
-        <span className="entryBlock__linkEntry">Запросить доступ</span>
-        <Link to={handleLink} className="entryBlock__linkAuth">
+      <div className="authorizationForm__entryBlock">
+        <span className="authorizationForm__linkEntry">Запросить доступ</span>
+        <Link to={handleLink} className="authorizationForm__linkAuth">
           {linkName}
         </Link>
         <Link
           to="/admin/carCart"
           type="button"
-          className={cn("entryBlock__button", {
-            entryBlock__button_active: checkError,
+          className={cn("authorizationForm__button", {
+            authorizationForm__button_active: checkError,
           })}
           onClick={() => handleClick(email, password)}
         >

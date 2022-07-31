@@ -5,7 +5,7 @@ import {
   fetchDataCarOrders,
   fetchDataFullCarList,
   fetchDataSelectivelyCarOrders,
-} from "../../api/fetchDataThunk";
+} from "../dataThunk/fetchDataThunk";
 
 const initialState = {
   dataCarList: [],

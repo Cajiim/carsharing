@@ -1,0 +1,45 @@
+.cardLineCheckbox {
+  display: flex;
+  align-items: center;
+}
+
+.cardLineCheckbox__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.cardLineCheckbox__fake {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border: 0.5px solid #becad6;
+  border-radius: 1px;
+  box-sizing: border-box;
+  left: -13.5px;
+}
+.cardLineCheckbox__input:checked
+  + .cardLineCheckbox__fake {
+  box-sizing: border-box;
+  border: 0.5px solid #0ec261;
+  background: url(../../assets/svg/checked.svg) no-repeat;
+  background-position-x: 60%;
+  background-position-y: 40%;
+}
+
+input[type="checkbox"]:checked
+  + span
+  + .cardLineCheckbox__text {
+  color: #121212;
+}
+
+.cardLineCheckbox__text {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.175439px;
+  color: #999999;
+  margin-left: 8.5px;
+}

@@ -3,9 +3,9 @@ import './index.scss'
 
 const MapWithAuto = () => (
     <>
-      <p className="mapWithAuto_title">Выбрать на карте:</p>
+      <p className="mapWithAuto__title">Выбрать на карте:</p>
       <img
-        className="mapWithAuto_map"
+        className="mapWithAuto__map"
         src="https://annamap.ru/karta-mira.jpg"
         alt="карта"
       ></img>

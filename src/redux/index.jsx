@@ -9,6 +9,8 @@ import userReducer from "./cart/reducerUserSlice";
 import getDataReducer from "./cart/reducerGetData";
 import reducerFiltrCarList from "./cart/reducerFiltrCarList";
 import reducerCityStreet from "./cart/reducerCityStreet";
+import reducerFilterInputs from "./cart/reducerFilterInputs";
+import reducerFetchAllCars from "./cart/reducerFetchAllCars";
 
 const store = configureStore({
   reducer: {
@@ -21,6 +23,8 @@ const store = configureStore({
     getData: getDataReducer,
     filterCarList: reducerFiltrCarList,
     cityStreetData: reducerCityStreet,
+    filterInputs: reducerFilterInputs,
+    allCars: reducerFetchAllCars,
   },
 });
 

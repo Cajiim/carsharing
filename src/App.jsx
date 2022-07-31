@@ -14,10 +14,11 @@ import AdminPanelCarOrders from "./pages/AdminPanelCarOrders";
 import AdminPanelError from "./pages/AdminPanelError";
 import AdminPanelSignUp from "./pages/AdminPanelSignUp";
 import AdminPanelLogin from "./pages/AdminPanelLogin";
-import Authorization from "./hooks";
+import Authorization from "./hooks/useAuthorization";
 
 const App = () => {
   const { isAuthorization } = Authorization();
+  const token = localStorage.getItem("token");
   return (
     <Router>
       <Routes>
@@ -30,7 +31,7 @@ const App = () => {
           exact
           path="/admin/carCart"
           element={
-            !isAuthorization ? (
+            !isAuthorization && !token ? (
               <Navigate replace to="/login" />
             ) : (
               <AdminPanelCarCart />
@@ -41,7 +42,7 @@ const App = () => {
           exact
           path="/admin/carList"
           element={
-            !isAuthorization ? (
+            !isAuthorization && !token ? (
               <Navigate replace to="/login" />
             ) : (
               <AdminPanelCarList />
@@ -52,7 +53,7 @@ const App = () => {
           exact
           path="/admin/carOrders"
           element={
-            !isAuthorization ? (
+            !isAuthorization && !token ? (
               <Navigate replace to="/login" />
             ) : (
               <AdminPanelCarOrders />

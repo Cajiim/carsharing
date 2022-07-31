@@ -12,11 +12,11 @@ const ColorBlock = () => {
   const colorsCurrentCar = modelInCart?.arrAllColors;
   return (
     <div className="colorBlock">
-      <p className="colorBlock__title">Цвет</p>
-      <div className="colorBlock__container container">
-        <label className="container__label" htmlFor="allRadio">
+      <p className="colorBlock__blockName">Цвет</p>
+      <div className="colorBlock__container">
+        <label className="colorBlock__label" htmlFor="allRadio">
           <input
-            className="container__label__input"
+            className="colorBlock__input"
             name="color"
             type="radio"
             value="Любой"
@@ -24,18 +24,18 @@ const ColorBlock = () => {
             checked={colorCar === "Любой"}
             onChange={(e) => handleClick(e.target.value)}
           ></input>
-          <span className="container__label__fakeCheckbox"></span>
-          <span className="container__label__textColor">Любой</span>
+          <span className="colorBlock__fakeCheckbox"></span>
+          <span className="colorBlock__checkBoxName">Любой</span>
         </label>
         {colorsCurrentCar &&
           colorsCurrentCar.map((el) => (
             <label
-              className="container__label"
+              className="colorBlock__label"
               htmlFor={el}
               key={el.toString()}
             >
               <input
-                className="container__label__input"
+                className="colorBlock__input"
                 name="color"
                 type="radio"
                 value={el}
@@ -43,8 +43,8 @@ const ColorBlock = () => {
                 checked={colorCar === el}
                 onChange={(e) => handleClick(e.target.value)}
               ></input>
-              <span className="container__label__fakeCheckbox"></span>
-              <span className="container__label__textColor">{el}</span>
+              <span className="colorBlock__fakeCheckbox"></span>
+              <span className="colorBlock__checkBoxName">{el}</span>
             </label>
           ))}
       </div>

@@ -1,4 +1,4 @@
-.adminAuthorizationForm {
+.authorizationForm {
   width: 376.5px;
   height: 253.5px;
   background: #ffffff;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.adminAuthorizationForm__title {
+.authorizationForm__authType {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -23,12 +23,11 @@
   margin-top: 19px;
 }
 
-.adminAuthorizationForm__mail {
+.authorizationForm__mail {
   margin-top: 35.5px;
 }
 
-.mail__text,
-.password__text {
+.authorizationForm__text {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -39,8 +38,7 @@
   margin-bottom: 8.5px;
 }
 
-.mail__inputMail,
-.password__inputPassword {
+.authorizationForm__input {
   width: 341.5px;
   height: 29px;
   outline: none;
@@ -55,8 +53,7 @@
   }
 }
 
-.mail__errorText,
-.password__errorText {
+.authorizationForm__errorText {
   position: absolute;
   font-family: "Helvetica";
   font-style: normal;
@@ -69,17 +66,20 @@
   left: 11.5px;
 }
 
-.adminAuthorizationForm__password {
+.authorizationForm__password {
   margin-top: 15px;
 }
-.adminAuthorizationForm__mail,
-.adminAuthorizationForm__password {
+.authorizationForm__mail,
+.authorizationForm__password {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.adminAuthorization__entryBlock {
+
+
+
+.authorizationForm__entryBlock {
   display: flex;
   justify-content: space-between;
   width: 341.5px;
@@ -88,7 +88,7 @@
   position: relative;
 }
 
-.entryBlock__linkEntry {
+.authorizationForm__linkEntry {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 400;
@@ -98,14 +98,14 @@
   color: #007bff;
 }
 
-.entryBlock__linkAuth {
+.authorizationForm__linkAuth {
   position: absolute;
   right: 120px;
   font-size: 12px;
   text-decoration: none;
 }
 
-.entryBlock__button {
+.authorizationForm__button {
   width: 110px;
   height: 29px;
   background: #007bff;

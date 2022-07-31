@@ -6,33 +6,30 @@ import dropDown from "../../../assets/img/dropdown_icon.png";
 import "./index.scss";
 
 const HeaderAdmin = () => (
-    <header className="headerAdmin">   
+  <header className="headerAdmin">
+    <img
+      src={searchIcon}
+      alt="search"
+      className="headerAdmin__searchIcon"
+    ></img>
+    <input className="headerAdmin__input" placeholder="Поиск ..."></input>
+    <div className="headerAdmin__notifications">
+      <img src={Notifications} alt="Notifications"></img>
+    </div>
+    <div className="headerAdmin__user">
       <img
-        src={searchIcon}
-        alt="search"
-        className="headerAdmin__searchIcon"   
+        src={userAvatar}
+        alt="userAvatar"
+        className="headerAdmin__avatar"
       ></img>
-      <input
-        className="headerAdmin__input"    
-        placeholder="Поиск ..."
-      ></input>
-      <div className="headerAdmin__notifications">    
-        <img src={Notifications} alt="Notifications"></img>
-      </div>
-      <div className="headerAdmin__user user">   
-        <img
-          src={userAvatar}
-          alt="userAvatar"
-          className="user__photo"    
-        ></img> 
-        <span className="user__name">Admin</span>    
-        <img
-          className="user__imgDropDown"   
-          src={dropDown}
-          alt="dropDown"
-        ></img>
-      </div>
-    </header>
-  )
+      <span className="headerAdmin__name">Admin</span>
+      <img
+        className="headerAdmin__imgDropDown"
+        src={dropDown}
+        alt="dropDown"
+      ></img>
+    </div>
+  </header>
+);
 
 export default HeaderAdmin;

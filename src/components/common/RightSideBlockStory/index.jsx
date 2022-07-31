@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,7 +7,8 @@ import {
   setFuelLvl,
 } from "../../../redux/cart/reducerFinalOrder";
 import { setTabIndex } from "../../../redux/cart/reducerTableIndex";
-import { fetchDataSelectivelyCarOrders } from "../../../api/fetchDataThunk";
+import { fetchDataSelectivelyCarOrders } from "../../../redux/dataThunk/fetchDataThunk";
+import { deleteFinalOrder } from "../../../api/api";
 import Modal from "../../Modal";
 import Button from "../../../ui/ButtonFinalOrderBlock";
 import style from "./index.scss";
@@ -17,22 +17,19 @@ const cn = classNames.bind(style);
 
 const RightSideBlockStory = () => {
   const dispatch = useDispatch();
+  const [activeModal, setActiveModal] = useState(false);
   const { dataSelectOrder } = useSelector(({ getData }) => getData);
 
   useEffect(() => {
     dispatch(fetchDataSelectivelyCarOrders());
   }, []);
 
-  const CarFromBack = dataSelectOrder[0]?.modelCar;
+  const CarFromBack = dataSelectOrder[0]?.Cars;
   const additionallyOptionsFromBack = dataSelectOrder[0]?.additionalOptions;
-
+  const order = dataSelectOrder[0]?.id;
+  const orderId = order || "";
   const handleDelete = () => {
-    axios
-      .delete(
-        `https://6288c18410e93797c15e9916.mockapi.io/FinalOrder/${
-          dataSelectOrder[0]?.id ? dataSelectOrder[0]?.id : ""
-        }`
-      )
+    deleteFinalOrder(orderId)
       .then((res) => console.log("!!!!!delete data", res))
       .catch((error) => console.log(error, "Ошибка"));
   };
@@ -86,7 +83,6 @@ const RightSideBlockStory = () => {
   const minPrice = model?.minPrice;
   const maxPrice = model?.maxPrice;
   const carClass = model?.class;
-
   const diffTime = Math.abs(
     new Date(endDate).getTime() - new Date(startDate).getTime()
   );
@@ -105,9 +101,6 @@ const RightSideBlockStory = () => {
   const additional = gas + baby + rightHand;
   const totalPrice = correctPriceRate + additional;
   const arendTimeForBlock = arendRate === "minut" ? diffMinutes : diffDays;
-
-  const [activeModal, setActiveModal] = useState(false);
-
   const cityAutoFromBack = additionallyOptionsFromBack?.cityAuto;
   const streetAutoFromBack = additionallyOptionsFromBack?.streetAuto;
   const colorCarFromBack = additionallyOptionsFromBack?.color;
@@ -121,7 +114,6 @@ const RightSideBlockStory = () => {
     additionallyOptionsFromBack?.checkedRightHand;
   const totalPriceFromBack = additionallyOptionsFromBack?.totalPrice;
   const tabIndexFromBack = additionallyOptionsFromBack?.tabIndex;
-
   const tabIndex = tabIndexFromBack || tabId;
 
   const handlClickButton = () => {
@@ -225,49 +217,42 @@ const RightSideBlockStory = () => {
   return (
     <div className="orderBlock">
       <Modal active={activeModal} setActive={setActiveModal} />
-      <h4 className="orderBlock__title">Ваш заказ:</h4>
-      <ul className="orderBlock__mainList mainList">
-        <li className="mainList__text">
-          <span className="mainList__nameLine">Пункт выдачи</span>
+      <p className="orderBlock__nameBlock">Ваш заказ:</p>
+      <ul className="orderBlock__mainList">
+        <li className="orderBlock__line">
+          <span className="orderBlock__nameLine">Пункт выдачи</span>
           <div></div>
-          <p className="mainList__container">
-            <span className="mainList__container__content">
-              {citySelected},
-            </span>
-            <span className="mainList__container__content">
-              {streetSelected}
-            </span>
+          <p className="orderBlock__textContainer">
+            <span className="orderBlock__text">{citySelected},</span>
+            <span className="orderBlock__text">{streetSelected}</span>
           </p>
         </li>
-
         {modelSelected && (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Модель</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Модель</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">
                 {correctModelModel}, {correactModelName}
               </span>
             </p>
           </li>
         )}
         {(colorCarFromBack || color) && (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Цвет</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Цвет</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">
-                {colorSelected}
-              </span>
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">{colorSelected}</span>
             </p>
           </li>
         )}
         {arendTimeSelected && (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Длительность аренды</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Длительность аренды</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">
                 {rentalTypeSelect}
                 {rentalTypeCorrect}
               </span>
@@ -275,47 +260,47 @@ const RightSideBlockStory = () => {
           </li>
         )}
         {tarifRateSelected && (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Тариф</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Тариф</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">
                 {rateRentFromBack !== undefined ? rateRentFromBack : rateRent}
               </span>
             </p>
           </li>
         )}
         {!fullGasSelected ? null : (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Полный бак</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Полный бак</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">Да</span>
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">Да</span>
             </p>
           </li>
         )}
         {!babyChairSelected ? null : (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Детское кресло</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Детское кресло</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">Да</span>
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">Да</span>
             </p>
           </li>
         )}
         {!rightHandSelected ? null : (
-          <li className="mainList__text">
-            <span className="mainList__nameLine">Правый руль</span>
+          <li className="orderBlock__line">
+            <span className="orderBlock__nameLine">Правый руль</span>
             <div></div>
-            <p className="mainList__container">
-              <span className="mainList__container__content">Да</span>
+            <p className="orderBlock__textContainer">
+              <span className="orderBlock__text">Да</span>
             </p>
           </li>
         )}
       </ul>
 
-      <div className="orderBlock__price">
-        <span className="orderBlock__price__text">Цена:</span>
+      <div className="orderBlock__priceContent">
+        <span className="orderBlock__priceText">Цена:</span>
         &nbsp;
         {correctPriceSelect}
         &nbsp;₽
@@ -323,35 +308,35 @@ const RightSideBlockStory = () => {
 
       <Button
         handlClick={handlClickButton}
-        buttonControl="buttonFinalOrder"
-        disabled={!modelButtonDisabled ? "buttonFinalOrder_disabled" : ""}
-        hidden={tabIndex !== "1" ? "buttonFinalOrder_hidden" : ""}
+        className="buttonFinalOrder"
+        isDisabled={!modelButtonDisabled}
+        isHidden={tabIndex !== "1"}
         name="Выбрать модель"
       />
       <Button
         handlClick={handlClickButton}
-        buttonControl="buttonFinalOrder"
-        disabled={model === null ? "buttonFinalOrder_disabled" : ""}
-        hidden={tabIndex !== "2" ? "buttonFinalOrder_hidden" : ""}
+        className="buttonFinalOrder"
+        isDisabled={model === null}
+        isHidden={tabIndex !== "2"}
         name="Дополнительно"
       />
       <Button
         handlClick={handlClickButtonTotal}
-        buttonControl="buttonFinalOrder"
-        disabled={totalSelect ? "buttonFinalOrder_disabled" : ""}
-        hidden={tabIndex !== "3" ? "buttonFinalOrder_hidden" : ""}
+        className="buttonFinalOrder"
+        isDisabled={totalSelect}
+        isHidden={tabIndex !== "3"}
         name="Итого"
       />
       <Button
         handlClick={handlClickOrder}
-        buttonControl="buttonFinalOrder"
-        hidden={tabIndex !== "4" ? "buttonFinalOrder_hidden" : ""}
+        className="buttonFinalOrder"
+        isHidden={tabIndex !== "4"}
         name="Заказать"
       />
       <Link
         to="/order"
-        className={cn("orderBlock__button_cancel", {
-          orderBlock__button_cancel_hidden: tabIndex !== "5",
+        className={cn("orderBlock__buttonCancel", {
+          orderBlock__buttonCancel_hidden: tabIndex !== "5",
         })}
         onClick={() => {
           handleDelete();

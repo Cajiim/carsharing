@@ -2,9 +2,14 @@
   margin-left: 1px;
 }
 
-.colorBlock__title {
+.colorBlock__blockName {
   margin-top: 30px;
   margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #121212;
 }
 
 .colorBlock__container {
@@ -14,7 +19,7 @@
   align-items: center;
 }
 
-.container__label {
+.colorBlock__label {
   display: inline-flex;
   font-family: "Roboto";
   font-style: normal;
@@ -26,14 +31,14 @@
   margin-right: 15px;
 }
 
-.container__label__input {
+.colorBlock__input {
   position: absolute;
   opacity: 0;
   border: 1px solid #999999;
   box-sizing: border-box;
 }
 
-.container__label__fakeCheckbox {
+.colorBlock__fakeCheckbox {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -59,13 +64,13 @@
   }
 }
 
-.container__label__input:checked + .container__label__fakeCheckbox::before {
+.colorBlock__input:checked + .colorBlock__fakeCheckbox::before {
   opacity: 1;
 }
-input[type="radio"]:checked + span + .container__label__textColor {
+input[type="radio"]:checked + span + .colorBlock__checkBoxName {
   color: #121212;
 }
 
-span .container__label {
+span .colorBlock__label {
   margin-bottom: 5px;
 }

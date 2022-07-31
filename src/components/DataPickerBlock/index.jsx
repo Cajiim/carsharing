@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,10 +8,8 @@ import {
   deleteDurationArend,
   deleteDurationArendTwo,
 } from "../../redux/cart/reducerFinalOrder";
-
-import style from "./index.scss";
-
-const cn = classNames.bind(style);
+import Button from "../../ui/ButtonClose";
+import "./index.scss";
 
 const DataPickerBlock = () => {
   const dispatch = useDispatch();
@@ -31,13 +28,19 @@ const DataPickerBlock = () => {
   const { durationArend, durationArendTwo } = useSelector(
     ({ finalOrder }) => finalOrder
   );
+  const errorDate =
+    durationArend >= durationArendTwo &&
+    durationArend !== null &&
+    durationArendTwo !== null &&
+    Number.isNaN(durationArendTwo) === false &&
+    Number.isNaN(durationArend) === false;
 
   return (
-    <div className="dataPicker_container">
-      <p className="dataPicker_container_title">Дата аренды</p>
-      <div className="dataPicker_container_startDate">
-        <p className="dataPicker_container_startDate_text">С</p>
-        <div className="dataPicker_container_startDate_content">
+    <>
+      <p className="dataPicker__name">Дата аренды</p>
+      <div className="dataPicker__startDate">
+        <p className="dataPicker__text">С</p>
+        <div className="dataPicker__container">
           <DatePicker
             selected={durationArend}
             onChange={(date) => handleClickDuration(date)}
@@ -47,24 +50,16 @@ const DataPickerBlock = () => {
             dateFormat="d.MM.yyyy HH:mm"
             placeholderText="Введите дату и время"
           />
-          <button
-            type="button"
-            className={cn("dataPicker_container_startDate_content_button", {
-              dataPicker_container_startDate_content_button_disabled:
-                durationArend === null || Number.isNaN(durationArend),
-            })}
-            onClick={() => {
-              handleClickCloseFirstDate();
-            }}
-          >
-            &times;
-          </button>
+          <Button
+            className="clearDateButton"
+            handlClick={handleClickCloseFirstDate}
+            isDisabled={durationArend === null || Number.isNaN(durationArend)}
+          />
         </div>
       </div>
-
-      <div className="dataPicker_container_endDate">
-        <p className="dataPicker_container_endDate_text">По</p>
-        <div className="dataPicker_container_endDate_content">
+      <div className="dataPicker__endDate">
+        <p className="dataPicker__textTwo">По</p>
+        <div className="dataPicker__container">
           <DatePicker
             selected={durationArendTwo}
             onChange={(date) => handleClickDurationTwo(date)}
@@ -74,31 +69,22 @@ const DataPickerBlock = () => {
             dateFormat="d.MM.yyyy HH:mm"
             placeholderText="Введите дату и время"
           />
-          <button
-            type="button"
-            className={cn("dataPicker_container_endDate_content_button", {
-              dataPicker_container_endDate_content_button_disabled:
-                durationArendTwo === null || Number.isNaN(durationArendTwo),
-            })}
-            onClick={() => {
-              handleClickCloseSecondDate();
-            }}
-          >
-            &times;
-          </button>
-          {durationArend >= durationArendTwo &&
-            durationArend !== null &&
-            durationArendTwo !== null &&
-            Number.isNaN(durationArendTwo) === false &&
-            Number.isNaN(durationArend) === false && (
-              <span className="dataPicker_container_endDate_content_error">
-                Введите корректную дату
-              </span>
-            )}
+          <Button
+            className="clearDateButton"
+            handlClick={handleClickCloseSecondDate}
+            isDisabled={
+              durationArendTwo === null || Number.isNaN(durationArendTwo)
+            }
+          />
+          {errorDate && (
+            <span className="dataPicker__textError">
+              Введите корректную дату
+            </span>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
-}
+};
 
 export default DataPickerBlock;

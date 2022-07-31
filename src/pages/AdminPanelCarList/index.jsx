@@ -1,20 +1,11 @@
 import React from "react";
-
-import NavBar from "../../components/NavBarAdminPanel";
-import Header from "../../components/common/HeaderAdmin";
-import Footer from "../../components/common/FooterAdminPanel";
 import CarList from "../../components/CarListAdminPanel";
-import "./index.scss";
+import Layout from "../../components/Common/Layout";
 
 const AdminPanelCarList = () => (
-  <div className="adminPanelCarList_container">
-    <NavBar />
-    <div className="adminPanelCarList_container_rightSide">
-      <Header />
-      <CarList />
-      <Footer />
-    </div>
-  </div>
+  <Layout>
+    <CarList />
+  </Layout>
 );
 
 export default AdminPanelCarList;

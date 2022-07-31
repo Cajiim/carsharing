@@ -1,7 +1,7 @@
 import { React, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
-import { fetchDataSelectivelyCarOrders } from "../../../api/fetchDataThunk";
+import { fetchDataSelectivelyCarOrders } from "../../../redux/dataThunk/fetchDataThunk";
 import "./index.scss";
 
 const FinalCart = () => {
@@ -13,7 +13,7 @@ const FinalCart = () => {
   }, []);
 
   const { dataSelectOrder } = useSelector(({ getData }) => getData);
-  const modelFromBack = dataSelectOrder[0]?.modelCar;
+  const modelFromBack = dataSelectOrder[0]?.Cars;
   const additionallyOptionsFromBack = dataSelectOrder[0]?.additionalOptions;
   const startDateFromBack = additionallyOptionsFromBack?.startDate;
   const {
@@ -52,28 +52,28 @@ const FinalCart = () => {
       : startOfLeaseFromBack.toString();
 
   return (
-    <div className="finalCard-wrapper">
-      <div className="finalCard-wrapper__main">
+    <div className="finalCard">
+      <div className="finalCard__main">
         {lastIndex ? (
-          <h3 className="finalCard-wrapper__title">Ваш заказ подтвержден</h3>
+          <h3 className="finalCard__title">Ваш заказ подтвержден</h3>
         ) : null}
-        <p className="finalCard-wrapper__name">
+        <p className="finalCard__name">
           {modelCar}, {nameCar}
         </p>
-        <div className="finalCard-wrapper__carNumber">
-          <span className="finalCard-wrapper__carNumber__text">
+        <div className="finalCard__carNumberBlock">
+          <span className="finalCard__carNumberText">
             {carNumberForCart} 73
           </span>
         </div>
-        <p className="finalCard-wrapper__gas">
+        <p className="finalCard__gas">
           <b>Топливо</b> {fuelLevel}
         </p>
-        <p className="finalCard-wrapper__availableTime">
+        <p className="finalCard__availableTime">
           <b>Доступна с </b>
           {correctStartDate}
         </p>
       </div>
-      <img src={imgCar} alt="car" className="finalCard-wrapper__imgCar"></img>
+      <img src={imgCar} alt="car" className="finalCard__imgCar"></img>
     </div>
   );
 };

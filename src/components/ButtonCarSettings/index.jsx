@@ -1,9 +1,9 @@
 import React, { useEffect, memo } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { fetchDataCarList } from "../../api/fetchDataThunk";
+import { putCar, postCar, deleteCar } from "../../api/api";
+import { fetchDataCarList } from "../../redux/dataThunk/fetchDataThunk";
 import {
   setModelCarCart,
   setTypeCarCart,
@@ -41,7 +41,7 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
     colorError,
   } = useSelector(({ validateErrors }) => validateErrors);
 
-  const errorChecking = // Должен быть true, чтобы без ошибки было
+  const errorChecking = 
     linkError === "" &&
     descriptionError === "" &&
     carNameError === "" &&
@@ -49,7 +49,7 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
     minPriceError === "" &&
     maxPriceError === "" &&
     colorError === "";
-  const correctErrorChecking = // Должен быть false, чтобы без ошибки было
+  const correctErrorChecking = 
     Number(maxPrice) <= Number(minPrice) ||
     (arrAllColors && arrAllColors.length === 0);
   const choiseFromArr = modelCarCart.split(",");
@@ -61,46 +61,40 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
   };
 
   const location = useLocation();
-  const urlId = location.search
+  const url = location.search
     .slice(location.search.indexOf("?"))
     .split(/[&?]{1}[\w\d]+=/);
-
+  const urlId = url[1] ? url[1] : "";
   const handleChangeCar = () => {
-    axios
-      .put(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          urlId[1] ? urlId[1] : ""
-        }`,
-        {
-          model,
-          name,
-          typeCarCart,
-          minPrice,
-          maxPrice,
-          imgCar,
-          descriptionCar,
-          arrAllColors,
-        }
-      )
+    putCar(
+      model,
+      name,
+      typeCarCart,
+      minPrice,
+      maxPrice,
+      imgCar,
+      descriptionCar,
+      arrAllColors,
+      urlId
+    )
       .then(
-        (Response) => console.log(Response, "posting data"),
+        (Response) => console.log(Response, "put data"),
         setActiveConfirmation(true)
       )
       .catch((error) => console.log(error));
   };
 
   const handleAddCar = () => {
-    axios
-      .post(`https://6288c18410e93797c15e9916.mockapi.io/Cars`, {
-        model,
-        name,
-        typeCarCart,
-        minPrice,
-        maxPrice,
-        imgCar,
-        descriptionCar,
-        arrAllColors,
-      })
+    postCar(
+      model,
+      name,
+      typeCarCart,
+      minPrice,
+      maxPrice,
+      imgCar,
+      descriptionCar,
+      arrAllColors
+    )
       .then(
         (Response) => console.log(Response, "posting data"),
         setActiveConfirmation(true)
@@ -109,14 +103,10 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
   };
 
   const handleDeleteCar = () => {
-    axios
-      .delete(
-        `https://6288c18410e93797c15e9916.mockapi.io/Cars/${
-          urlId[1] ? urlId[1] : ""
-        }`
-      )
+    deleteCar(urlId)
       .then((Response) =>
-        console.log(Response, `Delete!! car with id ${urlId[1]} `)
+        console.log(Response, `Delete!! car with id ${urlId} `),
+        dispatch(clearData())
       )
       .catch((error) => console.log(error));
   };
@@ -126,7 +116,6 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
   }, [dispatch]);
 
   const { dataCarList } = useSelector(({ getData }) => getData);
-
   const returnModel = dataCarList?.model;
   const returnName = dataCarList?.name;
   const returnCarModel = `${returnModel}, ${returnName}`;
@@ -145,26 +134,24 @@ const ButtonCarSettings = ({ setActiveConfirmation }) => {
 
   return (
     <div className="containerButtons">
-      <div className="containerButtons__control control">
+      <div>
         <ButtonCarSetting
           handlClick={urlId[1] ? handleChangeCar : handleAddCar}
-          buttonControl="control__save"
-          active={
-            (errorChecking && !correctErrorChecking) === true
-              ? "control__save_active"
-              : ""
-          }
+          className="controlSave"
+          isActive={errorChecking && !correctErrorChecking}
           name="Сохранить"
         />
         <ButtonCarSetting
           handlClick={urlId[1] ? handlReturnCar : handlClickClear}
-          buttonControl="control__cancel"
+          className="controlCancel"
           name="Отменить"
         />
       </div>
       <ButtonCarSetting
-        handlClick={urlId[1] ? handleDeleteCar : handlClickClear}
-        buttonControl="control__delete"
+        handlClick={
+          urlId[1] ? handleDeleteCar : handlClickClear
+        }
+        className="controlDelete"
         name="Удалить"
       />
     </div>

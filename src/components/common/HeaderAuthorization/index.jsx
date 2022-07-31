@@ -1,16 +1,16 @@
 import React from "react";
-import './index.scss'
+import "./index.scss";
 
 const HeaderAuthorization = () => (
-  <h2 className="authorizationTitle"> 
-    <div className="authorizationTitle__circle circle">  
-      <div className="circle__circleSmall"></div>  
-      <div className="circle__circleLarge"> 
-        <div className="circle__circleSmallTwo"></div>  
+  <header className="authorizationHead">
+    <div className="authorizationHead__externalCircle">
+      <div className="authorizationHead__interiorСircleSmall"></div>
+      <div className="authorizationHead__interiorСircleLarge">
+        <div className="authorizationHead__interiorСircleSmallTwo"></div>
       </div>
     </div>
     Need for drive
-  </h2>
+  </header>
 );
 
 export default HeaderAuthorization;

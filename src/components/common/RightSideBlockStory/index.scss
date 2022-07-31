@@ -7,7 +7,7 @@
   margin: 32px 64px 0 32px;
 }
 
-.orderBlock__title {
+.orderBlock__nameBlock {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -28,13 +28,12 @@
   }
 }
 
-.mainList__text {
+.orderBlock__line {
   display: flex;
   margin-top: 16px;
 }
 
-
-.mainList__nameLine {
+.orderBlock__nameLine {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -44,12 +43,12 @@
   align-self: flex-end;
 }
 
-.mainList__container {
+.orderBlock__textContainer {
   display: flex;
   flex-direction: column;
 }
 
-.mainList__container__content {
+.orderBlock__text {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
@@ -59,7 +58,7 @@
   color: #999999;
 }
 
-.orderBlock__price {
+.orderBlock__priceContent {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -69,11 +68,11 @@
   margin: 32px 0px 32px 0px;
 }
 
-.orderBlock__price__text {
+.orderBlock__priceText {
   font-weight: bold;
 }
 
-.orderBlock__button_cancel {
+.orderBlock__buttonCancel {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,16 +90,16 @@
   line-height: 21px;
   text-align: center;
 
-  &:hover{
+  &:hover {
     background: linear-gradient(90deg, #493013 0%, #a7104f 100%);
     cursor: pointer;
   }
-  &:active{
+  &:active {
     background: linear-gradient(90deg, #704718 0%, #d7065d 100%);
     background-blend-mode: darken;
     cursor: pointer;
   }
-  &_hidden{
-    display:none;
+  &_hidden {
+    display: none;
   }
 }

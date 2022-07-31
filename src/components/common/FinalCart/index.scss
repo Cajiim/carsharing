@@ -1,16 +1,16 @@
-.finalCard-wrapper {
+.finalCard {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.finalCard-wrapper__main {
+.finalCard__main {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
 
-.finalCard-wrapper__title {
+.finalCard__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -20,7 +20,7 @@
   margin-bottom:10px;
 }
 
-.finalCard-wrapper__name {
+.finalCard__name {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -29,13 +29,13 @@
   color: #121212;
 }
 
-.finalCard-wrapper__carNumber {
+.finalCard__carNumberBlock {
   border: 1px solid #999999;
   border-radius: 4px;
   width: 100px;
 }
 
-.finalCard-wrapper__carNumber__text {
+.finalCard__carNumberText {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -45,7 +45,7 @@
   margin-left: 7px;
 }
 
-.finalCard-wrapper__gas {
+.finalCard__gas {
   font-family: "Roboto";
   font-style: normal;
   font-size: 14px;
@@ -53,7 +53,7 @@
   color: #121212;
 }
 
-.finalCard-wrapper__availableTime {
+.finalCard__availableTime {
   font-family: "Roboto";
   font-style: normal;
   font-size: 14px;
@@ -62,7 +62,7 @@
 }
 
 
-.finalCard-wrapper__imgCar {
+.finalCard__imgCar {
   width: 256px;
   height: 116px;
   margin-right: 192px;
