@@ -91,7 +91,7 @@ const ModelTypeSettings = () => {
         </span>
         <InputCarSettings
           className="inputCarSettings"
-          isError={modelCarDirty && carNameError}
+          isError={!!((modelCarDirty && carNameError))}
           value={modelCarCart}
           onChange={handlChangeModel}
           onBlur={handlClickBlur}
@@ -109,7 +109,7 @@ const ModelTypeSettings = () => {
         </span>
         <InputCarSettings
           className="inputCarSettings"
-          isError={typeCarDirty && carTypeError}
+          isError={!!((typeCarDirty && carTypeError))}
           value={typeCarCart}
           onChange={handlChangeType}
           onBlur={handlClickBlur}

@@ -1,12 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import {
   getSingleCar,
   getFullCarList,
   getSelectivityOrder,
+  getFullCarOrders,
 } from "../../api/api";
-
-/* const queryString = require("query-string"); */
 
 export const fetchDataCarList = createAsyncThunk(
   "getData/fetchData",
@@ -58,29 +56,9 @@ export const fetchDataSelectivelyCarOrders = createAsyncThunk(
 
 export const fetchDataCarOrders = createAsyncThunk(
   "getData/fetchDataCarOrders",
-  async ({ /* urlFilter, */ page, limit }, { rejectWithValue }) => {
-    const url = window.location.href
-      .slice(window.location.href.indexOf("?"))
-      .split(/[&?]{1}[\w\d]+=/);
-    const filterString = url[0] !== "s" ? url[0] : "";
-    /* queryString.stringify({
-      additionalOptions: JSON.stringify({ cityAuto: urlFilter.cityAuto || undefined }),
-    }); */
+  async ({ urlFilter, page, limit }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `http://localhost:3001/FinalOrders${filterString}`,
-        {
-          params: {
-            /* periodOfTime: urlFilter.periodOfTime || undefined,
-          additionalOptions: { cityAuto: urlFilter.cityAuto || undefined },
-          name: urlFilter.name || undefined,
-          orderStatus: urlFilter.orderStatus || undefined, */
-            _expand: "Cars",
-            _page: page,
-            _limit: limit,
-          },
-        }
-      );
+      const response = await getFullCarOrders(urlFilter, page, limit);
       const data = await response.data;
       const totalCars = response.headers["x-total-count"];
       return { data, totalCars };

@@ -60,7 +60,28 @@ const App = () => {
             )
           }
         />
-        <Route exact path="*" element={<AdminPanelError />} />
+        <Route
+          exact
+          path="/admin"
+          element={
+            !isAuthorization && !token ? (
+              <Navigate replace to="/login" />
+            ) : (
+              <AdminPanelCarCart />
+            )
+          }
+        />
+        <Route
+          exact
+          path="*"
+          element={
+            !isAuthorization && !token ? (
+              <Navigate replace to="/login" />
+            ) : (
+              <AdminPanelError />
+            )
+          }
+        />
       </Routes>
     </Router>
   );

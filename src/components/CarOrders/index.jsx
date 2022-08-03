@@ -21,10 +21,12 @@ const CarOrders = () => {
 
   const stringFilter = useCallback(
     () => ({
-      name: searchParams.get("name") || "",
-      periodOfTime: searchParams.get("periodOfTime") || "",
-      cityAuto: searchParams.get("city") || "",
-      orderStatus: searchParams.get("orderStatus") || "",
+      CarsId: searchParams.get("CarsId") || "",
+      periodOfTime: searchParams.get("additionalOptions.startDate_gte") || "",
+      periodOfTimeTwo: searchParams.get("additionalOptions.startDate_lte") || '',
+      cityAuto: searchParams.get("additionalOptions.cityAuto") || "",
+      orderStatus: searchParams.get("additionalOptions.endDate_gte") || "",
+      orderStatusTwo: searchParams.get("additionalOptions.endDate_lte") || "",
     }),
     [searchParams]
   );

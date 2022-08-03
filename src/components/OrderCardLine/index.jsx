@@ -103,7 +103,7 @@ const OrderCardLine = ({ dataCurrent }) => (
 OrderCardLine.propTypes = {
   dataCurrent: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.number,
       name: PropTypes.string,
       minPrice: PropTypes.string,
       maxPrice: PropTypes.string,
@@ -118,7 +118,7 @@ OrderCardLine.propTypes = {
 OrderCardLine.defaultProps = {
   dataCurrent: PropTypes.arrayOf(
     PropTypes.shape({
-      id: "",
+      id: null,
       name: "",
       minPrice: "",
       maxPrice: "",

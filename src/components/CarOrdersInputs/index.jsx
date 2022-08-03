@@ -1,6 +1,7 @@
 import React, { useState, memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { fetchOrderFilter } from "../../redux/dataThunk/fetchFiltrInputs";
+import fetchAllCars from "../../redux/dataThunk/fetchAllCars";
 import useParameters from "../../hooks/useParametersCarOrders";
 import Select from "../../ui/SelectedList";
 import Button from "../../ui/ButtonCarSetting";
@@ -13,30 +14,45 @@ const CarOrdersInput = () => {
   const [cityFromList, setCityFromList] = useState("");
   const [orderStatusFromList, setOrderStatusFromList] = useState("");
   const { setCarOrdersQuery, deleteCarOrdersQuery } = useParameters();
-  const { dataOrdersInput } = useSelector(({filterInputs}) => filterInputs)
-
+  const { dataOrdersInput } = useSelector(({ filterInputs }) => filterInputs);
+  const { dataCars } = useSelector(({ allCars }) => allCars);
   useEffect(() => {
     dispatch(fetchOrderFilter());
+    dispatch(fetchAllCars());
   }, []);
-
   const now = new Date();
   const nowDate = new Date(now).getTime();
-  
+
   const allPeriodOfTimes = dataOrdersInput.map((el) => {
-    if (Math.ceil(Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) / (1000 * 3600 * 24)) < 7)
+    if (
+      Math.ceil(
+        Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) /
+          (1000 * 3600 * 24)
+      ) < 7
+    )
       return "За неделю";
-    if (Math.ceil(Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) /(1000 * 3600 * 24)) < 30)
+    if (
+      Math.ceil(
+        Math.abs(nowDate - new Date(el.additionalOptions.startDate).getTime()) /
+          (1000 * 3600 * 24)
+      ) < 30
+    )
       return "За месяц";
     return "За год";
   });
-  const allOrderStatus = dataOrdersInput.map((el) => Math.abs(nowDate < new Date(el.additionalOptions.endDate).getTime())
+  const allOrderStatus = dataOrdersInput.map((el) =>
+    Math.abs(nowDate < new Date(el.additionalOptions.endDate).getTime())
       ? "В процессе"
       : "Завершен"
   );
 
   const uniquePeriodOfTimes = [...new Set(allPeriodOfTimes)];
-  const uniqueCarNames = [...new Set(dataOrdersInput.map((el) => el.Cars.name))];
-  const uniqueCities = [...new Set(dataOrdersInput.map((el) => el.additionalOptions.cityAuto)),];
+  const uniqueCarNames = [
+    ...new Set(dataOrdersInput.map((el) => el.Cars?.name)),
+  ];
+  const uniqueCities = [
+    ...new Set(dataOrdersInput.map((el) => el.additionalOptions.cityAuto)),
+  ];
   const uniqueOrderStatus = [...new Set(allOrderStatus)];
 
   const weekMicroseconds = 604800000;
@@ -47,13 +63,13 @@ const CarOrdersInput = () => {
   const periodOfYear = new Date(now).getTime() - year;
   const statusPeriod = 1280508033000;
   const endStatusPeriod = nowDate + year;
-  /* http://localhost:3001/FinalOrders?_expand=Cars&CarsId=3 */
-  /* http://localhost:3001/FinalOrders?_expand=Cars&filter[Cars.name]=CRETA */
 
+  const test = dataCars.find((el) => el.name === carNameFromList);
+  
   const handlAccept = () => {
-    setCarOrdersQuery("name", carNameFromList);
+    setCarOrdersQuery("CarsId", test?.id);
     if (carNameFromList === "") {
-      deleteCarOrdersQuery("name");
+      deleteCarOrdersQuery("CarsId");
     }
     if (periodOfTimeFromList === "За неделю") {
       setCarOrdersQuery(`additionalOptions.startDate_gte`, periodOfWeek);

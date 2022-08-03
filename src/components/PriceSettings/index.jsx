@@ -81,7 +81,7 @@ const PriceSettings = () => {
         </span>
         <Input
           className="inputCarSettings"
-          isError={minPriceDirty && minPriceError}
+          isError={!!(minPriceDirty && minPriceError)}
           value={minPrice}
           onChange={handlChangeMinPrice}
           onBlur={handlClickBlur}
@@ -99,7 +99,7 @@ const PriceSettings = () => {
         </span>
         <Input
           className="inputCarSettings"
-          isError={maxPriceDirty && maxPriceError}
+          isError={!!(maxPriceDirty && maxPriceError)}
           value={maxPrice}
           onChange={handlChangeMaxPrice}
           onBlur={handlClickBlur}

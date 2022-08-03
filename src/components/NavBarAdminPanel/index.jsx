@@ -40,7 +40,7 @@ const NavBarAdminPanel = () => {
       <nav className="navBarAdminPanel__container">
         {email || emailStorage ? (
           <div className="userEmail">
-            <p>{email || emailStorage}</p>
+            <p className="userEmail__text">{email || emailStorage}</p>
             <button
               type="button"
               onClick={() => {
