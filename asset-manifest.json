@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carsharing/static/css/main.3150deb2.css",
-    "main.js": "/carsharing/static/js/main.526c30ce.js",
+    "main.js": "/carsharing/static/js/main.b61e5067.js",
     "static/media/four.png": "/carsharing/static/media/four.be695f13b9b2c5c7bf11.png",
     "static/media/three.png": "/carsharing/static/media/three.4e22dc96c90ef96e85e6.png",
     "static/media/one.png": "/carsharing/static/media/one.9369f2aaab71089a15e4.png",
@@ -32,10 +32,10 @@
     "static/media/ShapeOk.svg": "/carsharing/static/media/ShapeOk.3579bfb87cebc503bade29a80bc40826.svg",
     "static/media/Vector.svg": "/carsharing/static/media/Vector.ce81e7425fdbcb8e18e8475e250c5da8.svg",
     "main.3150deb2.css.map": "/carsharing/static/css/main.3150deb2.css.map",
-    "main.526c30ce.js.map": "/carsharing/static/js/main.526c30ce.js.map"
+    "main.b61e5067.js.map": "/carsharing/static/js/main.b61e5067.js.map"
   },
   "entrypoints": [
     "static/css/main.3150deb2.css",
-    "static/js/main.526c30ce.js"
+    "static/js/main.b61e5067.js"
   ]
 }
