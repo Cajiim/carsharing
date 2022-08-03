@@ -1,9 +1,10 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  /* BrowserRouter as Router, */
   Route,
   Routes,
   Navigate,
+  HashRouter
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
@@ -20,7 +21,7 @@ const App = () => {
   const { isAuthorization } = Authorization();
   const token = localStorage.getItem("token");
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/order" element={<Category />} />
@@ -83,7 +84,7 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
